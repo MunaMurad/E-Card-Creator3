@@ -1,0 +1,7 @@
+{
+  "name": "ionic5fullapp_final",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
