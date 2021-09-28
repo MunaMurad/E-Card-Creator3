@@ -1,0 +1,106 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar [color]="mycolor">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Theme color</ion-title>
+  </ion-toolbar>
+  <ion-toolbar  [color]="mycolor">
+    <ion-grid fixed class="ion-no-padding">
+      <ion-searchbar color="" placeholder="Find something.." search-icon="search-outline">
+      </ion-searchbar>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top ion-text-center">
+  <ion-grid fixed class="ion-no-padding">
+      <div *ngIf="themeView==='md'">
+      
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let mdColor of mdColor"  size-lg="3" size-md="4" size-sm="4" size="6">
+              <div
+                #colorBlock
+                [ngClass]="'color-block ion-color ion-color-' + mdColor.colorName" (click)="changeColor(mdColor.colorName)">
+                <b>{{ mdColor.colorName }}</b><br>
+                {{ getColorBase(colorBlock)}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+      <div *ngIf="themeView==='ios'">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let iosColor of iosColor"  size-lg="3" size-md="4" size-sm="4" size="6">
+              <div
+                #colorBlock
+                [ngClass]="'color-block ion-color ion-color-' + iosColor.colorName" (click)="changeColor(iosColor.colorName)">
+                <b>{{ iosColor.colorName }}</b><br>
+                {{ getColorBase(colorBlock)}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+      <div *ngIf="themeView==='flat'">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let flatColor of flatColor"  size-lg="3" size-md="4" size-sm="4" size="6">
+              <div
+                #colorBlock
+                [ngClass]="'color-block ion-color ion-color-' + flatColor.colorName" (click)="changeColor(flatColor.colorName)">
+                <b>{{ flatColor.colorName }}</b><br>
+                {{ getColorBase(colorBlock)}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+      <div *ngIf="themeView==='misc'">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let miscColor of miscColor"  size-lg="3" size-md="4" size-sm="4" size="6">
+              <div
+                #colorBlock
+                [ngClass]="'color-block ion-color ion-color-' + miscColor.colorName" (click)="changeColor(miscColor.colorName)">
+                <b>{{ miscColor.colorName }}</b><br>
+                {{ getColorBase(colorBlock)}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+  </ion-grid>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar [color]="mycolor">
+    <ion-grid fixed class="ion-no-padding">
+    
+        <ion-segment mode="md" color="dark" [(ngModel)]="themeView"  >
+          <ion-segment-button  value="md"><ion-label>MD</ion-label></ion-segment-button>
+          <ion-segment-button value="ios"><ion-label>IOS</ion-label></ion-segment-button>
+          <ion-segment-button value="flat"><ion-label>FLAT</ion-label></ion-segment-button>
+          <ion-segment-button value="misc"><ion-label>MISC</ion-label></ion-segment-button>
+        </ion-segment>
+
+        <!-- <ion-segment mode="md" value="buy" color="success" [(ngModel)]="themeView">
+          <ion-segment-button value="buy">
+            <ion-label>Buy</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="rent">
+            <ion-label>Rent</ion-label>
+          </ion-segment-button>
+        </ion-segment> -->
+      </ion-grid>
+  </ion-toolbar>
+</ion-footer>
