@@ -1,0 +1,17 @@
+<ion-header >
+  <ion-toolbar color="pumpkin">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">Toast</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="pumpkin">
+    <ion-searchbar showCancelButton="always"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <ion-button expand="block" color="medium" (click)="toast()">toast <ion-icon slot="end" name="bluetooth"></ion-icon></ion-button>
+  <ion-button expand="block" color="medium" (click)="presentToastWithOptions()">toast with option <ion-icon slot="end" name="bluetooth"></ion-icon></ion-button>
+</ion-content>

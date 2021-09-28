@@ -1,0 +1,116 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>map-home</ion-title>
+  </ion-toolbar>
+  <ion-button color="dark" (click)="close()">
+    <ion-icon size="large" name="close-circle"></ion-icon>
+  </ion-button>
+</ion-header>
+ -->
+
+
+
+
+
+<ion-content fullscreen="true">
+
+        <!-- fab placed to the top end -->
+        <ion-fab vertical="top" horizontal="end" slot="fixed">
+          <ion-fab-button mode="ios"  size="small" translucent="true" (click)="close()">
+            <ion-icon name="close-circle-outline" color="lightgray"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+
+
+
+        <!--*********** Map wrapper  ***********-->
+
+        <div id="wrapper">
+          <!--*********** Map  ***********x-->
+          <div #map id="map"></div>
+
+          <!--*********** Detail box ***********-->
+          <div *ngIf="viewDetail" class="place-detail effect6">
+            <ion-card class="place-detail-card"  (click)="openDetail('/travel-detail',placeId)">
+
+              <div class="place-detail-card-bg" [ngStyle]="{'background-image': 'url(' + placeImage+ ')'}">
+                  <div class="place-detail-card-title">
+                    <ion-item lines="none">
+                      <ion-label>
+                        <h2 class="main-b-header6">{{placeName}}</h2>
+                        <ion-text color="light">
+                          <p>{{placeShortDescription}}</p>
+                        </ion-text>
+                        <!-- <h2 class="main-header6">{{placeShortDescription}}</h2> -->
+                        <p>
+                          <ion-icon
+                            style="font-size: 14px !important;"
+                            color="yellow"
+                            *ngFor="let i of [0,1,2,3,4]"
+                            [name]="i < placeRating? 'star' : 'star-outline'"
+                          >
+                          </ion-icon>
+                        </p>                
+                    
+                      </ion-label>
+                      
+                    </ion-item>      
+                  </div>
+        
+              </div>
+            </ion-card>
+            <!-- <ion-card>
+              <div class="image_header" [ngStyle]="{'background-image': 'url(' + placeImage + ')'}"></div>
+              <ion-card-content>
+                <ion-item lines="none">
+                  <ion-label>
+                    <h2>{{placeName}}</h2>
+                    <p>
+                      <ion-icon
+                        style="font-size: 14px !important;"
+                        color="warning"
+                        *ngFor="let i of [0,1,2,3,4]"
+                        [name]="i < placeRating? 'star' : 'star-outline'"
+                      >
+                      </ion-icon>
+                    </p>
+                    <p>{{placeDescription}}</p>
+                    <ion-button fill="outline" slot="end" (click)="openDetail('placeId')">View</ion-button>
+                  </ion-label>
+                  
+                </ion-item>
+              
+              </ion-card-content>
+            </ion-card> -->
+          </div>
+          <!-- <div *ngIf="viewDetail" class="place-detail effect6">
+        
+                <ion-item>
+                  <ion-thumbnail slot="start">
+                    <img src="{{placeImage}}" />
+                  </ion-thumbnail>
+                  <ion-label>
+                    <h2>{{placeName}}</h2>
+                    <p>
+                      <ion-icon
+                        style="font-size: 14px !important;"
+                        color="warning"
+                        *ngFor="let i of [0,1,2,3,4]"
+                        [name]="i < placeRating? 'star' : 'star-outline'"
+                      >
+                      </ion-icon>
+                    </p>
+                    <p>{{placeDescription}}</p>
+                    <ion-button fill="outline" slot="end" (click)="openDetail('placeId')">View</ion-button>
+                  </ion-label>
+                  
+                </ion-item>
+
+          </div> -->
+
+
+
+        </div>
+
+ 
+</ion-content>

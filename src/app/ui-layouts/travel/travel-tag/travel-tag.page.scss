@@ -1,0 +1,21 @@
+ion-thumbnail {
+    --size: 50px;
+    // width: 104px !important;
+    // height: 75px !important;
+
+    // margin-left: 24px;
+    margin-bottom: 15px;
+    border-radius: 0px  !important;
+    background-color: #dddddd;
+
+    // min-width: 6rem;    
+    // min-height: 8rem;
+    min-width: 6rem;    
+    min-height: 5rem;
+    // margin-left: 24px;
+    ion-img {
+        border-radius: 0px  !important;
+        // max-width: 6rem;    
+        // min-width: 8rem;
+    }
+}

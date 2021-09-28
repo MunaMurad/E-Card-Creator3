@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar color="scarletred">
+    <ion-buttons slot="start">
+      <ion-menu-button  auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title slot="start" class="main-header4">FEED</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="scarletred">
+    <ion-grid fixed class="ion-no-padding">
+      <ion-searchbar color="" placeholder="Find the best place."  search-icon="search-outline">
+      </ion-searchbar>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+  <!-- <ion-content #content> -->
+
+<ion-content >
+  <ion-grid fixed class="ion-no-padding">
+        <ion-card mode="ios"  *ngFor="let feed of feeds  | async">
+              <ion-item lines="none">
+                <ion-avatar slot="start">
+                    <img [src]="feed.imgProfile">
+                </ion-avatar>
+                <ion-label>
+                  <h3>{{feed.name}}</h3>
+                  <p>November 5, 1955</p>
+                </ion-label>
+              </ion-item>
+              <ion-slides pager>
+                  <ng-container *ngFor="let images of  feed.images | slice:1">
+                <ion-slide  [ngStyle]="{'background' : 'url(' + images.url + ')'}">
+                </ion-slide>
+                  </ng-container>
+              </ion-slides>
+            
+          <ion-card-content>
+            <ion-card-title>
+              <h3 class="main_header4">  {{feed.title}}</h3>
+            </ion-card-title>
+            <p>
+              {{feed.description}}
+            </p>
+          </ion-card-content>
+          
+          <ion-row>
+              <ion-col>
+                <ion-button fill="clear" size="small" color="dark">
+                  <ion-icon slot="start"  name="chatbox-ellipses-outline" color="medium"></ion-icon>
+                  <!-- <ion-badge color="danger">2.3k</ion-badge> -->
+                  <ion-label> {{feed.comment}}</ion-label>
+                </ion-button>
+
+                <ion-button fill="clear" size="small" color="dark">
+                  <ion-icon slot="start"  name="heart-outline" color="medium"></ion-icon>
+                  <!-- <ion-badge color="danger">2.3k</ion-badge> -->
+                  <ion-label> {{feed.like}}</ion-label>
+                </ion-button>     
+                <!-- <ion-button fill="clear" size="small" color="dark">
+                  <ion-icon slot="start" name="ios-chatboxes" color="gray"></ion-icon>
+                  {{feed.comment}}
+                </ion-button> -->
+                <!-- <ion-button fill="clear" size="small" color="dark">
+                    <ion-icon slot="start" name="ios-heart" color="gray"></ion-icon>
+                    {{feed.like}}
+                </ion-button> -->
+              </ion-col>
+        
+              <ion-col center class="ion-text-right"> 
+                <ion-button fill="clear" size="small" color="dark">
+                  <ion-icon slot="start"  name="arrow-redo-outline" color="medium"></ion-icon>
+                  <!-- <ion-badge color="danger">2.3k</ion-badge> -->
+                  <ion-label> REPLY</ion-label>
+                </ion-button>     
+                  <!-- <ion-button fill="clear" size="small" color="dark">
+                      REPLY
+                  </ion-button> -->
+              </ion-col>
+          </ion-row>
+      
+        </ion-card>
+      <!-- 
+        <ion-fab right bottom>
+            <button ion-fab color="amber"><ion-icon name="md-share"></ion-icon></button>
+            <ion-fab-list side="top">
+              <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+            </ion-fab-list>
+        </ion-fab> -->
+  </ion-grid>
+</ion-content>
+    
+<!--  hide ion-tab-bar -->
+<ion-footer>
+  <ion-tab-bar class="ion-no-border" color="midblue">
+    <ion-tab-button selected>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="globe"></ion-icon>
+      <ion-label>world</ion-label>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="people"></ion-icon>
+      <ion-label>contact</ion-label>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="mail"></ion-icon>
+      <ion-badge color="danger">2.3k</ion-badge>
+      <ion-label>mail</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

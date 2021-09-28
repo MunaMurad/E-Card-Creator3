@@ -1,0 +1,41 @@
+
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button color="success"></ion-back-button>
+      </ion-buttons>
+      <ion-title color="success" class="main-b-header6">List</ion-title>
+      <ion-buttons slot="end">
+        <ion-button class="badge-button" routerLink="/food-cart" routerDirection="forward">
+          <ion-icon name="basket-outline" color="success">
+          </ion-icon>
+          <ion-badge class="badge-one" color="danger" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content no-padding>
+  <ion-grid fixed class="ion-no-padding">
+        <ion-grid class="ion-margin-top ion-padding-top">
+            <ion-row wrap>
+                <ion-col tappable size-lg="4" size-md="4" size-sm="6" size="6" class="ion-padding"
+                    *ngFor="let item of items | async" >
+                    <ion-card mode="ios" class="food-main-card food-card-tall ion-margin-bottom"
+                        routerLink="/food-detail/{{item.id}}">
+
+                        <div class="food-div-tall-bg" [ngStyle]="{'background-image': 'url(' + item.image+ ')'}"></div>
+                        <div class="margin-top-5 main-header10" text-wrap>{{item.name}}</div>
+                        <ion-icon style="font-size: 12px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]"
+                            [name]="i < item.rating  ? 'star' : 'star-outline'"></ion-icon>
+                        <!-- <div class="main-b-header8" color="green">${{item.price}}</div> -->
+                        <div class="main-b-header9">
+                            <ion-text color="grey">{{item.price | currency}}</ion-text>
+                        </div>
+
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+   </ion-grid>
+</ion-content>

@@ -1,0 +1,134 @@
+<ion-app>
+
+
+  
+  <ion-split-pane contentId="main-content" when="(min-width: 3000px)">
+
+
+    <ion-menu contentId="main-content" >
+      <ion-content>
+        <!-- ########################### -->
+
+
+
+
+
+        <!-- ############################ -->
+
+        <ion-list id="inbox-list">
+          <ion-list-header>ionic5 fullapp</ion-list-header>
+          <ion-note>with firebase backend</ion-note>
+    
+        </ion-list>
+    
+
+        <ion-list class="padding-left-10" lines="none">
+          <!-- <ion-list-header>
+            UI layout with firebase
+          </ion-list-header> -->
+          <ion-note>UI Layouts</ion-note>
+
+          <ion-menu-toggle autoHide="false" *ngFor="let p of layoutPages; let i = index">
+            <ion-item lines="none" [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+
+        <ion-list lines="none">
+          <ion-note> Firebase Authentication</ion-note>
+          <ion-menu-toggle autoHide="false" *ngFor="let p of authPages; let i = index">
+            <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list lines="none">
+          <ion-note>Themes</ion-note>
+          <ion-menu-toggle autoHide="false" *ngFor="let p of themePages; let i = index">
+            <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+
+
+
+
+        <ion-list lines="none">
+          <ion-note>UI Components</ion-note>
+          <!-- <ion-list class="home-list" lines="none">
+
+                <ion-item lines="none" href="">
+                  <ion-icon slot="start" name="hardware-chip-outline" class="component-icon component-icon-primary"></ion-icon>
+                  <ion-label>components</ion-label>
+                </ion-item>
+
+          </ion-list> -->
+
+
+          <ion-menu-toggle autoHide="false" *ngFor="let p of componentPages; let i = index">
+            <ion-item lines="none" [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+
+        </ion-list>
+
+
+
+
+
+
+
+
+
+
+
+      </ion-content>
+
+      <!-- <ion-footer>
+        <ion-toolbar>
+          <ion-title>
+            Click to Add Text
+          </ion-title>
+          <ion-buttons slot="end">
+            <ion-button id="changeText" onClick="toggleText()">
+              <ion-icon slot="start" name="refresh"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer> -->
+      
+
+    </ion-menu>
+
+
+
+
+
+
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+
+</ion-app>

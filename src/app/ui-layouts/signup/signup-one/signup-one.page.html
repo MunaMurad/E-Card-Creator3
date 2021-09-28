@@ -1,0 +1,81 @@
+<ion-content fullscreen="true">
+
+  <ion-header class="ion-no-border" slot="fixed">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button mode="md" color="light" defaultHref="#"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+
+        <div class="login-logo">
+          <img src="assets/appicon.svg" alt="Ionic logo">
+        </div>
+
+        <ion-list class="ion-margin-top ion-margin margin-0-28">
+
+          <!-- ############ -->
+          <ion-item class="roundedInput8px margin-bottom-10 ">
+            <ion-label>
+              <ion-icon color="medium" name="person-outline"></ion-icon>
+            </ion-label>
+            <ion-input placeholder="Firstname"></ion-input>
+          </ion-item>
+          <!-- ############ -->
+          <ion-item class="roundedInput8px margin-bottom-10">
+            <ion-label>
+              <ion-icon color="medium" name="people-outline"></ion-icon>
+            </ion-label>
+            <ion-input placeholder="Lastname"></ion-input>
+          </ion-item>
+          <!-- ############ -->
+          <ion-item class="roundedInput8px margin-bottom-10">
+            <ion-label>
+              <ion-icon color="medium" name="mail-outline"></ion-icon>
+            </ion-label>
+            <ion-input placeholder="Username"></ion-input>
+          </ion-item>
+          <!-- ############ -->
+          <ion-item class="roundedInput8px margin-bottom-10">
+
+            <ion-label>
+              <ion-icon color="medium" name="lock-closed-outline"></ion-icon>
+            </ion-label>
+
+            <ion-input placeholder="Password" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false">
+            </ion-input>
+
+            <!-- ### Show/hide password ### -->
+            <div (click)="onPasswordToggle()" ion-button fill="clear" size="small">
+              <ion-icon slot="icon-only" color="medium" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+            </div>
+
+          </ion-item>
+
+          <!-- ############ -->
+          <ion-text color="dark">
+            <p class="ion-text-right main-header8">Forgot password?</p>
+          </ion-text>
+
+          <!-- ############ -->
+          <ion-button mode="ios" class="ion-margin-top" color="sunflower" expand="block">SIGN UP</ion-button>
+          <ion-text color="dark">
+            <h2 class="ion-text-center ion-margin-bottom main-header8">
+              By clicking Sign up you agree to the following Terms ans Conditions without reservation
+            </h2>
+          </ion-text>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+</ion-content>

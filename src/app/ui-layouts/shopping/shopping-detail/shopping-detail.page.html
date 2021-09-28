@@ -1,0 +1,197 @@
+<ion-content  no-padding fullscreen (ionScroll)="onScroll($event)" [scrollEvents]="true" [class.transition]="transition">
+    <ion-header class="ion-no-border" slot="fixed">
+        <ion-toolbar class="first" [class.show-background]="showToolbar">
+            <ion-buttons slot="start">
+            <ion-back-button mode="ios" color="light" defaultHref="#"></ion-back-button>
+            </ion-buttons>
+    
+            <!-- <ion-title [class.show-title]="show-title" color="light">Detail</ion-title> -->
+    
+            <ion-buttons slot="end">
+
+            <ion-button class="badge-button" routerLink="/shopping-cart" routerDirection="forward">
+                <ion-icon name="cart-outline" color="light">
+                </ion-icon>
+                <ion-badge class="badge-one" color="danger" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+            </ion-button>
+        </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+        
+    <ion-grid fixed class="ion-no-padding">
+
+        <!--*********** Image header  ***********-->
+        <!-- <div class="detail-header" [ngStyle]="{'background-image': 'url(' + itemArray.image + ')'}">
+        </div> -->
+        <ion-slides pager="true" [options]="slideOptsOne" >
+            <ion-slide *ngFor="let s of itemArray.image_slide" >
+                <img class="image-slide" [src]="s">
+            </ion-slide>
+        </ion-slides>
+        <!--*********** Title  ***********-->
+        <div class="food_space1">
+        <ion-item lines="none">
+            <ion-label  text-wrap>
+                <h1 class="main-b-header2 detail-name">{{itemArray.name}}</h1>
+                <ion-icon  style="font-size: 18px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]" [name]="i < itemArray.rating  ? 'star' : 'star-outline'"></ion-icon>
+                <!-- <h2 class="food_header3 detail-price "> {{itemArray.short_description}}</h2> -->
+                <!-- <ion-text color="grey"> <h2 class="main-b-header5 detail-price "> ${{itemArray.price}}</h2> </ion-text> -->
+                <div *ngIf="!itemArray.discount" class="main-b-header5" >
+                    <ion-text color="grey">{{itemArray.price | currency}}</ion-text>
+                </div>
+                <div *ngIf="itemArray.discount" class="main-b-header5" >
+                    <ion-text color="grey">{{itemArray.discount_price | currency}}&nbsp;&nbsp;</ion-text>
+                    <ion-text color="light" class="discount">{{itemArray.price | currency}}</ion-text>
+                </div>   
+
+            </ion-label>
+            <div slot="end">
+            </div>
+        </ion-item>  
+        </div>
+
+        <!--*********** Description ***********-->
+        <div class="food_space4">
+        <p class="" [innerHtml]="itemArray.description">
+        </p>
+
+        </div>
+
+        <!-- show if attribute1_value = true-->
+        <!-- {{(item | async)?.attribute1_visible}} -->
+
+
+        <!-- ################################## -->
+        <!-- ######## Color selector ########## -->
+        <!-- ################################## -->
+        <!-- https://angular.io/tutorial/toh-pt2 -->
+        <!-- https://stackblitz.com/angular/dgknlvmvgko  -->
+        <!--  if attribute2_visible then show color selctor -->
+        <div *ngIf="itemArray.attribute2_visible">
+            <ion-row>
+                <ion-col size="2" style="margin-left:15px;">
+                        <h1 class="main-header5">{{itemArray.attribute2_name}}</h1>
+                </ion-col>
+                <ion-col>
+                        <ul class="color-selector">
+                                <li *ngFor="let color of itemArray.attribute2_value"
+                                    [style.backgroundColor]="color.color"
+                                    [class.selected]="color.color === selectedColor"
+                                    (click)="onSelectColor(color.color,color.name)" >
+                                    <span class="badge"></span> 
+                                </li>
+                            </ul>
+                </ion-col>
+            </ion-row>
+
+        </div>
+
+
+
+        <!-- ############################### -->
+        <!-- ######## Size selector ########## -->
+        <!-- ############################### -->
+
+        <!--  if attribute1_visible = true then show size selector -->
+        <div *ngIf="itemArray.attribute1_visible">
+        <ion-row>
+            <ion-col size="2" style="margin-left:15px;">
+                    <h1 class="main-header5">{{itemArray.attribute1_name}}</h1>
+            </ion-col>
+            <ion-col>
+                    <ul class="size-selector">
+                            <li *ngFor="let size of itemArray.attribute1_value"
+                                [style.backgroundColor]="size"
+                                [class.selected]="size === selectedSize"
+                                (click)="onSelectSize(size)" >
+                                {{size}}
+                            </li>
+                        </ul>                
+            </ion-col>
+        </ion-row>
+        </div>
+
+
+
+        <!-- ############################### -->
+        <!-- ######## Related items ########## -->
+        <!-- ############################### -->
+        <!-- <ion-item lines="none">
+            <h1 class="main-header4">Related items</h1>
+        </ion-item> -->
+        
+            <!-- <ion-grid>
+                <ion-row wrap>
+                    <ion-col tappable  size="6"  *ngFor="let itemRelated of itemRelated | async" color="gray">
+                    <ion-card class="main-card card-tall-2 "   routerLink="/shopping-detail/{{itemRelated.id}}"  >
+                        <div class="div-tall-bg-2"  [ngStyle]="{'background-image': 'url(' + itemRelated.image+ ')'}">
+                        </div>
+        
+                        <div class="">{{itemRelated.name}}</div>
+                        <div><p style="margin-top: 3px;">{{itemRelated.name}}</p></div>
+                        <div style="margin-top: -10px;">
+                                <p *ngIf="!promotion.discount" ion-text  color="dark"><strong>${{itemRelated.price}}</strong></p>
+                                <p *ngIf="promotion.discount" ion-text  color="dark" class="discount">${{itemRelated.price}}</p>
+                                <p *ngIf="promotion.discount" ion-text  large color="red"><strong>${{itemRelated.discountPrice}}</strong></p>
+                        </div>
+                    </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid> -->
+
+        <!--  add list of reviews and submit review button -->
+        <!-- ################################## -->
+        <!-- ######## Review ########## -->
+        <!-- ################################## -->
+        <!-- <div class="ion-margin-top">
+                <ion-item lines="none"   class="">
+                        <h1 class="main_header4">Review</h1>
+                    <ion-button fill="none" slot="end" color="secondary" [routerLink]="['/shopping-review', itemId]" >View all</ion-button>
+                </ion-item>
+        </div>
+
+
+        <ion-card *ngFor="let review of reviews | async" >
+            <ion-item  lines="none" detail="false">
+                <ion-avatar slot="start" class="avatar-top">
+                    <ion-img [src]="review.userProfileImage"></ion-img>
+                </ion-avatar>
+                <ion-label >
+                    <h2>{{review.name}}</h2>
+                    <p> {{review.createdTime.toDate() | date: 'dd/MM/yyyy'}}</p>
+                </ion-label>
+                <ion-label text-right slot="end" >            
+                    <ion-icon  style="margin-right:2px; font-size: 14px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]" [name]="i < review.rating ?  'star' : 'star-outline'"></ion-icon>
+                </ion-label>
+                
+            </ion-item>
+            
+            <ion-card-content>
+                {{review.comment}}
+            </ion-card-content>
+        </ion-card>
+
+
+        
+        <div class="ion-margin">
+            <ion-button expand="block"  color="orange"  *ngIf="(place | async) as placeId" class="team" (click)="openAddReview(placeId.id)">Write review</ion-button>
+            <ion-button expand="block"  fill="blank" color="bluegrey"  class="team" [routerLink]="['/shopping-review-add', itemId]">Write a review</ion-button>
+        </div>
+        <div style="height: 85px;"></div> -->
+        <div class="footer-box"></div>
+        <div class="footer-box"></div>
+        <div style="height: 85px;"></div>
+    </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-grid fixed class="ion-no-padding">
+      <!-- <ion-button  expand="block"  color="orange" (click)="goAddReview()">Write review</ion-button> -->
+      <ion-button color="warning" expand="full" (click)="addToCart()">Add to Cart</ion-button>
+      <!-- <ion-button  fill="none"  slot="end">
+          <ion-icon slot="icon-only"  color="orange" name="ios-share-outline"></ion-icon>
+      </ion-button> -->
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

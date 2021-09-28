@@ -1,0 +1,52 @@
+.component-icon {
+    border-radius: 50%;
+  
+    padding: 7px;
+    height: 18px;
+    width: 18px;
+  
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .component-icon.size100 {
+    height: 100px;
+    width: 100px;
+ 
+  }
+  .component-icon.size80 {
+    height: 80px;
+    width: 80px;
+ 
+  }  .component-icon.size70 {
+    height: 70px;
+    width: 70px;
+ 
+  }
+  .component-icon.size50 {
+    height: 50px;
+    width: 50px;
+ 
+  }
+  .component-icon.size40 {
+    height: 40px;
+    width: 40px;
+ 
+  }
+  .component-icon.size25 {
+    height: 25px;
+    width: 25px;
+  }
+  .component-icon.size15 {
+    height: 15px;
+    width: 15px;
+  }
+  .component-icon-bg {
+    background: var(--ion-color-medium);
+    color: #fff;
+  }
+
+  // .component-icon-dark {
+  //   background: var(--ion-color-step-850, #27323e);
+  //   color: var(--ion-item-background, #fff);
+  // }

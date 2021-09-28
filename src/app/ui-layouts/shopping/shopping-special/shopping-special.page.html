@@ -1,0 +1,26 @@
+<ion-content fullscreen="true">
+  <!--*********** Image header  ***********-->
+  <div class="detail-header" [ngStyle]="{'background-image': 'url(' + (specialDetail | async)?.image + ')'}">
+    <div *ngIf="(specialDetail | async)?.special" class="ribbon">{{(specialDetail | async)?.special_message}}</div>
+  </div>
+
+  <!--*********** Title  ***********-->
+  <div class="travel_space1">
+    <ion-item lines="none">
+      <ion-label text-wrap>
+        <h1 class="main-b-header7">{{(specialDetail | async)?.name}}</h1>
+        <!-- <h2 class="travel_header3 detail-price "> </h2> -->
+
+        <div class="main-header8-500" [innerHTML]="(specialDetail | async)?.description"></div>
+
+      </ion-label>
+    </ion-item>
+  </div>
+
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button expand="full" color="warning" (click)="close()">Cancel</ion-button>
+  </ion-toolbar>
+</ion-footer>

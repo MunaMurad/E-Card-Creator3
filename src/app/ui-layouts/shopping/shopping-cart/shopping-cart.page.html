@@ -1,0 +1,70 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" color="warning" defaultHref="#"></ion-back-button>
+    </ion-buttons>
+          <ion-title color="warning" >Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+  <ion-grid fixed class="ion-no-padding">
+      <div  *ngIf="selectedItems.length">
+        <ion-list>
+          <ion-item-sliding  *ngFor="let item of selectedItems; let i = index" lines="none" class="ion-margin-top" #slidingItem>
+              <ion-item lines="none">
+                  <ion-thumbnail slot="start">
+                      <ion-img [src]="item.image"></ion-img>
+                  </ion-thumbnail>
+                  <ion-label  class="text-left">
+                    
+                    <h3>{{ item.name }}</h3>
+                    <p>Size: {{item.size}}</p>
+                    <p>Color: {{item.color}}</p>
+                    <!-- <ion-icon name="trash" slot="end" color="dark" (click)="removeCartProduct(i) " ></ion-icon> -->
+                  </ion-label>
+                  <h5  slot="end" class="main-header7" text-right >{{ item.price | currency:'USD':'symbol' }}</h5>
+                </ion-item>
+              <ion-item-options side="end">
+                <ion-item-option (click)="removeCartProduct(i, slidingItem) " >
+                  <ion-icon slot="icon-only" size="small" name="trash"></ion-icon>
+                </ion-item-option>
+              </ion-item-options>
+          </ion-item-sliding>
+      
+          <!-- <ion-item  class="ion-margin-top" lines="none">
+            Total: <span slot="end">{{ total | currency:'USD':'symbol' }}</span>
+          </ion-item> -->
+          <ion-item lines="none" class="ion-margin-top">
+            <ion-label  class="text-left">
+                <h1 class="main-b-header8">Total:</h1>
+            </ion-label>
+            <h5 class="margin-top-5" slot="end" class="main-b-header8" text-right >{{ total | currency:'USD':'symbol' }}</h5>       
+        </ion-item>       
+        </ion-list>
+      </div>
+        
+      <div  *ngIf="!selectedItems.length" text-center>
+        <div class="logo-box">
+            <ion-icon class="notification pop-in" name="bookmarks-outline" color="light"  ></ion-icon>
+          </div>
+          <div class="ion-text-center">
+            <ion-text color="ulightgrey" class="ion-margin-bottom">
+              <h1 class="main-header5">Your shopping cart is empty</h1>
+            </ion-text>
+          </div>
+          <div>
+            <ion-button color="warning" fill="blank" expand="full"  routerLink="/shopping-home">Continue shopping</ion-button>
+          </div>
+      </div>
+  </ion-grid>
+</ion-content>
+    
+<ion-footer *ngIf="selectedItems.length" >
+    <ion-toolbar>
+      <ion-grid fixed class="ion-no-padding">
+        <ion-button color="warning" expand="full"  (click)="checkout()" >Checkout</ion-button>
+        <ion-button color="warning" fill="blank" expand="full" routerLink="/shopping-home">Continue shopping</ion-button>
+      </ion-grid>
+      </ion-toolbar>
+</ion-footer>

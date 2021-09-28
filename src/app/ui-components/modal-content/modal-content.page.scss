@@ -1,0 +1,56 @@
+.setting-modal .modal-wrapper {
+    height: 20%;
+    bottom: 0px;
+    position: absolute; 
+    display: block;  
+}
+
+.component-icon {
+    border-radius: 50%;
+    padding: 7px;
+    height: 18px;
+    width: 18px;
+  
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+ .large {
+    height: 100px;
+    width: 100px;
+ 
+  }
+  .component-icon-primary {
+    background: var(--ion-color-primary);
+    color: #fff;
+  }
+
+  .component-icon-dark {
+    background: var(--ion-color-step-850, #27323e);
+    color: var(--ion-item-background, #fff);
+  }
+
+// 
+  #container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }

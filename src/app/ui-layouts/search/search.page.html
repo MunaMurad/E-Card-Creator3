@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="asphalt">
+
+    <ion-grid fixed class="ion-no-padding">
+
+      <ion-row>
+        <ion-col class="fix-col-icon">
+          <ion-buttons>
+            <ion-menu-button auto-hide="false"></ion-menu-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col>
+          <ion-searchbar #searchbar placeholder="cafe ...." (ionInput)="filterList($event)" >
+          </ion-searchbar>
+        </ion-col>
+      </ion-row>  
+    </ion-grid>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content no-padding>
+  <!-- ######################################### Updated: ver2.0  #############################################-->
+  <!-- ##  -Fixed attribute tells Ionic’s grid to use the max-width corresponding to the current breakpoint ## -->
+  <!-- ##  -To edit breakpoint go to variables.css and edit --ion-grid-width- : value  ###-->
+  <!-- ####################################################################################################### -->
+  <ion-grid fixed class="ion-no-padding">
+      <ion-list-header>Recommended</ion-list-header>
+      <p class="ion-margin">
+        <ion-chip outline color="medium" (click)="searchByTag('coffee')">
+          <ion-label>coffee</ion-label>
+        </ion-chip>
+        <ion-chip outline color="medium" (click)="searchByTag('cake')">
+          <ion-label>cake</ion-label>
+        </ion-chip>
+        <ion-chip outline color="medium" (click)="searchByTag('egg')">
+          <ion-label>egg</ion-label>
+        </ion-chip>
+        <ion-chip outline color="medium" (click)="searchByTag('country')">
+          <ion-label>country</ion-label>
+        </ion-chip>
+        <ion-chip outline color="medium" (click)="searchByTag('breakfast')">
+          <ion-label>breakfast</ion-label>
+        </ion-chip>
+        <ion-chip outline color="medium" (click)="searchByTag('grill')">
+          <ion-label>grill</ion-label>
+        </ion-chip>
+        <ion-chip outline color="medium" (click)="searchByTag('bissel')">
+          <ion-label>bissel</ion-label>
+        </ion-chip>
+      </p>
+
+      
+      <ion-list-header>Results</ion-list-header>
+
+      <ion-list class="ion-margin-top">
+        <ion-item *ngFor="let result of resultList" lines="none" button >
+          <ion-thumbnail slot="start">
+            <ion-img [src]="result.image"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{result.name}}</h2>
+            <p>{{result.description}}</p>
+            <ion-icon style="font-size: 14px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]"
+              [name]="i < result.rating ? 'star' : 'star-outline'">
+            </ion-icon>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+  </ion-grid>
+</ion-content>

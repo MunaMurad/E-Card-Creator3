@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons  mode="md" slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="main-header4" >Category</ion-title>
+
+  </ion-toolbar>
+  <!-- <ion-toolbar color="primary">
+    <ion-title  size="large">Explorer</ion-title>
+  </ion-toolbar> -->
+  <ion-toolbar color="tertiary">
+
+    <ion-grid fixed class="ion-no-padding">
+
+      <ion-row>
+        <ion-col>
+          <ion-searchbar color="" placeholder="Find the best place." (click)="openSearchModal()" search-icon="search-outline">
+          </ion-searchbar>
+        </ion-col>
+        <ion-col class="fix-col-icon">
+          <ion-buttons>
+            <ion-button (click)="openMap()">
+              <ion-icon slot="icon-only" name="map-outline" color="light"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>  
+    </ion-grid>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding >
+  <ion-grid fixed class="ion-no-padding">
+      <!-- ############## -->
+      <!-- <ion-header collapse="condense">
+        <ion-toolbar mode="ios">
+          <ion-title color="tertiary" size="large">Category</ion-title>
+        </ion-toolbar>
+      </ion-header> -->
+      <ion-row class="margin-top-5">
+        <ion-col size-lg="6" size-md="6" size-sm="6" size="12" *ngFor="let category of categories ">
+          <ion-card class="travel-card-wide margin-top-5" tappable>
+            <div class="travel-card-wide-bg" [ngStyle]="{'background-image': 'url(' + category.image+ ')'}"  routerLink="../travel-list/{{category.id}}" >
+                <h2 class="travel-card-wide-title pop-in"> {{category.name}}</h2>   
+                <p class="travel-card-wide-sub-title pop-in">{{category.group}}</p>           
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <div class="footer-box"></div>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+    
+</ion-footer>

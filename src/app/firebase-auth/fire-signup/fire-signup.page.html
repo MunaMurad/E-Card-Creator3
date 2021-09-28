@@ -1,0 +1,165 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button color="orange" auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title color="orange" lass="main-header4">SIGN UP</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button color="orange"></ion-back-button>
+      </ion-buttons>
+      <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content fullscreen=true>
+    <ion-grid fixed class="ion-no-padding">
+        <ion-header class="ion-no-border" collapse="condense">
+          <ion-toolbar>
+            <ion-title color="orange" size="large">SIGN UP</ion-title>
+          </ion-toolbar>
+        </ion-header>
+      
+        <div class="register-form ion-margin">
+            <ion-text color="dark">
+                <h2 text-center class="ion-margin-bottom main-header7">
+                    Create new account.
+                </h2>
+            </ion-text>
+            <form [formGroup]="registerForm" novalidate>
+    <!--  -->
+              <ion-list class="ion-margin-top ion-padding">
+                <!-- ############ -->
+                <ion-item  class="roundedInput8px margin-bottom-10">
+                  <ion-label>
+                    <ion-icon name="person-outline" color="medium"></ion-icon>
+                    </ion-label>
+                  <ion-input type="text" formControlName="firstname" placeholder="First name" ></ion-input>
+                </ion-item>
+                <!-- ############ -->
+                <ion-item  class="roundedInput8px margin-bottom-10">
+                  <ion-label>
+                    <ion-icon name="people-outline" color="medium"></ion-icon>
+                    </ion-label>
+                  <ion-input type="text" formControlName="lastname" placeholder="Lastname"></ion-input>
+                </ion-item>
+                <!-- ############ -->
+                <ion-item  class="roundedInput8px margin-bottom-10">
+                  <ion-label>
+                    <ion-icon name="call-outline" color="medium"></ion-icon>
+                    </ion-label>
+                  <ion-input  type="number" formControlName="phone" placeholder="phone" ></ion-input>
+                </ion-item>
+
+                <!-- ############ -->
+                <ion-item  class="roundedInput8px margin-bottom-10">
+                    <ion-label>
+                      <ion-icon name="mail-outline" color="medium"></ion-icon>
+                      </ion-label>
+                    <ion-input type="text" formControlName="username" placeholder="Username(email)"></ion-input>
+                  </ion-item>
+      
+
+
+                <!-- ############ -->                              
+                <ion-item  class="roundedInput8px margin-bottom-10">
+
+                  <ion-label slot="start" class="margin-right-8">
+                    <ion-icon name="lock-closed-outline" color="medium"></ion-icon>
+                    </ion-label>
+
+                  <ion-input type="text" formControlName="password" placeholder="Password" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+
+                      <!-- ### Show/hide password ### -->    
+                      <div (click)="onPasswordToggle()" ion-button fill="clear" size="small" >
+                        <ion-icon  slot="icon-only" color="medium" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+                      </div>
+
+                </ion-item>
+
+              </ion-list>
+
+
+    <!--  -->
+
+
+
+                <!-- <ion-list lines="none">
+
+                    <ion-item>
+                        <ion-icon slot="start" color="lightgrey" size="small" name="person-outline"></ion-icon>
+                        <ion-input type="text" formControlName="firstname" placeholder="First name"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-icon slot="start" color="lightgrey" size="small" name="people-outline"></ion-icon>
+                        <ion-input type="text" formControlName="lastname" placeholder="Lastname"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-icon slot="start" color="lightgrey" size="small" name="call-outline"></ion-icon>
+                        <ion-input type="number" formControlName="phone" placeholder="phone"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-icon slot="start" color="lightgrey" size="small" name="mail-outline"></ion-icon>
+                        <ion-input type="text" formControlName="username" placeholder="Username(email)"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-icon slot="start" color="lightgrey" size="small" name="key-outline"></ion-icon>
+                        <ion-input type="text" formControlName="password" placeholder="Password"></ion-input>
+                    </ion-item>
+
+                </ion-list> -->
+
+                <!-- Error meassage -->
+                <ion-text color="danger">
+                    <p *ngIf="!registerForm.controls.firstname.valid && registerForm.controls.firstname.touched">
+                        <ion-icon name="information-circle-outline"></ion-icon> Firstname field must be at least 3
+                        characters long!
+                    </p>
+                </ion-text>
+                <ion-text color="danger">
+                    <p *ngIf="!registerForm.controls.lastname.valid && registerForm.controls.lastname.touched">
+                        <ion-icon name="information-circle-outline"></ion-icon> Lastname field must be at least 3 characters
+                        long!
+                    </p>
+                </ion-text>
+                <ion-text color="danger">
+                    <p *ngIf="!registerForm.controls.phone.valid && registerForm.controls.phone.touched">
+                        <ion-icon name="information-circle-outline"></ion-icon> Phone field must be at least 6 characters
+                        long!
+                    </p>
+                </ion-text>
+
+                <ion-text color="danger">
+                    <p *ngIf="!registerForm.controls.username.valid && registerForm.controls.username.touched">
+                        <ion-icon name="information-circle-outline"></ion-icon> Username must be e-mail!
+                    </p>
+                </ion-text>
+                <ion-text color="danger">
+                    <p *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.touched">
+                        <ion-icon name="information-circle-outline"></ion-icon> Password field must be at least 6 characters
+                        long!
+                    </p>
+                </ion-text>
+
+                <!-- Submit button -->
+                <ion-button mode="ios" color="orange" expand="block" class="ion-margin-top" [disabled]="!registerForm.valid"
+                    (click)="registerUser()">
+                    Create
+                </ion-button>
+                <ion-button mode="ios" color="orange" expand="block" fill="outline" class="ion-margin-top"
+                    routerLink="/fire-signin">
+                    Cancel
+                </ion-button>
+                <ion-text color="dark">
+                    <h2  class="ion-text-center ion-margin-bottom main-header8">
+                        By clicking Sign up you agree to the following Terms ans Conditions without reservation
+                    </h2>
+                </ion-text>
+            </form>
+
+        </div>
+  </ion-grid>
+</ion-content>

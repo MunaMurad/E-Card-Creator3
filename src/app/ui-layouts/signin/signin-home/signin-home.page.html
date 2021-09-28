@@ -1,0 +1,31 @@
+<ion-header >
+  <ion-toolbar color="lightgreen">
+    <ion-buttons slot="start">
+      <ion-menu-button  auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">Sign in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen=true>
+  <ion-grid fixed class="ion-no-padding">
+      <div class="margin-top-25">
+        <ion-list class="ion-margin">
+          <ion-item routerLink="/signin-one" routerDirection="forward">
+            <ion-icon color="lightgreen" slot="start" icon="log-in-outline" size="large"></ion-icon>
+            <ion-label>Signin 1</ion-label>
+          </ion-item>
+
+          <ion-item routerLink="/signin-two" routerDirection="forward">
+            <ion-icon color="lightgreen" slot="start" icon="log-in-outline" size="large"></ion-icon>
+            <ion-label>Signin 2</ion-label>
+          </ion-item>
+
+          <ion-item routerLink="/signin-three" routerDirection="forward" >
+            <ion-icon color="lightgreen" slot="start" icon="log-in-outline" size="large"></ion-icon>
+            <ion-label>Signin 3</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-grid>
+</ion-content>

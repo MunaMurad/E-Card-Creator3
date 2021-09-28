@@ -1,0 +1,494 @@
+ion-content {
+    //background-color: #ddd !important;
+  //   --ion-color-light: #f4f5f8;
+  //--background: #f4f5f8;
+  }
+  
+  ion-icon {
+    // color: #454545;
+    // font-size: 30px;
+  }
+  ion-item{
+    --background :#F9F9F9;
+  }
+  
+  ion-searchbar{
+    padding: 0px 18px;
+  }
+  ion-searchbar ion-icon{
+    font-size: 20px !important;
+  } 
+  .searchbar-input-container{
+    height: 43px !important;
+  }
+  
+  
+  ion-item ion-thumbnail ion-icon {
+    color: #ffffff;
+    font-size:40px;
+  }
+  ion-searchbar {
+    padding: 0px 10px 10px !important;
+    height: 50px !important;
+  }
+  
+  //********** horizontal agent list **********//
+  .agent-icon  {
+    display: inline-block;
+    // width: 100px !important;
+    // height:100px !important;
+    margin: 0px 5px 0px 5px !important;
+  }
+  // ************ Header ************//  
+  
+  .transparent{
+    --background: rgba(0,0,0,0);
+    --border-color: rgba(0,0,0,0);
+  }
+  
+  // ************ Sub Header ************//  
+  h4{
+    font-family:roboto;
+    color:#464646 !important;
+    letter-spacing: -1px;
+    font-size: 22px;
+    font-weight: lighter;
+  }
+  
+  
+  
+  ion-chip{
+    padding: 10px !important;
+    border-radius: 8px  !important;
+    height: 35px;
+    margin-left: 11px;
+    // color:#E8E8E8 !important;
+  }
+  
+  .horizontal-scroll {
+    margin-left: 12px;
+    white-space: nowrap;
+    height: auto;
+    overflow-X: scroll;
+    overflow-y: auto;
+  
+  }
+  
+  .imgTall{
+    width:  140px !important;
+    height:260px !important;
+    // border-radius: 8px;
+  }
+  
+  
+    .card-tall  {
+    position: relative;
+    width:  120px !important;
+    height:315px !important;
+    margin: 0px 5px 0px 5px !important;
+    // background-color: #dddddd;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+    
+    }
+  
+    .div-tall-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .div-tall-bg {
+        border-radius: 9px  !important;
+        position: relative;
+        width:  120px;
+        height: 245px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+  
+  .card2  {
+    position: relative;
+    width: 149px !important;
+    height:92px !important;
+    margin: 0px 5px 0px 5px !important;
+    background-color: #dddddd;
+    border-radius: 8px  !important;
+  
+    }
+  
+    .card2-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .card2-bg {
+        position: relative;
+        height: 92px;
+    
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+    .card2-bg .card2-title {
+        width: 100px;
+        padding:0px 5px;
+  
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+  
+        font-style: roboto;
+        font-size: 16px;
+        font-weight: 400;
+  
+        color: #FFFFFF;
+        position: absolute;
+        top: 30%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+  
+    .card2-bg .card2-star {
+        width: 179px !important;
+        height:77px !important;
+        padding:0px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-style: roboto;
+        font-size: 17px;
+        font-weight: 600;
+        color: #FFFFFF;
+        position: absolute;
+        top: 60%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+  
+    .card3  {
+        position: relative;  
+        width: 201px !important;
+        height:357px !important;
+        // padding-left:16px;
+        margin: 0px 5px 0px 5px !important;
+        
+        //min-height: 150vh !important;
+        //max-height: 160vh !important;
+    
+    }
+  
+    .card3-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .card3-bg {
+        position: relative;
+        width: 100%;
+        height: 252px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px  !important;
+    }
+    .card3-bg .card3-title {
+        width: 100px;
+        padding:0px 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-size: 17px;
+        font-weight: 600;
+        color: #FFFFFF;
+        position: absolute;
+        top: 25%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .segment-card {
+    display: flex;
+    overflow-x: scroll;
+    background-color: blue;
+    height: 200px;
+    .segment-item {
+        -webkit-margin-start: 0px !important;
+        margin-inline-start: 0px !important;
+        display: inline-block !important;
+        min-width: 300px !important;
+        height: 120px !important;
+        width: auto !important;
+    }
+    // .card-frame{
+    //     height: 230px;
+    //     width: 150px;
+    // }
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+  
+  }
+  
+  .secondary-card {
+    display: flex;
+    overflow-x: scroll;
+    background-color: red;
+    height: 280px;
+    .secondary-item {
+        -webkit-margin-start: 0px !important;
+        margin-inline-start: 0px !important;
+        display: inline-block !important;
+        min-width: 300px !important;
+        height: 120px !important;
+        width: auto !important;
+    
+    }
+    // .card-frame{x
+    //     height: 230px;
+    //     width: 150px;
+    // }
+    .secondary-card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .secondary-card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+  
+  }
+  
+  
+  
+  .thumnails{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    .list-thumbnail{
+      height: 100%;
+      white-space: nowrap;
+      .img-thumb{
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 3px;
+        //width: 100%;
+        height: 50px;
+        margin:0 2px 0 0; 
+        line-height: 60px;
+      }
+      .selected-img{
+        border: 2px solid red;
+      }
+    }
+  }
+  ::-webkit-scrollbar { 
+    display: none; 
+  }
+  
+  
+  
+  
+  .container {
+    width: 100px;
+    background-color: green;
+    overflow: hidden; 
+    white-space: nowrap;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll {
+      overflow: auto;
+    }
+  }
+  
+  
+  ion-avatar {
+    background-color: #61CFE9;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  
+    min-width: 60px;
+    min-height: 60px;
+  }
+  ion-avatar[item-start]{
+    margin: 8px 16px 8px 0;
+  }
+  
+  .transition{
+    transition: background-size .3s ease-in;
+  }
+  .hide 
+  {
+   display: none !important;
+  }
+
+
+
+
+
+
+
+.detail-header:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 68%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 68%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 68%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+.detail-header {
+
+  background-image: url('https://media.fazwaz.com/site-config/1/c/cover13-banner-homepage.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  position: relative;
+  height: 300px !important;
+  // background: url(img/1.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.detail-header .detail-title {
+  // font-size: 20px;
+  // font-weight: normal;
+  // color: #FFFFFF;
+  position:absolute;
+	left:50%;
+	// top:50%;
+	margin:-75px 0 0 -135px;
+
+
+  text-align: center;
+  
+  // left: 2px;
+  bottom: 20px;
+  // width: 100%;
+  min-width: 350px;
+  max-width: 600px;
+  color: #fff;
+  // text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.detail-header ion-item {
+  // font-size: 20px;
+  // font-weight: normal;
+  color: #ffffff;
+  --background: rgba(0, 0, 0, 0);
+  --border-color: rgba(0, 0, 0, 0);
+  // text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.detail-header .detail-price {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  /*color: #86d44d;*/
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+// ion-segment-button{
+//   --indicator-box-shadow: transparent!important;
+//   border-radius: 2.5rem !important;
+//   padding: 0.7rem;
+//   margin: 0;
+//   --background:white;
+//   --color:#2d2e87;
+//   --background-checked: linear-gradient(to right, #2d2e87, #0083CB)!important;
+//   --color-checked: white;
+//   --indicator-color : transparent!important; /* this solution */
+
+//   }

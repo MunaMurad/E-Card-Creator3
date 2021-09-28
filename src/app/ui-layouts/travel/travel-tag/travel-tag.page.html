@@ -1,0 +1,32 @@
+<ion-header >
+  <ion-toolbar class="bar-header" mode="ios"> 
+    <ion-buttons  mode="md" slot="start">
+      <ion-back-button  color="tertiary" class="ion-margin-left ion-padding-left"></ion-back-button>
+    </ion-buttons>
+      <ion-title  color="tertiary" class="main-header4">{{(tag | async)?.name}}</ion-title>
+  </ion-toolbar>
+  <!-- <ion-item lines="none">
+      <ion-label>
+        <h1 class="travel_header1">Tag: {{(tag | async)?.name}}</h1>
+      </ion-label>
+    </ion-item>     -->
+</ion-header>
+<ion-content  no-padding>
+
+  <ion-grid fixed class="ion-no-padding">
+    <ion-list class="ion-margin-top ion-padding-top">
+        <ion-item   *ngFor="let place of (tag | async)?.places" lines="none" button routerLink="/travel-detail/{{place.travel_placeId}}"  >
+          <ion-thumbnail slot="start">
+              <ion-img [src]="place.image_header"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{place.name}}</h2>
+            <p>{{place.description}}</p>
+            <ion-icon style="font-size: 14px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]" [name]="i < place.rating ? 'star' : 'star-outline'"></ion-icon>
+
+          </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </ion-grid>
+</ion-content>

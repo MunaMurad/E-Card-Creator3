@@ -1,0 +1,2622 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import 'assets/scss/animations.scss';
+
+//*************************************//
+//******** Horizontal scroll ***********//
+//*************************************//
+
+.top-horizontal-scroll {
+    margin-left: 10px;
+    white-space: nowrap;
+    height: auto;
+    overflow-X: scroll;
+    overflow-y: auto;
+}
+.horizontal-scroll {
+    margin-left: 10px;
+    white-space: nowrap;
+    height: auto;
+    overflow-X: scroll;
+    overflow-y: auto;
+    vertical-align: top !important; /* here */
+}
+.horizontal-scroll-banner {
+    margin-left: 2px;
+    white-space: nowrap;
+    height: auto;
+    overflow-X: scroll;
+    overflow-y: auto;
+    vertical-align: top !important; /* here */
+}
+//*************************************//
+//******** Modal styles ***********//
+//*************************************//
+.modal-wrapper{
+    background: none !important;
+}
+// from bottom
+// .my-custom-modal-css .modal-wrapper {
+//     height: 20%;
+    
+//     top: 80%;
+//     position: absolute; 
+//     display: block;  
+//  }
+
+
+//******** small ***********//
+    .from-middle-modal .modal-wrapper {
+        height: 400px;
+        width: 300px;
+        margin: 0px 5px !important;
+        // width: 300px;
+        // top: 350px;
+        // bottom:0px;
+        position: absolute; 
+        border-radius: 8px  !important;
+        display: block;  
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+    }
+//******** full ***********//
+
+.fullscreen-modal .modal-wrapper{
+    height: 100% !important;
+    width: 100% !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+//********  top ***********//
+    .from-top-modal .modal-wrapper {
+        height: 20%;
+        bottom: 80%;
+        position: absolute; 
+        display: block;  
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+    }
+
+
+    //******** bottom  ***********//
+    .from-bottom-modal .modal-wrapper {
+        height: 40%;
+        
+        top: 60%;
+        position: absolute; 
+        display: block;  
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+
+
+    .small-modal .modal-wrapper {
+        width: 90%; 
+
+        height: 40%;
+        
+        top: 60%;
+        position: absolute; 
+        display: block;  
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+
+
+
+//*******************************//
+//******** Input form ***********//
+//*******************************//
+
+//******** rounded input border : 8px  ***********//
+
+ 
+   .list-ios .item-lines-none {
+     --border-width: 1px; 
+    // --inner-border-width: 0;
+    --border-style: none !important;
+   }
+   ion-item:last-child {   
+        .item-inner {
+            border-bottom: 0px;
+        }
+    }
+
+
+
+//************************************************//
+//******** Rounded conner input : 8px  ***********//
+//************************************************//
+// .roundedInput25px {
+//     --border-color: #eee;
+//     --border-radius: 25px;
+//     --border-width: 1px;
+//     --box-shadow: 0px #eee;
+//     --highlight-height: 0;
+//     --background: #f8f9fa;
+// }
+
+//   .roundedInput0px {
+//     --border-color: red;
+//     --border-radius: 0px;
+//     --border-width: 1px;
+//     --box-shadow: 0px red;
+//     --highlight-height: 0;
+//     --background: #f8f9fa;
+//    }
+ 
+// .roundedInput {
+//     --border-color: black !important;
+//     --border-radius: 8px;
+//     --border-width: 1px;
+//     --box-shadow: 0px #eee;
+//     --highlight-height: 0;
+//     --background: #f8f9fa;
+// }
+
+   .styledInput {
+    --border-color: #eee;
+    --border-width: 1px;
+    --box-shadow: 0px #eee;
+    --highlight-height: 0;
+    --background: #f8f9fa;
+    
+    margin-bottom: 5px;
+   }
+
+
+.roundedInput8px {
+    @extend .styledInput;
+    --border-radius: 8px;
+}
+.roundedInput12px {
+    @extend .styledInput;
+    --border-radius: 12px;
+}
+.roundedInput25px {
+    @extend .styledInput;
+    --border-radius: 25px;
+}
+
+.sharpedInput {
+    @extend .styledInput;
+    --border-radius: 0px;
+}
+
+
+
+
+   .roundedInput.ion-invalid.item-has-focus {
+
+    --border-color: var(--ion-color-danger-shade);
+  }
+  
+  .roundedInput.ion-valid.item-has-focus {
+    --border-color: var(--ion-color-success-shade);
+  }
+  
+  .roundedInput.ion-invalid.ion-dirty {
+    --border-color: var(--ion-color-danger-shade);
+  }
+  
+  .roundedInput.ion-valid.ion-dirty {
+    --border-color: var(--ion-color-success-shade);
+  }
+
+//************************************************//
+//******** Rounded conner input : 25px  ***********//
+//************************************************//
+
+
+//**************************************//
+//******** Sharp edges input ***********//
+//**************************************//
+
+
+
+
+
+
+
+//***********************************//
+//******** Main card/tile  ***********//
+//***********************************//
+.horizontal-card{
+    display: inline-block;
+}
+.conner-round{
+
+}
+
+
+
+.card-h{
+  
+}
+.card-main{
+   
+    border-radius: 0px  !important;
+    vertical-align: top; /* here */
+    // remove shadow //
+    // margin-left: 0px !important;
+    // margin-right: 0px !important;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+ }
+.card-conner-round{
+    border-radius: 3px  !important;
+}
+.card-conner-shape{
+    border-radius: 0px  !important;
+}
+
+
+
+
+
+
+
+
+
+
+.main-h-card{
+    display: inline-block;
+    vertical-align: top; /* here */
+    border-radius: 0px  !important;
+    // remove shadow //
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+.main-card-sharp{
+   
+    vertical-align: top; /* here */
+    border-radius: 0px  !important;
+    // remove shadow //
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+.main-card-round{
+   
+    vertical-align: top; /* here */
+    border-radius: 3px  !important;
+    // remove shadow //
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+
+
+
+.card-wide  {
+    position: relative;  
+
+    border-radius: 0px  !important;
+    height:120px !important;
+    // margin: 0px 5px 0px 5px !important;
+    background-color: #dddddd;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+.card-wide-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.card-wide-bg {
+    position: relative;
+    height: 120px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.pong {
+    //width: 149px;
+   
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    //font-family:roboto;
+    font-size: 17px;
+    font-weight:700;
+    color: #FFFFFF;
+  
+
+
+
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+ 
+
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+   
+    top: 40%;
+    margin-top: 0px;
+
+}
+
+
+
+
+
+
+
+
+
+
+//************************************//
+//******** Text overlay position ***********//
+//***********************************//
+
+
+//************************************//
+//******** Text below position ***********//
+//***********************************//
+
+
+//************************************//
+//******** Text overlay lower-left**********//
+//***********************************//
+
+//************************************//
+//******** Text overlay lower-right**********//
+//***********************************//
+
+//************************************//
+//******** Text overlay top-right**********//
+//***********************************//
+
+//************************************//
+//******** Text overlay center**********//
+//***********************************//
+
+//************************************//
+//******** Text small**********//
+//***********************************//
+
+//************************************//
+//******** Text medium **********//
+//***********************************//
+
+//************************************//
+//******** Text large **********//
+//***********************************//
+
+//************************************//
+//******** round border 5px **********//
+//***********************************//
+
+//************************************//
+//******** round border 10px **********//
+//***********************************//
+
+
+
+
+
+
+
+
+//*************************************//
+//******** Tile round 5px ***********//
+//*************************************//
+
+// Example:
+// <ion-card class="tile-square " tappable  *ngFor="let category of categories " >
+// <div class="tile-square-bg" [ngStyle]="{'background-image': 'url(' + category.image+ ')'}"  routerLink="../travel-place/{{category.id}}" >
+//     <h2 class="tile-title-center pop-in"> {{category.name}}</h2>   
+//     <p class="title-subtitle-center pop-in">{{category.group}}</p>           
+// </div>
+// </ion-card>
+
+
+//*************************************//
+//******** Tile square ***********//
+//*************************************//
+
+
+
+
+
+
+
+
+
+
+
+
+//*************************************//
+//******** Tile-round square ***********//
+//*************************************//
+
+
+
+
+//***********************************//
+//******** Tile-round 3:1 ***********//
+//***********************************//
+
+
+
+//************************************//
+//******** Tile-round 3:2 ***********//
+//***********************************//
+
+
+//***********************************//
+//******** Tile-sharp 3:1 ***********//
+//***********************************//
+
+
+//************************************//
+//******** Tile-round 3:2 ***********//
+//***********************************//
+
+
+//************************************//
+//******** Tile-sharp 3:2 ***********//
+//***********************************//
+
+
+
+//*****************************//
+//******** Tile 4:3 ***********//
+//*****************************//
+
+
+
+//**************************************//
+//******** Tile 2:3 vertical ***********//
+//**************************************//
+
+
+
+//**************************************//
+//******** Tile 3:4 vertical ***********//
+//**************************************//
+
+//**************************************//
+//******** Tile circle ***********//
+//**************************************//
+
+
+//**************************************//
+//******** Tile 2:3 vertical ***********//
+//**************************************//`
+
+
+
+
+
+
+
+
+
+
+
+
+//############################################################################//
+//############################################################################//
+//############################################################################//
+
+
+
+
+
+
+//*************************************//
+//******** TravelApp styles ***********//
+//*************************************//
+
+
+.travel_space0{
+    margin: 10px 0px 0px;
+}
+.travel_space1{
+    margin: 0px 0px 0px;
+}
+.travel_space2{
+    margin: 10px 0px;
+}
+.travel_space3{
+    margin: 10px 0px;
+}
+.travel_space4{
+    margin: 5px 15px;
+}
+
+
+
+// .travel_header1{
+//     font-family:roboto !important;
+//     letter-spacing: -1px !important;
+//     font-size: 28px !important;
+//     font-weight: 700 !important;
+// }
+.travel_header2{
+    color:#464646 !important;
+    letter-spacing: -1px;
+    font-size: 22px;
+    font-weight: 300;
+
+//     letter-spacing: -1px;
+//     font-size: 17px !important;
+//     font-weight: 400 !important;
+}
+
+.travel_header3{
+    // color:#464646 !important;
+    // letter-spacing: -1px;
+    // font-size: 22px;
+    // font-weight: 300;
+
+    letter-spacing: -1px;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+
+
+
+.travel_title1{
+    //font-family:roboto;
+    font-size: 17px;
+    font-weight:600;
+    color: #464646;
+    margin-top: 12px;
+}
+
+
+
+ion-col.fix-col-icon {
+    flex: 0 0 3px;
+    padding:0;
+    margin-right:2px;
+}
+
+
+//********************************************//
+//******** Food Delivery App styles **********//
+//********************************************//
+
+
+.food_space0{
+    margin: 10px 0px 0px;
+}
+.food_space1{
+    margin: 0px 0px 0px;
+}
+.food_space2{
+    margin: 10px 0px;
+}
+.food_space3{
+    margin: 10px 0px;
+}
+.food_space4{
+    margin: 5px 15px;
+}
+
+
+
+.food_header1{
+    margin-bottom: 2px !important;
+    letter-spacing: -1px;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+.food_header2{ // user main_header3 instead //
+    //color:#464646 !important;
+    letter-spacing: -1px;
+    font-size: 26px;
+    font-weight: 300;
+// disable this food_header2 //
+//     letter-spacing: -1px;
+//     font-size: 17px !important;
+//     font-weight: 400 !important;
+}
+
+.food_header3{
+    // color:#464646 !important;
+    // letter-spacing: -1px;
+    // font-size: 22px;
+    // font-weight: 300;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    color:#999 !important;
+    letter-spacing: -1px;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+
+
+
+.food_title1{
+    //font-family:roboto;
+    font-size: 17px;
+    font-weight:600;
+    color: #464646;
+    margin-top: 12px;
+}
+
+
+// ************ Horizontal card ************//  
+
+
+.main-h-card{
+    display: inline-block;
+    vertical-align: top; /* here */
+    border-radius: 9px  !important;
+    // remove shadow //
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+.main-card-h{
+    display: inline-block;
+}
+.main-card{
+   border-radius: 3px  !important;
+   vertical-align: top; /* here */
+   // remove shadow //
+   margin-left: 0px !important;
+   margin-right: 0px !important;
+   -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+   box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+
+
+
+
+
+
+
+
+// ************ Wide card ************//  
+.travel-card-wide  {
+ 
+    // border-radius: 4px  !important;
+    // width: 100% !important;
+    height:157px !important;
+    margin: 0px 5px 0px 5px !important;
+    background-color: #dddddd;
+    // min-height: 150vh !important;
+    // max-height: 160vh !important;
+
+}
+
+.travel-card-wide-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.travel-card-wide-bg {
+    position: relative;
+    height: 157px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.travel-card-wide-bg .travel-card-wide-title {
+    width: 100px;
+    padding:0px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 24px;
+    font-style: roboto;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: absolute;
+    top: 25%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+.travel-card-wide-bg .travel-card-wide-sub-title {
+    width: 100px;
+    padding:0px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 18px;
+    font-style: roboto;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: absolute;
+    top: 42%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+    //************ Tall card ************//  
+    .travel-card-tall  {
+        position: relative;
+        width:  250px !important;
+        height:230px !important;
+        margin: 0px 5px 0px 5px !important;
+        box-shadow: none !important;
+        border-radius: 0px !important;
+        // background-color: #dddddd;
+        //min-height: 150vh !important;
+        //max-height: 160vh !important;
+        
+    }
+    .travel-div-tall-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .travel-div-tall-bg {
+        border-radius: 0px  !important;
+        position: relative;
+        width:  250px;
+        height: 150px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .travel-card-tall-title {
+        width: 100px;
+        padding:0px 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+
+        font-style: roboto;
+        font-size: 24px;
+        font-weight: 400;
+
+        color: #FFFFFF;
+        position: absolute;
+        top: 45%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+    .travel-card-tall-star {
+        width: 133px !important;
+        height:133px !important;
+
+        padding:0px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-size: 16px;
+        font-weight: normal;
+        color: #FFFFFF;
+        position: absolute;
+        top: 55%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ************ Small wide card ************//  
+    .travel-card-s-wide  {
+        position: relative;  
+        box-shadow: none !important;
+        border-radius: 0px !important;
+
+        width: 160px !important;
+        height:77px !important;
+        margin: 0px 5px 0px 5px !important;
+        background-color: #dddddd;
+        //min-height: 150vh !important;
+        //max-height: 160vh !important;
+
+    }
+
+    .travel-card-s-wide-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .travel-card-s-wide-bg {
+        position: relative;
+        height: 77px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+    .travel-card-s-wide-bg .travel-card-s-wide-title {
+        width: 149px;
+        padding:0px 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        // font-family:roboto;
+        font-size: 17px;
+        // font-weight:700;
+        color: #FFFFFF;
+        position: absolute;
+        top: 18%;
+        bottom:15px;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+    .travel-card-s-wide-bg  .travel-card-title-center {
+        
+        //width: 149px;
+        //padding:0px 16px;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+
+        white-space: nowrap;
+        overflow: hidden;
+        
+        text-overflow: ellipsis; // This is where the magic happens
+        // font-family:roboto;
+        font-size: 18px;
+        font-weight:400;
+        color: #FFFFFF;
+        position: absolute;
+       // top: 18%;
+        // bottom:15px;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+    .travel-card-s-wide-bg  .travel-card-title-bottom-left {
+        
+        //width: 149px;
+        //padding:0px 16px;
+        left: 10px;
+        //right: 0;
+        bottom:50px;
+        //transform: translateY(-50%);
+
+
+        white-space: nowrap;
+        overflow: hidden;
+        
+        text-overflow: ellipsis; // This is where the magic happens
+        // font-family:roboto;
+        font-size: 18px;
+        font-weight:400;
+        color: #FFFFFF;
+        position: absolute;
+       // top: 18%;
+        // bottom:15px;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        //text-align: center;
+    }
+
+
+
+
+// ************ Square card ************//  
+.travel-card-square  {
+    position: relative;
+    width: 133px !important;
+    height:133px !important;
+    margin: 0px 5px 0px 5px !important;
+    background-color: #dddddd;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+    
+    }
+    // .card-tall  .card-tall-bg{
+    //     height: 230px; 
+    // }
+    .travel-card-square-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .travel-card-square-bg {
+        position: relative;
+        height: 133px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+    .travel-card-square-bg .travel-card-square-title {
+        width: 100px;
+        padding:0px 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+
+        font-style: roboto;
+        font-size: 16px;
+        font-weight: 400;
+
+        color: #FFFFFF;
+        position: absolute;
+        top: 30%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+    .travel-card-square-bg .travel-card-square-star {
+        width: 133px !important;
+        height:133px !important;
+
+        padding:0px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-size: 16px;
+        font-weight: normal;
+        color: #FFFFFF;
+        position: absolute;
+        top: 60%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+
+//****************************************//
+//************* New Food Card ************//
+//****************************************//
+.food-main-card{
+    border-radius: 4px  !important;
+    // remove shadow //
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+ }
+.food-card-tall{
+    position: relative;
+   // width:  120px !important;
+    height:250px!important;
+    //margin: 0px 5px 0px 5px !important;
+    // background-color: #dddddd;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+    margin:0px;
+}
+.food-div-tall-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.food-div-tall-bg {
+    border-radius: 9px  !important;
+    position: relative;
+    // width:  120px;
+    height: 150px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.food-card-tall-title {
+    width: 100px;
+    padding:0px 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+
+    font-style: roboto;
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #FFFFFF;
+    position: absolute;
+    top: 45%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+.food-card-tall-star {
+    width: 133px !important;
+    height:133px !important;
+
+    padding:0px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+    position: absolute;
+    top: 55%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+// ************ Shopping card ************//  
+
+
+.shop-banner  {
+    position: relative;
+    width: 94% !important;
+    height: 200px !important;
+    margin: 15px 2px 0px 5px !important;
+    background-color: #dddddd;
+    border-radius: 8px  !important;
+
+    }
+
+    .shop-banner-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .shop-banner-bg {
+        position: relative;
+        height: 290px;
+    
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+    .shop-banner-bg .card2-title {
+        width: 350px;
+        padding:0px 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+
+        font-style: roboto;
+        font-size: 25px;
+        font-weight: 300;
+
+        color: #FFFFFF;
+        position: absolute;
+        top:35%;
+        left: 10px;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        //text-align: center;
+    }
+
+    .shop-banner-bg .card2-star {
+        width: 179px !important;
+        height:77px !important;
+        padding:0px 5px;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-style: roboto;
+        font-size: 17px;
+        font-weight: 600;
+        color: #FFFFFF;
+        position: absolute;
+        top: 60%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+.shop-main-h-card{
+    display: inline-block;
+    border-radius: 9px  !important;
+    // remove shadow //
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+.shop-main-card{
+   border-radius: 4px  !important;
+   // remove shadow //
+   margin-left: 0px !important;
+   margin-right: 0px !important;
+   -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+   box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+
+
+
+.checkout-card{
+
+        background-color: #fff;
+        padding: 10px 5px 25px 5px;
+        border-radius: 5px !important;
+        margin-left: 13px !important;
+        margin-right: 13px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0) !important;
+        border: 1px solid #eeeeee;
+
+}
+
+
+.info-card{
+    background-color: #fff;
+    padding: 10px 15px 25px 15px;
+    border-radius: 10px  !important;
+    // remove shadow //
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+.info-card-2{
+    background-color: #fff;
+    padding: 10px 15px 25px 15px;
+    border-radius: 0px  !important;
+    // remove shadow //
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+
+
+   //************ small wide card ************//  
+
+.shop-card-s-wide  {
+    position: relative;  
+
+    border-radius: 8px  !important;
+    width: 200px !important;
+    height:100px !important;
+    margin: 0px 5px 0px 5px !important;
+    background-color: #dddddd;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+
+}
+
+.shop-card-s-wide-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.shop-card-s-wide-bg {
+    position: relative;
+    height: 100px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.shop-card-s-wide-bg .shop-card-s-wide-title {
+    width: 149px;
+    padding:0px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+   // font-family:roboto;
+    font-size: 17px;
+    font-weight:400;
+    color: #FFFFFF;
+    position: absolute;
+    top: 22%;
+    bottom:15px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+
+.shop-card-tall{
+    position: relative;
+    width:  140px !important;
+    height:250px!important;
+    margin: 0px 5px 0px 5px !important;
+    // background-color: #dddddd;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+    
+}
+.shop-div-tall-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.shop-div-tall-bg {
+    border-radius: 9px  !important;
+    position: relative;
+    width:  140px;
+    height: 160px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.shop-card-tall-title {
+    width: 100px;
+    padding:0px 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+
+    font-style: roboto;
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #FFFFFF;
+    position: absolute;
+    top: 45%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+.shop-card-tall-star {
+    width: 133px !important;
+    height:133px !important;
+
+    padding:0px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+    position: absolute;
+    top: 55%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+   //************ For grid layout ************//  
+   .shop-card-tall-2  {
+       position: relative;
+      // width:  100% !important;
+    //   padding: 0px 5px;
+       height:100% !important; // include content 
+        margin: 0px 5px 10px 5px !important;
+       // background-color: #dddddd;
+       //min-height: 150vh !important;
+       //max-height: 160vh !important;
+   }
+   .shop-div-tall-bg-2:before {
+       content: ' ';
+       position: absolute;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 0;
+       background-size: cover;
+       background-position: center;
+   }
+   .shop-div-tall-bg-2 {
+       border-radius: 9px  !important;
+       position: relative;
+       //width:  120px;
+       height: 200px;
+       background-color: #dddddd;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       background-size: cover;
+       background-position: center;
+   }
+
+   .shop-card-tall-title-2 {
+       width: 100px;
+       padding:0px 5px;
+
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis; // This is where the magic happens
+
+       font-style: roboto;
+       font-size: 24px;
+       font-weight: 400;
+
+       color: #FFFFFF;
+       position: absolute;
+       top: 45%;
+       text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+       width: 100%;
+       text-align: center;
+   }
+   .shop-card-tall-star-2 {
+       width: 133px !important;
+       height:133px !important;
+
+       padding:0px 5px;
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis; // This is where the magic happens
+       font-size: 16px;
+       font-weight: normal;
+       color: #FFFFFF;
+       position: absolute;
+       top: 55%;
+       text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+       width: 100%;
+       text-align: center;
+   }
+
+.food-main-h-card{
+    display: inline-block;
+    border-radius: 9px  !important;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+.food-card1  {
+    position: relative;
+    width: 295px !important;
+    
+   // height:285px !important;
+    margin: 0px 5px 0px 5px !important;
+
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+    
+    }
+    // .card-tall  .card-tall-bg{
+    //     height: 230px; 
+    // }
+    .food-card1-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .food-card1-bg {
+        position: relative;
+        height: 158px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px  !important;
+    }
+
+    .food-card1-bg .card1-title {
+        width: 100px;
+        padding:0px 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+
+        font-style: roboto;
+        font-size: 16px;
+        font-weight: 400;
+
+        color: #FFFFFF;
+        position: absolute;
+        top: 30%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+    .food-card1-bg .card1-star {
+        width: 133px !important;
+        height:133px !important;
+
+        padding:0px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-size: 16px;
+        font-weight: normal;
+        color: #FFFFFF;
+        position: absolute;
+        top: 60%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+
+// ************ Category card ************//  
+.food-card2  {
+    position: relative;
+    width: 149px !important;
+    height:92px !important;
+    margin: 0px 5px 0px 5px !important;
+    background-color: #dddddd;
+    border-radius: 8px  !important;
+
+    }
+
+    .food-card2-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .food-card2-bg {
+        position: relative;
+        height: 92px;
+    
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+    .food-card2-bg .card2-title {
+        width: 100px;
+        padding:0px 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+
+        font-style: roboto;
+        font-size: 16px;
+        font-weight: 400;
+
+        color: #FFFFFF;
+        position: absolute;
+        top: 25%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+    .food-card2-bg .card2-star {
+        width: 179px !important;
+        height:77px !important;
+        padding:0px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-style: roboto;
+        font-size: 17px;
+        font-weight: 600;
+        color: #FFFFFF;
+        position: absolute;
+        top: 60%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+
+// ************ Promotion card ************//  
+    .food-card3  {
+        position: relative;  
+        width: 201px !important;
+        height:357px !important;
+        // padding-left:16px;
+        margin: 0px 5px 0px 5px !important;
+        
+        //min-height: 150vh !important;
+        //max-height: 160vh !important;
+    
+    }
+
+    .food-card3-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .food-card3-bg {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px  !important;
+    }
+    .food-card3-bg .card3-title {
+        width: 100px;
+        padding:0px 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-size: 17px;
+        font-weight: 600;
+        color: #FFFFFF;
+        position: absolute;
+        top: 25%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+// ************ Category card ************//  
+.food-card4  {
+    position: relative;  
+    width: 100% !important;
+    height:150px !important;
+    // padding-left:16px;
+    margin: 0px 5px 0px 5px !important;
+    
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+
+}
+
+.food-card4-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.food-card4-bg {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px  !important;
+}
+.food-card4-bg .card4-title {
+    width: 100px;
+    padding:0px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 17px;
+    font-weight: 600;
+    color: #FFFFFF;
+    position: absolute;
+    top: 25%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+// ************ Popular card ************//  
+.real-card1  {
+    position: relative;
+    width: 205px !important;
+    
+    height:220px !important;
+    margin: 0px 5px 0px 5px !important;
+
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+    
+    }
+    // .card-tall  .card-tall-bg{
+    //     height: 230px; 
+    // }
+    .real-card1-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .real-card1-bg {
+        position: relative;
+        height: 120px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px  !important;
+    }
+
+    .real-card1-bg .card1-title {
+        width: 100px;
+        padding:0px 5px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+
+        font-style: roboto;
+        font-size: 16px;
+        font-weight: 400;
+
+        color: #FFFFFF;
+        position: absolute;
+        top: 30%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+    .real-card1-bg .card1-star {
+        width: 133px !important;
+        height:133px !important;
+
+        padding:0px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-size: 16px;
+        font-weight: normal;
+        color: #FFFFFF;
+        position: absolute;
+        top: 60%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+.real-tags{ 
+    background-color: #e80000;
+    color: #fff;
+    display: flex;
+    //width: 38px;
+    height: 19px;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin-left: 5px;
+    z-index: 999;
+}
+.real-tags-bottom{ 
+    background-color: #e80000;
+    color: #fff;
+    display: flex;
+    //width: 38px;
+    height: 25px;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 15px;
+    right: 8px;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin-left: 5px;
+    z-index: 5;
+}
+
+
+// ************ full list card************//  
+.real-card2  {
+    position: relative;
+    //width: 100% !important;
+    height:280px !important;
+    margin: 0px 5px 0px 5px !important;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+    padding-top: 0px;
+    padding-left: 5px;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+    }
+
+    .real-card2-bg:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .real-card2-bg {
+        position: relative;
+        height: 180px;
+        background-color: #dddddd;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px  !important;
+    }
+  
+    .real-card2-bg .card1-title {
+        width: 100px;
+        padding:0px 5px;
+  
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+  
+        font-style: roboto;
+        font-size: 16px;
+        font-weight: 400;
+  
+        color: #FFFFFF;
+        position: absolute;
+        top: 30%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+  
+    .real-card2-bg .card1-star {
+        width: 133px !important;
+        height:133px !important;
+  
+        padding:0px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; // This is where the magic happens
+        font-size: 16px;
+        font-weight: normal;
+        color: #FFFFFF;
+        position: absolute;
+        top: 60%;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 100%;
+        text-align: center;
+    }
+  
+
+
+// ************ Radio card ************//  
+.radio-main-h-card{
+    display: inline-block;
+    border-radius: 9px  !important;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+.radio-card  {
+    position: relative;  
+    width: 201px !important;
+    height:200px !important;
+    // padding-left:16px;
+    margin: 0px 5px 0px 5px !important;
+    border-radius: 0px  !important;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+
+}
+
+.radio-card-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.radio-card-bg {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-color: #666;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px  !important;
+}
+.radio-card-bg .radio-title {
+    width: 100px;
+    padding:0px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 17px;
+    font-weight: 600;
+    color: #FFFFFF;
+    position: absolute;
+    top: 25%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+    .radio-tags{ 
+        background-color: #f1c40f;
+        color: #fff;
+        display: flex;
+        //width: 38px;
+        height: 19px;
+        flex-wrap: wrap;
+        position: absolute;
+        bottom: 10px;
+        left: 8px;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 0px 5px;
+        margin-left: 5px;
+        z-index: 999;
+    }
+ // ************ Original  wide card ************//  
+ .card-wide  {
+    position: relative;  
+
+    border-radius: 0px  !important;
+    height:120px !important;
+    // margin: 0px 5px 0px 5px !important;
+    background-color: #dddddd;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+
+}
+
+.card-wide-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.card-wide-bg {
+    position: relative;
+    height: 120px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.card-wide-bg .card-s-wide-title {
+    //width: 149px;
+    padding:0px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    //font-family:roboto;
+    font-size: 17px;
+    font-weight:700;
+    color: #FFFFFF;
+    position: absolute;
+    top: 18%;
+    bottom:15px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.card-wide2  {
+    position: relative;  
+
+    border-radius: 5px  !important;
+    height:100px !important;
+    margin: 5px 5px 0px 5px;
+    background-color: #dddddd;
+    //min-height: 150vh !important;
+    //max-height: 160vh !important;
+
+}
+
+.card-wide2-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+
+}
+.card-wide2-bg {
+    position: relative;
+    height: 100px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.card-wide2-bg .card-s-wide-title {
+    //width: 149px;
+    padding:0px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    //font-family:roboto;
+    font-size: 26px;
+    font-weight:200;
+    color: #FFFFFF;
+    position: absolute;
+    left: 20px;
+    top: 35%;
+    margin-top: 0px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+
+}
+
+
+
+
+
+.icon-over{
+    position:absolute;
+    padding:0;
+    margin:0;
+    z-index: 9999;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    // transform-origin:0 100%;
+    // box-shadow:0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    //background-color:#eee; 
+    color: #fff;
+    height:50px;
+    width:100px;
+    // top:-30px;
+    // transform:rotateZ(45deg);
+    // padding-left:30px;
+    padding-right:30px;
+    line-height:30px;
+    // right:-14.644660940673px;
+    right: -34px;
+    // -webkit-transform:rotateZ(45deg);
+    // -moz-transform:rotateZ(45deg);
+    // -o-transform:rotateZ(45deg);
+  }
+
+
+
+.ribbon{
+    position:absolute;
+    padding:0;
+    margin:0;
+    z-index: 2;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    transform-origin:0 100%;
+    box-shadow:0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    background-color: #14b900; //#d33939;
+    color: #fff;
+    height:25px;
+    width:100px;
+    top:-30px;
+    transform:rotateZ(45deg);
+    padding-left:30px;
+    padding-right:30px;
+    line-height:30px;
+    // right:-14.644660940673px;
+    right: -34px;
+    -webkit-transform:rotateZ(45deg);
+    -moz-transform:rotateZ(45deg);
+    -o-transform:rotateZ(45deg);
+  }
+  .ribbon-left{
+    position:absolute;
+    padding:0;
+    margin:0;
+    z-index: 9999;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    transform-origin:0 100%;
+    box-shadow:0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    background-color: #14b900; //#d33939;
+    color: #fff;
+    height:25px;
+    width:100px;
+    top:-30px;
+    transform:rotateZ(45deg);
+    padding-left:30px;
+    padding-right:30px;
+    line-height:30px;
+    // right:-14.644660940673px;
+    left: -34px;
+    -webkit-transform:rotateZ(45deg);
+    -moz-transform:rotateZ(45deg);
+    -o-transform:rotateZ(45deg);
+  }
+  .bookmarkRibbon{
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    right: 10px;
+    width:0; 
+    height:35px; 
+    border-right:10px solid #ffc107;
+    border-left:10px solid #ffc107;
+    border-bottom:10px solid transparent;
+    
+}
+  .discount {
+    text-decoration: line-through;
+  }
+
+
+
+
+
+
+
+
+
+.footer-box{
+    height: 100px;
+}
+
+
+
+
+
+
+//****************************//
+//******** Margin ***********//
+//***************************//
+.margin-top-0{
+    margin-top: 0px !important;
+}
+.margin-top-3{
+    margin-top: 3px !important;
+}
+.margin-top-5{
+    margin-top: 5px !important;
+}
+.margin-top-10{
+    margin-top: 10px !important;
+}
+.margin-top-15{
+    margin-top: 15px !important;
+}
+.margin-top-25{
+    margin-top: 25px !important;
+}
+.margin-bottom-0{
+    margin-bottom: 0px !important;
+}
+.margin-bottom-3{
+    margin-bottom: 3px !important;
+}
+.margin-bottom-5{
+    margin-bottom: 5px !important;
+}
+.margin-bottom-10{
+    margin-bottom: 10px !important;
+}
+.margin-bottom-15{
+    margin-bottom: 15px !important;
+}
+.margin-bottom-20{
+    margin-bottom: 20px !important;
+}
+.margin-all-5{
+    margin: 5px !important;
+}
+.margin-all-10{
+    margin: 10px !important;
+}
+.margin-all-15{
+    margin: 15px !important;
+}
+
+.margin-right-0{
+    margin-right: 0px !important;
+}
+.margin-right-5{
+    margin-right: 5px !important;
+}
+.margin-right-8{
+    margin-right: 8px !important;
+}
+.margin-right-10{
+    margin-right: 10px !important;
+}
+.margin-right-15{
+    margin-right: 15px !important;
+}
+.margin-left-0{
+    margin-left: 0px !important;
+}
+.margin-left-5{
+    margin-left: 5px !important;
+}
+.margin-left-8{
+    margin-left: 8px !important;
+}
+.margin-left-10{
+    margin-left: 10px !important;
+}
+.margin-0-28{
+    margin: 0px 25px !important;
+}
+//****************************//
+//******** Padding ***********//
+//***************************//
+.padding-top-0{
+    padding-top: 0px !important;
+}
+.padding-top-3{
+    padding-top: 3px !important;
+}
+.padding-top-5{
+    padding-top: 5px !important;
+}
+.padding-top-10{
+    padding-top: 10px !important;
+}
+
+.padding-bottom-0{
+    padding-bottom: 0px !important;
+}
+.padding-bottom-3{
+    padding-bottom: 3px !important;
+}
+.padding-bottom-5{
+    padding-bottom: 5px !important;
+}
+.padding-bottom-10{
+    padding-bottom: 10px !important;
+}
+.padding-right-5{
+    padding-right: 5px !important;
+}
+.padding-right-15{
+    padding-right: 15px !important;
+}
+.padding-right-25{
+    padding-right: 25px !important;
+}
+.padding-left-0{
+    padding-left: 0px !important;
+}
+.padding-left-5{
+    padding-left: 5px !important;
+}
+.padding-left-10{
+    padding-left: 10px !important;
+}
+.padding-left-15{
+    padding-left: 15px !important;
+}
+.padding-left-25{
+    padding-left: 25px !important;
+}
+.padding-all-5{
+    padding: 5px !important;
+}
+.padding-all-10{
+    padding: 10px !important;
+}
+.padding-all-15{
+    padding: 15px !important;
+}
+
+
+//*************************************//
+//******** Typography ***********//
+//*************************************//
+p{
+  //  color: #666666 !important;
+    line-height: 1.4 !important;
+}
+.main-header10{
+    font-size: 18px !important;
+    font-weight: 300 !important;
+}
+.main-header9{
+    //letter-spacing: -1px;
+    font-size: 12px !important;
+    font-weight: 300 !important;
+}
+.main-header8{
+    //letter-spacing: -1px;
+    font-size: 14px!important; 
+    font-weight: 300 !important;
+}
+.main-header8-500{
+    //letter-spacing: -1px;
+    font-size: 14px!important; 
+    font-weight: 500 !important;
+}
+.main-header7{
+    //letter-spacing: -1px;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+}
+.main-header6{
+    //letter-spacing: -1px;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+}
+.main-header5{
+    //letter-spacing: -1px;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+
+//     letter-spacing: -1px;
+//     font-size: 17px !important;
+//     font-weight: 400 !important;
+}
+.main-header4{
+    //letter-spacing: -1px;
+    font-size: 22px !important;
+    font-weight: 300 !important;
+
+//     letter-spacing: -1px;
+//     font-size: 17px !important;
+//     font-weight: 400 !important;
+}
+.main-header3{
+    //letter-spacing: -1px;
+    font-size: 26px !important;
+    font-weight: 300 !important;
+}
+.main-header2{
+    letter-spacing: -1px;
+    font-size: 28px !important;
+    font-weight: 300 !important;
+}
+.main-header1{
+    letter-spacing: -1px;
+    font-size: 30px !important;
+    font-weight: 300;
+}
+.main-header0{
+    letter-spacing: -1px;
+    font-size: 34px !important;
+    font-weight: 300 !important;
+}
+.main-b-header1{
+    letter-spacing: -1px;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+}
+.main-b-header2{
+    letter-spacing: -1px;
+    font-size: 28px !important;
+    font-weight: 500 !important;
+}
+.main-b-header3{
+    //letter-spacing: -1px;
+    font-size: 26px !important;
+    font-weight: 500 !important;
+}
+.main-b-header4{
+    //letter-spacing: -1px;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+}
+.main-b-header5{
+   // letter-spacing: -1px;
+    font-size: 22px !important;
+    font-weight: 500 !important;
+}
+.main-b-header6{
+    //letter-spacing: -1px;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}
+.main-b-header7{
+    //letter-spacing: -1px;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+
+.main-b-header8{
+    //letter-spacing: -1px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+.main-b-header9{
+    //letter-spacing: -1px;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+.main-para0{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #444444 !important;
+}
+.main-para1{
+    letter-spacing: 1px;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #444444 !important;
+}
+.main-para2{
+    letter-spacing: 1px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #444444 !important;
+}
+
+//**********************************//
+//******   Ionic component    ******//
+//**********************************//
+.loadinDialog{
+    --background: #111;
+}
+.loading-translucent.sc-ion-loading-ios-h .loading-wrapper.sc-ion-loading-ios {
+    background-color: rgba(var(--ion-background-color-rgb,0,0,0),.4) !important;
+    --spinner-color: white;
+    // -webkit-backdrop-filter: saturate(180%) blur(20px);
+    // backdrop-filter: saturate(180%) blur(20px);
+}
+
+
+//**********************//
+//******   Misc   ******//
+//**********************//
+
+.badge-one {
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    font-size: 0.6em;
+    --padding-start: 5px;
+    --padding-end: 5px;
+  }
+  
+  .badge-two {
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    font-size: 0.6em;
+    --padding-start: 3px;
+    --padding-end: 3px;
+  }
+  
+
+  .shopping-tags{ 
+    background-color: #e80000;
+    color: #fff;
+    display: flex;
+    //width: 38px;
+    height: 19px;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin-left: 5px;
+    z-index: 999;
+}
+
+
+
+
+ion-split-pane{ 
+    --border: none !important;
+    ion-menu{
+        --background: rgba(0, 0, 0, 0.488) !important; 
+     //--background: #1c1c1c !important; 
+        ion-content{            
+            --background: #1c1c1c !important; 
+            ion-list{
+                background-color:#1c1c1c !important;
+            }
+            ion-list-header{ 
+                --background: #1c1c1c !important;
+                --color: #FFFFFF !important;   
+            }
+            ion-item{
+                --min-height: 50px;
+                --background: #1c1c1c !important;
+                 --color: #FFFFFF !important;
+                 --border-color:#1c1c1c !important;
+                 ion-icon{ 
+                     //padding-right: 10px !important; 
+                     color: #73849a !important; 
+                }
+            }
+            ion-item.selected {
+                --color: var(--ion-color-primary);
+              }
+        }
+    }
+}
+
+
+// ion-split-pane{ 
+//     --border: none !important;
+//     ion-menu{
+//      --background: var(--ion-color-dark) !important; 
+//         ion-content{            
+//             --background: var(--ion-color-dark) !important; 
+//             ion-list-header{ 
+//                 --background: var(--ion-color-dark) !important;
+//                 --color: #FFFFFF !important;   
+//             }
+//             ion-item{
+//                 --background: var(--ion-color-dark) !important;
+//                  --color: #FFFFFF !important;
+//                  ion-icon{ 
+//                      padding-right: 10px !important; 
+//                     --color: #73849a !important; 
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,77 @@
+
+// ************ Main card ************//  
+ion-card{
+    //display: inline-block;
+    border-radius: 9px  !important;
+    // -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+    // box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+}
+
+// ************ Wide card ************//  
+.card-wide  {
+    // border-radius: 4px  !important;
+    height:120px !important;
+    margin: 10px 10px 0px 10px !important;
+    background-color: #dddddd;
+    // min-height: 150vh !important;
+    // max-height: 160vh !important;
+}
+.card-wide-bg:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+}
+.card-wide-bg {
+    position: relative;
+    height: 120px;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.card-wide-bg .card-wide-title {
+    width: 100px;
+    padding:0px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 26px;
+    font-style: roboto;
+    font-weight: 300;
+    color: #FFFFFF;
+    position: absolute;
+    top: 26%;
+    left: 10px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    //text-align: center;
+}
+.card-wide-bg .card-wide-sub-title {
+    width: 100px;
+    padding:0px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // This is where the magic happens
+    font-size: 18px;
+    font-style: roboto;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: absolute;
+    top: 42%;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+

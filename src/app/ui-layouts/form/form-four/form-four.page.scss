@@ -1,0 +1,30 @@
+.card-bg{
+    --background: none;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   }
+  
+  ion-card.card-bg-img1{
+    @extend .card-bg;
+    background-image: url('https://image.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg');
+   }
+   ion-card.card-bg-img2{
+    @extend .card-bg;
+    background-image: url('https://image.freepik.com/free-vector/realistic-elegant-geometric-shapes-background_23-2148434482.jpg');
+   }
+   ion-card.card-bg-img3{
+    @extend .card-bg;
+    background-image: url('https://image.freepik.com/free-vector/abstract-futuristic-background_23-2148399335.jpg');
+   }
+   ion-card.card-bg-img4{
+    @extend .card-bg;
+    background-image: url('https://image.freepik.com/free-vector/red-neon-glowing-lights-arrow-style-background_1017-25201.jpg');
+   }
+   ion-col{
+    padding: 0px !important;
+  }
+  ion-list {
+   --ion-item-background: transparent;
+ }
+ 

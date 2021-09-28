@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="success" class="main-b-header6">Category</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="badge-button" routerLink="/food-cart" routerDirection="forward">
+        <ion-icon name="basket-outline" color="success">
+        </ion-icon>
+        <ion-badge class="badge-one" color="danger" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-grid fixed class="ion-no-padding">
+    <ion-row>
+      <ion-col size-lg="6" size-md="6" size-sm="6" size="12" *ngFor="let category of categories | async">
+        <ion-card class="card-main card-wide2 " tappable>
+          <div class="card-wide2-bg" [ngStyle]="{'background-image': 'url(' + category.image+ ')'}"
+            routerLink="/food-list/{{category.id}}">
+            <h2 class="card-s-wide-title"> {{category.name}}</h2>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

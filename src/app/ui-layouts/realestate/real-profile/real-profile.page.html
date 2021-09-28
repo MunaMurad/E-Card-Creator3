@@ -1,0 +1,47 @@
+
+<ion-header>
+  <ion-toolbar color="realgreen-invert">
+          <ion-buttons  slot="start" color="light">
+                  <ion-back-button></ion-back-button>
+              </ion-buttons>
+          <!-- <ion-searchbar color="" placeholder="Search by Location, Area , State or Pin Code" (ionFocus)="openSearchModal()" search-icon="ios-pin" ></ion-searchbar>   -->
+          <ion-title color="realgreen" class="main-b-header4">Profile</ion-title>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+<ion-card class="info-card-2">
+  <ion-item style="padding:0px !important;">
+      <ion-avatar slot="start">
+      <img src="https://randomuser.me/api/portraits/men/18.jpg">
+      </ion-avatar>
+      <ion-label>
+          <h3 class="main-header6">{{(userDetail | async)?.firstname}}</h3>
+          <p class="main-b-header9" (click)="logout()">LOGOUT</p>
+
+      </ion-label>
+  
+  </ion-item>
+
+</ion-card>
+
+<ion-card class="info-card-2">
+  <ion-list>
+      <ion-list-header>
+          Account information
+      </ion-list-header>
+      <ion-item href="#" routerLink="/side-menu/profile">
+          <ion-label>Name: {{(userDetail | async)?.firstname}} </ion-label>
+      </ion-item>
+      <ion-item href="#" routerLink="/side-menu/profile">
+          <ion-label>Email: {{(userDetail | async)?.email}}</ion-label>
+      </ion-item>
+      <ion-item href="#" routerLink="/side-menu/realestate/tabs/tab3">
+          <ion-label>My favorite</ion-label>
+      </ion-item>
+  </ion-list>
+</ion-card>
+
+
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header >
+  <ion-toolbar color="pumpkin">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">Rating</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  class="info-card ion-margin ion-padding-top ion-padding-bottom"  >
+      <ion-card-content>
+
+                <!-- ****** rating ******* -->
+                <rating [(ngModel)]="rating"
+                readonly="false"
+                size="default" 
+                resettable= "true">
+                </rating>
+                <br>
+                <h1 class="ion-text-center">Rating: {{rating}}</h1>
+
+      </ion-card-content>
+  </ion-card>
+</ion-content>
+   

@@ -1,0 +1,19 @@
+<ion-header >
+  <ion-toolbar color="pumpkin">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-margin">
+
+  <div class="margin-top-25 ion-padding-start ion-padding-end">
+    <ion-button color="medium" expand="block" (click)="openBottomModal()">Bottom modal</ion-button>
+    <ion-button color="medium" expand="block"  (click)="openTopModal()">Top modal</ion-button>
+    <ion-button color="medium" expand="block" (click)="openMiddleModal()">Middle modal</ion-button>
+    <ion-button color="medium" expand="block"  (click)="openFullModal()">Full modal</ion-button>
+    <ion-button color="medium" expand="block"  (click)="openSwipeableModal()">Swipe to close modal</ion-button>
+  </div>
+</ion-content>

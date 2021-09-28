@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+  
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">TravelGo</ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button class="badge-button" routerLink="/fire-signin" routerDirection="forward">
+        <ion-icon name="person-circle-outline" color="light">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+
+  <ion-toolbar color="tertiary">
+
+    <ion-grid fixed class="ion-no-padding">
+
+      <ion-row>
+        <ion-col>
+          <ion-searchbar color="" placeholder="Find the best place." (click)="openSearchModal()" search-icon="search-outline">
+          </ion-searchbar>
+        </ion-col>
+        <ion-col class="fix-col-icon">
+          <ion-buttons>
+            <ion-button (click)="openMap()">
+              <ion-icon slot="icon-only" name="map-outline" color="light"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>  
+    </ion-grid>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- ######################################### Updated: ver2.0  #############################################-->
+  <!-- ##  -Fixed attribute tells Ionic’s grid to use the max-width corresponding to the current breakpoint ## -->
+  <!-- ##  -To edit breakpoint go to variables.css and edit --ion-grid-width- : value  ###-->
+  <!-- ####################################################################################################### -->
+  <ion-grid fixed class="ion-no-padding">
+    
+      <!-- *********** Tags ********** -->
+
+      <ion-item lines="none" class="">
+        <h1 class="travel_header2">Place by tags</h1>
+      </ion-item>
+
+      <div class="horizontal-scroll ion-margin-bottom">
+        <ion-chip *ngFor="let tag of tags " [color]="tag.color" outline=true routerLink="/travel-tag/{{tag.id}}">
+          <div>
+            <ion-label>{{tag.name}}</ion-label>
+          </div>
+        </ion-chip>
+      </div>
+
+
+      <!--*********** Category  ***********-->
+      
+      <ion-slides class="swiper-container ion-margin-top margin-left-10 " pager= false [options]="slideOption" #slidesOne>
+
+        <ion-slide  *ngFor="let category of categories " (click)="openDetail('travel-list',category.id)">
+  
+            <ion-card  class="main-card-h main-card travel-card-s-wide ">
+
+              <div class="travel-card-s-wide-bg ion-text-uppercase"
+                [ngStyle]="{'background-image': 'url(' + category.image+ ')'}">
+                <div class="travel-card-title-center"> {{category.name}}</div>
+              </div>
+
+            </ion-card>
+        </ion-slide>
+      </ion-slides>
+     
+
+      <!--*********** Popular places  ***********-->
+
+      <ion-list-header class="margin-bottom-10">
+        <ion-label class="margin-top-3 travel_header2">Popular places</ion-label>
+        <ion-button color="tertiary" size="small"  fill="outline"  routerLink="/travel-category">More</ion-button>
+      </ion-list-header>
+
+      <ion-slides class="swiper-container ion-margin-top margin-left-10 " pager= false [options]="slideOption" #slidesTwo>
+
+        <ion-slide  *ngFor="let recommended of recommended " (click)="openDetail('travel-detail',recommended.id)">
+          <!--  routerLink="/side-menu/travel/tabs/tab1/travel-place-detail/{{recommended.id}}" -->
+          <ion-card class="main-card-h travel-card-tall " >
+            <div class="travel-div-tall-bg" [ngStyle]="{'background-image': 'url(' + recommended.image_header+ ')'}">
+            </div>
+            <div class="padding-left-15 padding-top-10">
+              <div class="margin-top-5 main-b-header8">{{recommended.name}}</div>
+              <div>
+                <p style="margin-top: 3px;">{{recommended.short_description}}</p>
+              </div>
+              <div style="margin-top: -10px;">
+                <ion-icon style="font-size: 14px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]"
+                  [name]="i < recommended.rating ? 'star' : 'star-outline'" >
+                </ion-icon>
+              </div>
+            </div>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+
+
+
+      <!--*********** Top rating ***********-->
+      <!-- <ion-item lines="none">
+        <h1 class="margin-top-10 travel_header2">Top rating</h1>
+      </ion-item> -->
+      <ion-list-header class="margin-bottom-10">
+        <ion-label class="margin-top-3 travel_header2">Top rating</ion-label>
+        <ion-button color="tertiary" size="small"  fill="outline"  routerLink="/travel-category">More</ion-button>
+      </ion-list-header>
+      <ion-slides class="swiper-container ion-margin-top margin-left-10 " pager= false [options]="slideOption" #slidesThree>
+
+        <ion-slide  *ngFor="let place of topRatingPlaces "  (click)="openDetail('travel-detail',place.id)">
+      
+          <ion-card class="main-card-h  travel-card-square " >
+            <div class="travel-card-square-bg" [ngStyle]="{'background-image': 'url(' + place.image_header+ ')'}">
+              <h2 class="travel-card-square-title"> {{place.name}}</h2>
+            </div>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+
+      <div class="footer-box"></div>
+
+  </ion-grid>
+</ion-content>

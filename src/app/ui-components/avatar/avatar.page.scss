@@ -1,0 +1,33 @@
+.profile {
+  width: 100px !important;
+  height: 100px !important;
+}
+.profile img {
+  width: 100px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-top: calc(-1 * var(--ion-safe-area-top));
+}
+
+.header-background {
+  position: relative;
+  background-color: #ddd;
+  display: flex;
+
+  padding-top: var(--ion-safe-area-top);
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  height: calc(250px + var(--ion-safe-area-top));
+}
+
+.header-background h2 {
+  position: absolute;
+
+  bottom: 20px;
+
+  color: white;
+}

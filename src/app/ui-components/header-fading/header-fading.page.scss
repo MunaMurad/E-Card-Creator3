@@ -1,0 +1,84 @@
+
+ion-content {
+    // --padding-bottom: 10px;
+    // --padding-end: 10px;
+    // --padding-start: 20px;
+   // --padding-top: 0px !important;
+  }
+
+/* Transparent */
+ion-toolbar.first {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    // ion-title {
+    //     opacity: 0;
+    // }
+}
+
+.show-title{
+
+    // animation: fadein 0.4s;
+    // -moz-animation: fadein 0.4s; /* Firefox */
+    // -webkit-animation: fadein 0.4s; /* Safari and Chrome */
+    // -o-animation: fadein 0.4s; /* Opera */
+    // --color: #fff !important;
+    // -webkit-transition: opacity 1s ease-in-out;
+    // -moz-transition: opacity 1s ease-in-out;
+    // -ms-transition: opacity 1s ease-in-out;
+    // -o-transition: opacity 1s ease-in-out;
+    //  opacity: 1;
+
+}
+/* Show background if class is active */
+.show-background {
+    border-style: none;
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s; /* Firefox */
+    -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+    -o-animation: fadein 0.5s; /* Opera */
+
+    background: var(--ion-color-pumpkin);
+    //background: #009f34;
+}
+.hide-title {
+    border-style: none;
+    animation: fadeout 0.5s;
+    -moz-animation: fadein 0.5s; /* Firefox */
+    -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+    -o-animation: fadein 0.5s; /* Opera */
+
+    background: var(--ion-color-danger);
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+
+.top-grey-box{
+    width: 100%;
+    //height: 250px;
+    background-color: #dddddd;
+    height: calc(250px + var(--ion-safe-area-top));
+}

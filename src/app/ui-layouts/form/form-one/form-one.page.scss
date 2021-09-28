@@ -1,0 +1,96 @@
+// ion-item:first-child {
+//     border-top-left-radius: 5px;
+//     border-top-right-radius: 5px;
+//   }
+//   ion-item:last-child {
+//     border-bottom-left-radius: 5px;
+//     border-bottom-right-radius: 5px;
+//   }
+//   ion-item.item {
+//     background-color: rgba(255, 255, 255, 0.4);
+//     margin-bottom: 1px;
+//     .label {
+//       width: 10%;
+//       color: rgba(0, 0, 0, 0.6);
+//       font-size: 1.2em;
+//     }
+//   }
+
+
+
+
+//   .login-form {
+//     --background: #fafafa;
+//     .title {
+//       font-size: 25px;
+//       --color: #1259a1;
+//     }
+//     .sub-title {
+//       margin-top: 10px;
+//       font-weight: 500;
+//     }
+  
+//     .btn-login {
+//       --background: #e88233;
+//       border-radius: 4px;
+//     }
+  
+//     .input-container {
+//       border: 1px solid #e8e8e8;
+//       --border-radius: 5px;
+//       --min-height:50px; 
+//       --highlight-color-focused :#1259a1;
+//       width: 100%;
+//       &:first-child {
+//         margin-bottom: 10px;
+//       }
+  
+//       .email-pattern {
+//         color: #cccccc;
+//       }
+  
+//       .custom-icon{
+//           width:16px;
+//           height: 16px;
+//       }
+//     }
+//   }
+
+ion-col{
+   padding: 0px !important;
+ }
+ ion-list {
+  --ion-item-background: transparent;
+}
+
+.card-bg{
+  --background: none;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+
+ion-card.card-bg-img1{
+  @extend .card-bg;
+  background-image: url('https://image.freepik.com/free-vector/antibody-immunoglobulin-molecule-theme_23-2148573169.jpg');
+ }
+ ion-card.card-bg-img2{
+  @extend .card-bg;
+  background-image: url('https://image.freepik.com/free-vector/gradient-green-blue-abstract-geometric-background_23-2148362562.jpg');
+ }
+ ion-card.card-bg-img3{
+  @extend .card-bg;
+  background-image: url('https://image.freepik.com/free-vector/colorful-memphis-design-background-vector_53876-81744.jpg');
+ }
+ ion-card.card-bg-img4{
+  @extend .card-bg;
+  background-image: url('https://image.freepik.com/free-vector/fluid-style-wallpaper-with-memphis-elements_23-2148498121.jpg');
+ }
+
+// ion-content{
+//   --background: none;
+//   background-image: url('https://image.freepik.com/free-vector/abstract-design-blue-background_23-2148497489.jpg');
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }

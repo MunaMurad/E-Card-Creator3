@@ -1,0 +1,41 @@
+<ion-header no-border [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
+  <ion-toolbar color="pumpkin">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4">Shrinking header</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="pumpkin">
+    <ion-searchbar  placeholder="Search.." search-icon="ios-search" ></ion-searchbar>
+</ion-toolbar>
+</ion-header>
+
+<!-- 
+<ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()"> -->
+  <ion-content #pageContent >
+    <!-- skeleton thumbnail -->
+  
+    <ion-item *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+       <ion-thumbnail slot="start">
+         <ion-skeleton-text ></ion-skeleton-text>
+       </ion-thumbnail>
+       <!-- <ion-avatar slot="start">
+           <ion-skeleton-text animated></ion-skeleton-text>
+         </ion-avatar> -->
+       <ion-label>
+         <h3>
+           <ion-skeleton-text  style="width: 50%"></ion-skeleton-text>
+         </h3>
+         <p>
+           <ion-skeleton-text  style="width: 80%"></ion-skeleton-text>
+         </p>
+         <p>
+           <ion-skeleton-text  style="width: 60%"></ion-skeleton-text>
+         </p>
+       </ion-label>
+     </ion-item>
+</ion-content>
