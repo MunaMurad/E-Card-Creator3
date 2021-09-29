@@ -1,0 +1,146 @@
+
+<ion-header mode="ios" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button auto-hide="false" color="success"></ion-menu-button>
+    </ion-buttons>
+  
+    <ion-title color="success" class="main-b-header6">FOOD DELIVERY</ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button class="badge-button" routerLink="/fire-profile" routerDirection="forward">
+        <ion-icon name="person-circle-outline" color="success">
+        </ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button class="badge-button" routerLink="/food-cart" routerDirection="forward">
+        <ion-icon name="basket-outline" color="success">
+        </ion-icon>
+        <ion-badge class="badge-one" color="danger" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-grid fixed class="ion-no-padding">
+          <ion-searchbar mode="ios" placeholder="Search.." (click)="openSearchModal()" search-icon="search-outline" ></ion-searchbar>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-padding>
+
+  <!-- ############################################# Updated #################################################-->
+  <!-- ##  -Fixed attribute tells Ionic’s grid to use the max-width corresponding to the current breakpoint ## -->
+  <!-- ##  -To edit breakpoint go to variables.css and edit --ion-grid-width- : value  ###-->
+  <!-- ####################################################################################################### -->
+  <ion-grid fixed class="ion-no-padding">
+
+      <!-- If desktop = true then show breadcrumb -->
+
+    <!--*********** Category  ***********-->
+
+    <!-- <ion-list-header class="margin-top-0 margin-bottom-10">
+      <ion-label class="margin-top-3 main-header4">Category</ion-label>
+      <ion-button class="margin-right-10" color="success" size="small" fill="outline" routerLink="/food-category">See All</ion-button>
+    </ion-list-header> -->
+
+    <ion-slides class="swiper-container" pager= false [options]="slideOption" #slidesOne>
+
+      <ion-slide *ngFor="let category of categories | async " (click)="openDetail('food-list',category.id)">
+        <ion-card class="food-main-h-card food-card2 slide-left "  >
+              <div class="food-card2-bg ion-text-uppercase" [ngStyle]="{'background-image': 'url(' + category.image+ ')'}" >
+                  <h2 class="card2-title"> {{category.name}}</h2>                           
+              </div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+  
+
+      <!--*********** Popular  ***********-->
+
+      <ion-item lines="none">
+      <label>
+        <h1 class="main-header4 margin-bottom-3">Popular menu</h1>
+        <h1 class="food_header3 ">Most popular food menu for you each day</h1>
+      </label>
+      <!-- <ion-button fill="none" slot="end" color="secondary"  routerLink="/side-menu/food/tabs/tab1/food-category" >View all</ion-button> -->
+      </ion-item>
+
+
+      <ion-slides class="swiper-container" pager= false [options]="slideOption" #slidesTwo>
+
+        <ion-slide   *ngFor="let popular of populars | async "  (click)="openDetail('food-detail',popular.id)" >
+          <!--  routerLink="/side-menu/food/tabs/tab1/food-place-detail/{{recommended.id}}" -->
+            <ion-card class="food-main-h-card food-card1 slide-right "   >
+                <div class="food-card1-bg"  [ngStyle]="{'background-image': 'url(' + popular.image+ ')'}" ></div>
+                <ion-card-content class="card1-padding">
+                    <ion-label><ion-text color="black"><h2>{{popular.name}}</h2></ion-text></ion-label>
+                    <ion-label><h3>{{popular.short_description}}</h3></ion-label>
+                    <ion-row class="margin-top-5">
+                        <ion-col size="6" class="ion-text-left">
+                          <ion-icon  style="font-size: 16px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]" [name]="i < popular.rating  ? 'star' : 'star-outline'"></ion-icon>
+                        </ion-col>
+                        <ion-col class="ion-text-right">
+                                <ion-text color="black"> <h2><strong>{{popular.price | currency}}</strong></h2></ion-text>
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+
+          </ion-slide>
+        </ion-slides>
+
+      <!--*********** Promotion ***********-->
+      <ion-list-header class="margin-bottom-10 margin-right-10">
+        <ion-label class="margin-top-3 main-header4">Promotions</ion-label>
+        <ion-button class="margin-right-10" color="success" size="small" fill="outline" routerLink="/food-category">See More</ion-button>
+      </ion-list-header>
+
+      <ion-slides class="swiper-container" pager= false [options]="slideOption" #slidesThree>
+
+        <ion-slide  *ngFor="let promotion of promotions | async "  (click)="openDetail('food-detail',promotion.id)">
+            <!--  routerLink="/side-menu/food/tabs/tab1/food-place-detail/{{recommended.id}}" -->
+            <ion-card class="food-main-h-card food-card3 slide-left ">
+                <!-- <div class="bookmarkRibbon"></div> -->
+                <div class="ribbon pop-in">Hot</div>
+                <div class="food-card3-bg"  [ngStyle]="{'background-image': 'url(' + promotion.image+ ')'}" ></div>
+
+                <ion-card-content class="card1-padding">
+                        <ion-label><ion-text color="black"><h2>{{promotion.name}}</h2></ion-text></ion-label>
+                        <ion-label><h3>{{promotion.short_description}}</h3></ion-label>
+                        <div class="margin-top-5">
+                              <ion-icon  style="font-size: 16px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]" [name]="i < promotion.rating  ? 'star' : 'star-outline'"></ion-icon>
+                                <ion-text color="black"> <h2><strong>{{promotion.price | currency}}</strong></h2></ion-text>
+                        </div>
+                    </ion-card-content>
+
+                <!-- <div class="food_title1">{{promotion.name}}</div>
+                <div><p style="margin-top: 3px;">{{promotion.short_description}}</p></div>
+                <div style="margin-top: -10px;">
+                    <ion-item lines="none">
+                        <ion-label  text-wrap>
+                            <h1 class="travel_header1 detail-name">${{promotion.price}}</h1>
+                        </ion-label>
+                        <div slot="end">
+                            <ion-icon  style="font-size: 18px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]" [name]="i < promotion.rating  ? 'star' : 'star-outline'"></ion-icon>
+                        </div>
+                    </ion-item>  
+                </div> -->
+            </ion-card>
+
+        </ion-slide>
+      </ion-slides>
+
+</ion-grid>
+
+
+
+
+</ion-content>

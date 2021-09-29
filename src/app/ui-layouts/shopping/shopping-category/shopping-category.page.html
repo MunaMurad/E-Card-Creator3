@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="warning"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="warning">Category</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="badge-button" routerLink="/shopping-cart" routerDirection="forward">
+        <ion-icon name="cart-outline" color="warning">
+        </ion-icon>
+        <ion-badge class="badge-one" color="danger" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid fixed class="ion-no-padding">
+    <ion-row wrap>
+      <ion-col tappable size-lg="4" size-md="6" size-sm="12" size="12" class="ion-no-padding"
+      *ngFor="let category of categories | async " color="gray">
+          <ion-card class="card-wide">
+            <div class="card-wide-bg" [ngStyle]="{'background-image': 'url(' + category.image+ ')'}"
+              routerLink="/shopping-list/{{category.id}}">
+              <h2 class="card-wide-title pop-in"> {{category.name}}</h2>
+            </div>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

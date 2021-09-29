@@ -1,0 +1,48 @@
+.empty-icon-circle {
+  border-radius: 50%;
+  padding: 20px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+.icon-large {
+  height: 180px;
+  width: 180px;
+}
+.icon-mid {
+  height: 100px;
+  width: 100px;
+}
+.icon-small {
+  height: 60px;
+  width: 60px;
+}
+.empty-icon-color {
+  background: var(--ion-color-slightgray);
+  color: #fff;
+}
+
+//
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}

@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button color="medium" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="medium" size="large">FORGOT</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="medium"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content fullscreen=true>
+  <ion-grid fixed class="ion-no-padding">
+  
+
+      <form [formGroup]="resetPasswordForm" novalidate>
+        <div class="login-form">
+          <ion-text color="dark">
+            <h2 text-center class="ion-margin-bottom main-header7">
+              Forgot password
+            </h2>
+          </ion-text>
+          <ion-list class="ion-margin-top">
+            <!-- <ion-item>
+                  <ion-input formControlName="email" type="text" placeholder="email"></ion-input>
+                </ion-item> -->
+            <ion-item class="roundedInput8px margin-bottom-10">
+              <ion-label>
+                <ion-icon name="mail-outline" color="medium"></ion-icon>
+              </ion-label>
+              <ion-input formControlName="email" type="text" placeholder="email"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <!-- Error meassage -->
+          <p color="warning" *ngIf="!resetPasswordForm.controls.email.valid && resetPasswordForm.controls.email.touched">
+            <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
+          </p>
+
+          <ion-button mode="ios" color="medium" expand="block" [disabled]="!resetPasswordForm.valid"
+            (click)="resetPassword()">
+            Recover
+          </ion-button>
+          <ion-button mode="ios" color="medium" expand="block" fill="outline" class="ion-margin-top"
+            routerLink="/fire-signup">
+            Create new user
+          </ion-button>
+          <ion-text color="dark">
+            <h2  class="ion-text-center ion-margin-bottom main-header8">
+                By clicking Sign up you agree to the following Terms ans Conditions without reservation
+            </h2>
+        </ion-text>
+        </div>
+      </form>
+  </ion-grid>
+</ion-content>

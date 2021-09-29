@@ -1,0 +1,86 @@
+<ion-header no-border >
+  <ion-toolbar color="pumpkin">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">Shrinking footer</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="pumpkin">
+    <ion-searchbar  placeholder="Search.."  search-icon="ios-search" ></ion-searchbar>
+</ion-toolbar>
+</ion-header>
+
+<!-- 
+<ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()"> -->
+  <ion-content #pageContent >
+    <!-- skeleton thumbnail -->
+  
+    <ion-item *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+       <ion-thumbnail slot="start">
+         <ion-skeleton-text ></ion-skeleton-text>
+       </ion-thumbnail>
+       <!-- <ion-avatar slot="start">
+           <ion-skeleton-text animated></ion-skeleton-text>
+         </ion-avatar> -->
+       <ion-label>
+         <h3>
+           <ion-skeleton-text  style="width: 50%"></ion-skeleton-text>
+         </h3>
+         <p>
+           <ion-skeleton-text  style="width: 80%"></ion-skeleton-text>
+         </p>
+         <p>
+           <ion-skeleton-text  style="width: 60%"></ion-skeleton-text>
+         </p>
+       </ion-label>
+     </ion-item>
+</ion-content>
+
+
+<!--  hide ion-tab-bar -->
+<ion-tab-bar [scrollHide]="footerScrollConfig" [scrollContent]="pageContent" class="ion-no-border" color="lightgray">
+  <ion-tab-button selected>
+    <ion-icon name="home"></ion-icon>
+    <ion-label>home</ion-label>
+  </ion-tab-button>
+  <ion-tab-button>
+    <ion-icon name="globe"></ion-icon>
+    <ion-label>world</ion-label>
+  </ion-tab-button>
+  <ion-tab-button>
+    <ion-icon name="people"></ion-icon>
+    <ion-label>contact</ion-label>
+  </ion-tab-button>
+  <ion-tab-button>
+    <ion-icon name="mail"></ion-icon>
+    <ion-badge color="danger">2.3k</ion-badge>
+    <ion-label>mail</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>
+
+<!--  hide ion-footer-->
+<!-- <ion-footer  [scrollHide]="footerScrollConfig" [scrollContent]="pageContent" class="ion-no-border">
+  <ion-toolbar color="pumpkin">
+    <ion-item>
+      <ion-thumbnail slot="end">
+        <ion-skeleton-text ></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text  style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text  style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text  style="width: 60%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+
+</ion-footer> -->

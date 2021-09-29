@@ -1,0 +1,48 @@
+.card-ios {
+    border-radius: 10px !important;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 25px !important;
+    
+  }
+.card-md {
+  border-radius: 8px !important;
+  //box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 12px !important;
+}
+ion-card:focus {
+  outline: none;
+}
+ion-col {
+    padding: 5px 5px 0px 5px; 
+}
+.content{
+        background-color: #ddd;
+}
+ion-card.cardGrid{
+  position: relative;
+  text-align: center;
+  margin: 12px 10px 0px 0px !important;
+  width: 100% !important;
+}
+p{
+  font-size: 16px;
+}
+
+
+.badge-one {
+  position: absolute;
+  top: 0px;
+  right: -5px;
+  font-size: 0.6em;
+  --padding-start: 5px;
+  --padding-end: 5px;
+}
+
+.badge-two {
+  position: absolute;
+  top: 0px;
+  right: -5px;
+  font-size: 0.6em;
+  --padding-start: 3px;
+  --padding-end: 3px;
+}

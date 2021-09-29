@@ -1,0 +1,60 @@
+<ion-header >
+  <ion-toolbar color="pumpkin">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">Progress bar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <!-- Default Progress Bar -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Default</ion-label>
+    </ion-list-header>
+    <ion-progress-bar color="greenwild"></ion-progress-bar>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Default at 50%</ion-label>
+    </ion-list-header>
+    <ion-progress-bar value="0.5" color="greenwild"></ion-progress-bar>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Color</ion-label>
+    </ion-list-header>
+
+    <!-- Progress Bar with Color -->
+    <ion-progress-bar color="amber" value="0.4"></ion-progress-bar><br>
+    <ion-progress-bar color="deeporange" value="0.6"></ion-progress-bar><br>
+    <ion-progress-bar color="deeppurple" value="0.8"></ion-progress-bar><br>
+
+    <ion-list-header>
+      <ion-label>
+        Indeterminate
+      </ion-label>
+    </ion-list-header>
+    <ion-progress-bar type="indeterminate" color="greenwild"></ion-progress-bar>
+
+    <ion-list-header>
+      <ion-label>
+        Indeterminate (reversed)
+      </ion-label>
+    </ion-list-header>
+    <ion-progress-bar type="indeterminate" color="greenwild" reversed="true"></ion-progress-bar>
+
+    <ion-list-header>
+      <ion-label>
+        Buffer
+      </ion-label>
+    </ion-list-header>
+    <ion-progress-bar value="0.25" color="greenwild" buffer="0.5"></ion-progress-bar>
+  </ion-list>
+
+
+
+</ion-content>

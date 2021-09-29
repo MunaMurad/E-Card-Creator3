@@ -1,0 +1,166 @@
+<ion-header >
+  <ion-toolbar color="pumpkin">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">Animation</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="pumpkin">
+    <ion-segment [(ngModel)]="viewMode">
+      <ion-segment-button value="set1">
+        <ion-label>Set 1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="set2">
+          <ion-label>Set 2 </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="set3">
+          <ion-label>Set 3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid fixed class="ion-no-padding">
+      <div *ngIf="viewMode==='set1'">
+        <!--********** Drop in *************-->
+          <ion-card color="darkGray" class="drop-in">
+            <ion-card-content text-center>   
+              <h3>Drop-In</h3>
+              <p>
+                Usage: class="drop-in"
+              </p>
+            </ion-card-content>
+          </ion-card>
+        <!--********** wobble*************-->
+          <ion-card color="darkGray" class="wobble">
+            <ion-card-content text-center>   
+              <h3>Wobble</h3>
+              <p>
+                Usage: class="wobble"
+              </p>
+            </ion-card-content>
+          </ion-card>
+      
+        <!--********** Fadein-down *************-->
+      <ion-card color="darkGray" class="fadein-down">
+            <ion-card-content text-center>   
+              <h3>Fadein-down</h3>
+              <p>
+                Usage: class="fadein-down"
+              </p>
+            </ion-card-content>
+          </ion-card>
+        <!--********** Ta-da *************-->
+          <ion-card color="darkGray" class="ta-da">
+            <ion-card-content text-center>   
+              <h3>Ta-da</h3>
+              <p>
+                Usage: class="ta-da"
+              </p>
+            </ion-card-content>
+          </ion-card>   
+      
+      </div>
+      
+      
+      
+      
+      <div *ngIf="viewMode==='set2'">
+      
+      
+        <!--********** Slide up *************-->
+      <ion-card color="darkGray" class="slide-up">
+            <ion-card-content text-center margin-bottom>   
+              <h3>Slide-up</h3>
+              <p>
+                Usage: class="slide-up"
+              </p>
+            </ion-card-content>
+          </ion-card>
+      <!--********** Slide left *************-->
+      <ion-card color="darkGray" class="slide-left">
+        <ion-card-content text-center margin-bottom>   
+          <h3>Slide-left</h3>
+          <p>
+            Usage: class="slide-left"
+          </p>
+        </ion-card-content>
+      </ion-card>
+      <!--********** Slide right *************-->
+            <ion-card color="darkGray" class="slide-right">
+              <ion-card-content text-center margin-bottom>   
+                <h3>Slide-right</h3>
+                <p>
+                  Usage: class="slide-right"
+                </p>
+              </ion-card-content>
+            </ion-card>
+        <!--********** Wave *************-->
+          <ion-card color="darkGray" class="wave">
+            <ion-card-content text-center>   
+              <h3>Wave</h3>
+              <p>
+                Usage: class="wave"
+              </p>
+            </ion-card-content>
+          </ion-card>   
+        <!--********** Pop in *************-->
+          <ion-card color="darkGray" class="pop-in">
+            <ion-card-content text-center>   
+              <h3>Pop-In</h3>
+              <p>
+                Usage: class="pop-in"
+              </p>
+            </ion-card-content>
+          </ion-card>
+        <!--********** Pop put *************-->
+          <ion-card color="darkGray" class="pop-out">
+            <ion-card-content text-center>   
+              <h3>Pop-Out</h3>
+              <p>
+                Usage: class="pop-out"
+              </p>
+            </ion-card-content>
+          </ion-card>
+      
+      
+      </div>
+      
+      
+      
+      <div *ngIf="viewMode==='set3'">
+        <!--********** Swing *************-->
+          <ion-card color="darkGray" class="swing">
+            <ion-card-content text-center>   
+              <h3>Swing</h3>
+              <p>
+                Usage: class="swing"
+              </p>
+            </ion-card-content>
+          </ion-card>
+        <!--********** Shake*************-->
+          <ion-card color="darkGray" class="shake">
+            <ion-card-content text-center>   
+              <h3>Shake</h3>
+              <p>
+                Usage: class="shake"
+              </p>
+            </ion-card-content >
+          </ion-card>
+      
+        <!--********** Bounce *************-->
+      <ion-card color="darkGray" class="bounce">
+            <ion-card-content text-center>   
+              <h3>Bounce</h3>
+              <p>
+                Usage: class="bounce"
+              </p>
+            </ion-card-content>
+          </ion-card>
+      
+      </div>
+  </ion-grid>
+<ion-content>

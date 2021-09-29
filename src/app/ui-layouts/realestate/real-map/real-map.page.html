@@ -1,0 +1,101 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="greensea">
+    <ion-searchbar color="" placeholder="Search by Location, Area or Pin Code.." (click)="openSearchModal()"
+      search-icon="search-outline">
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/real-home" routerDirection="back">
+        <ion-icon slot="icon-only" size=""  name="grid-outline" color=""></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar color="greensea">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" color=""></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4" color="">PROPERTY8</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+    
+    <ion-content no-padding>
+      
+      <!-- <ion-fab vertical="top" horizontal="end" slot="fixed" >
+        <ion-fab-button (click)="close()" color="medium">
+          <ion-icon name="close-outline" ></ion-icon>
+        </ion-fab-button>
+      </ion-fab> -->
+      <!--*********** Map wrapper  ***********-->
+    
+      <div id="wrapper">
+        <!--*********** Map  ***********x-->
+        <div #map id="map"></div>
+    
+        <!--*********** Detail box ***********-->
+        <div *ngIf="viewDetail" class="place-detail effect6">
+    
+          <ion-card (click)="openDetail('/real-detail',placeId)">
+            <div class="image_header" [ngStyle]="{'background-image': 'url(' + placeImage + ')'}"></div>
+            <ion-card-content>
+              <ion-item lines="none">
+                <ion-label>
+                  <h2>Price:
+                    {{ placePrice| currency : 'USD' : 'symbol' : '1.0-0' }}</h2>
+                  <p>
+                    <!-- <ion-icon
+                      style="font-size: 14px !important;"
+                      color="warning"
+                      *ngFor="let i of [0,1,2,3,4]"
+                      [name]="i < placeRating? 'star' : 'star-outline'"
+                    >
+                    </ion-icon> -->
+                  </p>
+                  <p>{{placeFeatures}}</p>
+                  <p>{{placeLocation}}</p>
+                  <!-- <ion-button fill="outline" slot="end" >View</ion-button> -->
+                </ion-label>
+                
+              </ion-item>
+            
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <!-- <div *ngIf="viewDetail" class="place-detail effect6">
+      
+              <ion-item>
+                <ion-thumbnail slot="start">
+                  <img src="{{placeImage}}" />
+                </ion-thumbnail>
+                <ion-label>
+                  <h2>{{placeName}}</h2>
+                  <p>
+                    <ion-icon
+                      style="font-size: 14px !important;"
+                      color="warning"
+                      *ngFor="let i of [0,1,2,3,4]"
+                      [name]="i < placeRating? 'star' : 'star-outline'"
+                    >
+                    </ion-icon>
+                  </p>
+                  <p>{{placeDescription}}</p>
+                  <ion-button fill="outline" slot="end" (click)="openDetail('placeId')">View</ion-button>
+                </ion-label>
+                
+              </ion-item>
+    
+        </div> -->
+      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </ion-content>
+    

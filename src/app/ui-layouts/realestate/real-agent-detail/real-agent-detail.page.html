@@ -1,0 +1,98 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="greensea" defaultHref="#"></ion-back-button>
+    </ion-buttons>
+
+    <!-- <ion-searchbar color="" placeholder="Search by Location, Area , State or Pin Code" (ionFocus)="openSearchModal()" search-icon="ios-pin" ></ion-searchbar>   -->
+    <!-- <ion-title color="realgreen" class="main-b-header4">Agent</ion-title> -->
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid fixed class="ion-no-padding">
+      <div id="profile1-info" class="test-class" padding>
+        <img id="profile1-image" class="pop-in" src="{{(agent | async)?.image}}" />
+        <h3 id="profile1-name">{{(agent | async)?.name}}</h3>
+        <!--<p>{{(profile2 | async)?.company}} &bull; {{(profile2 | async)?.position}}</p> -->
+        <p class="profile1-description">{{(agent | async)?.position}} of {{(agent | async)?.company}}</p>
+        <ion-icon style="font-size: 18px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]"
+          [name]="i < (agent | async)?.rating  ? 'star' : 'star-outline'"></ion-icon>
+      </div>
+
+
+
+        <ion-row>
+          <ion-col  class="padding-left-25" size-lg="6" size-md="6" size-sm="12" size="12">
+            <!--***********  About  ***********-->
+            <ion-item lines="none">
+              <h1 class="main-header5">About me</h1>
+            </ion-item>
+
+            <ion-item lines="none">
+              <p>{{(agent | async)?.about_me}}</p>
+            </ion-item>
+          </ion-col>
+
+
+
+          <ion-col class="padding-left-25" size-lg="6" size-md="6" size-sm="12" size="12">
+
+            <!--***********  Contact  ***********-->
+            <ion-item lines="none">
+              <h1 class="main-header5">Contact</h1>
+            </ion-item>
+            <ion-list>
+              <ion-item lines="none">
+                <ion-icon slot="start" name="mail-outline" item-left></ion-icon>
+                <ion-label>
+                  <h2>ceo@cemo.com</h2>
+                  <p>work email</p>
+                </ion-label>
+
+              </ion-item>
+
+              <ion-item lines="none">
+                <ion-icon slot="start" name="call-outline" item-left></ion-icon>
+                <ion-label>
+                  <h2>009923124322</h2>
+                  <p>mobile phone</p>
+                </ion-label>
+
+              </ion-item>
+
+              <ion-item lines="none">
+                <ion-icon slot="start" name="logo-linkedin" item-left></ion-icon>
+                <ion-label>
+                  <h2>linkedin.com/cemo</h2>
+                  <p>linked in </p>
+                </ion-label>
+
+              </ion-item>
+              <ion-item lines="none">
+                <ion-icon slot="start" name="logo-facebook" item-left></ion-icon>
+                <ion-label>
+                  <h2>facebook.com/cemo</h2>
+                  <p>facebook</p>
+                </ion-label>
+
+              </ion-item>
+              <ion-item lines="none">
+                <ion-icon slot="start" name="logo-skype" item-left></ion-icon>
+                <ion-label>
+                  <h2>cemo@outlook.com</h2>
+                  <p>skype</p>
+                </ion-label>
+
+              </ion-item>
+            </ion-list>
+          </ion-col>
+
+
+        </ion-row>
+
+      <!--***********  Properties lists  ***********-->
+  </ion-grid>
+</ion-content>

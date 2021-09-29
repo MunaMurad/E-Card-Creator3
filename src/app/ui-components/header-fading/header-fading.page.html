@@ -1,0 +1,52 @@
+
+
+<ion-content  fullscreen=true (ionScroll)="onScroll($event)" [scrollEvents]="true" [class.transition]="transition">
+
+
+<!-- ##############  Fading header  ############ -->
+<ion-header class="ion-no-border" slot="fixed">
+
+  <ion-toolbar class="first"  [class.show-background]="showToolbar">
+ 
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4" color="light">Header-fading</ion-title>
+    <ion-buttons  color="light" slot="end">
+      <ion-button color="light" >
+        <ion-icon slot="icon-only" ios="share-outline" md="share-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+
+
+
+  
+
+  <!-- skeleton thumbnail -->
+  <div class="top-grey-box" ></div>
+  <ion-item *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+     <ion-thumbnail slot="start">
+       <ion-skeleton-text ></ion-skeleton-text>
+     </ion-thumbnail>
+     <!-- <ion-avatar slot="start">
+         <ion-skeleton-text animated></ion-skeleton-text>
+       </ion-avatar> -->
+     <ion-label>
+       <h3>
+         <ion-skeleton-text  style="width: 50%"></ion-skeleton-text>
+       </h3>
+       <p>
+         <ion-skeleton-text  style="width: 80%"></ion-skeleton-text>
+       </p>
+       <p>
+         <ion-skeleton-text  style="width: 60%"></ion-skeleton-text>
+       </p>
+     </ion-label>
+   </ion-item>
+ </ion-content>
+ 

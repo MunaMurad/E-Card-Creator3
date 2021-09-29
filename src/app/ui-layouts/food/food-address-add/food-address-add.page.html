@@ -1,0 +1,60 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+          <!-- <ion-searchbar color="" placeholder="Search.." (ionFocus)="openSearchModal()" search-icon="ios-pin" ></ion-searchbar>   -->
+        <ion-title color="success" class="main-header6">Add address</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+<div class="ion-margin ion-padding-top">
+
+    <form [formGroup]="addressForm" novalidate>
+        <ion-list lines="">   
+            <ion-item>
+              <ion-label position="floating">Address label</ion-label>
+              <ion-input  type="text"  formControlName="label"  placeholder="Ex: home , office"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Fullname</ion-label>
+              <ion-input  type="text"  formControlName="fullname" ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Phone number</ion-label>
+                <ion-input  type="number"  formControlName="phone"></ion-input>
+            </ion-item>             
+            <ion-item>
+                <ion-label position="stacked">Address</ion-label>
+                <ion-textarea formControlName="address" placeholder="Enter more information here..."  rows = "3" auto-grow=true></ion-textarea>
+            </ion-item>
+          </ion-list>
+    </form>
+
+      <!-- Error meassage -->
+      <p color="danger" *ngIf="!addressForm.controls.label.valid && addressForm.controls.label.touched">
+        <ion-text color="warning"><ion-icon name="information-circle-outline"></ion-icon> Address labelfield must be at least 3 characters long!</ion-text>  
+      </p>
+      <p color="danger" *ngIf="!addressForm.controls.fullname.valid && addressForm.controls.fullname.touched">
+              <ion-text color="warning"><ion-icon name="information-circle-outline"></ion-icon> Fullname field must be at least 3 characters long!</ion-text>  
+      </p>
+      <p color="danger" *ngIf="!addressForm.controls.phone.valid && addressForm.controls.phone.touched">
+              <ion-text color="warning"><ion-icon name="information-circle-outline"></ion-icon> Phone number field must be at least 3 characters long!</ion-text>  
+      </p>
+      <p color="danger" *ngIf="!addressForm.controls.address.valid && addressForm.controls.address.touched">
+              <ion-text color="warning"><ion-icon name="information-circle-outline"></ion-icon> Address field must be at least 3 characters long!</ion-text>  
+      </p>
+
+  <!-- <ion-button mode="ios" color="orange" expand="block" fill="outline" class="ion-margin-top">
+      Signinewwewe
+  </ion-button> -->
+
+</div>
+</ion-content>
+<ion-footer>
+<ion-toolbar>
+    <ion-button color="success" expand="full" [disabled]="!addressForm.valid"  (click)="addAddress()" >Add</ion-button>
+    <ion-button color="" fill="blank" expand="full" (click)="close()">Cancel</ion-button>
+</ion-toolbar>
+</ion-footer>

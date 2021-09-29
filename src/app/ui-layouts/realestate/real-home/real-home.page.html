@@ -1,0 +1,141 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="greensea">
+    <ion-searchbar color="" placeholder="Search by Location, Area or Pin Code.." (click)="openSearchModal()"
+      search-icon="search-outline">
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/real-map" routerDirection="back">
+        <ion-icon slot="icon-only" size=""  name="map-outline" color=""></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+<!--   
+  <ion-toolbar color="success">
+    <ion-grid fixed
+      <ion-row>
+        <ion-col>
+          <ion-searchbar color="" placeholder="Search by Location, Area or Pin Code.." (click)="openSearchModal()"
+          search-icon="search-outline">
+        </ion-searchbar>
+        </ion-col>
+        <ion-col class="fix-col-icon">
+          <ion-buttons>
+            <ion-button routerLink="/real-map" routerDirection="forward">
+              <ion-icon slot="icon-only" size="" name="map-outline" color=""></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>   
+
+    </ion-grid>
+  </ion-toolbar> -->
+
+  <ion-toolbar color="greensea">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" color=""></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4" color="">Property8</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <!-- ######################################### Updated: ver2.0  #############################################-->
+  <!-- ##  -Fixed attribute tells Ionic’s grid to use the max-width corresponding to the current breakpoint ## -->
+  <!-- ##  -To edit breakpoint go to variables.css and edit --ion-grid-width- : value  ###-->
+  <!-- ####################################################################################################### -->
+  <ion-grid fixed class="ion-no-padding">
+
+  <!--*****************************-->
+  <!--******* Show agents *********-->
+  <!--*****************************-->
+
+  <ion-item lines="none">
+    <h1 class="travel_header2">Real estate agents</h1>
+  </ion-item>
+
+  <ion-slides class="swiper-container margin-left-10" pager= false [options]="slideOption" #slidesOne>
+
+    <ion-slide *ngFor="let agent of agents | async ">
+
+      <div class="agent-icon" >
+        <ion-avatar mode="ios" slot="start" (click)="openDetail('/real-agent-detail',agent.id)">
+          <img [src]="agent.image">
+        </ion-avatar>
+      </div>
+
+    </ion-slide>
+  </ion-slides>
+
+
+  <!--*****************************-->
+  <!--****** Show buy items *******-->
+  <!--*****************************-->
+
+  <ion-list-header class="margin-bottom-10">
+    <ion-label class="margin-top-3 travel_header2">Buy</ion-label>
+    <ion-button color="greensea" size="small"  fill="outline" routerLink="/real-list">See more</ion-button>
+  </ion-list-header>
+
+  <ion-slides class="swiper-container margin-left-10" pager= false [options]="slideOption" #slidesTwo>
+
+    <ion-slide  *ngFor="let buyItem of buyItems | async " (click)="openDetail('real-detail',buyItem.id)">
+
+        <ion-card mode="ios" class="main-h-card real-card1 slide-right " >
+
+          <div class="real-card1-bg" [ngStyle]="{'background-image': 'url(' + buyItem.image_header+ ')'}"></div>
+        
+          <div *ngIf="buyItem.new" class="real-tags">New</div>
+          <div *ngIf="buyItem.status==false" class="ribbon pop-in">{{buyItem.status_message}}</div>
+
+          <ion-card-content class="card1-padding ">
+            <h2 class="main-b-header7"><ion-text color="dark">{{ buyItem.price | currency : 'USD' : 'symbol' : '1.0-0' }} </ion-text>  </h2>
+            <p class="margin-top-3 main-header8-500 ">
+              {{buyItem.location}}
+            </p>
+            <h3 class="margin-top-3 main-header8-500">{{buyItem.short_features}}</h3>
+          </ion-card-content>
+
+        </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+
+  <!--*****************************-->
+  <!--****** Show rent items *******-->
+  <!--*****************************-->
+
+  <ion-list-header class="margin-bottom-10">
+    <ion-label class="margin-top-3 travel_header2">Rent</ion-label>
+    <ion-button color="greensea" size="small"  fill="outline" routerLink="/real-list">See more</ion-button>
+  </ion-list-header>
+
+  <ion-slides class="swiper-container margin-left-10" pager= false [options]="slideOption" #slidesThree>
+
+    <ion-slide  *ngFor="let rentItem of rentItems | async "(click)="openDetail('real-detail',rentItem.id)">
+
+        <ion-card class="main-h-card real-card1 slide-right ">
+          <div class="real-card1-bg" [ngStyle]="{'background-image': 'url(' + rentItem.image_header+ ')'}"></div>
+        
+          <div *ngIf="rentItem.new" class="real-tags">New</div>
+          <div *ngIf="rentItem.status==false" class="ribbon pop-in">{{rentItem.status_message}}</div>
+          <!-- <div *ngIf="rentItem.recommended===false" class="ribbon pop-in">Rent</div> -->
+
+          <ion-card-content class="card1-padding ">
+            <h2 class="main-b-header7"> <ion-text color="dark">{{ rentItem.price | currency : 'USD' : 'symbol' : '1.0-0' }}/m</ion-text> </h2>
+            <p class="margin-top-3 main-header8-500 ">
+              {{rentItem.location}}
+            </p>
+            <h3 class="margin-top-3 main-header8-500">{{rentItem.short_features}}</h3>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  
+  <div class="footer-box"></div>
+
+  </ion-grid>
+
+</ion-content>

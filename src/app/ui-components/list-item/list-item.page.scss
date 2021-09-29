@@ -1,0 +1,12 @@
+.big_thumbnail{
+    --size : 180px !important; 
+}
+
+.large_thumbnail{
+    width:200px;
+    height:200px;
+    img{
+        width:auto !important;
+        height:auto !important;
+    }
+}

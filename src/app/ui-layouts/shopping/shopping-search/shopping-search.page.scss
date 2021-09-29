@@ -1,0 +1,25 @@
+ion-thumbnail {
+    //--size: 50px;
+    width: 70px !important;
+    height: 61px !important;
+
+    // margin-left: 24px;
+    margin-bottom: 15px;
+    border-radius: 8px  !important;
+    background-color: #dddddd;
+
+    // min-width: 6rem;    
+    // min-height: 8rem;
+    min-width: 6rem;    
+    min-height: 5rem;
+    // margin-left: 24px;
+    ion-img {
+        border-radius: 8px  !important;
+        // max-width: 6rem;    
+        // min-width: 8rem;
+    }
+}
+ion-searchbar {
+    --cancel-button-color: var(--ion-color-light);
+    --clear-button-color: var(--ion-color-warning);
+}

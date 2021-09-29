@@ -1,0 +1,221 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button color="warning" mode="ios" defaultHref="shopping-cart"></ion-back-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-button routerLink="/shopping-home" routerDirection="root">
+        <ion-icon name="close-outline" color="warning"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="warning">Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid fixed class="ion-no-padding">
+    <ion-row>
+      <ion-col size-lg="8" size-md="12" size-sm="12" size="12">
+        <!--*********** Order summary  ***********-->
+          <!-- <ion-item lines="none">
+            <h1 class="main-header5">Order summary</h1>
+          </ion-item> -->
+          <ion-card class="checkout-card">
+            <ion-item lines="none">
+              <h1 class="main-header5">Order summary</h1>
+            </ion-item>
+            <ion-list>
+              <ion-item *ngFor="let item of orderItems; let i = index" lines="none" class="" lines="none">
+                <ion-thumbnail slot="start">
+                  <ion-img [src]="item.image"></ion-img>
+                </ion-thumbnail>
+                <ion-label class="text-left">
+
+                  <h3>{{ item.name }}</h3>
+                  <p>Size: {{item.size}}</p>
+                  <p>
+                    Addon: <span *ngFor="let addOn of item.addOn;">{{ addOn.name}} &nbsp;</span>
+                  </p>
+                  <!-- <ion-icon name="trash" slot="end" color="dark" (click)="removeCartProduct(i) " ></ion-icon> -->
+                </ion-label>
+                <h5 slot="end" class="main-header7" text-right>{{ item.price | currency:'USD':'symbol' }}</h5>
+              </ion-item>
+
+              <ion-item lines="none" class="margin-top-15" >
+                <ion-label class="text-left">
+                  <h1 class="main-b-header8">Subtotal:</h1>
+                </ion-label>
+                <h1 class="main-b-header8" slot="end" text-right>{{ total | currency:'USD':'symbol' }}</h1>
+                <!-- <span slot="end">{{ total | currency:'USD':'symbol' }}</span> -->
+              </ion-item>
+              <ion-item lines="none" >
+                <ion-label class="text-left">
+                  <h1 class="main-b-header8">Vat({{vat}}%):</h1>
+                </ion-label>
+                <p class="main-b-header8" slot="end" text-right>{{ vatTotal | currency:'USD':'symbol' }}</p>
+                <!-- <span slot="end">{{ total | currency:'USD':'symbol' }}</span> -->
+              </ion-item>
+
+              <ion-item lines="none">
+                <ion-label class="text-left">
+                  <h1 class="main-b-header8">Shipping fee:</h1>
+                </ion-label>
+                <h1 class="main-b-header8" slot="end" text-right>{{ fee | currency:'USD':'symbol' }}</h1>
+                <!-- <span slot="end">{{ total | currency:'USD':'symbol' }}</span> -->
+              </ion-item>
+
+              <ion-item lines="none" class="ion-margin-top">
+                <ion-label class="text-left">
+                  <h1 class="main-b-header8">GrandTotal:</h1>
+                </ion-label>
+                <h1 class="main-b-header8" slot="end" text-right>{{ grandTotal | currency:'USD':'symbol' }}</h1>
+                <!-- <span slot="end">{{ total | currency:'USD':'symbol' }}</span> -->
+              </ion-item>
+
+
+
+            </ion-list>
+          </ion-card>
+
+        <!--*********** Payment  ***********-->
+        <ion-card class="checkout-card">
+          <ion-item lines="none">
+            <h1 class="main-header5">Payment</h1>
+          </ion-item>
+          <ion-radio-group value="payment" (ionChange)="paymentGroupChange($event)">
+            <div class="ion-padding-top ion-padding-bottom margin-top-15">
+              <ion-item lines="none">
+                <ion-radio slot="start" mode="md" color="warning" value="cc" ></ion-radio>
+                <ion-icon slot="start" size="small" name="card-outline"></ion-icon>
+                <ion-label>
+                  <h2 class="main-header7">Credit card</h2>
+                </ion-label>
+
+              </ion-item>
+            </div>
+
+            <div class="ion-padding-top ion-padding-bottom">
+              <ion-item lines="none">
+                <ion-radio slot="start" mode="md" color="warning" value="paypal" ></ion-radio>
+
+                <ion-icon slot="start" size="small" name="logo-playstation"></ion-icon>
+                <ion-label>
+                  <h2 class="main-header7">Paypal</h2>
+                </ion-label>
+
+              </ion-item>
+            </div>
+            <div class="ion-padding-top ion-padding-bottom ">
+              <ion-item lines="none">
+                <ion-radio slot="start" mode="md" color="warning" value="bank" ></ion-radio>
+
+                <ion-icon slot="start" size="small"  name="swap-horizontal-outline"></ion-icon>
+                <ion-label>
+                  <h2 class="main-header7">Bank tranfer</h2>
+                </ion-label>
+
+              </ion-item>
+            </div>
+            <div class="ion-padding-top ion-padding-bottom">
+              <ion-item lines="none">
+                <ion-radio slot="start" mode="md" color="warning" value="cash"  ></ion-radio>
+                <ion-icon slot="start" size="small" name="wallet-outline"></ion-icon>
+                <ion-label>
+                  <h2 class="main-header7">Cash on delivery</h2>
+                </ion-label>
+              </ion-item>
+            </div>
+          </ion-radio-group>
+        </ion-card>
+
+      </ion-col>
+      <ion-col size-lg="4" size-md="12" size-sm="12" size="12">
+          <!--*********** Address  ***********-->
+          <!-- 
+          <ion-item lines="none">
+            <h1 class="main-header5">Shipping address</h1>
+          </ion-item> -->
+          <ion-card class="checkout-card">
+            <ion-item lines="none">
+              <h1 class="main-header5">Shipping address</h1>
+            </ion-item>
+            <!-- <ion-list-header>
+              <ion-label>Address</ion-label>
+              <ion-button *ngIf="userAuth"  (click)="openAddressModal()">Add</ion-button>
+            </ion-list-header> -->
+            <ion-radio-group value="address" (ionChange)="addressGroupChange($event)">
+              <div *ngFor="let address of addresses | async" class="ion-padding-top ion-padding-bottom">
+                <ion-item-sliding>
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p>{{address.label}}</p>
+                      <h3>{{address.fullname}}</h3>
+                      <h3 class="ion-text-wrap">{{address.address}}</h3>
+                      <h3>{{address.phone}}</h3>
+                    </ion-label>
+                    <!-- <div slot="end" class="click-outside"  (click)="editAddress(address.id)" > <h4 class="main-header7">change</h4></div> -->
+                    <!-- <ion-icon name="md-create" slot="end" color="dark" (click)="editAddress(address.id)" ></ion-icon>  -->
+                    <ion-radio mode="md" color="warning" slot="start" [value]="address.id">
+                    </ion-radio>
+                  </ion-item>
+                  <ion-item-options side="end">
+                    <ion-item-option color="" (click)="editAddressModal(address.id)">Edit</ion-item-option>
+                  </ion-item-options>
+                </ion-item-sliding>
+              </div>
+            </ion-radio-group>
+            <ion-button *ngIf="userAuth" color="" fill="blank" expand="full" (click)="openAddressModal()">Add address
+            </ion-button>
+
+          </ion-card>
+
+          <!-- Delivery to -->
+          <!-- <h1 class="main-header6">Delivery to</h1>
+          <ion-card class="info-card ion-padding-top ion-padding-bottom">
+            <ion-item lines="none">
+              <ion-label>
+                <h3>{{(address | async)?.label}}</h3>
+                <p>{{(address | async)?.fullname}}</p>
+                <p class="ion-text-wrap">{{(address | async)?.address}}</p>
+                <p>{{(address | async)?.phone}}</p>
+              </ion-label>
+            </ion-item>
+          </ion-card> -->
+
+      </ion-col>
+    </ion-row>
+    
+
+
+
+
+     
+  </ion-grid>
+</ion-content>
+<ion-footer>
+
+  <ion-toolbar>
+    <ion-grid fixed class="ion-no-padding">
+        <ion-row>
+          <ion-col size="5">
+            <ion-text color="dark">
+              <h1 class="main-header8 margin-top-3 margin-bottom-0">Order total price</h1>
+            </ion-text>
+            <ion-text color="realgreen">
+              <h1 class="main-b-header5 margin-top-0">{{ grandTotal | currency:'USD':'symbol' }}</h1>
+            </ion-text>
+          </ion-col>
+          <ion-col size="7">
+            <!-- <ion-button color="" expand="full" (click)="addToCart()">
+                      Add to cart
+                      <ion-icon slot="end" name="star"></ion-icon>
+                    </ion-button> -->
+            <ion-button color="warning" expand="full" (click)="placeOrder()">
+              Place order
+              <ion-icon slot="start"  name="checkmark-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

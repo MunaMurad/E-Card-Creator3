@@ -1,0 +1,184 @@
+
+
+<ion-content fullscreen="true" (ionScroll)="onScroll($event)" [scrollEvents]="true" [class.transition]="transition">
+  
+  <ion-header class="ion-no-border" slot="fixed">
+    <div *ngIf="(itemDetail | async)?.status == false" class="ribbon pop-in">{{(itemDetail | async)?.status_message}}</div>
+    <ion-toolbar class="first" [class.show-background]="showToolbar">
+      <ion-buttons slot="start">
+        <ion-back-button mode="md" color="light" defaultHref="#"></ion-back-button>
+      </ion-buttons>
+
+      <ion-title  class="main-header4" color="light" [class.show-title]="showToolbar">{{(itemDetail | async)?.title}}</ion-title>
+
+      <ion-buttons color="light" slot="end">
+        <!-- <ion-button color="light">
+          <ion-icon slot="icon-only" ios="call-outline" md="call-sharp"></ion-icon>
+        </ion-button> -->
+
+        <ion-button color="light" routerLink="/real-home" routerDirection="root">
+          <ion-icon slot="icon-only" ios="home-outline" md="share-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+      <!--*****************************-->
+      <!--******* Image header  *******-->
+      <!--*****************************-->
+
+      <!-- <div *ngIf="(itemDetail | async)?.recommended"  class="ribbon pop-in">Best</div> -->
+      <div class="detail-header" [ngStyle]="{'background-image': 'url(' + (itemDetail | async)?.image_header + ')'}">
+        <ion-grid fixed class="ion-no-padding">
+
+          <div class="detail-price">
+            <h1 class="main-b-header4 margin-top-10">
+              Price: {{ (itemDetail | async)?.price | currency : 'USD' : 'symbol' :
+              '1.0-0' }}
+              <!-- <span *ngIf="itemDetail.type===false"  class="ribbon pop-in">Sold</span> -->
+            </h1>
+          </div>
+          <div class="detail-sfeatured">
+            <h2 class="main-header7 ">
+              {{(itemDetail | async)?.short_features}}
+            </h2>
+          </div>
+          <div *ngIf="(itemDetail | async)?.new" class="real-tags-bottom">New</div>
+        </ion-grid>
+      </div>
+
+
+    <ion-grid fixed class="ion-no-padding">
+      <ion-list-header class="margin-bottom-10">
+        <ion-label class="margin-top-3 travel_header2">{{(itemDetail | async)?.title}}</ion-label>
+      </ion-list-header>
+
+      <div class="padding-left-15 padding-right-15">
+        <p class="margin-left-5 margin-top-0">
+          {{(itemDetail | async)?.description}}
+        </p>
+      </div>
+      <!--*********** Features ***********-->
+
+      <ion-item lines="none">
+        <h1 class="main-header5">Features</h1>
+      </ion-item>
+      <div class="">
+
+        <ion-grid style="margin-left: 30px;">
+          <ion-row wrap>
+            <ion-col tappable size-lg="6" size-md="6" size-sm="12" size="12"
+              *ngFor="let feature of (itemDetail | async)?.features">
+              <ion-item class="ion-no-margin ion-no-padding" lines="none">
+                <ion-icon class="margin-right-15" name="checkmark-circle-outline" color="greensea" slot="start">
+                </ion-icon>
+                <ion-label>
+                  <h2>{{feature.title}}:</h2>
+                </ion-label>
+                <ion-label>
+                  <h3>{{feature.value}}</h3>
+                </ion-label>
+              </ion-item>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-row>
+          <ion-col size-lg="6" size-md="6" size-sm="12" size="12">
+
+            <!--*********** location ***********-->
+            <ion-item lines="none">
+              <h1 class="main-header5">Location</h1>
+            </ion-item>
+
+            <ion-item lines="none" class="ion-wrap">
+              <ion-icon class="margin-left-8"  name="navigate-circle-outline" slot="start" color="medium" size="large"></ion-icon>
+              <ion-label class="ion-text-wrap">
+                <h2>{{(itemDetail | async)?.location}}</h2>
+              </ion-label>
+            </ion-item>
+
+          </ion-col>
+
+          <ion-col size-lg="6" size-md="6" size-sm="12" size="12">
+
+            <!--*********** Contact ***********-->
+            <ion-item lines="none">
+              <h1 class="main-header5">Contact agent</h1>
+            </ion-item>
+            <ion-item lines="none" style="padding: 0px !important;" href="#"
+              routerLink="/real-agent-detail/{{(itemDetail | async)?.agentId}}">
+              <ion-avatar slot="start">
+                <img [src]="(agentDetail | async)?.image" />
+              </ion-avatar>
+              <ion-label>
+                <!-- <h3 class="main-header6">{{(itemDetail | async)?.agentId}}</h3> -->
+                <h3 class="main-header6">{{(agentDetail | async)?.name}}</h3>
+                <h3 class="main-header6">{{(agentDetail | async)?.position}}</h3>
+                <ion-icon style="font-size: 16px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]"
+                  [name]="i < (agentDetail | async)?.rating  ? 'star' : 'star-outline'"></ion-icon>
+                <!-- <p class="main-b-header9"  (click)="logout()">LOGOUT</p> -->
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+
+      </div>
+
+
+      <!--*****************************-->
+      <!--****** Recommened *******-->
+      <!--*****************************-->
+
+      <ion-list-header class="margin-top-25 margin-bottom-10">
+        <ion-label class="margin-top-3 travel_header2">Recommened</ion-label>
+      </ion-list-header>
+
+      <ion-slides class="swiper-container margin-left-10 " pager= false [options]="slideOption" #slidesne>
+        <ion-slide *ngFor="let recommenedItem of recommenedItems | async " (click)="openDetail('real-detail',recommenedItem.id)">
+            <ion-card mode="ios" class="main-h-card real-card1 slide-right " >
+
+              <div class="real-card1-bg" [ngStyle]="{'background-image': 'url(' + recommenedItem.image_header+ ')'}"></div>
+          
+              <!-- <div *ngIf="recommenedItem.recommended===false" class="ribbon pop-in">Rent</div> -->
+
+              <ion-card-content class="card1-padding ">
+                <h2 class="main-b-header7"> <ion-text color="dark">{{ recommenedItem.price | currency : 'USD' : 'symbol' : '1.0-0' }}</ion-text>  </h2>
+                <p class="margin-top-3 main-header8-500 ">
+                  {{recommenedItem.location}}
+                </p>
+                <h3 class="margin-top-3 main-header8-500">{{recommenedItem.short_features}}</h3>
+              </ion-card-content>
+
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+
+
+    </ion-grid>
+</ion-content>
+
+<ion-footer color="light">
+  <ion-grid fixed class="ion-no-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button  expand="block" color="pumpkin" (click)="contactAction('Calling......')">
+              <ion-icon slot="start" name="call-outline"></ion-icon>
+              CALL
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button  expand="block" color="pumpkin" (click)="contactAction('Opening email...')">
+              <ion-icon slot="start" name="mail-outline"></ion-icon>
+              E-MAIL
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-grid>
+</ion-footer>

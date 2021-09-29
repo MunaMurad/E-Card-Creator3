@@ -1,0 +1,46 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="pumpkin" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="pumpkin" lass="main-header4">Header title</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Header without a border -->
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Header - No Border</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content fullscreen=true>
+  <ion-header  collapse="condense">
+
+    <ion-toolbar>
+      <ion-title color="pumpkin" size="large">Header title</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- skeleton thumbnail -->
+  <div class="top-grey-box" ></div>
+  <ion-item *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+     <ion-thumbnail slot="start">
+       <ion-skeleton-text ></ion-skeleton-text>
+     </ion-thumbnail>
+     <!-- <ion-avatar slot="start">
+         <ion-skeleton-text animated></ion-skeleton-text>
+       </ion-avatar> -->
+     <ion-label>
+       <h3>
+         <ion-skeleton-text  style="width: 50%"></ion-skeleton-text>
+       </h3>
+       <p>
+         <ion-skeleton-text  style="width: 80%"></ion-skeleton-text>
+       </p>
+       <p>
+         <ion-skeleton-text  style="width: 60%"></ion-skeleton-text>
+       </p>
+     </ion-label>
+   </ion-item>
+ </ion-content>

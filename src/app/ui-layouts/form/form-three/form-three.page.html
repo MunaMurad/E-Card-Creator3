@@ -1,0 +1,267 @@
+<ion-header slot="fixed">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="brown" defaultHref="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="main-header4" color="brown">FORM 3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-grid fixed class="ion-no-padding">
+      <ion-grid>
+        <ion-row>
+          <!-- #############################################-->
+          <!-- ############# Form 1 (left icon) ########### -->
+          <!-- #############################################-->
+
+          <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
+            
+            <ion-card mode="ios"  class="ion-padding">
+              <ion-card-header>
+                <h4 class="ion-no-margin ion-text-center">SIGNUP</h4>
+              </ion-card-header>
+
+                  <ion-list class="ion-margin-top">
+                    <!-- ############ -->
+                    <ion-item  class="sharpedInput margin-bottom-10">
+                      <ion-label>
+                        <ion-icon name="person-add-outline"></ion-icon>
+                        </ion-label>
+                      <ion-input placeholder="Username" ></ion-input>
+                    </ion-item>
+                    <!-- ############ -->                              
+                    <ion-item  class="sharpedInput margin-bottom-10">
+
+                      <ion-label slot="start" class="margin-right-8">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        </ion-label>
+
+                      <ion-input placeholder="Password" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+
+                          <!-- ### Show/hide password ### -->    
+                          <div (click)="onPasswordToggle()" ion-button fill="clear" size="small" >
+                            <ion-icon  slot="icon-only" color="medium" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+                          </div>
+
+                    </ion-item>
+
+                    <!-- ############ -->
+                    <span >
+                      <p class="ion-text-right">Forgot password?</p>
+                    </span>
+                    <!-- ############ -->
+                    <ion-button class="ion-margin-top" color="success" expand="block" shape="">Signin</ion-button>
+                  </ion-list>
+            </ion-card>
+
+          </ion-col>
+
+          <!-- #############################################-->
+          <!-- ########## Form 2 (Stacked Label ) ########## -->
+          <!-- #############################################-->
+
+          <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
+            <ion-card mode="ios" class="ion-padding">
+              <ion-card-header>
+                <h4 class="ion-no-margin ion-text-center">SIGNIN</h4>
+              </ion-card-header>
+              <form>
+                <ion-list>
+
+                  <!-- ############ -->
+                  <ion-list-header mode="md">
+                    <ion-label>
+                      Username
+                    </ion-label>
+                  </ion-list-header>
+                  <ion-item  class="sharpedInput">
+                    <ion-input></ion-input>
+                  </ion-item>
+
+                  <!-- ############ -->
+                  <ion-list-header mode="md">
+                    <ion-label>
+                      E-mail
+                    </ion-label>
+                  </ion-list-header>
+                  <ion-item  class="sharpedInput">
+                    <ion-input></ion-input>
+                  </ion-item>
+
+                  <!-- ############ -->
+                  <ion-list-header mode="md">
+                    <ion-label>
+                      Password
+                    </ion-label>
+                  </ion-list-header>
+                  <ion-item  class="sharpedInput">
+                    <ion-input></ion-input>
+                  </ion-item>
+
+                  <!-- ############ -->
+                  <ion-list-header mode="md">
+                    <ion-label>
+                      Confirm password
+                    </ion-label>
+                  </ion-list-header>
+                  <ion-item  class="sharpedInput">
+                    <ion-input></ion-input>
+                  </ion-item>         
+                  <!-- ############ -->
+                  <ion-button class="ion-margin-top" color="success" expand="block" shape="">Create</ion-button>
+                  <!-- <ion-button  color="primary"  fill="outline" expand="block" >
+                    <ion-icon slot="start"name="logo-facebook"></ion-icon>
+                    Signin with facebook
+                  </ion-button> -->
+
+                  <!-- <span>
+                    <p class="ion-text-center">or</p>
+                  </span>
+                  
+                  <ion-button class="ion-margin-top" color="primary" fill="outline" expand="block">
+                    <ion-icon slot="start" color="primary" name="logo-facebook"></ion-icon>
+                    Signup with Facebook
+                  </ion-button>
+                  <ion-button  color="danger" fill="outline" expand="block">
+                    <ion-icon slot="start" color="danger" name="logo-google"></ion-icon>
+                    Singup with Google
+                  </ion-button> -->
+
+                  <span>
+                    <p class="ion-text-center">or</p>
+                  </span>
+                  <!-- ############ -->
+                  <ion-button class="ion-margin-top" color="primary" expand="block">
+                    <ion-icon slot="start" color="light" name="logo-facebook"></ion-icon>
+                    Signup with Facebook
+                  </ion-button>
+                  <ion-button  color="danger" expand="block">
+                    <ion-icon slot="start" color="light" name="logo-google"></ion-icon>
+                    Singup with Google
+                  </ion-button>              
+                </ion-list>
+              </form>
+            </ion-card>
+          </ion-col>
+
+
+          <!-- #############################################-->
+          <!-- ############# Form 3 (right icon) ########### -->
+          <!-- #############################################-->
+
+          <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
+            <ion-card mode="ios" mode="ios" class="ion-padding">
+              <ion-card-header>
+                <h4 class="ion-no-margin">Event registration</h4>
+              </ion-card-header>
+                <form>
+                  <ion-list>
+                    <!-- ############ -->
+                    <ion-item  class="sharpedInput">
+                      <ion-input placeholder="Firstname" ></ion-input>
+                      <ion-label>
+                        <ion-icon name="person-outline"></ion-icon>
+                        </ion-label>
+                    </ion-item>
+                    <!-- ############ -->               
+                    <ion-item class="ion-padding-end"  class="sharpedInput">
+                      <ion-input placeholder="Lastname" ></ion-input>
+                      <ion-label>
+                        <ion-icon color="medium" name="people-outline"></ion-icon>
+                      </ion-label>
+
+                    </ion-item>
+
+                    <!-- ############ -->               
+                    <ion-item class="ion-padding-end"  class="sharpedInput">
+                      <ion-input placeholder="Company" ></ion-input>
+                      <ion-label>
+                        <ion-icon color="medium" name="business-outline"></ion-icon>
+                      </ion-label>
+                    </ion-item>
+                    <!-- ############ -->               
+                    <ion-item class="ion-padding-end"  class="sharpedInput">
+                      <ion-input placeholder="Phone number" ></ion-input>
+                      <ion-label>
+                        <ion-icon color="medium" name="call-outline"></ion-icon>
+                      </ion-label>
+                    </ion-item>
+                    <!-- ############ -->               
+                    <ion-item class="ion-padding-end"  class="sharpedInput">
+                      <ion-input placeholder="E-mail" ></ion-input>
+                      <ion-label>
+                        <ion-icon color="medium" name="mail-outline"></ion-icon>
+                      </ion-label>
+                    </ion-item>
+                    <!-- ############ -->
+                    <ion-item  class="sharpedInput">
+
+                        <ion-textarea rows="6" placeholder="About your company"></ion-textarea>
+                      <!-- <ion-input placeholder="Username" ></ion-input> -->
+                    </ion-item>
+
+                    <!-- ############ -->               
+                    <ion-item  class="sharpedInput">
+                      <ion-label color="medium">Status</ion-label>
+                      <ion-toggle></ion-toggle>
+                    </ion-item>
+                  <!-- ############ -->               
+                  <ion-item  class="sharpedInput">
+                    <ion-label color="medium">Gender</ion-label>
+                    <ion-select placeholder="Select One">
+                      <ion-select-option value="f">Female</ion-select-option>
+                      <ion-select-option value="m">Male</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+
+                    <span>
+                      <p class="ion-text-right">Already signup?</p>
+                    </span>
+                    <!-- ############ -->
+                    <ion-button class="ion-margin-top" color="success" expand="block" >Submit</ion-button>
+
+                  </ion-list>
+
+                </form>
+            </ion-card>
+          </ion-col>
+
+
+
+          <!-- #########################################-->
+          <!-- ############# Form 4 (Rating) ########### -->
+          <!-- #########################################-->
+          <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
+            <ion-card mode="ios" mode="ios" class="ion-padding">
+              <!-- <ion-card-header>
+                <h4 class="ion-no-margin">Review</h4>
+              </ion-card-header> -->
+                  <ion-list>
+                    <!-- ****** rating ******* -->
+                    <h4 class="ion-text-center">Please give a rating: {{rating}}</h4>
+                    <div class="ion-justify-content-center ion-padding-bottom">
+                      <rating [(ngModel)]="rating"
+                        readonly="false"
+                        size="default" 
+                        resettable= "true">
+                      </rating>
+                    </div>
+
+                    <!-- ############ -->
+                    <ion-item class="sharpedInput">
+                        <ion-textarea rows="6" placeholder="What do think about this product?"></ion-textarea>
+                      <!-- <ion-input placeholder="Username" ></ion-input> -->
+                    </ion-item>
+                    <!-- ############ -->
+                    <ion-button  color="success" expand="block" shape="">Submit</ion-button>
+                  
+                  </ion-list>
+            </ion-card>
+          </ion-col>
+          
+        </ion-row>
+      </ion-grid>
+  </ion-grid>
+
+</ion-content>

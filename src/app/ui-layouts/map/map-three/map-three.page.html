@@ -1,0 +1,49 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="river" defaultHref="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title  color="river" class="main-header4">MAP 3</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!--*********** Map wrapper  ***********-->
+
+  <div id="wrapper">
+    <!--*********** Map  ***********x-->
+    <div #map id="map"></div>
+
+    <!--*********** Detail box ***********-->
+    <div *ngIf="viewDetail" class="place-detail effect6">
+      <ion-card class="place-detail-card">
+
+        <div class="place-detail-card-bg" [ngStyle]="{'background-image': 'url(' + placeImage+ ')'}">
+            <div class="place-detail-card-title">
+              <ion-item lines="none" class="ion-text-center">
+                <ion-label>
+                  <h2 class="main-b-header5">{{placeName}}</h2>
+                  <ion-text color="light">
+                    <p>{{placeDescription}}</p>
+                  </ion-text>
+                  <p>
+                    <ion-icon
+                      style="font-size: 14px !important;"
+                      color="warning"
+                      *ngFor="let i of [0,1,2,3,4]"
+                      [name]="i < placeRating? 'star' : 'star-outline'"
+                    >
+                    </ion-icon>
+                  </p>                
+                  <ion-button fill="outline" slot="end" color="yellow" (click)="openDetail('placeId')">View</ion-button>
+                </ion-label>
+                
+              </ion-item>      
+            </div>
+   
+        </div>
+      </ion-card>
+
+    </div>
+  </div>
+</ion-content>

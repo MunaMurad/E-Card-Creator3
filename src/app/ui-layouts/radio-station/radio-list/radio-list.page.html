@@ -1,0 +1,108 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button auto-hide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="main-header4" >Radio Station</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar color="dark">
+
+        <ion-segment mode="md" value="home">
+          <ion-segment-button value="home">
+            <ion-label>Home</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="fav">
+            <ion-label>Favorite</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+    
+      </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" color="darkgray">
+  <!-- ######################################### Updated: ver2.0  #############################################-->
+  <!-- ##  -Fixed attribute tells Ionic’s grid to use the max-width corresponding to the current breakpoint ## -->
+  <!-- ##  -To edit breakpoint go to variables.css and edit --ion-grid-width- : value  ###-->
+  <!-- ####################################################################################################### -->
+  <ion-grid fixed class="ion-no-padding">
+        <!--*********** Featured ***********-->
+        <ion-item lines="none" color="darkgray">
+            <h2 class="main-header5" color="light">Featured</h2>
+        </ion-item>
+
+
+    <ion-slides class="swiper-container  margin-left-10 " pager= false [options]="slideOption" #slidesOne>
+        <ion-slide  *ngFor="let recommended of recommended | async" (click)="openPlayer(recommended.id)">
+
+            <ion-card color="darkgray" class="radio-main-h-card radio-card">
+    
+                <div class="radio-card-bg" [ngStyle]="{'background-image': 'url(' + recommended.image+ ')'}">
+                    <div class="radio-tags">{{recommended.type}}</div>
+                </div>
+
+                <ion-card-content class="card1-padding">
+                    <ion-label>
+                        <ion-text color="light">
+                            <h2>{{recommended.title}}</h2>
+                        </ion-text>
+                    </ion-label>
+                    <ion-label>
+                        <ion-text color="medium">
+                            <h2>{{recommended.description}}</h2>
+                        </ion-text>
+                    </ion-label>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+    </ion-slides>
+
+        <!--*********** Podcast ***********-->
+    <ion-item lines="none" color="darkgray">
+        <h2 class="main-header5" color="light">Podcast</h2>
+    </ion-item>
+        <ion-list class="" color="">
+            <ion-item color="darkgray" *ngFor="let podcast of podcasts | async" lines="none" (click)="openPlayer(podcast.id)" class="">
+                <ion-icon name="play-circle-outline" size="large" color="light" slot="start"></ion-icon>
+                <ion-label>
+                    <h3>{{podcast.title}}</h3>
+                    <p>{{podcast.description}}</p>
+                </ion-label>
+
+                <ion-thumbnail slot="end">
+                    <ion-img [src]="podcast.image"></ion-img>
+                </ion-thumbnail>
+            </ion-item>
+        </ion-list>
+
+        <!--*********** Radio ***********-->
+        <ion-item lines="none" color="darkgray">
+            <h2 class=" main-header5">Radio</h2>
+        </ion-item>
+            <ion-list class="">
+                <ion-item color="darkgray" *ngFor="let radio of radios | async" lines="none" (click)="openPlayer(radio.id)" class="">
+                    <ion-icon name="play-circle-outline" size="large" color="light" slot="start"></ion-icon>
+                    <ion-label>
+                        <h3>{{radio.title}}</h3>
+                        <p>{{radio.description}}</p>
+                    </ion-label>
+        
+                    <ion-thumbnail slot="end">
+                        <ion-img [src]="radio.image"></ion-img>
+                    </ion-thumbnail>
+                </ion-item>
+        </ion-list>
+    </ion-grid>
+</ion-content>
+<!--  hide ion-tab-bar -->
+<!-- <ion-tab-bar class="ion-no-border" color="dark">
+    <ion-tab-button selected>
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>Favorite</ion-label>
+    </ion-tab-button>
+   
+  </ion-tab-bar> -->

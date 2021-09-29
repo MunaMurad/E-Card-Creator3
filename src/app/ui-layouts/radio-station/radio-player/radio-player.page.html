@@ -1,0 +1,53 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-buttons (click)="close()" >
+             <ion-button color="light">
+                 <ion-icon slot="end" name="md-close"></ion-icon> close
+             </ion-button>
+         </ion-buttons> 
+       </ion-toolbar>
+</ion-header> -->
+<ion-header class="ion-no-border">
+  <ion-toolbar class="first">
+      <!-- <ion-title color="light" slot="start">Player</ion-title> -->
+      <ion-buttons slot="end">
+          <ion-button (click)="close()" >
+              <ion-icon class="close" color="light" name="close-circle-outline"></ion-icon>
+          </ion-button>
+      </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  fullscreen="true" >
+<!-- fab placed to the top end -->
+<!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="close()" >
+    <ion-icon name="close"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+-->
+<div class="profile-header" [ngStyle]="{'background-image': 'url(' + (radioDetail | async)?.image  + ')'}"></div>
+<div class="profile">
+<div class="profile-box">
+  
+    <ion-img  class="profile-image" src="{{(radioDetail | async)?.image}}"></ion-img>
+    <h3 class="ion-margin-top main-b-header6 description" padding-top>{{(radioDetail | async)?.title}}</h3>
+    <p class="description" padding-top>{{(radioDetail | async)?.description}}</p>
+   
+    <!-- play/stop button-->
+    <div>    
+        <input #dummy style="display: none" type="text" value="{{(radioDetail | async)?.url}}">
+
+        <ion-button  fill="clear"   *ngIf="!playing"   (click)="play(dummy.value)" >
+          <ion-icon class="player"   color="light" name="play"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" *ngIf="playing"  (click)="pause()" >
+          <ion-icon class="player"   color="light"  name="pause"></ion-icon>
+        </ion-button>
+    </div>
+
+</div>
+</div>
+
+</ion-content>

@@ -1,0 +1,89 @@
+.card {
+  margin-top: 10px;
+}
+
+ion-avatar {
+  margin: 0 !important;
+}
+
+.item ion-avatar img {
+  width: 9vw;
+  height: 9vw;
+}
+
+.post-description {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+
+
+
+
+/// version 3 without responsive ///
+/* This CSS is used in HTML file -> https://gist.github.com/AnkitMaheshwariIn/20954763f4aabdd5524891cb8e0ad01c */
+
+
+
+  
+
+//**********   2 columns  *************//
+
+.pins {
+  column-count: 2;
+}
+
+.pin {
+  display: inline-block;
+}
+// Media queries
+// @media (min-width: 480px) {
+//   .pins {
+//     column-count: 3;
+//   }
+//   .item ion-avatar img {
+//     width: 7vw !important;
+//     height: 7vw !important;
+//   }
+// }
+
+// @media (min-width: 640px) {
+//   .pins {
+//     column-count: 4;
+//   }
+//   .item ion-avatar img {
+//     width: 5vw !important;
+//     height: 5vw !important;
+//     margin: 6px;
+//   }
+// }
+
+
+//**********   Responsive   *****************//
+.pins2 {
+    column-count: 2;
+    padding: 7px;
+  }
+  
+  .pin2 {
+    display: inline-block;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    background: #f8f8ff;
+    border-radius: 19px;
+  }
+  
+  // Media queries
+  @media (min-width: 480px) {
+      .pins2 {
+        column-count: 3;
+      }
+    }
+    
+    @media (min-width: 640px) {
+      .pins2 {
+        column-count: 4;
+      }
+    }

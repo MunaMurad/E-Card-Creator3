@@ -1,0 +1,28 @@
+ion-radio {
+    --color-checked:green;
+    --color:green;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+ion-radio-group .item-radio-checked ion-icon {
+    fill: teal;
+  }
+  
+  ion-radio-group ion-icon::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: teal;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transform: scale(0);
+  }
+  
+  ion-radio-group .item-radio-checked ion-icon::after {
+    transform: scale(1);
+  }

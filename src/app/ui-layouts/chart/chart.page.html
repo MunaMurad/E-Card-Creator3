@@ -1,0 +1,204 @@
+<ion-header>
+  <ion-toolbar color="instagram">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header4">CHART</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="md" color="instagram">
+    <ion-segment [(ngModel)]="chartView">
+      <ion-segment-button color="light" value="Bar">Bar</ion-segment-button>
+      <ion-segment-button color="light" value="Pie">Pie</ion-segment-button>
+      <ion-segment-button color="light" value="Line">Line</ion-segment-button>
+      <!-- <ion-segment-button color="light" value="More">More</ion-segment-button> -->
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <ion-grid fixed class="ion-no-padding">
+      <div *ngIf="isDataAvailable">
+
+        <!--*********** Bar chart  ***********-->
+        <div *ngIf="chartView==='Bar'">
+          <ion-row>
+            <ion-col size-lg="6" size-md="12" size-sm="12" size="12">
+              <!--*********** Vertical ***********-->
+              <ion-card>
+                <ion-card-header>
+                  Bar chart
+                </ion-card-header>
+                <ion-card-content>
+                  <canvas
+                    baseChart
+                
+                    [datasets]="chartData2"
+                    [labels]="chartLabels2"
+                    [colors]="chartColor7"
+                    [options]="verBarChartOptions"
+                    chartType="bar"
+                  >
+                  </canvas>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size-lg="6" size-md="12" size-sm="12" size="12">
+              <!--*********** Horizontal  ***********-->
+              <ion-card>
+                <ion-card-header>
+                  Bar chart(horizontal)
+                </ion-card-header>
+                <ion-card-content>
+                  <canvas
+                    baseChart
+                    [datasets]="chartData"
+                    [labels]="chartLabels"
+                    [colors]="chartColor1"
+                    [options]="horBarChartOptions"
+                    chartType="horizontalBar"
+                  >
+                  </canvas>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>   
+          </ion-row>        
+
+
+
+        </div>
+
+        <!--*********** Pie chart  ***********-->
+
+        <div *ngIf="chartView==='Pie'">
+
+          <ion-row>
+            <ion-col size-lg="6" size-md="12" size-sm="12" size="12">
+              <!--*********** Pie chart  ***********-->         
+              <ion-card>
+                <ion-card-header>
+                  Pie chart
+                </ion-card-header>
+                <ion-card-content>
+                  <canvas
+                    baseChart
+                    width="200"
+                    height="200"
+                    [datasets]="chartData"
+                    [labels]="chartLabels"
+                    [colors]="chartColor1"
+                    [options]="pieChartOptions"
+                    chartType="pie"
+                  >
+                  </canvas>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size-lg="6" size-md="12" size-sm="12" size="12">
+              <!--*********** Doughnut chart  ***********-->
+              <ion-card>
+                <ion-card-header>
+                  Doughnut chart
+                </ion-card-header>
+                <ion-card-content>
+                  <canvas
+                    baseChart
+                    width="200"
+                    height="600"
+                    [datasets]="chartData"
+                    [labels]="chartLabels"
+                    [colors]="chartColor1"
+                    [options]="pieChartOptions"
+                    chartType="doughnut"
+                  >
+                  </canvas>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>   
+          </ion-row>     
+
+          <ion-row>
+            <ion-col size="12">
+              <!--*********** Half-doughnut chart  ***********-->
+              <ion-card>
+                <ion-card-header>
+                  Half Doughnut chart
+                </ion-card-header>
+                <ion-card-content>
+                  <canvas
+                    baseChart
+                    width="200"
+                    height="600"
+                    [datasets]="chartData"
+                    [labels]="chartLabels"
+                    [colors]="chartColor1"
+                    [options]="halfDonutChartOptions"
+                    chartType="doughnut"
+                  >
+                  </canvas>
+                </ion-card-content>
+              </ion-card>
+            </ion-col> 
+          </ion-row>     
+ 
+        </div>
+
+        <!--*********** Line chart  ***********-->
+        <div *ngIf="chartView==='Line'">
+          <ion-card>
+            <ion-card-header>
+              Line chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas
+                baseChart
+                [datasets]="chartData2"
+                [labels]="chartLabels2"
+                [colors]="chartColor6"
+                [options]="lineChartOptions"
+                chartType="line"
+              >
+              </canvas>
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+        <!--*********** More chart  ***********-->
+        <div *ngIf="chartView==='More'">
+          <!--*********** Radar chart  ***********-->
+          <!-- <ion-card>
+            <ion-card-header>
+              Radar chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas
+                baseChart
+                [datasets]="chartData2"
+                [labels]="chartLabels2"
+                [options]="baseOptions"
+                chartType="radar"
+              >
+              </canvas>
+            </ion-card-content>
+          </ion-card> -->
+
+          <!-- *********** PolarArea chart  *********** -->
+          <!-- <ion-card>
+            <ion-card-header>
+              PolarArea chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas
+                baseChart
+                [datasets]="chartData2"
+                [labels]="chartLabels2"
+                [colors]="chartColor3"
+                [options]="baseOptions"
+                chartType="polarArea"
+              >
+              </canvas>
+            </ion-card-content>
+          </ion-card> -->
+        </div>
+      </div>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons mode="md" slot="start">
+      <ion-back-button  class="ion-margin-left ion-padding-left"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="main-header4">List</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="tertiary">
+
+    <ion-grid fixed class="ion-no-padding">
+
+      <ion-row>
+        <ion-col>
+          <ion-searchbar color="" placeholder="Find the best place." (click)="openSearchModal()" search-icon="search-outline">
+          </ion-searchbar>
+        </ion-col>
+        <ion-col class="fix-col-icon">
+          <ion-buttons>
+            <ion-button (click)="openMap()">
+              <ion-icon slot="icon-only" name="map-outline" color="light"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>  
+    </ion-grid>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid fixed class="ion-no-padding">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar mode="ios">
+      <ion-title color="tertiary" size="large">List</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+
+  <!-- Skeleton screen -->
+  <!-- <div *ngIf="!places">
+    <ion-list class="ion-padding">
+      <ion-list-header>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+      </ion-list-header>
+      <ion-item *ngFor="let i of [0,1,2,3,4,5]">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+    <div>
+      <ion-list class="ion-margin-top ion-padding-top">
+        <ion-item *ngFor="let place of places" lines="none"  routerLink="/travel-detail/{{place.id}}">
+          <ion-thumbnail slot="start">
+            <ion-img [src]="place.image_header"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{place.name}}</h2>
+            <p>{{place.description}}</p>
+            <ion-icon style="font-size: 14px !important;" color="warning" *ngFor="let i of [0,1,2,3,4]"
+              [name]="i < place.rating ? 'star' : 'star-outline'">
+            </ion-icon>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-grid>
+</ion-content>

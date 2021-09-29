@@ -1,0 +1,45 @@
+<ion-content fullscreen>
+  <ion-fab vertical="top" horizontal="end" slot="fixed" >
+    <ion-fab-button  (click)="close()"  size="small" translucent="true">
+      <ion-icon name="close-circle-outline" color="lightgray"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- <ion-item class="close-fake" lines="none" text-center>
+    <ion-button (click)="close()" fill="clear" color="light">
+      <ion-icon name="close" slot="start"></ion-icon>
+      Back
+    </ion-button>
+ 
+    <ion-button (click)="zoom(true)" fill="clear" color="light">
+      <ion-icon name="add" slot="start"></ion-icon>
+      in
+    </ion-button>
+ 
+    <ion-button (click)="zoom(false)" fill="clear" color="light">
+      <ion-icon name="remove" slot="start"></ion-icon>
+      out
+    </ion-button>
+  </ion-item>
+  -->
+
+
+  <ion-slides [options]="sliderOpts" #slider>
+    <ion-slide *ngFor="let image of imgArray.images" (pan)="close()">
+      <div class="swiper-zoom-container">
+        <img src="{{ image }}">
+      </div>
+    </ion-slide>
+    
+    <!-- <ion-slide>
+        <div class="swiper-zoom-container">
+          <img src="{{ img }}">
+        </div>
+      </ion-slide>
+      <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="{{ img }}">
+          </div>
+        </ion-slide> -->
+  </ion-slides>
+
+</ion-content>

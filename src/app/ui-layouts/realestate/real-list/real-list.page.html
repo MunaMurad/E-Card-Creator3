@@ -1,0 +1,147 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar  mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="greensea" defaultHref="#"></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar  mode="ios" placeholder="Search by Location, Area or Pin Code.." (click)="openSearchModal()" search-icon="search-outline"></ion-searchbar>
+    <!-- <ion-buttons slot="end">
+      <ion-button (click)="openMap()">
+        <ion-icon size="" slot="icon-only" name="map-outline" color=""></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+
+  <ion-toolbar >
+
+    <ion-segment mode="md" value="buy" color="greensea" [(ngModel)]="viewType">
+      <ion-segment-button value="buy">
+        <ion-label>Buy</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="rent">
+        <ion-label>Rent</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-toolbar>
+
+
+  <!-- <ion-toolbar>
+    <ion-segment value="all" color="tertiary">
+      <ion-segment-button value="all" color="danger">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favorites" color="danger">
+        <ion-label>Favorites</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar> -->
+
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid fixed class="ion-no-padding">
+  <!--*********** Show buy items ***********-->
+  <div *ngIf="viewType==='buy'">
+    <div class="margin-top-15">
+      <ion-row>
+        <ion-col size-lg="4" size-md="4" size-sm="6" size="12" *ngFor="let buyItem of buyItems | async ">
+          <ion-card class="real-card2 slide-up" routerLink="/real-detail/{{buyItem.id}}">
+            <div *ngIf="buyItem.new" class="real-tags">New</div>
+            <div *ngIf="buyItem.status==false" class="ribbon pop-in">{{buyItem.status_message}}</div>
+
+            <!-- <div *ngIf="buyItem.recommended" class="real-tags">New</div>
+            <div *ngIf="buyItem.recommended===  false"  class="ribbon pop-in">Sold</div> -->
+
+            <div class="real-card2-bg" [ngStyle]="{'background-image': 'url(' + buyItem.image_header+ ')'}">
+            </div>
+            <ion-card-content class="padding-all-15 margin-bottom-5">
+
+              <ion-label>
+                <ion-text color="black">
+                  <h2 class="margin-top-0 main-b-header7"> Price:
+                    {{ buyItem.price | currency : 'USD' : 'symbol' : '1.0-0' }} </h2>
+                  <!-- <h2 class="main-b-header7">{{buyItem.title}}</h2> -->
+                </ion-text>
+              </ion-label>
+              <!-- <ion-label text-wrap>
+                <h2 class="main-b-header8">{{buyItem.title}}</h2>
+            </ion-label> -->
+              <ion-label>
+                <h3 class="margin-top-5 main-header7">{{buyItem.short_features}}</h3>
+              </ion-label>
+
+
+              <ion-label text-wrap>
+                <h3 class="margin-top-5 main-header7">
+
+                  {{buyItem.location}}
+                </h3>
+              </ion-label>
+
+
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+    </div>
+  </div>
+
+  <div *ngIf="viewType==='rent'">
+    <div class="margin-top-15 ">
+
+
+
+
+      <!--*********** Show rent items ***********-->
+
+      <ion-row>
+        <ion-col size-lg="4" size-md="4" size-sm="6" size="12" *ngFor="let rentItem of rentItems | async">
+          <ion-card class="real-card2 slide-up" routerLink="/real-detail/{{rentItem.id}}">
+
+
+            <div *ngIf="rentItem.new" class="real-tags">New</div>
+            <div *ngIf="rentItem.status==false" class="ribbon pop-in">{{rentItem.status_message}}</div>
+
+            <div class="real-card2-bg" [ngStyle]="{'background-image': 'url(' + rentItem.image_header+ ')'}">
+            </div>
+            <ion-card-content class="padding-all-15 margin-bottom-5">
+
+              <ion-label>
+                <ion-text color="black">
+                  <h2 class="margin-top-0  main-b-header7"> Rent:
+                    {{ rentItem.price | currency : 'USD' : 'symbol' : '1.0-0' }} / m </h2>
+                  <!-- <h2 class="main-b-header7">{{rentItem.title}}</h2> -->
+                </ion-text>
+              </ion-label>
+              <!-- <ion-label text-wrap>
+              <h2 class="main-b-header8">{{rentItem.title}}</h2>
+          </ion-label> -->
+              <ion-label>
+                <h3 class="margin-top-5 main-header7">{{rentItem.short_features}}</h3>
+              </ion-label>
+
+
+              <ion-label text-wrap>
+                <h3 class="margin-top-5 main-header7">
+
+                  {{rentItem.location}}
+                </h3>
+              </ion-label>
+
+
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+
+
+
+    </div>
+  </div>
+  </ion-grid>
+</ion-content>

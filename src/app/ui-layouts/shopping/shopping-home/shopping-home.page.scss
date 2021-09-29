@@ -1,0 +1,178 @@
+// Slider Style START 
+.custon-nav{
+    height: 48px;
+    width: 20px;
+    cursor: pointer;
+  
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .prev-icon-custom{
+    background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll 0px 0px;
+  }
+  .prev-icon-custom.disabled{
+    opacity: 0.4;
+    cursor: default;
+  }
+  .next-icon-custom{
+    background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll -32px 0px;
+  }
+  .next-icon-custom.disabled{
+    opacity: 0.4;
+    cursor: default;
+  }
+  .slider-nav{
+    ion-icon{
+        height: 100%;
+    }
+  }
+  
+  .slide-text{
+    position: absolute;
+    color: white;
+    bottom: 30px;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    //height: 100px;
+    margin: 5px auto;
+  }
+  .swiper-slide {
+    width: auto;
+    text-align: left;
+  }
+  .swiper-pagination-bullets {
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+  }
+
+
+  // Slider Style STOP
+
+
+
+// ion-slides{
+//     height: 200px;
+//     width: 100%;
+//     margin-top: -1px !important;
+//     --bullet-background: #ddd;
+//     --bullet-background-active: #999;
+//     // margin-left: -1px !important;
+// }
+// .image-slide{
+//     max-width: 100vw !important;
+//     max-height: 100vh !important; 
+//     /* Center slide text vertically */
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: -webkit-flex;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     -ms-flex-pack: center;
+//     -webkit-justify-content: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     -ms-flex-align: center;
+//     -webkit-align-items: center;
+//     align-items: center;
+// }
+
+
+
+
+
+
+
+ion-searchbar{
+    height: 50px !important;
+    padding: 0px 4px !important;
+}
+
+ion-avatar {
+    background-color: #607D8B;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    min-width: 50px;
+    min-height: 50px;
+}
+ion-avatar[item-start]{
+    margin: 8px 16px 8px 0;
+}
+
+ion-label{
+    padding-left: 10px;
+}
+
+ ion-icon {
+    color: #999;
+    font-size: 25px;
+}
+
+ion-icon.menu-icon {
+    font-size: 30px;
+  }
+
+ion-icon.sidemenu{
+    color: black;
+    font-size: 40px; 
+}
+
+
+
+
+.component-icon {
+    border-radius: 50%;
+  
+    padding: 7px;
+    height: 18px;
+    width: 18px;
+  
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+ .size100 {
+    height: 100px;
+    width: 100px;
+ 
+  }
+  .size50 {
+    height: 50px;
+    width: 50px;
+ 
+  }
+  .size25 {
+    height: 25px;
+    width: 25px;
+  }
+  .size15 {
+    height: 15px;
+    width: 15px;
+  }
+  .component-icon-primary {
+    background: var(--ion-color-primary);
+    color: #fff;
+  }
+
+  .component-icon-dark {
+    background: var(--ion-color-step-850, #27323e);
+    color: var(--ion-item-background, #fff);
+  }
+
+
+ 

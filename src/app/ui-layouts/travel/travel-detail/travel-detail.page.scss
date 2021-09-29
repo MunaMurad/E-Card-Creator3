@@ -1,0 +1,268 @@
+// ion-title{
+//     //--color: transparent !important;
+//     opacity: 0;
+// }
+
+
+ion-card{
+  margin: 0px 0px 15px 0px !important;
+  width: 100% !important;
+}
+ion-chip{
+  padding: 10px !important;
+  border-radius: 4px  !important;
+  height: 35px;
+  margin-left: 11px;
+  // color:#E8E8E8 !important;
+}
+
+/* Transparent standard */
+ion-toolbar.first {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+
+.opening-time ul {
+  padding-left: 18px;
+  margin-top: 5px;
+}
+
+// .hide-title{
+//     opacity: 0 !important;
+// }
+
+ion-buttons.showColor {
+  color: #333;
+}
+ion-avatar {
+  background-color: #ccc;
+  margin: 10px 16px 8px 0 !important;
+}
+.show-title2 {
+  // animation: fadein 0.4s;
+  // -moz-animation: fadein 0.4s; /* Firefox */
+  // -webkit-animation: fadein 0.4s; /* Safari and Chrome */
+  // -o-animation: fadein 0.4s; /* Opera */
+  // --color: #fff !important;
+  // -webkit-transition: opacity 1s ease-in-out;
+  // -moz-transition: opacity 1s ease-in-out;
+  // -ms-transition: opacity 1s ease-in-out;
+  // -o-transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+/* Show background if class is active */
+.show-background {
+  border-style: none;
+  animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s; /* Firefox */
+  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+  -o-animation: fadein 0.5s; /* Opera */
+
+  background:  var(--ion-color-tertiary);
+}
+// .show-invert{
+//     --color:"#F9690E";
+// }
+// .hide-title {
+//     border-style: none;
+//     animation: fadeout 0.5s;
+//     -moz-animation: fadein 0.5s; /* Firefox */
+//     -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+//     -o-animation: fadein 0.5s; /* Opera */
+
+//     background: var(--ion-color-danger);
+// }
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+ion-card {
+  border-radius: 9px !important;
+  //-webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0)  !important;
+  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1) !important;
+
+  //box-shadow: 0 4px 16px rgba(0,0,0,0) !important;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.img-gallery-box {
+  display: inline-block;
+  padding: 4px;
+}
+.img-gallery {
+  margin-left: 8px;
+  width: 110px;
+  height: 90px;
+  background-color: #ddd;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.img-gallery img {
+  border-radius: 4px;
+  width: 120px;
+  height: 90px;
+
+}
+
+.horizontal-scroll {
+  white-space: nowrap;
+  height: auto;
+  overflow-x: scroll;
+  overflow-y: auto;
+}
+
+/* Remove bottom border on md */
+.header-md::after {
+  background-image: none;
+}
+
+/* Remove bottom border on ios */
+.header-ios ion-toolbar:last-child {
+  --border-width: 0;
+}
+
+.img-thumbnail:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+}
+.img-thumbnail {
+  border-radius: 9px !important;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #dddddd;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.detail-header:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 68%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 68%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 68%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+.detail-header {
+  position: relative;
+  height: 300px !important;
+  // background: url(img/1.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.detail-header .detail-title {
+  // font-size: 20px;
+  // font-weight: normal;
+  // color: #FFFFFF;
+  text-align: center;
+  position: absolute;
+  left: 2px;
+  bottom: 20px;
+  width: 100%;
+  min-width: 350px;
+  max-width: 600px;
+  color: #fff;
+  // text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.detail-header ion-item {
+  // font-size: 20px;
+  // font-weight: normal;
+  color: #ffffff;
+  --background: rgba(0, 0, 0, 0);
+  --border-color: rgba(0, 0, 0, 0);
+  // text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.detail-header .detail-price {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  /*color: #86d44d;*/
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.transition {
+  transition: background-size 0.3s ease-in;
+}
+
+.avatar-top {
+  margin: 16px 16px 8px 0;
+  margin-bottom: auto;
+}
+
+.detail-horizontal-scroll {
+  margin-left: 10px;
+  white-space: nowrap;
+  height: auto;
+  overflow-x: scroll;
+  overflow-y: auto;
+  vertical-align: top !important; /* here */
+}
+
+// .title {
+//     color: #111111;
+//     font-weight: 300;
+//     letter-spacing: -0.03em;
+//     font-size: 28px;
+//     line-height: 32px;
+// }
+// .subtitle {
+// color: #aaa;
+// font-size: 20px;
+// font-weight:300;
+// }

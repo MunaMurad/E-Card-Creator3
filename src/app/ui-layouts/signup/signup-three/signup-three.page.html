@@ -1,0 +1,78 @@
+<ion-content fullscreen="true">
+  <ion-header class="ion-no-border" slot="fixed">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button mode="md" color="light" defaultHref="#"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+ <ion-grid>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+       
+          <div class="login-logo">
+            <img src="assets/appicon.svg" alt="Ionic logo">
+          </div>
+
+          <form class="margin-0-28">
+            <ion-list mode="ios">
+
+              <!-- ############ -->
+
+              <ion-item>
+                <ion-label color="light" position="stacked">Firstname</ion-label>
+                <ion-input color="light" ></ion-input>
+              </ion-item>
+
+              <!-- ############ -->
+
+              <ion-item>
+                <ion-label color="light" position="stacked">Lastname</ion-label>
+                <ion-input color="light" ></ion-input>
+              </ion-item>
+
+              <!-- ############ -->
+              <ion-item>
+                <ion-label color="light" position="stacked">Email</ion-label>
+                <ion-input color="light" ></ion-input>
+              </ion-item>
+
+               <!-- ############ -->
+              <ion-item  class="">
+                <ion-label color="light" position="stacked">Password</ion-label>
+                <ion-input color="light" ></ion-input>
+              </ion-item>        
+
+              <!-- ############ -->
+
+              <ion-button class="margin-top-25" color="greensea" expand="block">Create</ion-button>
+  
+              <ion-text color="lightgray">
+                <p class="ion-text-center">-or-</p>
+              </ion-text>
+              <!-- ############ -->
+              <ion-button class="ion-margin-top" color="primary" expand="block">
+                <ion-icon slot="start" color="light" name="logo-facebook"></ion-icon>
+                Signup with Facebook
+              </ion-button>
+              <ion-button  color="danger" expand="block">
+                <ion-icon slot="start" color="light" name="logo-google"></ion-icon>
+                Singup with Google
+              </ion-button>       
+              <ion-text color="dark">
+                <h2  class="ion-text-center ion-margin-bottom main-header8">
+                    By clicking Sign up you agree to the following Terms ans Conditions without reservation
+                </h2>
+            </ion-text>       
+            </ion-list>
+          </form>
+       
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+      
+
+
+</ion-content>

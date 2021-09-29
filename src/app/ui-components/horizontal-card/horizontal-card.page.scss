@@ -1,0 +1,48 @@
+
+  /* Music Card */
+  .music-card {
+    width: 250px;
+    height: 300px;
+    margin: 5px;
+  }
+   .music-card ion-card-header,
+   .music-card ion-card-content {
+    text-align: center;
+  }
+  
+   .music-card img {
+    width: 200px;
+    height: 208px;
+  
+    box-shadow: 0px 2px 8px rgba(2, 8, 20, 0.1), 0px 8px 16px rgba(2, 8, 20, 0.08);
+    border-radius: 6px;
+  }
+  
+   .music-card h2 {
+    font-weight: 600;
+    font-size: 16px;
+  
+    color: var(--text-darker);
+  }
+  
+   .music-card p {
+    color: var(--text-light);
+  }
+  
+   .music-card ion-button {
+    --padding-start: 7px;
+    --padding-end: 7px;
+  
+    margin: 0;
+  }
+  
+   .music-card .button-largest {
+    font-size: 28px;
+  }
+  
+   .music-card ion-progress-bar {
+    margin: 30px 0 20px;
+  
+    --background: var(--background-darker);
+    --progress-background: var(--text-dark);
+  }

@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+    <!-- <ion-searchbar showcancelbutton (ionInput)="filterList($event)" (ionCancel)="close()" cancelButtonText="close"></ion-searchbar> -->
+    <ion-searchbar class="ion-margin-top"  #searchbar placeholder="Search by Location, Area or Pin Code" showCancelButton  (ionInput)="filterList($event)" (ionCancel)="close()" cancelButtonText="close"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+
+<ion-list class="ion-margin-top">
+    <ion-item *ngFor="let result of resultList" lines="none" button  (click)="openDetail(result.id)"     >
+        <ion-thumbnail slot="start">
+            <ion-img [src]="result.image_header"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+            <h2>{{result.title}}</h2>
+            <p>{{result.location}}</p>
+            <p>{{result.price}}</p>
+        </ion-label>
+    </ion-item>
+</ion-list>
+
+</ion-content>
