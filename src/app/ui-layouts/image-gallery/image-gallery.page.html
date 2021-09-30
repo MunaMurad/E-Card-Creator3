@@ -1,28 +1,150 @@
 <ion-header >
-  <ion-toolbar color="pink">
+  <ion-toolbar color="scarletred">
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title  class="main-header4">Image gallery</ion-title>
+    <ion-title  class="main-header4">انشاء دعوة</ion-title>
   </ion-toolbar>
-  <ion-toolbar  color="pink">
+  <ion-toolbar  color="scarletred">
     <ion-grid fixed class="ion-no-padding">
       <ion-segment mode="md" [(ngModel)]="galleryView" >
-        <ion-segment-button value="two">2 colunms</ion-segment-button>
-        <ion-segment-button value="three">3 colunms</ion-segment-button>
-        <ion-segment-button value="four">4 colunms</ion-segment-button>
+        <ion-segment-button value="two"> مكتوبة</ion-segment-button>
+        <ion-segment-button value="three">مساحة حرة</ion-segment-button>
+        <ion-segment-button value="four"> الدعوات الحالية</ion-segment-button>
       </ion-segment>
     </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content class="backg" >
   <ion-grid fixed>
       <!--***********  2 columns  ***********-->
       <ion-grid  *ngIf="galleryView==='two'">
           <ion-row wrap color="gray">
-            <ion-col size="6"  *ngFor="let image of imagesArray,let i = index">
-                <img class="img-item" [src]="image.url"   (click)="openImageViewer(i)"/>
+            <ion-col >
+
+              <ion-card >
+                <img src="../../assets/pictures/wedding2.jpg">
+                
+                <ion-card-header>
+                <ion-card-title class="ion-text-center">زواج</ion-card-title>
+                
+                </ion-card-header>
+                <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+                 strong class="my-action-button" >انتقل</ion-button>
+                
+                
+                </ion-card>
+                
+                
+                
+                
+                
+                
+                
+                <!--card with image for(hena party)-->
+                
+                <ion-card >
+                <img src="../../assets/pictures/hena.jpg">
+                
+                <ion-card-header>
+                <ion-card-title class="ion-text-center">ليلة الحنّه</ion-card-title>
+                </ion-card-header>
+                <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+                 strong class="my-action-button" >انتقل</ion-button>
+                
+                
+                </ion-card>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <ion-card >
+                
+                
+                <img src="../../assets/pictures/bye.jpg">
+                
+                <ion-card-header>
+                <ion-card-title class="ion-text-center">توديع عزوبية</ion-card-title>
+                <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+                strong class="my-action-button" >انتقل</ion-button>
+                
+                
+                </ion-card-header>
+                </ion-card>
+                
+                
+                <!--card and image for (baby)-->
+                <ion-card >
+                <img src="../../assets/pictures/baby1.jpg">
+                
+                <ion-card-header>
+                <ion-card-title class="ion-text-center"> مباركة مولود</ion-card-title>
+                <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+                strong class="my-action-button" >انتقل</ion-button>
+                
+                
+                </ion-card-header>
+                </ion-card>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <!--card and image for (pijama party)-->
+                
+                <ion-card >
+                <img src="../../assets/pictures/pij.jpg">
+                
+                 <ion-card-header>
+                  <ion-card-title class="ion-text-center">حفلة مبيّت</ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+                  strong class="my-action-button" >انتقل</ion-button>
+                
+                
+                 </ion-card-header>
+                  </ion-card>
+                
+                
+                
+                
+                
+                
+                
+                
+                <!--card and image for (gradution part)-->
+                
+                
+                <ion-card >
+                <img src="../../assets/pictures/gradution.jpg">
+                
+                 <ion-card-header>
+                  <ion-card-title class="ion-text-center">تخرج</ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+                  strong class="my-action-button" >انتقل</ion-button>
+                
+                
+                 </ion-card-header>
+                  </ion-card>
+                
+                
+
+
             </ion-col>
           </ion-row>
       </ion-grid>
@@ -31,9 +153,124 @@
       
       <ion-grid *ngIf="galleryView==='three'">
           <ion-row wrap color="gray">
-            <ion-col size="4"  *ngFor="let image of imagesArray,let i = index"  >
-              <img [src]="image.url"   (click)="openImageViewer(i)"/>
+            <ion-col   >
+
+
+      <!--card and image for (gradution part)-->
+      
+  
+      <ion-card >
+        <img src="../../assets/pictures/gradution.jpg">
+       
+         <ion-card-header>
+          <ion-card-title class="ion-text-center">تخرج</ion-card-title>
+          <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+          strong class="my-action-button" >انتقل</ion-button>
+       
+       
+         </ion-card-header>
+          </ion-card>
+       
             
+
+  <ion-card >
+    <img src="../../assets/pictures/wedding2.jpg">
+    
+     <ion-card-header>
+      <ion-card-title class="ion-text-center">زواج</ion-card-title>
+     
+     </ion-card-header>
+     <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+     strong class="my-action-button" >انتقل</ion-button>
+   
+   
+      </ion-card>
+   
+  
+  
+  
+  
+  
+  
+  <!--card with image for(hena party)-->
+  
+    <ion-card >
+    <img src="../../assets/pictures/hena.jpg">
+    
+     <ion-card-header>
+      <ion-card-title class="ion-text-center">ليلة الحنّه</ion-card-title>
+     </ion-card-header>
+     <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+     strong class="my-action-button" >انتقل</ion-button>
+   
+   
+      </ion-card>
+   
+  
+  
+  
+  
+  <!--card and image for (bye bye single life)-->
+  
+  <ion-card >
+  
+     
+    <img src="../../assets/pictures/bye.jpg">
+   
+     <ion-card-header>
+      <ion-card-title class="ion-text-center">توديع عزوبية</ion-card-title>
+      <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+      strong class="my-action-button" >انتقل</ion-button>
+   
+   
+     </ion-card-header>
+      </ion-card>
+  
+  
+    <!--card and image for (baby)-->
+      <ion-card >
+   <img src="../../assets/pictures/baby1.jpg">
+  
+    <ion-card-header>
+     <ion-card-title class="ion-text-center"> مباركة مولود</ion-card-title>
+     <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+     strong class="my-action-button" >انتقل</ion-button>
+  
+  
+    </ion-card-header>
+     </ion-card>
+  
+  
+  
+  
+  
+  
+  
+  
+     
+  <!--card and image for (pijama party)-->
+  
+    <ion-card >
+      <img src="../../assets/pictures/pij.jpg">
+     
+       <ion-card-header>
+        <ion-card-title class="ion-text-center">حفلة مبيّت</ion-card-title>
+        <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
+        strong class="my-action-button" >انتقل</ion-button>
+     
+     
+       </ion-card-header>
+        </ion-card>
+  
+  
+  
+  
+  
+  
+  
+
+              
+
             </ion-col>
           </ion-row>
       </ion-grid>
@@ -42,8 +279,11 @@
       <!--***********  4 columns  ***********-->
       <ion-grid *ngIf="galleryView==='four'">
           <ion-row wrap color="gray">
-            <ion-col  size="3" *ngFor="let image of imagesArray,let i = index" >
-                <img [src]="image.url"   (click)="openImageViewer(i)"/>
+            <ion-col  >
+
+              <!--Here to write the code of current invitation and access to camera and read the QR code-->
+
+
             </ion-col>
           </ion-row>
       </ion-grid>

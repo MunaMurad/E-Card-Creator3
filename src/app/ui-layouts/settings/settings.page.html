@@ -1,0 +1,26 @@
+<ion-header >
+  <ion-toolbar color="scarletred">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4">Setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+   <ion-grid size="fixed">
+    <ion-row size="50">
+       <ion-col size="12">
+         <ion-item> 
+           <ion-label size="16px">
+             Toggle color theme 
+           </ion-label>
+           <ion-toggle (ionChange)="onToggleColorTheme($event)"></ion-toggle>
+         </ion-item>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+   </div>
+ </ion-content>
+ 
