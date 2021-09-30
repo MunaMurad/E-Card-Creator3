@@ -1,25 +1,23 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-menu-button color="orange" auto-hide="false"></ion-menu-button>
+      <ion-menu-button color="medium" auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title color="orange" lass="main-header4">FORGOT</ion-title>
+    <ion-title color="medium" size="large">FORGOT</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="orange"></ion-back-button>
+      <ion-back-button color="medium"></ion-back-button>
     </ion-buttons>
     <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
   </ion-toolbar>
 </ion-header>
 
+
+
+
+
 <ion-content fullscreen=true>
   <ion-grid fixed class="ion-no-padding">
-      <ion-header class="ion-no-border" collapse="condense">
-        <ion-toolbar>
-          <ion-title color="orange" size="large">FORGOT</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-
+  
 
       <form [formGroup]="resetPasswordForm" novalidate>
         <div class="login-form">
@@ -45,11 +43,11 @@
             <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
           </p>
 
-          <ion-button mode="ios" color="orange" expand="block" [disabled]="!resetPasswordForm.valid"
+          <ion-button mode="ios" color="medium" expand="block" [disabled]="!resetPasswordForm.valid"
             (click)="resetPassword()">
             Recover
           </ion-button>
-          <ion-button mode="ios" color="orange" expand="block" fill="outline" class="ion-margin-top"
+          <ion-button mode="ios" color="medium" expand="block" fill="outline" class="ion-margin-top"
             routerLink="/fire-signup">
             Create new user
           </ion-button>

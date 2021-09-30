@@ -1,10 +1,10 @@
-
 <ion-header class="ion-no-border">
-    <ion-toolbar>
+    <ion-toolbar >
         <ion-buttons slot="end">
-            <ion-menu-button color="orange" auto-hide="false"></ion-menu-button>
+            <ion-menu-button color="medium" auto-hide="false"></ion-menu-button>
         </ion-buttons>
-        <ion-title color="orange" lass="main-header4">SIGN IN</ion-title>
+        <ion-title color="medium" size="large">SIGN IN</ion-title>
+
         <!-- <ion-buttons slot="start">
             <ion-back-button color="orange"></ion-back-button>
         </ion-buttons> -->
@@ -15,12 +15,7 @@
 
 <ion-content fullscreen=true>
     <ion-grid fixed class="ion-no-padding">
-        <ion-header  class="ion-no-border" collapse="condense">
-    
-        <ion-toolbar>
-            <ion-title color="orange" size="large">SIGN IN</ion-title>
-        </ion-toolbar>
-        </ion-header>
+ 
 
 
         <!-- <div class="logo-box">
@@ -112,11 +107,11 @@
                     Sign in
                 </ion-button> -->
 
-                <ion-button mode="ios" color="orange" expand="block" [disabled]="!loginForm.valid" (click)="login()">
+                <ion-button mode="ios" color="black" expand="block" [disabled]="!loginForm.valid" (click)="login()">
                     Sign in
                 </ion-button>
 
-                <ion-button mode="ios" color="orange" expand="block" fill="outline" class="ion-margin-top" (click)="register()">
+                <ion-button mode="ios" color="black" expand="block" fill="outline" class="ion-margin-top" (click)="register()">
                     Create new user
                 </ion-button>
                 <ion-text color="medium">

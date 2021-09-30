@@ -1,13 +1,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "REPLACE-WITH-YOUR-KEY",
-    authDomain: "REPLACE-WITH-YOUR-KEY",
-    databaseURL: "REPLACE-WITH-YOUR-KEY",
-    projectId: "REPLACE-WITH-YOUR-KEY",
-    storageBucket: "REPLACE-WITH-YOUR-KEY",
-    messagingSenderId: "REPLACE-WITH-YOUR-KEY",
-    appId: "REPLACE-WITH-YOUR-KEY",
+    apiKey: "AIzaSyBn6PSs-grLloLvTqn3R4MsfLN535M4wOU",
+    authDomain: "e-card-creator.firebaseapp.com",
+    projectId: "e-card-creator",
+    storageBucket: "e-card-creator.appspot.com",
+    messagingSenderId: "610815746444",
+    appId: "1:610815746444:web:6edfc71ebfe7be4aa2b6a9",
+    measurementId: "G-QYB9F91DSF"
   }
 };
 

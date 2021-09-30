@@ -30,18 +30,18 @@ var fileName = process.argv[2];
 //console.log(4);
 
 // Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
+firebase.initializeApp(
+  {
+  apiKey: "AIzaSyBn6PSs-grLloLvTqn3R4MsfLN535M4wOU",
+  authDomain: "e-card-creator.firebaseapp.com",
+  projectId: "e-card-creator",
+  storageBucket: "e-card-creator.appspot.com",
+  messagingSenderId: "610815746444",
+  appId: "1:610815746444:web:6edfc71ebfe7be4aa2b6a9",
+  measurementId: "G-QYB9F91DSF"
+}
 
-  // apiKey: "YOUR_API_KEY",
-  // authDomain: "YOUR_API_KEY",
-  // databaseURL: "YOUR_API_KEY",
-  // projectId: "YOUR_API_KEY",
-  // storageBucket: "YOUR_API_KEY",
-  // messagingSenderId: "YOUR_API_KEY",
-  // appId: "YOUR_API_KEY"
-
-
-});
+);
 
 
 

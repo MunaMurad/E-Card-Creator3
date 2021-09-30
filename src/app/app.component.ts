@@ -134,12 +134,12 @@ export class AppComponent {
     },
 
   //***************************************//
-  {
+ /*{
     title: 'Map',
     url: 'map-home',
     icon: 'map'
   },
-  
+  */
 
   {
     title: 'Signin',

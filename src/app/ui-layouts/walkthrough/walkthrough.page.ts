@@ -513,35 +513,38 @@ export class WalkthroughPage implements OnInit {
 //************ Slides ***********//
   slides = [
     {
-      title: "ionic 5 firebase fullapp",
+      title: "E-Card Creator",
       description:
-        "Speed-up your Ionic 5 firebase app development with tons of ready-to-use firebase apps , UI layouts , UI components",
+        "بخطوات بسيطة سوف تتمكن من الحصول على بطاقة إلكترونية إحترافية",
       image:
-        "https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_unlock_24mb.svg?alt=media&token=48f2783c-ce81-49cd-936c-54817ad01b8c",
-      color: "#c0392b",
+        "../assets/copy_84080478.png",
+      color: "#e6cca6",
     },
+    
     {
-      title: "Ready-to-use firebase app",
+      title: "هنئ و شارك الجميع أفراحهم",
       description:
-        "Like Food delivery , Ecommerce , Real estate  , Travel guide , Radio station etc.",
+        "تبادل الدعوات و التهاني مع رفاقك و أحبابك بطريقة سريعة و مواكبة للعصر",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic5fullapp-4d4bb.appspot.com/o/undraw_online_connection_6778.svg?alt=media&token=7d420b1e-cbcb-4956-8a8b-5ed26b7d8de7",
-      color: "#e74c3c ",
+      color: "#e0c29e ",
     },
     {
-      title: "Ton-of-layouts",
+      title: "تميّـــز",
       description:
-        "Beautifully designed app/layout  ex: Chat , Food delivery ,Travel guide, Shopping, Real estate , Map , Feed , Radio station , Profile , Image Gallery and much more.  ",
+        "و احصل على تصاميم مجانية و رائعة، بالإضافة إلى الخيارات المتعددة، والمناسبات المتنوعة ",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_start_building_vqhd.svg?alt=media&token=509089ba-29c0-4dc5-a368-0cf1a9db6c93",
-      color: "#d35400",
+      color: "#e0c29e",
     },
     {
-      title: "Ready-to-use components",
-      description: " Ex: shrinking / fading header , star rating etc.",
+      title: "و العديد من المميزات",
+      description: "سنكتشفها معًا",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_design_sprint_x3eb.svg?alt=media&token=d6d88aae-d80b-48ec-bb2e-2221fb19de3d",
-      color: "#e67e22",
+      color: "#e0c29e",
+      background: "../../../assets/eberhard-grossgasteiger-TRE0n2_rQIU-unsplash.jpg" ,
+    
     }
   ];
 

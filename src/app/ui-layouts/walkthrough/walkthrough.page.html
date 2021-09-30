@@ -11,64 +11,62 @@
   </ion-header> -->
 
 
-<ion-content fullscreen="true" class="tutorial-page">
+  <ion-content fullscreen="true" class="tutorial-page" >
 
-  <ion-header class="ion-no-border" slot="fixed">
-    <ion-toolbar class="first">
-
-      <ion-buttons color="light" slot="start">
-        <ion-button color="light" (click)="toggleSideMenu()">
-          <ion-icon slot="icon-only" ios="apps-outline" size="small" md="call-sharp"></ion-icon>
-          &nbsp; &nbsp;Skip
-        </ion-button>
-
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-
-  <!-- <ion-slides pager="true" [options]="slideOptsOne" >
-      <ion-slide *ngFor="let s of itemArray.image_slide">
-          <img class="image-slide" [src]="s">
+    <ion-header class="ion-no-border" slot="fixed">
+      <ion-toolbar class="first">
+  
+        <ion-buttons color="light" slot="start">
+          <ion-button color="light" (click)="toggleSideMenu()">
+            <ion-icon slot="icon-only" ios="apps-outline" size="small" md="call-sharp"></ion-icon>
+            &nbsp; &nbsp;تخطي
+          </ion-button>
+  
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+  
+    <!-- <ion-slides pager="true" [options]="slideOptsOne" >
+        <ion-slide *ngFor="let s of itemArray.image_slide">
+            <img class="image-slide" [src]="s">
+        </ion-slide>
+    </ion-slides> -->
+  
+    <ion-slides pager="true" [options]="slideFlip" #slidesOne>
+      <ion-slide *ngFor="let slide of slides" [ngStyle]="{'background-color': slide.color} ">
+        <!-- <ion-toolbar transparent>
+                  <ion-buttons end>
+                      <button ion-button menuToggle clear color="light">Skip</button>                                
+                  </ion-buttons>
+            </ion-toolbar> -->
+  
+        <div class="intro-box">
+          <img [src]="slide.image" class="pop-in slide-image" />
+          <h2 class="slide-title main-b-header6" [innerHTML]="slide.title"></h2>
+          <p [innerHTML]="slide.description"></p>
+          <div>
+            <ion-button color="orange" fill="clear" size="" (click)="moveToNext(slidesOne)">
+              <ion-icon  slot="end" name="arrow-forward-circle-outline"  size=""></ion-icon>
+              <ion-label slot="start"> التالي</ion-label>
+            </ion-button>
+          </div>
+        </div>
+  
       </ion-slide>
-  </ion-slides> -->
-
-  <ion-slides pager="true" [options]="slideFlip" #slidesOne>
-    <ion-slide *ngFor="let slide of slides" [ngStyle]="{'background-color': slide.color} ">
-      <!-- <ion-toolbar transparent>
-                <ion-buttons end>
-                    <button ion-button menuToggle clear color="light">Skip</button>                                
-                </ion-buttons>
-          </ion-toolbar> -->
-
-      <div class="intro-box">
-        <img [src]="slide.image" class="pop-in slide-image" />
-        <h2 class="slide-title main-b-header6" [innerHTML]="slide.title"></h2>
-        <p [innerHTML]="slide.description"></p>
-        <div>
-          <ion-button color="yellow" fill="clear" size="" (click)="moveToNext(slidesOne)">
-            <ion-icon  slot="end" name="arrow-forward-circle-outline"  size=""></ion-icon>
-            <ion-label slot="start"> NEXT</ion-label>
+      
+      <!-- Last slide -->
+      <ion-slide class="lastslide">
+        <div class="introBox" margin-top>
+          
+          <!--<h2 class="slide-title">Let's get started</h2>-->
+          <h3 class="slide-title main-b-header6">
+            لتبـدأ التجربة 
+          </h3>
+          <ion-button mode="ios" color="black" expand="block" (click)="toggleSideMenu()">
+            اضغط هنا
           </ion-button>
         </div>
-      </div>
-
-    </ion-slide>
-    
-    <!-- Last slide -->
-    <ion-slide>
-      <div class="introBox" margin-top>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_finish_line_katerina_limpitsouni_xy20.svg?alt=media&token=c56773b7-9092-4c8c-9e02-128c3d43fc52"
-          class="slide-image" />
-        <!--<h2 class="slide-title">Let's get started</h2>-->
-        <h3 class="slide-title main-b-header6">
-          “But don't take my word.”
-        </h3>
-        <ion-button color="alizarin" (click)="toggleSideMenu()">
-          Try it for yourself.
-        </ion-button>
-      </div>
-    </ion-slide>
-  </ion-slides>
-
-</ion-content>
+      </ion-slide>
+    </ion-slides>
+  
+  </ion-content>

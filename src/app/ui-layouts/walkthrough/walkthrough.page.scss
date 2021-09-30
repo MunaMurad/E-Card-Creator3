@@ -1,6 +1,7 @@
-.content {
+//.content {
   // background-color: #3465a4;
-}
+//}
+
 
 //Fullscreen animated rainbow gradient
 //  ion-content {
@@ -96,4 +97,16 @@ ion-slides{
   --bullet-background-activ: #ffeb3b !important;
   --progress-bar-background: #fff !important;
   --progress-bar-background-active: #ffeb3b !important;
-}
+  --background: none;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../../assets/ranurte-VPTSnznXtyQ-unsplash.jpg');
+  opacity: 0.7;
+
+
+ }
+
+ .color{
+  background: linear-gradient(to bottom, #ffffcc -6%, #993333 100%);
+ }

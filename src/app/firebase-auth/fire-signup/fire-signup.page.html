@@ -1,24 +1,20 @@
 <ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-buttons slot="end">
-        <ion-menu-button color="orange" auto-hide="false"></ion-menu-button>
+        <ion-menu-button color="medium" auto-hide="false"></ion-menu-button>
       </ion-buttons>
-      <ion-title color="orange" lass="main-header4">SIGN UP</ion-title>
+      <ion-title color="medium" size="large">SIGN UP</ion-title>
       <ion-buttons slot="start">
-        <ion-back-button color="orange"></ion-back-button>
+        <ion-back-button color="medium"></ion-back-button>
       </ion-buttons>
       <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
     </ion-toolbar>
   </ion-header>
-  
+
+
   <ion-content fullscreen=true>
     <ion-grid fixed class="ion-no-padding">
-        <ion-header class="ion-no-border" collapse="condense">
-          <ion-toolbar>
-            <ion-title color="orange" size="large">SIGN UP</ion-title>
-          </ion-toolbar>
-        </ion-header>
-      
+       
         <div class="register-form ion-margin">
             <ion-text color="dark">
                 <h2 text-center class="ion-margin-bottom main-header7">
@@ -145,11 +141,11 @@
                 </ion-text>
 
                 <!-- Submit button -->
-                <ion-button mode="ios" color="orange" expand="block" class="ion-margin-top" [disabled]="!registerForm.valid"
+                <ion-button mode="ios" color="medium" expand="block" class="ion-margin-top" [disabled]="!registerForm.valid"
                     (click)="registerUser()">
                     Create
                 </ion-button>
-                <ion-button mode="ios" color="orange" expand="block" fill="outline" class="ion-margin-top"
+                <ion-button mode="ios" color="medium" expand="block" fill="outline" class="ion-margin-top"
                     routerLink="/fire-signin">
                     Cancel
                 </ion-button>
