@@ -12,7 +12,6 @@ import { UserService } from "../../services/user.service";
   styleUrls: ["./fire-signin.page.scss"],
 })
 export class FireSigninPage implements OnInit {
-  
   public showPassword: boolean = false;
   redirectUrl: string;
   //****** form validation ******//
