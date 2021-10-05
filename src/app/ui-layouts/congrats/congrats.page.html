@@ -1,13 +1,13 @@
-<ion-header >
+<ion-header   >
 
-
-  <ion-toolbar color="lightbrown">
+ 
+  <ion-toolbar color="medium">
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
     <ion-title  class="main-header4">انشاء تهنئة</ion-title>
   </ion-toolbar>
-  <ion-toolbar  color="lightbrown">
+  <ion-toolbar color="medium" >
     <ion-grid fixed class="ion-no-padding">
       <ion-segment mode="md" [(ngModel)]="galleryView" >
         <ion-segment-button value="two"> مكتوبة</ion-segment-button>
@@ -23,25 +23,25 @@
       <ion-grid  *ngIf="galleryView==='two'">
           <ion-row wrap color="gray">
             <ion-col >
-
+   <!--card with image for (wedding)-->
               <ion-card >
                 <img src="../../assets/pictures/wedding.jpg">
                
                  <ion-card-header>
-                  <ion-card-title class="ion-text-center">عقد قران</ion-card-title>
+                  <ion-card-title class="ion-text-center" color="black">عقد قران</ion-card-title>
                  
                  </ion-card-header>
-                 <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
-                 strong class="my-action-button" >انتقل</ion-button>
+                 <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+                 strong class="my-action-button" class="ion-buuton" >انتقل</ion-button>
                 </ion-card>
               <!--card with image for (baby)-->
               <ion-card >
-                <img src="../../assets/pictures/baby2.jpg">
+                <img src="../../assets/pictures/baby3.jpg">
                
                  <ion-card-header>
-                  <ion-card-title class= "ion-text-center">مولود</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="outline" color="lightgray" 
-                  strong class="my-action-button" >انتقل</ion-button>
+                  <ion-card-title class= "ion-text-center"color="black" >مولود</ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" 
+                  strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
                
                
                  </ion-card-header>
@@ -57,9 +57,9 @@
                 <img src="../../assets/pictures/friday.jpg">
                
                  <ion-card-header>
-                  <ion-card-title class= "ion-text-center">يوم الجمعة</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
-                  strong class="my-action-button" >انتقل</ion-button>
+                  <ion-card-title class= "ion-text-center"color="black">يوم الجمعة</ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+                  strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
                
                
                  </ion-card-header>
@@ -74,10 +74,10 @@
                 <img src="../../assets/pictures/Rmadan.jpg">
                
                  <ion-card-header>
-                  <ion-card-title class="ion-text-center">رمضان</ion-card-title>
+                  <ion-card-title class="ion-text-center"color="black">رمضان</ion-card-title>
               
-                  <ion-button  expand="full" shape="round" fill="outline" color="pink"
-                  strong class="my-action-button" >انتقل</ion-button>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+                  strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
                
                
                  </ion-card-header>
@@ -93,15 +93,11 @@
                 <img src="../../assets/pictures/Eid.jpg">
                
                  <ion-card-header>
-                  <ion-card-title class="ion-text-center">عيد مبارك</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="outline" color="gray"
-                  strong class="my-action-button" >انتقل</ion-button>
+                  <ion-card-title class="ion-text-center" color="black">عيد مبارك</ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+                  strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
                
                
-                 </ion-card-header>
-                  </ion-card>
-              
-
             </ion-col>
           </ion-row>
       </ion-grid>
@@ -113,14 +109,38 @@
             <ion-col>
 
 
+
+
+           <ion-card >
+             <img src="../../assets/pictures/wedding.jpg">
+               
+          <ion-card-header>
+                  <ion-card-title class="ion-text-center" color="black">عقد قران</ion-card-title>
+                 
+                 </ion-card-header>
+                 <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+                 strong class="my-action-button" class="ion-buuton" >انتقل</ion-button>
+                </ion-card>
+
+
+
+
+
+
+
+
+
+
+
+
 <!--card with image for (مولود)-->
 <ion-card >
-  <img src="../../assets/pictures/baby2.jpg">
+  <img src="../../assets/pictures/baby3.jpg">
  
    <ion-card-header>
-    <ion-card-title class= "ion-text-center">مولود</ion-card-title>
-    <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
-    strong class="my-action-button" >انتقل</ion-button>
+    <ion-card-title class= "ion-text-center"color="black">مولود</ion-card-title>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+    strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
  
  
    </ion-card-header>
@@ -135,9 +155,9 @@
   <img src="../../assets/pictures/friday.jpg">
  
    <ion-card-header>
-    <ion-card-title class= "ion-text-center">يوم الجمعة</ion-card-title>
-    <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
-    strong class="my-action-button" >انتقل</ion-button>
+    <ion-card-title class= "ion-text-center"color="black">يوم الجمعة</ion-card-title>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+    strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
  
  
    </ion-card-header>
@@ -150,10 +170,10 @@
   <img src="../../assets/pictures/Rmadan.jpg">
  
    <ion-card-header>
-    <ion-card-title class="ion-text-center">رمضان</ion-card-title>
+    <ion-card-title class="ion-text-center" color="black">رمضان</ion-card-title>
 
-    <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
-    strong class="my-action-button" >انتقل</ion-button>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+    strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
  
  
    </ion-card-header>
@@ -166,9 +186,9 @@
   <img src="../../assets/pictures/Eid.jpg">
  
    <ion-card-header>
-    <ion-card-title class="ion-text-center">عيد مبارك</ion-card-title>
-    <ion-button  expand="full" shape="round" fill="outline" color="lightgray"
-    strong class="my-action-button" >انتقل</ion-button>
+    <ion-card-title class="ion-text-center"color="black">عيد مبارك</ion-card-title>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
+    strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
  
  
    </ion-card-header>
