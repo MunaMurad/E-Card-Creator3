@@ -26,6 +26,22 @@
           <!-- <ion-list-header>
             UI layout with firebase
           </ion-list-header> -->
+
+          
+        <ion-list lines="none">
+          <ion-note> Firebase Authentication</ion-note>
+          <ion-menu-toggle autoHide="false" *ngFor="let p of authPages; let i = index">
+            <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+
+        
           <ion-note>UI Layouts</ion-note>
 
           <ion-menu-toggle autoHide="false" *ngFor="let p of layoutPages; let i = index">
@@ -40,18 +56,6 @@
         </ion-list>
 
 
-        <ion-list lines="none">
-          <ion-note> Firebase Authentication</ion-note>
-          <ion-menu-toggle autoHide="false" *ngFor="let p of authPages; let i = index">
-            <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
-              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
-            </ion-item>
-
-          </ion-menu-toggle>
-        </ion-list>
 
         <ion-list lines="none">
           <ion-note>Themes</ion-note>
