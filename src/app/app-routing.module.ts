@@ -602,7 +602,11 @@ const routes: Routes = [
   {
     path: 'information',
     loadChildren: () => import('./ui-layouts/information/information.module').then( m => m.InformationPageModule)
+  },  {
+    path: 'marriage-contract',
+    loadChildren: () => import('./congratspages/marriage-contract/marriage-contract.module').then( m => m.MarriageContractPageModule)
   },
+
 
   
 

@@ -407,11 +407,11 @@ export class AppComponent {
   //******** Themes *********//
   //************************//
   themePages = [
-    {
+    /* {
       title: 'Color ',
       url: 'ui-colors',
       icon: 'color-palette'
-    }
+    } */
   ];  
   loggedIn = false;
   dark = false;

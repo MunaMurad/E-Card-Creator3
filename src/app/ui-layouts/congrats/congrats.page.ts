@@ -13,6 +13,7 @@ import { ImageGalleryViewPage } from '../image-gallery-view/image-gallery-view.p
   styleUrls: ['./congrats.page.scss'],
 })
 export class CongratsPage implements OnInit {
+  [x: string]: any;
 
   public images: Observable<any[]>;
   public imagesArray: any=[];
@@ -58,6 +59,11 @@ openImageViewer(image) {
  }).then(modal => {
    modal.present();
  });
+}
+filterItems(searchTerm: string) {
+  return this.items.filter((item: { title: string; }) => {
+    return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+  });
 }
 
 }
