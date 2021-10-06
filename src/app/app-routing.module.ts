@@ -598,6 +598,10 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./ui-layouts/settings/settings.module').then( m => m.SettingsPageModule)
   },
+  {
+    path: 'information',
+    loadChildren: () => import('./ui-layouts/information/information.module').then( m => m.InformationPageModule)
+  },
 
   
 

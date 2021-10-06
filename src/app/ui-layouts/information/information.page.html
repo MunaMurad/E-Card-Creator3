@@ -1,0 +1,82 @@
+<!--Information page -->
+
+<ion-header>
+  <!-- The header contain the back button -->
+  <ion-fab horizontal="start" vertical="top" > 
+      <ion-fab-button size="large" color="danger " routerLink="/home" routerDirection="back">
+        <ion-icon name="arrow-undo" ></ion-icon>
+     </ion-fab-button>
+    </ion-fab>
+  
+  
+    <div class="ion-text-center">
+      <ion-text color="danger" >
+        <strong><i><h1>ـــــــــــــــــــــــــــــــــــــــــ</h1></i></strong>
+      </ion-text>
+    </div>
+  </ion-header>
+  
+  
+  
+  <ion-content [fullscreen]="true" class="Background">
+    <ion-content class="ion-padding"> 
+  
+      <!-- The first card contain information about the TEAM -->
+      <ion-card>
+     <ion-card-header  class="sizecenter" color="danger"><strong> من نحن؟ </strong></ion-card-header>
+  
+     <img src='../../assets/photos/puzzle.jpg'> 
+  
+    <ion-card-subtitle  class="ion-text-right"  > 
+      <ion-text class="sizeText">
+      فريق جمعتنا الحياة الجامعية ، نتشارك ذات الأفكار و الأهداف 
+      نسعى جادين لتحقيق أفضل ما يمكننا عمله، و لأننا نؤمن أن اليد الواحدة لا تصفق،
+      لكنها تشكل جزءًا مهمًا من العمل الجماعي.. تشابكت أيدينا و اتحدت لتنتج هذا المشروع 
+    </ion-text></ion-card-subtitle>
+    </ion-card> <!--End of the first card-->
+  
+  
+  
+     <!-- The second card contain general questions about the application -->
+    <ion-card>
+    <ion-card-header class="sizecenter" color="danger"><strong> الأسئلة الشائعة </strong></ion-card-header>
+    <img src='../../assets/photos/question.jpg'>
+    <ion-card-subtitle  class="ion-text-right">
+     
+     <p>
+      <ion-text class="sizeText" >
+        ما المقصود بـبطاقة/تهنئة مكتوبة؟
+     </ion-text>
+     </p>
+  
+     <p>
+     <ion-text color="tertiary" class="sizeText">
+      في هذا الخيار يوجد العديد من البطاقات الجاهزة بعبارات مناسبة و متنوعة 
+      يمكنك إضافة اسم الشخص أو معلومات بسيطة جدًا لتحصل على بطاقتك
+     </ion-text>
+    </p>
+  
+    <p>
+     <ion-text class="sizeText">
+      في حال لم أقم بحفظ الصورة هل افقد الصورة تمامًا؟
+     </ion-text>
+    </p>
+  
+    <p>
+     <ion-text color="tertiary" class="sizeText">
+  لا، ستجد جميع الصور التي قمت بالعمل عليها محفوظة في المسودات
+     </ion-text>
+    </p>
+   </ion-card-subtitle>
+   </ion-card>
+  
+    </ion-content> 
+  </ion-content>
+  
+  <!--footer of the page -->
+  <ion-footer>
+  <div class="sign-in-hr">
+  <p><span><ion-text  horizontal ="end" vertical="center">
+  ــ فريق متحدين نقف ــ
+  </ion-text></span></p></div>
+  </ion-footer>

@@ -3,19 +3,24 @@
     //border-radius: 8px;
   }
 
+.ion-buuton{
+  font-size: 20px ;
 
+
+}
 
   ion-card{
   
     box-shadow: none;
     border-radius: 12px;
-    background-color: #f7f2c9;
+    background-color: #5260664f;
      }
 
 
     .backg{
-      --ion-background-color:#eed6b6;
+      --ion-background-color:none;
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
+      background-image: url('../../../assets/ram1.jpg');
      }

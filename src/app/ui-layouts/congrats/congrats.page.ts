@@ -9,7 +9,7 @@ import { ImageGalleryViewPage } from '../image-gallery-view/image-gallery-view.p
 
 @Component({
   selector: 'app-congrats',
-  templateUrl: './congrats.page.html',
+  templateUrl:'./congrats.page.html',
   styleUrls: ['./congrats.page.scss'],
 })
 export class CongratsPage implements OnInit {
