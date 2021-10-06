@@ -518,7 +518,7 @@ export class WalkthroughPage implements OnInit {
         "تطبيق متخصص في انشاء البطاقات الإلكترونية الفريدة و المتميزة",
       image:
         "../assets/copy_84080478.png",
-      color: "#e68acc",
+      color: "#dbb2ad",
     },
     
     {
@@ -527,7 +527,7 @@ export class WalkthroughPage implements OnInit {
         "تمكنك من مشاركة الجميع ببطاقتك الإلكترونية..",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic5fullapp-4d4bb.appspot.com/o/undraw_online_connection_6778.svg?alt=media&token=7d420b1e-cbcb-4956-8a8b-5ed26b7d8de7",
-      color: "#e68acc ",
+      color: "#fab8c7 ",
     },
     {
       title: "بأسلوب عصري و خطوات بسيطة",
@@ -535,14 +535,14 @@ export class WalkthroughPage implements OnInit {
         "ستجد تصاميم و خيارات و عبارات متنوعة لتنشئ بطاقة متألقة  ",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_start_building_vqhd.svg?alt=media&token=509089ba-29c0-4dc5-a368-0cf1a9db6c93",
-      color: "#e68acc",
+      color: " #edbaff",
     },
     {
       title: "ستجد بطاقات مكتوبة",
       description: "خيار يتيح لك اختصار وقتك و إنجاز بطاقتك بسرعة",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_design_sprint_x3eb.svg?alt=media&token=d6d88aae-d80b-48ec-bb2e-2221fb19de3d",
-      color: "#e68acc",
+      color: " #f2ccbf",
       background: "../../../assets/eberhard-grossgasteiger-TRE0n2_rQIU-unsplash.jpg" ,
     
     }
