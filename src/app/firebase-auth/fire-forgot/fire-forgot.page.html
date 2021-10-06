@@ -1,11 +1,11 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar color="medium">
     <ion-buttons slot="end">
-      <ion-menu-button color="medium" auto-hide="false"></ion-menu-button>
+      <ion-menu-button color="black" auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title color="medium" size="large">FORGOT</ion-title>
+    <ion-title color="black" size="large" class="ion-text-center">FORGOT</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="medium"></ion-back-button>
+      <ion-back-button color="black"></ion-back-button>
     </ion-buttons>
     <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
   </ion-toolbar>
@@ -15,7 +15,7 @@
 
 
 
-<ion-content fullscreen=true>
+<ion-content fullscreen=true class="backg">
   <ion-grid fixed class="ion-no-padding">
   
 
@@ -43,19 +43,21 @@
             <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
           </p>
 
-          <ion-button mode="ios" color="medium" expand="block" [disabled]="!resetPasswordForm.valid"
+          <ion-button mode="ios" color="black" fill="solid" expand="block" [disabled]="!resetPasswordForm.valid"
             (click)="resetPassword()">
             Recover
           </ion-button>
-          <ion-button mode="ios" color="medium" expand="block" fill="outline" class="ion-margin-top"
+          <ion-button mode="ios" color="lightgray" expand="block" fill="solid" class="ion-margin-top"
             routerLink="/fire-signup">
             Create new user
           </ion-button>
+          <!--
           <ion-text color="dark">
             <h2  class="ion-text-center ion-margin-bottom main-header8">
                 By clicking Sign up you agree to the following Terms ans Conditions without reservation
             </h2>
         </ion-text>
+        -->
         </div>
       </form>
   </ion-grid>

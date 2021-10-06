@@ -590,7 +590,8 @@ const routes: Routes = [
   {
     path: 'fire-forgot',
     loadChildren: () => import('./firebase-auth/fire-forgot/fire-forgot.module').then( m => m.FireForgotPageModule)
-  },  {
+  },
+  {
     path: 'congrats',
     loadChildren: () => import('./ui-layouts/congrats/congrats.module').then( m => m.CongratsPageModule)
   },

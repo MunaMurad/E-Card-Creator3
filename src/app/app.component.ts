@@ -381,7 +381,7 @@ export class AppComponent {
       url: 'fire-signin',
       icon: 'flame'
     },
-    {
+   /* {
       title: 'Signup',
       url: 'fire-signup',
       icon: 'flame'
@@ -395,7 +395,7 @@ export class AppComponent {
       title: 'Profile',
       url: 'fire-profile',
       icon: 'flame'
-    }
+    } */
   ];
 
   //**************************//

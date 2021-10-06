@@ -515,34 +515,34 @@ export class WalkthroughPage implements OnInit {
     {
       title: "E-Card Creator",
       description:
-        "بخطوات بسيطة سوف تتمكن من الحصول على بطاقة إلكترونية إحترافية",
+        "تطبيق متخصص في انشاء البطاقات الإلكترونية الفريدة و المتميزة",
       image:
         "../assets/copy_84080478.png",
-      color: "#e6cca6",
+      color: "#e68acc",
     },
     
     {
-      title: "هنئ و شارك الجميع أفراحهم",
+      title: "خيارات مشاركة متعددة",
       description:
-        "تبادل الدعوات و التهاني مع رفاقك و أحبابك بطريقة سريعة و مواكبة للعصر",
+        "تمكنك من مشاركة الجميع ببطاقتك الإلكترونية..",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic5fullapp-4d4bb.appspot.com/o/undraw_online_connection_6778.svg?alt=media&token=7d420b1e-cbcb-4956-8a8b-5ed26b7d8de7",
-      color: "#e0c29e ",
+      color: "#e68acc ",
     },
     {
-      title: "تميّـــز",
+      title: "بأسلوب عصري و خطوات بسيطة",
       description:
-        "و احصل على تصاميم مجانية و رائعة، بالإضافة إلى الخيارات المتعددة، والمناسبات المتنوعة ",
+        "ستجد تصاميم و خيارات و عبارات متنوعة لتنشئ بطاقة متألقة  ",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_start_building_vqhd.svg?alt=media&token=509089ba-29c0-4dc5-a368-0cf1a9db6c93",
-      color: "#e0c29e",
+      color: "#e68acc",
     },
     {
-      title: "و العديد من المميزات",
-      description: "سنكتشفها معًا",
+      title: "ستجد بطاقات مكتوبة",
+      description: "خيار يتيح لك اختصار وقتك و إنجاز بطاقتك بسرعة",
       image:
         "https://firebasestorage.googleapis.com/v0/b/ionic4firebase-2c0e6.appspot.com/o/undraw_design_sprint_x3eb.svg?alt=media&token=d6d88aae-d80b-48ec-bb2e-2221fb19de3d",
-      color: "#e0c29e",
+      color: "#e68acc",
       background: "../../../assets/eberhard-grossgasteiger-TRE0n2_rQIU-unsplash.jpg" ,
     
     }
