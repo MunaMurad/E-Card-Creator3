@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
-  templateUrl:'app.component.html',
+  templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
@@ -188,7 +188,7 @@ export class AppComponent {
   //********* UI component pages *********//
   //*************************************//
 
- // componentPages = [
+ componentPages = [
     // {
     //   title: 'Accordion',
     //   url: 'accordion',
@@ -348,7 +348,7 @@ export class AppComponent {
     //   url: 'toolbar',
     //   icon: 'code-slash'
     // }
- //];
+ ];
 
 
 

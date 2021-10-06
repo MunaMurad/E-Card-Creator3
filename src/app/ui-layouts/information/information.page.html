@@ -1,76 +1,74 @@
 <!--Information page -->
 
-<ion-header>
-  <!-- The header contain the back button -->
-  <ion-fab horizontal="start" vertical="top" > 
-      <ion-fab-button size="large" color="danger " routerLink="/home" routerDirection="back">
-        <ion-icon name="arrow-undo" ></ion-icon>
-     </ion-fab-button>
-    </ion-fab>
-  
-  
-    <div class="ion-text-center">
-      <ion-text color="danger" >
-        <strong><i><h1>ـــــــــــــــــــــــــــــــــــــــــ</h1></i></strong>
-      </ion-text>
-    </div>
+<ion-header >
+  <ion-toolbar color="lightgreen">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4"> More Information</ion-title>
+  </ion-toolbar> 
   </ion-header>
   
+
   
+  <ion-content  class="backg" >
+   
   
-  <ion-content [fullscreen]="true" class="Background">
-    <ion-content class="ion-padding"> 
-  
-      <!-- The first card contain information about the TEAM -->
+
+
+     <!-- The first card contain general questions about the application -->
+     <ion-card>
+      <ion-card-header class="sizecenter" color="greenwild"> الأسئلة الشائعة </ion-card-header>
+      <img src='../../assets/grlGreen.jpeg'> 
+      
+      <ion-card-subtitle  class="ion-text-right">
+       
+       <p>
+        <ion-text class="sizeText" color="black">
+          ما المقصود بـبطاقة/تهنئة مكتوبة؟
+       </ion-text>
+       </p>
+    
+       <p>
+       <ion-text color="brown" class="sizeText">
+        في هذا الخيار يوجد العديد من البطاقات الجاهزة بعبارات مناسبة و متنوعة 
+        يمكنك إضافة اسم الشخص أو معلومات بسيطة جدًا لتحصل على بطاقتك
+       </ion-text>
+      </p>
+    
+      <p>
+       <ion-text class="sizeText" color="black">
+        في حال لم أقم بحفظ الصورة هل افقد الصورة تمامًا؟
+       </ion-text>
+      </p>
+    
+      <p>
+       <ion-text color="brown" class="sizeText">
+    لا، ستجد جميع الصور التي قمت بالعمل عليها محفوظة في المسودات
+       </ion-text>
+      </p>
+     </ion-card-subtitle>
+     </ion-card>
+
+      <!-- The second card contain information about the TEAM -->
+
       <ion-card>
-     <ion-card-header  class="sizecenter" color="danger"><strong> من نحن؟ </strong></ion-card-header>
+     <ion-card-header  class="sizecenter" color="greenwild"> من نحن؟ </ion-card-header>
   
-     <img src='../../assets/photos/puzzle.jpg'> 
+     <img src='../../assets/teamLamb.jpeg'>
   
     <ion-card-subtitle  class="ion-text-right"  > 
-      <ion-text class="sizeText">
+      <ion-text class="sizeText" color= "brown">
       فريق جمعتنا الحياة الجامعية ، نتشارك ذات الأفكار و الأهداف 
       نسعى جادين لتحقيق أفضل ما يمكننا عمله، و لأننا نؤمن أن اليد الواحدة لا تصفق،
       لكنها تشكل جزءًا مهمًا من العمل الجماعي.. تشابكت أيدينا و اتحدت لتنتج هذا المشروع 
     </ion-text></ion-card-subtitle>
-    </ion-card> <!--End of the first card-->
+    </ion-card> <!--End of the  card-->
   
   
   
-     <!-- The second card contain general questions about the application -->
-    <ion-card>
-    <ion-card-header class="sizecenter" color="danger"><strong> الأسئلة الشائعة </strong></ion-card-header>
-    <img src='../../assets/photos/question.jpg'>
-    <ion-card-subtitle  class="ion-text-right">
-     
-     <p>
-      <ion-text class="sizeText" >
-        ما المقصود بـبطاقة/تهنئة مكتوبة؟
-     </ion-text>
-     </p>
   
-     <p>
-     <ion-text color="tertiary" class="sizeText">
-      في هذا الخيار يوجد العديد من البطاقات الجاهزة بعبارات مناسبة و متنوعة 
-      يمكنك إضافة اسم الشخص أو معلومات بسيطة جدًا لتحصل على بطاقتك
-     </ion-text>
-    </p>
-  
-    <p>
-     <ion-text class="sizeText">
-      في حال لم أقم بحفظ الصورة هل افقد الصورة تمامًا؟
-     </ion-text>
-    </p>
-  
-    <p>
-     <ion-text color="tertiary" class="sizeText">
-  لا، ستجد جميع الصور التي قمت بالعمل عليها محفوظة في المسودات
-     </ion-text>
-    </p>
-   </ion-card-subtitle>
-   </ion-card>
-  
-    </ion-content> 
+    
   </ion-content>
   
   <!--footer of the page -->

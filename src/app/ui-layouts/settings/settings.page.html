@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-toolbar color="scarletred">
+  <ion-toolbar color="lightgreen">
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
@@ -7,20 +7,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="container">
+<ion-content class="backg">
+  <div>
    <ion-grid size="fixed">
     <ion-row size="50">
        <ion-col size="12">
          <ion-item> 
-           <ion-label size="16px">
-             Toggle color theme 
-           </ion-label>
-           <ion-toggle (ionChange)="onToggleColorTheme($event)"></ion-toggle>
+        
          </ion-item>
        </ion-col>
      </ion-row>
    </ion-grid>
    </div>
  </ion-content>
- 
+   
+  <!--footer of the page -->
+  <ion-footer>
+    <div class="sign-in-hr">
+    <p><span><ion-text  horizontal ="end" vertical="center">
+                             ــ فريق متحدين نقف ــ
+    </ion-text></span></p></div>
+    </ion-footer>
