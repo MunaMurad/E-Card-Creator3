@@ -18,11 +18,11 @@
 </ion-header>
 
 <ion-content class="backg" >
-  <ion-grid fixed>
+ <ion-grid fixed>
       <!--***********  2 columns  ***********-->
-      <ion-grid  *ngIf="galleryView==='two'">
-          <ion-row wrap color="gray">
-            <ion-col>
+  <ion-grid  *ngIf="galleryView==='two'">
+   <ion-row wrap color="gray">
+    <ion-col >
    <!--card with image for (wedding)-->
               <ion-card >
                 <img src="../../assets/pictures/wedding.jpg">
@@ -89,8 +89,10 @@
                   <ion-card-title class="ion-text-center" color="black">عيد مبارك</ion-card-title>
                   <ion-button  expand="full" shape="round" fill="solid" color="lightgray"
                   strong class="my-action-button"class="ion-buuton" >انتقل</ion-button>
-               </ion-card-header> 
-               </ion-card>
+                 </ion-card-header>
+                  </ion-card>
+               
+               
             </ion-col>
           </ion-row>
       </ion-grid>
@@ -190,12 +192,12 @@
 
               
 
-            </ion-col>
-          </ion-row>
-      </ion-grid>
+    </ion-col>
+   </ion-row>
+  </ion-grid>
       
       
 
-  </ion-grid>
-  </ion-content>
+ </ion-grid>
+</ion-content>
   

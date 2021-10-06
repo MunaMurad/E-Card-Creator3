@@ -70,7 +70,7 @@ export class FireSigninPage implements OnInit {
     //   "Demo account: <br>username = lucky@gmail.com  <br>password= 123456",
     //   10000
     // );
-    this.ionicComponentService.presentToastWithOptions("Demo account:","notifications-outline","","username = lucky@gmail.com  <br>password= 123456","bottom",10000);
+    //this.ionicComponentService.presentToastWithOptions("Demo account:","notifications-outline","","username = lucky@gmail.com  <br>password= 123456","bottom",10000);
   }
 
   submitFormTest() {

@@ -15,7 +15,7 @@
         left: 0;
         margin: auto;
     }
-    ion-icon {
+    ion-icon { 
         font-size: 150px;
         position: absolute;
         width: 140px;
@@ -83,10 +83,11 @@
 }
 
 //to add picture as background
-ion-content{
-    --background: none;
+
+.backg{
+    --background:none;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../../assets/diana-akhmetianova-s358rpxEALI-unsplash.jpg');
+    background-image: url('../../../assets/ram1.jpg');
    }

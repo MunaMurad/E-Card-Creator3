@@ -1,19 +1,19 @@
 <ion-header class="ion-no-border">
-    <ion-toolbar >
+    <ion-toolbar  color="medium" >
         <ion-buttons slot="end">
-            <ion-menu-button color="medium" auto-hide="false"></ion-menu-button>
+            <ion-menu-button color="black" auto-hide="false"></ion-menu-button>
         </ion-buttons>
-        <ion-title color="medium" size="large">SIGN IN</ion-title>
+        <ion-title color="black" size="large" class="ion-text-center">SIGN IN</ion-title>
 
         <!-- <ion-buttons slot="start">
             <ion-back-button color="orange"></ion-back-button>
         </ion-buttons> -->
         <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
     </ion-toolbar>
-</ion-header>
+</ion-header> 
 
 
-<ion-content fullscreen=true>
+<ion-content fullscreen=true class="backg">
     <ion-grid fixed class="ion-no-padding">
  
 
@@ -41,17 +41,17 @@
                     <!-- ############ -->
                     <ion-item class="roundedInput8px margin-bottom-10">
                         <ion-label>
-                            <ion-icon name="person-add-outline" color="medium"></ion-icon>
+                            <ion-icon name="person-add-outline" color="black"></ion-icon>
                         </ion-label>
-                        <ion-input formControlName="username"  type="email" placeholder="Username"></ion-input>
+                        <ion-input formControlName="username"  type="email" placeholder="email" color="black"></ion-input>
                     </ion-item>
                     <!-- ############ -->
                     <ion-item class="roundedInput8px margin-bottom-10">
                         <ion-label slot="start" class="margin-right-8">
-                            <ion-icon name="lock-closed-outline" color="medium"></ion-icon>
+                            <ion-icon name="lock-closed-outline" color="black"></ion-icon>
                         </ion-label>
 
-                        <ion-input formControlName="password"  type="password" placeholder="Password" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false">
+                        <ion-input formControlName="password"  type="password" placeholder="Password" color="black" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false">
                         </ion-input>
 
                         <!-- ### Show/hide password ### -->
@@ -107,14 +107,14 @@
                     Sign in
                 </ion-button> -->
 
-                <ion-button mode="ios" color="black" expand="block" [disabled]="!loginForm.valid" (click)="login()">
+                <ion-button mode="ios" color="black" expand="block"  fill="solid" [disabled]="!loginForm.valid" (click)="login()">
                     Sign in
                 </ion-button>
 
-                <ion-button mode="ios" color="black" expand="block" fill="outline" class="ion-margin-top" (click)="register()">
+                <ion-button mode="ios" color="lightgray" expand="block" fill="outline" class="ion-margin-top" (click)="register()">
                     Create new user
                 </ion-button>
-                <ion-text color="medium">
+                <ion-text color="dark">
                     <h2 class="ion-margin-bottom main-header8 ion-text-center">
                         By clicking Sign up you agree to the following Terms ans Conditions without reservation
                     </h2>
