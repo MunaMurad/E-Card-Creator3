@@ -602,9 +602,14 @@ const routes: Routes = [
   {
     path: 'information',
     loadChildren: () => import('./ui-layouts/information/information.module').then( m => m.InformationPageModule)
-  },  {
+  },
+  {
     path: 'marriage-contract',
     loadChildren: () => import('./congratspages/marriage-contract/marriage-contract.module').then( m => m.MarriageContractPageModule)
+  },
+  {
+    path: 'image-editor',
+    loadChildren: () => import('./congratspages/image-editor/image-editor.module').then( m => m.ImageEditorPageModule)
   },
 
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, ModalController,NavController, LoadingController, ToastController} from '@ionic/angular';
 import { AngularFirestore} from '@angular/fire/firestore';
-
+// Send Parameter
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 //*********** Import  gallery viewer modal **************//
@@ -23,6 +24,7 @@ export class CongratsPage implements OnInit {
 
 
    constructor(
+    private router: Router,
     private firestore: AngularFirestore,
     public menuCtrl: MenuController,
     private loadingController: LoadingController ,
@@ -64,6 +66,11 @@ filterItems(searchTerm: string) {
   return this.items.filter((item: { title: string; }) => {
     return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
   });
+}
+
+
+editImage(imageSrc){
+  this.router.navigate(['/image-editor', {imageSrc: imageSrc}]);
 }
 
 }
