@@ -59,10 +59,15 @@ export class AppComponent {
   layoutPages = [
 
       //my try to add new page to the side menu
+      {
+        title: 'Walkthrough',
+        url: 'walkthrough',
+        icon: 'walk'
+  },
   {
-    title: 'Setting',
-    url: 'settings',
-    icon: 'settings'
+    title: 'Invitation',
+    url: 'image-gallery',
+    icon: 'images'
   },
   {
     title: 'congrats',
@@ -70,17 +75,19 @@ export class AppComponent {
     icon: 'images'
   },
 
-    {
-      title: 'Invitation',
-      url: 'image-gallery',
-      icon: 'images'
-    },
+  {
+    title: 'Setting',
+    url: 'settings',
+    icon: 'settings'
+  },
+  {
+    title: 'Information Page',
+    url: 'information',
+    icon: 'information'
+  },
+ 
 
-    {
-      title: 'Information Page',
-      url: 'information',
-      icon: 'alert'
-    },
+    
     //make unused pages as comment in sidemenue
 
     // {
