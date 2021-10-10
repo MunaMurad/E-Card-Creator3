@@ -33,21 +33,21 @@
           <ion-label>
             <ion-icon name="person-outline" color="medium"></ion-icon>
             </ion-label>
-          <ion-input  type="text"  formControlName="firstname" color="black" [value]="(userDetail | async)?.firstname" ></ion-input>
+          <ion-input  type="text"  formControlName="firstname" color="black" [value]="(userDetail | async)?.firstname" placeholder="First Name" color="black"></ion-input>
         </ion-item>
         <!-- ############ -->
         <ion-item  class="roundedInput8px margin-bottom-10">
           <ion-label>
             <ion-icon name="people-outline" color="medium"></ion-icon>
             </ion-label>
-          <ion-input type="text"  formControlName="lastname"  color="black" [value]="(userDetail | async)?.lastname"></ion-input>
+          <ion-input type="text"  formControlName="lastname"  color="black" [value]="(userDetail | async)?.lastname" placeholder="Last Name" color="black"></ion-input>
         </ion-item>
         <!-- ############ -->
         <ion-item  class="roundedInput8px margin-bottom-10">
           <ion-label>
             <ion-icon name="mail-outline" color="medium"></ion-icon>
             </ion-label>
-          <ion-input type="text"  formControlName="email" color="black" [value]="(userDetail | async)?.email" ></ion-input>
+          <ion-input type="text"  formControlName="email" color="black" [value]="(userDetail | async)?.email" placeholder="email" color="black"></ion-input>
         </ion-item>
 
         <!-- ############ -->
@@ -55,7 +55,7 @@
             <ion-label>
               <ion-icon name="call-outline" color="medium"></ion-icon>
               </ion-label>
-            <ion-input  type="text" formControlName="phone" color="black"  [value]="(userDetail | async)?.phone"></ion-input>
+            <ion-input  type="text" formControlName="phone" color="black"  [value]="(userDetail | async)?.phone" placeholder="Phone Number" color="black"></ion-input>
           </ion-item>
 
       </ion-list>

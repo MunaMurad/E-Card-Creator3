@@ -610,7 +610,11 @@ const routes: Routes = [
   {
     path: 'image-editor',
     loadChildren: () => import('./congratspages/image-editor/image-editor.module').then( m => m.ImageEditorPageModule)
+  },  {
+    path: 'empty-baby',
+    loadChildren: () => import('./congratspages/empty-baby/empty-baby.module').then( m => m.EmptyBabyPageModule)
   },
+
 
 
   

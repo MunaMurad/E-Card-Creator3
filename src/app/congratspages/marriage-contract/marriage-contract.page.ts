@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-marriage-contract',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarriageContractPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+
+  ) { }
 
   ngOnInit() {
   }
@@ -20,6 +24,10 @@ option = {
  // loop: true,
   spaceBetween: 10,
   //autoplay: true,
+}
+
+editImage(imageSrc){
+  this.router.navigate(['/image-editor', {imageSrc: imageSrc}]);
 }
 
 }
