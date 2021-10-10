@@ -59,12 +59,12 @@ export class AppComponent {
   layoutPages = [
 
       //my try to add new page to the side menu
-  {
-    title: 'Setting',
-    url: 'settings',
-    icon: 'settings'
-  },
-  {
+      {
+        title: 'Walkthrough',
+        url: 'walkthrough',
+        icon: 'walk'
+      },
+      {
     title: 'congrats',
     url: 'congrats',
     icon: 'images'
@@ -75,8 +75,13 @@ export class AppComponent {
       url: 'image-gallery',
       icon: 'images'
     },
-
-    {
+  
+  {
+    title: 'Setting',
+    url: 'settings',
+    icon: 'settings'
+  },
+  {
       title: 'Information Page',
       url: 'information',
       icon: 'alert'
@@ -137,11 +142,7 @@ export class AppComponent {
     //   url: 'feed',
     //   icon: 'newspaper'
     // },
-    {
-      title: 'Walkthrough',
-      url: 'walkthrough',
-      icon: 'walk'
-    },
+  
     // {
     //   title: 'Form',
     //   url: 'form-home',

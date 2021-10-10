@@ -1,0 +1,1 @@
+{"ast":null,"code":"import baseProperty from './_baseProperty.js';\n/**\r\n * Gets the size of an ASCII `string`.\r\n *\r\n * @private\r\n * @param {string} string The string inspect.\r\n * @returns {number} Returns the string size.\r\n */\n\nvar asciiSize = baseProperty('length');\nexport default asciiSize;","map":null,"metadata":{},"sourceType":"module"}
