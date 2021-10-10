@@ -1,17 +1,17 @@
-<ion-header>
+<ion-header   >
 
-
+ 
   <ion-toolbar color="medium">
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title class="main-header4">انشاء تهنئة</ion-title>
-
+    <ion-title  class="main-header4">انشاء تهنئة</ion-title>
+    
   </ion-toolbar>
 
-  <ion-toolbar color="medium">
+    <ion-toolbar color="medium" >
     <ion-grid fixed class="ion-no-padding">
-      <ion-segment mode="md" [(ngModel)]="galleryView">
+      <ion-segment mode="md" [(ngModel)]="galleryView" >
         <ion-segment-button value="two"> مكتوبة</ion-segment-button>
         <ion-segment-button value="three">مساحة حرة</ion-segment-button>
       </ion-segment>
@@ -19,12 +19,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="backg">
-  <ion-grid fixed>
-    <!--***********  2 columns  ***********-->
-    <ion-grid *ngIf="galleryView==='two'">
-      <ion-row wrap color="gray">
-        <ion-col>
+<ion-content class="backg" >
+ <ion-grid fixed>
+      <!--***********  2 columns  ***********-->
+  <ion-grid  *ngIf="galleryView==='two'">
+   <ion-row wrap color="gray">
+    <ion-col >
           <!--card with image for (wedding)-->
           <ion-card>
             <img src="../../assets/3gdGeran.jpeg">
@@ -198,5 +198,5 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-grid>
 </ion-content>
+   
