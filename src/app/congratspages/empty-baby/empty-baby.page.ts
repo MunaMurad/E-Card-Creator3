@@ -16,7 +16,14 @@ export class EmptyBabyPage implements OnInit {
   ngOnInit() {
   }
 
-
+  option = {
+    slidesPerView: 1.5,
+    centeredSlides: true,
+   //choose the most proborate wether the pictures loops or not
+   // loop: true,
+    spaceBetween: 10,
+    //autoplay: true,
+  }
   
 editImage(imageSrc){
   this.router.navigate(['/image-editor', {imageSrc: imageSrc}]);

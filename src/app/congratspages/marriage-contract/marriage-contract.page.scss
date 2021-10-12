@@ -7,8 +7,8 @@
    }
 
    ion-card{
-    width: 100%;
-    height: 350px;
+    width: 98%;
+    height: 200px;
     box-shadow: none;
     border-radius: 12px;
 
@@ -36,12 +36,34 @@
       transition: 400ms all ease-in-out;
 }
 
-.container {
-    //text-align: center;
+.arabic-designs-slides {
   
     position: absolute;
     left: 0;
     right: 0;
-    top: 45%;
+    top: 28%;
+    transform: translateY(-50%);
+  }
+
+  .pic {
+    width: 50%;
+    height: 50%;
+  }
+
+  .english-pic{
+    width: 70%;
+    position: absolute;
+    left: 20%;
+    right: 0;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.english-designs-slides {
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 75%;
     transform: translateY(-50%);
   }

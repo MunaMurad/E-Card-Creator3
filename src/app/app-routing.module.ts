@@ -614,6 +614,22 @@ const routes: Routes = [
     path: 'empty-baby',
     loadChildren: () => import('./congratspages/empty-baby/empty-baby.module').then( m => m.EmptyBabyPageModule)
   },
+  {
+    path: 'empty-marriage-contract',
+    loadChildren: () => import('./congratspages/empty-marriage-contract/empty-marriage-contract.module').then( m => m.EmptyMarriageContractPageModule)
+  },
+  {
+    path: 'engagement',
+    loadChildren: () => import('./congratspages/engagement/engagement.module').then( m => m.EngagementPageModule)
+  },
+  {
+    path: 'eid-alfitr',
+    loadChildren: () => import('./congratspages/eid-alfitr/eid-alfitr.module').then( m => m.EidAlfitrPageModule)
+  },
+  {
+    path: 'wedding',
+    loadChildren: () => import('./invitationspages/wedding/wedding.module').then( m => m.WeddingPageModule)
+  },
 
 
 
