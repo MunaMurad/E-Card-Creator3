@@ -22,6 +22,21 @@
 
 <div class="arabic-designs-slides">
 <ion-slides [options]="option">
+
+  <ion-slide (click) ="editImage('assets/designs/baby1.png')">
+    <ion-card>
+      
+      <img src="../assets/designs/baby1.png">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/baby2.png')">
+    <ion-card>
+      
+      <img src="../assets/designs/baby2.png">
+    </ion-card>
+  </ion-slide>
+
   <ion-slide (click) ="editImage('assets/designs/design1.png')">
     <ion-card>
       <img src="../assets/designs/design1.png">
@@ -58,6 +73,9 @@
       <img src="../assets/designs/design6.png">
     </ion-card>
   </ion-slide>
+
+
+
 
 </ion-slides>
 </div>
