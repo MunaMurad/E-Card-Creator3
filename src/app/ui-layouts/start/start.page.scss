@@ -39,11 +39,21 @@ ion-content{
 
   }
 
+
+
   
   .center{
     position: absolute;
     left: 0;
     right: 0;
     top: 40%;
+    transform: translateY(-50%);
+  }
+
+  .top{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
     transform: translateY(-50%);
   }
