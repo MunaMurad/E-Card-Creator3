@@ -92,7 +92,7 @@ export class FireSigninPage implements OnInit {
             if (this.redirectUrl) {
               this.router.navigateByUrl("/" + this.redirectUrl);
             } else {
-              this.router.navigateByUrl("/fire-profile");
+              this.router.navigateByUrl("/start");
             }
           },
           (error) => {

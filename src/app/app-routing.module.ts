@@ -658,6 +658,10 @@ const routes: Routes = [
     path: 'empty-wedding',
     loadChildren: () => import('./invitationspages/empty-wedding/empty-wedding.module').then( m => m.EmptyWeddingPageModule)
   },
+  {
+    path: 'start',
+    loadChildren: () => import('./ui-layouts/start/start.module').then( m => m.StartPageModule)
+  },
 
 
 
