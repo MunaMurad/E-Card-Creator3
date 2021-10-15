@@ -610,7 +610,55 @@ const routes: Routes = [
   {
     path: 'image-editor',
     loadChildren: () => import('./congratspages/image-editor/image-editor.module').then( m => m.ImageEditorPageModule)
+  },  {
+    path: 'empty-baby',
+    loadChildren: () => import('./congratspages/empty-baby/empty-baby.module').then( m => m.EmptyBabyPageModule)
   },
+  {
+    path: 'empty-marriage-contract',
+    loadChildren: () => import('./congratspages/empty-marriage-contract/empty-marriage-contract.module').then( m => m.EmptyMarriageContractPageModule)
+  },
+  {
+    path: 'engagement',
+    loadChildren: () => import('./congratspages/engagement/engagement.module').then( m => m.EngagementPageModule)
+  },
+  {
+    path: 'eid-alfitr',
+    loadChildren: () => import('./congratspages/eid-alfitr/eid-alfitr.module').then( m => m.EidAlfitrPageModule)
+  },
+  {
+    path: 'wedding',
+    loadChildren: () => import('./invitationspages/wedding/wedding.module').then( m => m.WeddingPageModule)
+  },
+  {
+    path: 'friday',
+    loadChildren: () => import('./congratspages/friday/friday.module').then( m => m.FridayPageModule)
+  },
+  {
+    path: 'ramadan',
+    loadChildren: () => import('./congratspages/ramadan/ramadan.module').then( m => m.RamadanPageModule)
+  },
+  {
+    path: 'empty-ramadan',
+    loadChildren: () => import('./congratspages/empty-ramadan/empty-ramadan.module').then( m => m.EmptyRamadanPageModule)
+  },
+  {
+    path: 'empty-friday',
+    loadChildren: () => import('./congratspages/empty-friday/empty-friday.module').then( m => m.EmptyFridayPageModule)
+  },
+  {
+    path: 'empty-eid-alfitr',
+    loadChildren: () => import('./congratspages/empty-eid-alfitr/empty-eid-alfitr.module').then( m => m.EmptyEidAlfitrPageModule)
+  },
+  {
+    path: 'gathering',
+    loadChildren: () => import('./invitationspages/gathering/gathering.module').then( m => m.GatheringPageModule)
+  },
+  {
+    path: 'empty-wedding',
+    loadChildren: () => import('./invitationspages/empty-wedding/empty-wedding.module').then( m => m.EmptyWeddingPageModule)
+  },
+
 
 
   

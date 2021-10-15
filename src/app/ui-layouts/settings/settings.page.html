@@ -8,17 +8,28 @@
 </ion-header>
 
 <ion-content class="backg">
+<ion-content class="ion-padding"> 
   <div>
-   <ion-grid size="fixed">
-    <ion-row size="50">
-       <ion-col size="12">
-         <ion-item> 
-        
-         </ion-item>
-       </ion-col>
-     </ion-row>
-   </ion-grid>
-   </div>
+
+    <ion-list  >
+      <ion-item>
+        <ion-label position="stacked">
+          <h2> Language:</h2>
+        </ion-label>
+        <!--هنا حطي كود الترجمة-->
+        <ion-select placeholder="Select Airport">
+          <ion-select-option value="madison"> Arabic (AR)</ion-select-option>
+          <ion-select-option value="chicago"> English (EN)</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-list>
+
+    <ion-button color="greenwild" expand="block" routerLink="/fire-profile" >Edit your Profile</ion-button>
+    <ion-button mode="ios" color="greenwild" expand="block" class="ion-margin-top"  (click)="logout()">
+      Sign Out
+  </ion-button>
+  </div>    
+</ion-content> 
  </ion-content>
    
   <!--footer of the page -->

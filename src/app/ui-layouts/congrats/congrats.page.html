@@ -41,7 +41,7 @@
               <img src="../../assets/wedding2.jpeg">
               <ion-card-header>
                 <ion-card-title class="ion-text-center" color="black">خِــطـبــة</ion-card-title>
-               <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل </ion-button>
+               <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/engagement">انتقل </ion-button>
               </ion-card-header>
               </ion-card>
           <!--card with image for (baby)-->
@@ -72,7 +72,7 @@
                   <img src="../../assets/Quran1.jpeg">
                  <ion-card-header>
                   <ion-card-title class="ion-text-center"color="black">رمضان</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل </ion-button>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/ramadan">انتقل </ion-button>
                   </ion-card-header>
                     </ion-card>
 
@@ -82,7 +82,7 @@
             <img src="../../assets/Ballons1.jpeg">
              <ion-card-header>
               <ion-card-title class="ion-text-center" color="black">عيد الفطر المبارك</ion-card-title>
-              <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل </ion-button>
+              <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/eid-alfitr">انتقل </ion-button>
              </ion-card-header>
              </ion-card>
   
@@ -122,7 +122,7 @@
               <ion-card-title class="ion-text-center" color="black">عقد قران</ion-card-title>
             
             <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-              class="ion-button" (click) ="editImage('assets/3gdGeran.jpeg')">انتقل</ion-button>
+              class="ion-button" routerLink="/empty-marriage-contract">انتقل</ion-button>
             </ion-card-header>
             </ion-card>
 
@@ -133,7 +133,7 @@
             <ion-card-header>
               <ion-card-title class="ion-text-center" color="black">مولود</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button" (click) ="editImage('assets/pictures/baby3.jpg')">انتقل</ion-button>
+                class="ion-button" routerLink="/empty-baby">انتقل</ion-button>
             </ion-card-header>
           </ion-card>
 
@@ -145,7 +145,7 @@
             <ion-card-header>
               <ion-card-title class="ion-text-center" color="black">يوم الجمعة</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button"  (click) ="editImage('assets/assets/FridayPray.jpeg')">انتقل</ion-button>
+                class="ion-button" routerLink="/empty-friday" >انتقل</ion-button>
 
 
             </ion-card-header>
@@ -159,7 +159,7 @@
             <ion-card-header>
               <ion-card-title class="ion-text-center" color="black">رمضان</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button" (click) ="editImage('assets/Quran1.jpeg')">انتقل</ion-button>
+                class="ion-button" routerLink="/empty-ramadan">انتقل</ion-button>
             </ion-card-header>
           </ion-card>
 
@@ -171,7 +171,7 @@
                <ion-card-header>
                 <ion-card-title class="ion-text-center" color="black">عيد الفطر المبارك</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button" (click) ="editImage('assets/Ballons1.jpeg')">انتقل</ion-button>
+                class="ion-button" routerLink="/empty-eid-alfitr">انتقل</ion-button>
             </ion-card-header>
           </ion-card>
  <!--//card and image for ( عيدالاضحى)-->
@@ -179,8 +179,7 @@
   <img src="../../assets/cuteSheep.jpg">
    <ion-card-header>
     <ion-card-title class="ion-text-center" color="black">عيد الاضحى المبارك</ion-card-title>
-    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton"
-    (click) ="editImage('assets/cuteSheep.jpg')">انتقل </ion-button>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل </ion-button>
           </ion-card-header>
          </ion-card>
 
@@ -197,7 +196,11 @@
 
         </ion-col>
       </ion-row>
+<<<<<<< HEAD
     </ion-grid> 
+=======
+    </ion-grid>
+>>>>>>> 049b65d9b17b2c5687459d11f396659be35821fe
   </ion-grid>
 </ion-content>
    
