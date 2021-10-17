@@ -43,7 +43,7 @@
                         <ion-label>
                             <ion-icon name="person-add-outline" color="black"></ion-icon>
                         </ion-label>
-                        <ion-input formControlName="username"  type="email" placeholder="email" color="black"></ion-input>
+                        <ion-input formControlName="username"  type="email" placeholder="email" color="black" [disabled]="loginForm.valid"></ion-input>
                     </ion-item>
                     <!-- ############ -->
                     <ion-item class="roundedInput8px margin-bottom-10">
@@ -59,7 +59,6 @@
                             <ion-icon slot="icon-only" color="medium" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
                         </div>
                     </ion-item>
-                    
                     <!-- ############ -->
                     <span>
                         <p class="ion-text-right" (click)="forgot()">Forgot password?</p>
@@ -80,8 +79,8 @@
                             long!
                         </p>
                     </ion-text>
-
-
+ 
+    
                 </ion-list>
 
 
@@ -119,6 +118,14 @@
                         By clicking Sign up you agree to the following Terms ans Conditions without reservation
                     </h2>
                 </ion-text>
+
+                 <!--message to learn the user where to go if he want to sign out--> 
+                 <ion-text color="asphalt">
+                    <h2 class="ion-margin-bottom main-header8 ion-text-center" routerLink="/settings">
+                        If you want to sign out, click here to go to settings page. 
+                    </h2>
+                </ion-text> 
+
             </div>
         </form>
     </ion-grid>
