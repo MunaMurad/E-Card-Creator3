@@ -12,18 +12,24 @@
   <div>
 
     <ion-list  >
-      <ion-item>
-        <ion-label position="stacked">
-          <h2> Language:</h2>
-        </ion-label>
-        <!--هنا حطي كود الترجمة-->
-        <ion-select placeholder="Select Language">
-          <ion-select-option value="madison"> Arabic (AR)</ion-select-option>
-          <ion-select-option value="chicago"> English (EN)</ion-select-option>
-        </ion-select>
-      </ion-item>
-      </ion-list>
+      <ion-item class ="select">
+        <ion-label>Informtion</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-item>
 
+
+
+        <ion-item class="select">
+          <ion-label>{{"Language"|translate}}</ion-label>
+        <ion-select cncelText="Cancel" [(ngModel)]="Language" placeholder="select"
+        (ionChange)="changLang($event)">
+          <ion-select-option *ngFor="let lang of langs">{{lang}}</ion-select-option>
+       
+        
+        </ion-select>
+     
+      </ion-list>
+    </ion-item>
     <ion-button color="greenwild" expand="block" routerLink="/fire-profile" >Edit your Profile</ion-button>
     <ion-button mode="ios" color="greenwild" expand="block" class="ion-margin-top"  (click)="logout()">
       Sign Out

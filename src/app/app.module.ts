@@ -4,7 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { HttpClientModule } from '@angular/common/http';
+//import { HttpClientModule } from '@angular/common/http';
 
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -91,12 +91,35 @@ import { SharedModule} from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
 
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateModule, TranslateLoader,TranslateService} from '@ngx-translate/core';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
+
+
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory:HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+    }),
+
+
+
+    
+    
     //IonicRatingModule, // Put ionic-rating module here
     SharedModule,
     HttpClientModule,

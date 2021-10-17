@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {TranslateModule} from '@ngx-translate/core';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -10,10 +11,12 @@ import { WalkthroughPage } from './walkthrough.page';
 
 @NgModule({
   imports: [
+ 
     CommonModule,
     FormsModule,
     IonicModule,
-    WalkthroughPageRoutingModule
+    WalkthroughPageRoutingModule,
+    TranslateModule
   ],
   declarations: [WalkthroughPage]
 })

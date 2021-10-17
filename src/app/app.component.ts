@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
-
+import {TranslateService} from '@ngx-translate/core';
 import { MenuController, Platform, ToastController } from '@ionic/angular';
 
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -48,7 +48,8 @@ export class AppComponent {
        url: '/folder/Spam',
        icon: 'warning'
      }
-  ];
+  ]
+  ;
    public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 
@@ -424,10 +425,13 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private storage: Storage,
+ private TranslateService :TranslateService,
     // private userData: UserData,
     // private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
   ) {
+    this.TranslateService.setDefaultLang("ar");
+    this.TranslateService.addLangs(["en","ar"]);
     this.initializeApp();
   }
 
