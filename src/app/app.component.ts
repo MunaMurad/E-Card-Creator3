@@ -67,13 +67,13 @@ export class AppComponent {
       {
     title: 'congrats',
     url: 'congrats',
-    icon: 'images'
+    icon: 'mail-open'
   },
 
     {
       title: 'Invitation',
       url: 'image-gallery',
-      icon: 'images'
+      icon: 'mail-open'
     },
   
   {
@@ -385,7 +385,7 @@ export class AppComponent {
     {
       title: 'Signin',
       url: 'fire-signin',
-      icon: 'flame'
+      icon: 'log-in'
     },
    /* {
       title: 'Signup',

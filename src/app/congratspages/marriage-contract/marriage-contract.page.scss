@@ -46,16 +46,20 @@
   }
 
   .pic {
-    width: 50%;
-    height: 50%;
-  }
+    width: 70%;
+    position: absolute;
+    left: 20%;
+    right: 0;
+    top: 7%;
+    transform: translateY(-50%);
+}
 
   .english-pic{
     width: 70%;
     position: absolute;
     left: 20%;
     right: 0;
-    top: 55%;
+    top: 54%;
     transform: translateY(-50%);
 }
 
@@ -64,6 +68,6 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 75%;
+    top: 79%;
     transform: translateY(-50%);
   }
