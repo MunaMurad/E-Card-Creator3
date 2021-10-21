@@ -15,7 +15,7 @@ export class InformationPage implements OnInit {
 
   ngOnInit() {
   }
-  //this code to select lung button
+  //this code to select lang button
 changelang(event){
 this.TranslateService.use(event.detail.value);
 console.log(event.detail.value);

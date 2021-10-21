@@ -96,7 +96,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader,TranslateService} from '@ngx-translate/core';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http,'./assets/i18n/', '.json');
 }
 
 
@@ -180,7 +180,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-
+  exports: [TranslateModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   
   bootstrap: [AppComponent]

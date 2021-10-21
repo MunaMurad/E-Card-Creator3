@@ -417,7 +417,7 @@ export class AppComponent {
   ];  
   loggedIn = false;
   dark = false;
-
+  languageSelected: any = 'en';
   constructor(
     private menu: MenuController,
     private platform: Platform,
@@ -425,7 +425,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private storage: Storage,
- private TranslateService :TranslateService,
+    private TranslateService :TranslateService,
     // private userData: UserData,
     // private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
@@ -438,12 +438,11 @@ export class AppComponent {
 
   initializeApp() {
 
-
-
     this.platform.ready().then(() => {
 
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.setLanguage();
     });
   }
 
@@ -459,4 +458,14 @@ export class AppComponent {
     this.storage.set('ion_did_tutorial', false);
     this.router.navigateByUrl('/tutorial');
   }
-}
+  setLanguage() {
+    const defaultLanguage = this.TranslateService.getDefaultLang();
+    if (this.languageSelected) {
+      console.log(this.languageSelected);
+      this.TranslateService.setDefaultLang(this.languageSelected);
+      this.TranslateService.use(this.languageSelected);
+    } else {
+      this.languageSelected = defaultLanguage;
+      this.TranslateService.use(defaultLanguage);
+    }
+}}
