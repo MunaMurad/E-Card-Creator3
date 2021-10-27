@@ -663,6 +663,14 @@ const routes: Routes = [
     path: 'start',
     loadChildren: () => import('./ui-layouts/start/start.module').then( m => m.StartPageModule)
   },
+  {
+    path: 'invitation',
+    loadChildren: () => import('./occasions/invitation/invitation.module').then( m => m.InvitationPageModule)
+  },
+  {
+    path: 'congratulate',
+    loadChildren: () => import('./occasions/congratulate/congratulate.module').then( m => m.CongratulatePageModule)
+  },
 
   {
     path: 'eid-aladha',

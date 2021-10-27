@@ -65,15 +65,29 @@ export class AppComponent {
         url: 'walkthrough',
         icon: 'walk'
       },
-      {
+
+
+    /*  {
     title: 'congrats',
     url: 'congrats',
     icon: 'mail-open'
+  }, */
+
+  {
+    title: 'تهنئة',
+    url: 'congratulate',
+    icon: 'mail-open'
   },
 
-    {
+  /*  {
       title: 'Invitation',
       url: 'image-gallery',
+      icon: 'mail-open'
+    }, */
+
+    {
+      title: 'دعوة',
+      url: 'invitation',
       icon: 'mail-open'
     },
   
