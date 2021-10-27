@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title  class="main-header4">Setting</ion-title>
+    <ion-title  class="main-header4">{{"SETTING"|translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,24 +26,11 @@
 -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <ion-button color="greenwild" expand="block" routerLink="/fire-profile" >Edit your Profile</ion-button>
+    <ion-button color="greenwild" expand="block" routerLink="/fire-profile" >{{"EDIT"|translate}}</ion-button>
     <ion-button mode="ios" color="greenwild" expand="block" class="ion-margin-top"  (click)="logout()">
-      Sign Out
+      {{"SIGNout"|translate}}
   </ion-button>
-  <ion-button>yarb</ion-button>
+ 
   </div>    
 </ion-content> 
  </ion-content>
@@ -52,6 +39,6 @@
   <ion-footer>
     <div class="sign-in-hr">
     <p><span><ion-text  horizontal ="end" vertical="center">
-                             ــ فريق متحدين نقف ــ
+                            {{" TEAM "|translate}}
     </ion-text></span></p></div>
     </ion-footer>

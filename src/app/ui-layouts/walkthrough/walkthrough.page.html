@@ -10,7 +10,7 @@
     </ion-toolbar>
   </ion-header> -->
 
-
+ 
   <ion-content fullscreen="true" class="tutorial-page"  >
     <ion-header class="ion-no-border" slot="fixed">
       <ion-toolbar class="first">
@@ -18,7 +18,7 @@
         <ion-buttons color="facebook" slot="start">
           <ion-button color="facebook" (click)="toggleSideMenu()">
             <ion-icon slot="icon-only" ios="apps-outline" size="small" md="call-sharp"></ion-icon>
-            &nbsp; &nbsp;تخطي
+            &nbsp; &nbsp;{{"SKIP"|translate}}
           </ion-button>
   
         </ion-buttons>
@@ -46,7 +46,7 @@
           <div>
             <ion-button color="facebook" fill="clear" size="" (click)="moveToNext(slidesOne)">
               <ion-icon  slot="end" name="arrow-forward-circle-outline"  size=""></ion-icon>
-              <ion-label slot="start"> التالي</ion-label>
+              <ion-label slot="start">{{"NEXT"|translate}} \</ion-label>
             </ion-button>
           </div>
         </div>
@@ -59,19 +59,19 @@
           
           <!--<h2 class="slide-title">Let's get started</h2>-->
           <h1 class="slide-title main-b-header6">
-           تسجيل الدخول: 
+            {{"LOGin"|translate}} 
           </h1>
           <!-- Here to go from walkthrogh to signin immediately-->
           <ion-button mode="ios" color="facebook" expand="block" routerLink="/fire-signin" size="large">
-            اضغط هنا
+            {{"PRESS"|translate}}
           </ion-button>
 
           <h1 class="slide-title main-b-header6">
-           استخدام التطبيق بدون تسجيل الدخول: 
+           {{"UsingAppWithOut"|translate}}
            </h1>
            <!-- Here to go from walkthrogh to signin immediately-->
            <ion-button mode="ios" color="facebook" expand="block"  (click)="toggleSideMenu()" size="large">
-             اضغط هنا
+             {{"PRESS"|translate}}
            </ion-button>
         </div>
       </ion-slide>

@@ -3,14 +3,15 @@
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title  class="main-header4">انشاء دعوة</ion-title>
+ 
+    <ion-title  class="main-header4">{{"CREATinv"|translate}}</ion-title>
   </ion-toolbar>
   <ion-toolbar  color="medium">
     <ion-grid fixed class="ion-no-padding">
       <ion-segment mode="md" [(ngModel)]="selectedItem" >
-        <ion-segment-button value="one"> مكتوبة</ion-segment-button>
-        <ion-segment-button value="two">مساحة حرة</ion-segment-button>
-        <ion-segment-button value="three"> الدعوات الحالية</ion-segment-button>
+        <ion-segment-button value="one">{{"WRITTEN"|translate}}</ion-segment-button>
+        <ion-segment-button value="two">{{"EMPTY"|translate}}</ion-segment-button>
+        <ion-segment-button value="three">{{" CURRENTinv"|translate}}</ion-segment-button>
       </ion-segment>
     </ion-grid>
   </ion-toolbar>
@@ -28,8 +29,8 @@
                   <img src="../../assets/wedding1.jpeg">
                  
                    <ion-card-header>
-                    <ion-card-title class="ion-text-center" color="black">زواج </ion-card-title>
-                   <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/wedding">انتقل </ion-button>
+                    <ion-card-title class="ion-text-center" color="black">{{"WEDDING"|translate}} </ion-card-title>
+                   <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/wedding">{{"MOVE"|translate}}</ion-button>
                   </ion-card-header>
                   </ion-card>
 
@@ -39,8 +40,8 @@
                 <img src="../../assets/hennah2.jpg">
                 
                 <ion-card-header>
-                <ion-card-title class="ion-text-center" color="black">ليلة الحنّه</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل </ion-button>
+                <ion-card-title class="ion-text-center" color="black">{{"HENNA"|translate}}</ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">{{"MOVE"|translate}}</ion-button>
                 </ion-card-header>
                 </ion-card>
                 
@@ -53,8 +54,10 @@
                 <img src="../../assets/Mrs.jpeg">
                 
                 <ion-card-header>
-                <ion-card-title class="ion-text-center" color="black">توديع عزوبية</ion-card-title>
-                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل    </ion-button>
+  
+  
+                <ion-card-title class="ion-text-center" color="black">   {{"BYEsingle"|translate}}</ion-card-title>
+                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}}  </ion-button>
               
                 </ion-card-header>
                 </ion-card>
@@ -65,8 +68,9 @@
                 <img src="../../assets/pictures/baby3.jpg">
                 
                 <ion-card-header>
-                <ion-card-title class="ion-text-center" color="black"> مباركة مولود</ion-card-title>
-                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل    </ion-button>
+  
+                <ion-card-title class="ion-text-center" color="black">   {{"NEWbaby"|translate}} </ion-card-title>
+                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}}  </ion-button>
                 
                 
                 </ion-card-header>
@@ -80,8 +84,8 @@
                 <img src="../../assets/pjm545.jpg">
                 
                  <ion-card-header>
-                  <ion-card-title class="ion-text-center" color="black">حفــلة مبـيّـت</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/gathering">انتقل    </ion-button>
+                  <ion-card-title class="ion-text-center" color="black">   {{"GATHERING"|translate}} </ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/gathering"> {{"MOVE"|translate}} </ion-button>
                  </ion-card-header>
                   </ion-card>
                 <!--card and image for (gradution partY)-->
@@ -89,8 +93,8 @@
                  <img src="../../assets/graduation67.jpeg">
                 
                  <ion-card-header>
-                  <ion-card-title class="ion-text-center" color="black">الـتــخـرج</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل     </ion-button>
+                  <ion-card-title class="ion-text-center" color="black">{{"GRADUATION"|translate}} </ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}} </ion-button>
                  </ion-card-header>
                 </ion-card>
               </ion-col>
