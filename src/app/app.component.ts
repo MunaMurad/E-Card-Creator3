@@ -15,7 +15,7 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-
+//title ='ngx-i18n';
   public selectedIndex = 0;
   public appPages = [
     {
@@ -428,14 +428,18 @@ export class AppComponent {
     private TranslateService :TranslateService,
     // private userData: UserData,
     // private swUpdate: SwUpdate,
+  
+  
     private toastCtrl: ToastController,
+    
   ) {
-    this.TranslateService.setDefaultLang("ar");
-    this.TranslateService.addLangs(["en","ar"]);
-    this.initializeApp();
+    this.TranslateService.setDefaultLang("en");
+    
   }
-
-
+  changeLocale(locale:string){
+    this.TranslateService.use(locale);
+  }
+  
   initializeApp() {
 
     this.platform.ready().then(() => {

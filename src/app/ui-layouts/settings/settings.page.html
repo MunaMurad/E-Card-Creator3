@@ -10,30 +10,40 @@
 <ion-content class="backg">
 <ion-content class="ion-padding"> 
   <div>
-<!--
-<ion-list>
-    <ion-item class ="select">
-        <ion-label>Informtion</ion-label>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-        </ion-item>
+  <!--
 
-        <ion-item class="select">
+<select #locale(change)=changeLocale(locale)>
+<option value="en">English</option>
 
-          <ion-label>{{"Language"|translate}}</ion-label>
+<option value="ar">Arabic</option>
 
-        <ion-select [(ngModel)]="languageSelected" placeholder="select"(ionChange)="setLanguage()">
-         
-          <ion-select-option value="en" selected>English</ion-select-option>
-            <ion-select-option value="ar">Arabic</ion-select-option>
-       
-        </ion-select>
-      </ion-item>
-   </ion-list>-->
+
+
+
+</select>
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
     <ion-button color="greenwild" expand="block" routerLink="/fire-profile" >Edit your Profile</ion-button>
     <ion-button mode="ios" color="greenwild" expand="block" class="ion-margin-top"  (click)="logout()">
       Sign Out
   </ion-button>
+  <ion-button>yarb</ion-button>
   </div>    
 </ion-content> 
  </ion-content>

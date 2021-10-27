@@ -90,7 +90,7 @@ import { SharedModule} from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
-
+//ngx translate 
 import {HttpClientModule, HttpClient} from '@angular/common/http';
  import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateModule, TranslateLoader,TranslateService} from '@ngx-translate/core';

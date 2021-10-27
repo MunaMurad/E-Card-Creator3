@@ -610,7 +610,8 @@ const routes: Routes = [
   {
     path: 'image-editor',
     loadChildren: () => import('./congratspages/image-editor/image-editor.module').then( m => m.ImageEditorPageModule)
-  },  {
+  },
+  {
     path: 'empty-baby',
     loadChildren: () => import('./congratspages/empty-baby/empty-baby.module').then( m => m.EmptyBabyPageModule)
   },
@@ -661,6 +662,11 @@ const routes: Routes = [
   {
     path: 'start',
     loadChildren: () => import('./ui-layouts/start/start.module').then( m => m.StartPageModule)
+  },
+
+  {
+    path: 'eid-aladha',
+    loadChildren: () => import('./congratspages/eid-aladha/eid-aladha.module').then( m => m.EidAladhaPageModule)
   },
 
 
