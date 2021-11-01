@@ -12,9 +12,14 @@
 </ion-header>
 
 <ion-content class="backg" >
-  <div class="arabic-designs-slides">
-    <ion-slides [options]="option">
+ <!--This part to show arabic designs-->
 
+ <div class="ion-text-center">
+  <img class="pic" src="../assets/ar.png ">
+</div>
+
+<div class="arabic-designs-slides">
+<ion-slides [options]="option">
 
 
       <ion-slide (click) ="editImage('assets/designs/4.jpg')">
@@ -35,39 +40,51 @@
 
 
 
-      <ion-slide (click) ="editImage('assets/designs/14.jpg')">
-        <ion-card>
-          <img src="../assets/designs/14.jpg">
-        </ion-card>
-      </ion-slide>
-
-
-
-
-
-      <ion-slide (click) ="editImage('assets/designs/15.jpg')">
-        <ion-card>
-          <img src="../assets/designs/15.jpg">
-        </ion-card>
-      </ion-slide>
-
-
-
-      <ion-slide (click) ="editImage('assets/designs/17.jpg')">
-        <ion-card>
-          <img src="../assets/designs/17.jpg">
-        </ion-card>
-      </ion-slide>
-
-
-
-
-
-
 
     </ion-slides>
 
 
   </div>    
+
+  
+<!--This part to show english designs-->
+<div class="ion-text-center">
+  <img class="english-pic" src="../assets/en.png ">
+</div>
+
+
+<div class="english-designs-slides">
+  <ion-slides [options]="option">
+
+      
+  <ion-slide (click) ="editImage('assets/designs/14.jpg')">
+    <ion-card>
+      <img src="../assets/designs/14.jpg">
+    </ion-card>
+  </ion-slide>
+
+
+
+
+
+  <ion-slide (click) ="editImage('assets/designs/15.jpg')">
+    <ion-card>
+      <img src="../assets/designs/15.jpg">
+    </ion-card>
+  </ion-slide>
+
+
+
+  <ion-slide (click) ="editImage('assets/designs/17.jpg')">
+    <ion-card>
+      <img src="../assets/designs/17.jpg">
+    </ion-card>
+  </ion-slide>
+
+
+  </ion-slides>
+</div>
           
   </ion-content>  
+
+
