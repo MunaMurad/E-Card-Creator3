@@ -24,6 +24,9 @@
 "WRITTEN":"Written",
 "EMPTY":"Empty",
 "MOVE":"Move",
+"INVITATION":"Invitation",
+"WALK":"Walkthrough",
+"CONG":"congratulate",
 "MARRIAGEcontract":"Marriage Contract",
 "ENGAGEMENT":"Engagement",
 "BABY":"Baby",
@@ -49,12 +52,31 @@
 "SELECTP":"Select page",
 "SETTING":"Setting",
 "SIGNout":"Sign Out",
-"PRESS":"Press here"
-
-
-
-
-
+"SIGNin":"Sign in",
+"PRESS":"Press here",
+"FORGOT?":"Forgot password?",
+"DIRECTIVE1":"By clicking Sign up you agree to the following Terms and Conditions without reservation",
+"Fname":"First Name",
+"Lname":"Last Name",
+"PHONE":"Phone",
+"PASSWORD":"Password",
+"CREATE":"Create",
+"CANCEL":"Cancel",
+"FORGOT":"FORGOT",
+"FORGOT3":"  Forgot password",
+"DIRECTIVE2":"Username field must be at least 3 characters long! ",
+"DIRECTIVE3":"Password field must be at least 3 characters long!",
+"DIRECTIVE4":"If you want to sign out, click here to go to settings page.",
+"RECOVER":"Recover",
+"CREATn":"Create new user",
+"CREATEu":"Creat new account",
+"EMAIL":"emil",
+"SIGN":" Sign in to continue",
+"WARNING1":" Password field must be at least 6 characters long!",
+"WARNING2":"Username must be e-mail!",
+"WARNING3":"Phone field must be at least 6 characters long!",
+"WARNING4":"Lastname field must be at least 3 characters long!",
+"WARNING5":"Firstname field must be at least 3 characters long!"
 
 
 

@@ -76,7 +76,8 @@ export class AppComponent {
   {
     title: 'تهنئة',
     url: 'congratulate',
-    icon: 'mail-open'
+    icon: 'mail-open',
+    
   },
 
   /*  {
@@ -447,8 +448,10 @@ export class AppComponent {
     private toastCtrl: ToastController,
     
   ) {
-    this.TranslateService.setDefaultLang("en");
-    
+    this.TranslateService.setDefaultLang("ar");
+    this.TranslateService.addLangs(["en","ar"]);
+    this.initializeApp();
+
   }
   changeLocale(locale:string){
     this.TranslateService.use(locale);

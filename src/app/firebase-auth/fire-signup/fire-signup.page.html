@@ -3,7 +3,7 @@
       <ion-buttons slot="end">
         <ion-menu-button color="black" auto-hide="false"></ion-menu-button>
       </ion-buttons>
-      <ion-title color="black" size="large" class="ion-text-center" >SIGN UP</ion-title>
+      <ion-title color="black" size="large" class="ion-text-center" >{{"SIGNup"|translate}} </ion-title>
       <ion-buttons slot="start">
         <ion-back-button color="black" ></ion-back-button>
       </ion-buttons>
@@ -18,7 +18,7 @@
         <div class="register-form ion-margin">
             <ion-text color="dark">
                 <h2 text-center class="ion-margin-bottom main-header7">
-                    Create new account.
+                    {{"CREATEu"|translate}}
                 </h2>
             </ion-text>
             <form [formGroup]="registerForm" novalidate>
@@ -111,32 +111,28 @@
                 <!-- Error meassage -->
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.firstname.valid && registerForm.controls.firstname.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> Firstname field must be at least 3
-                        characters long!
+                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNING5"|translate}}
                     </p>
                 </ion-text>
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.lastname.valid && registerForm.controls.lastname.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> Lastname field must be at least 3 characters
-                        long!
+                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNINIG4"|translate}}
                     </p>
                 </ion-text>
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.phone.valid && registerForm.controls.phone.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> Phone field must be at least 6 characters
-                        long!
+                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNINIG3"|translate}}
                     </p>
                 </ion-text>
 
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.username.valid && registerForm.controls.username.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> Username must be e-mail!
+                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNINIG2"|translate}}
                     </p>
                 </ion-text>
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> Password field must be at least 6 characters
-                        long!
+                        <ion-icon name="information-circle-outline"></ion-icon>{{"WARNING1"|translate}}
                     </p>
                 </ion-text>
 
@@ -144,15 +140,15 @@
                 <!-- Submit button -->
                 <ion-button mode="ios" color="black" expand="block"  fill="solid" class="ion-margin-top" [disabled]="!registerForm.valid"
                     (click)="registerUser()">
-                    Create
+                    {{"CREATE"|translate}}
                 </ion-button>
                 <ion-button mode="ios" color="lightgray" expand="block" fill="outline" class="ion-margin-top"
                     routerLink="/fire-signin">
-                    Cancel
+                    {{"CANCEL"|translate}}
                 </ion-button>
                 <ion-text color="dark">
                     <h2  class="ion-text-center ion-margin-bottom main-header8">
-                        By clicking Sign up you agree to the following Terms ans Conditions without reservation
+                         {{"DIRECTIVE1"|translate}}
                     </h2>
                 </ion-text>
             </form>

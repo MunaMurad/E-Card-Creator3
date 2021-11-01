@@ -33,7 +33,7 @@
             <div class="login-form">
                 <ion-text color="dark">
                     <h2 text-center class="ion-margin-bottom main-header7">
-                        Sign in to continue
+                        {{"SIGN"|translate}}
                     </h2>
                 </ion-text>
                 <!--  -->
@@ -43,7 +43,7 @@
                         <ion-label>
                             <ion-icon name="person-add-outline" color="black"></ion-icon>
                         </ion-label>
-                        <ion-input formControlName="username"  type="email" placeholder="email" color="black" [disabled]="loginForm.valid"></ion-input>
+                        <ion-input formControlName="username"  type="email" placeholder="email" color="black" [disabled]="loginForm.valid">{{"EMAIL"|translate}}</ion-input>
                     </ion-item>
                     <!-- ############ -->
                     <ion-item class="roundedInput8px margin-bottom-10">
@@ -52,6 +52,8 @@
                         </ion-label>
 
                         <ion-input formControlName="password"  type="password" placeholder="Password" color="black" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false">
+                            {{"PASSWORD"|translate}}
+                        
                         </ion-input>
 
                         <!-- ### Show/hide password ### -->
@@ -61,7 +63,7 @@
                     </ion-item>
                     <!-- ############ -->
                     <span>
-                        <p class="ion-text-right" (click)="forgot()">Forgot password?</p>
+                        <p class="ion-text-right" (click)="forgot()">   {{"FORGOT?"|translate}}</p>
                     </span>     
                 
                     <!-- ############ -->
@@ -69,14 +71,12 @@
                     <!-- Error meassage -->
                     <ion-text color="scarletred">
                         <p *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.touched">
-                            <ion-icon name="information-circle-outline"></ion-icon> Username field must be at least 3 characters
-                            long!
+                            <ion-icon name="information-circle-outline"></ion-icon>  {{"DIRECTIVE2"|translate}}
                         </p>
                     </ion-text>
                     <ion-text color="scarletred">
                         <p *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched">
-                            <ion-icon name="information-circle-outline"></ion-icon> Password field must be at least 3 characters
-                            long!
+                            <ion-icon name="information-circle-outline"></ion-icon> {{"DIRECTIVE3"|translate}}
                         </p>
                     </ion-text>
  
@@ -107,22 +107,22 @@
                 </ion-button> -->
 
                 <ion-button mode="ios" color="black" expand="block"  fill="solid" [disabled]="!loginForm.valid" (click)="login()">
-                    Sign in
+                    {{"SIGNin"|translate}}
                 </ion-button>
 
                 <ion-button mode="ios" color="lightgray" expand="block" fill="outline" class="ion-margin-top" (click)="register()">
-                    Create new user
+                      {{"CREATn"|translate}}
                 </ion-button>
                 <ion-text color="dark">
                     <h2 class="ion-margin-bottom main-header8 ion-text-center">
-                        By clicking Sign up you agree to the following Terms ans Conditions without reservation
+                        {{"DIRECTIVE1"|translate}} 
                     </h2>
                 </ion-text>
 
                  <!--message to learn the user where to go if he want to sign out--> 
                  <ion-text color="asphalt">
                     <h2 class="ion-margin-bottom main-header8 ion-text-center" routerLink="/settings">
-                        If you want to sign out, click here to go to settings page. 
+                        {{"DIRECTIVE4"|translate}}  
                     </h2>
                 </ion-text> 
 
