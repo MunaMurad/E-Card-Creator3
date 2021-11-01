@@ -5,7 +5,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'walkthrough',
+    redirectTo: 'intro-page',
     pathMatch: 'full'
   },
   {
@@ -676,6 +676,11 @@ const routes: Routes = [
     path: 'eid-aladha',
     loadChildren: () => import('./congratspages/eid-aladha/eid-aladha.module').then( m => m.EidAladhaPageModule)
   },
+  {
+    path: 'intro-page',
+    loadChildren: () => import('./intro-page/intro-page.module').then( m => m.IntroPagePageModule)
+  },
+
 
 
 
