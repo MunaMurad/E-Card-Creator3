@@ -94,12 +94,12 @@ export class AppComponent {
   
   {
     title: 'Setting',
-    url: 'settings',
+    url: 'sett',
     icon: 'settings'
   },
   {
       title: 'Information Page',
-      url: 'information',
+      url: 'info',
       icon: 'alert'
     },
     //make unused pages as comment in sidemenue

@@ -679,7 +679,19 @@ const routes: Routes = [
   {
     path: 'intro-page',
     loadChildren: () => import('./intro-page/intro-page.module').then( m => m.IntroPagePageModule)
+  },  {
+    path: 'sett',
+    loadChildren: () => import('./about-E-card/sett/sett.module').then( m => m.SettPageModule)
   },
+  {
+    path: 'info',
+    loadChildren: () => import('./about-E-card/info/info.module').then( m => m.InfoPageModule)
+  },
+  {
+    path: 'beginning',
+    loadChildren: () => import('./about-E-card/beginning/beginning.module').then( m => m.BeginningPageModule)
+  },
+
 
 
 
