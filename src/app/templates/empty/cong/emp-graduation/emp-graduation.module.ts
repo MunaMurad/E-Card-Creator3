@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { EmpGraduationPageRoutingModule } from './emp-graduation-routing.module';
+
+import { EmpGraduationPage } from './emp-graduation.page';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    EmpGraduationPageRoutingModule
+  ],
+  declarations: [EmpGraduationPage]
+})
+export class EmpGraduationPageModule {}
