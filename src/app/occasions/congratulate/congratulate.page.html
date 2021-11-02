@@ -5,15 +5,15 @@
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title  class="main-header4">{{""|translate}}انشاء تهنئة</ion-title>
+    <ion-title  class="main-header4">{{"CREATcong"|translate}}</ion-title>
     
   </ion-toolbar>
 
     <ion-toolbar color="amethyst" >
     <ion-grid fixed class="ion-no-padding">
       <ion-segment mode="md" [(ngModel)]="selectedItem" >
-        <ion-segment-button value="one"> {{""|translate}}مكتوبة</ion-segment-button>
-        <ion-segment-button value="two">{{""|translate}}مساحة حرة</ion-segment-button>
+        <ion-segment-button value="one"> {{"WRITTEN"|translate}}</ion-segment-button>
+        <ion-segment-button value="two">{{"EMPTY"|translate}}</ion-segment-button>
       </ion-segment>
     </ion-grid>
   </ion-toolbar>
@@ -120,10 +120,10 @@
           <ion-card>
             <img src="../../assets/3gdGeran.jpeg">
             <ion-card-header>
-              <ion-card-title class="ion-text-center" color="black">عقد قران</ion-card-title>
+              <ion-card-title class="ion-text-center" color="black">{{"MARRIAGEcontract"|translate}}</ion-card-title>
             
             <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-              class="ion-button" routerLink="/empty-marriage-contract">انتقل</ion-button>
+              class="ion-button" routerLink="/empty-marriage-contract">{{"MOVE"|translate}}</ion-button>
             </ion-card-header>
             </ion-card>
 
@@ -132,9 +132,9 @@
             <img src="../../assets/pictures/baby3.jpg">
 
             <ion-card-header>
-              <ion-card-title class="ion-text-center" color="black">مولود</ion-card-title>
+              <ion-card-title class="ion-text-center" color="black">{{"BABY"|translate}}</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button" routerLink="/empty-baby">انتقل</ion-button>
+                class="ion-button" routerLink="/empty-baby">{{"MOVE"|translate}}</ion-button>
             </ion-card-header>
           </ion-card>
 
@@ -144,9 +144,9 @@
             <img src="../../assets/FridayPray.jpeg">
 
             <ion-card-header>
-              <ion-card-title class="ion-text-center" color="black">يوم الجمعة</ion-card-title>
+              <ion-card-title class="ion-text-center" color="black">{{"FRIDAY"|translate}}</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button" routerLink="/empty-friday" >انتقل</ion-button>
+                class="ion-button" routerLink="/empty-friday" >{{"MOVE"|translate}}</ion-button>
 
 
             </ion-card-header>
@@ -158,9 +158,9 @@
           <ion-card>
             <img src="../../assets/Quran1.jpeg">
             <ion-card-header>
-              <ion-card-title class="ion-text-center" color="black">رمضان</ion-card-title>
+              <ion-card-title class="ion-text-center" color="black">{{"RAMADAN"|translate}}</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button" routerLink="/empty-ramadan">انتقل</ion-button>
+                class="ion-button" routerLink="/empty-ramadan">{{"MOVE"|translate}}</ion-button>
             </ion-card-header>
           </ion-card>
 
@@ -170,17 +170,17 @@
             <ion-card >
               <img src="../../assets/Ballons1.jpeg">
                <ion-card-header>
-                <ion-card-title class="ion-text-center" color="black">عيد الفطر المبارك</ion-card-title>
+                <ion-card-title class="ion-text-center" color="black">{{"EID1"|translate}}</ion-card-title>
               <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
-                class="ion-button" routerLink="/empty-eid-alfitr">انتقل</ion-button>
+                class="ion-button" routerLink="/empty-eid-alfitr">{{"MOVE"|translate}}</ion-button>
             </ion-card-header>
           </ion-card>
  <!--//card and image for ( عيدالاضحى)-->
  <ion-card >
   <img src="../../assets/cuteSheep.jpg">
    <ion-card-header>
-    <ion-card-title class="ion-text-center" color="black">عيد الاضحى المبارك</ion-card-title>
-    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل </ion-button>
+    <ion-card-title class="ion-text-center" color="black">{{"EID2"|translate}}</ion-card-title>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton"> {{"MOVE"|translate}}</ion-button>
           </ion-card-header>
          </ion-card>
 
@@ -188,9 +188,11 @@
  <ion-card >
    <img src="../../assets/graduation2.jpeg">
     <ion-card-header>
-     <ion-card-title class="ion-text-center" color="black">الـتــخـرج</ion-card-title>
-     <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">انتقل </ion-button>
-           </ion-card-header>
+     <ion-card-title class="ion-text-center" color="black">{{"GRADUATION"|translate}}</ion-card-title>
+            </ion-card-header>
+          
+            <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">{{"MOVE"|translate}} </ion-button>
+           
           </ion-card>       
 
 

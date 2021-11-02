@@ -8,33 +8,39 @@
 </ion-header>
 
 <ion-content class="backg">
-<ion-content class="ion-padding"> 
-  <div>
-  <!--
+<ion-content class="ion-padding">  
 
-<select #locale(change)=changeLocale(locale)>
-<option value="en">English</option>
+  <ion-list>
+      <ion-item class ="select">
+      <ion-label>Informtion</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-item>
 
-<option value="ar">Arabic</option>
+      <ion-item class="select">
 
+        <ion-label>languageSelected</ion-label>
+<!--
+      <ion-select cancelText='Cancel' [(ngModel)]="language" placeholder="select">
+       
+        <ion-select-option >English</ion-select-option>
+          <ion-select-option >Arabic</ion-select-option>
+     
+      </ion-select>
+      -->
+    </ion-item>
+ </ion-list>
 
-
-
-</select>
-
-
--->
-
-
-    <ion-button color="amethyst" expand="block" routerLink="/fire-profile" >{{"EDIT"|translate}}
-      <ion-icon name="clipboard-outline"></ion-icon></ion-button>
+    <ion-button color="amethyst" expand="block" routerLink="../fire-profile" >
+      {{"EDIT"|translate}}
+      <ion-icon name="clipboard-outline"></ion-icon>
+    </ion-button>
     <ion-button mode="ios" color="amethyst" expand="block" class="ion-margin-top"  (click)="logout()">
       {{"SIGNout"|translate}}
 
       <ion-icon name="log-out-outline"></ion-icon>
   </ion-button>
  
-  </div>    
+    
 </ion-content> 
  </ion-content>
    

@@ -3,9 +3,10 @@
     <ion-buttons slot="end">
       <ion-menu-button color="black" auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title color="black" size="large" class="ion-text-center">FORGOT</ion-title>
+    <ion-title color="black" size="large" class="ion-text-center">{{"FORGOT"|translate}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="black"></ion-back-button>
+
+<ion-back-button color="black">{{"BACK"|translate}}</ion-back-button>
     </ion-buttons>
     <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
   </ion-toolbar>
@@ -23,7 +24,7 @@
         <div class="login-form">
           <ion-text color="dark">
             <h2 text-center class="ion-margin-bottom main-header7">
-              Forgot password
+              {{"FORGOT3"|translate}}
             </h2>
           </ion-text>
           <ion-list class="ion-margin-top">
@@ -34,22 +35,23 @@
               <ion-label>
                 <ion-icon name="mail-outline" color="medium"></ion-icon>
               </ion-label>
-              <ion-input formControlName="email" type="text" placeholder="email"></ion-input>
+              <ion-input formControlName="email" type="text" placeholder="email">{{"EMAIL"|translate}}</ion-input>
             </ion-item>
           </ion-list>
 
           <!-- Error meassage -->
           <p color="warning" *ngIf="!resetPasswordForm.controls.email.valid && resetPasswordForm.controls.email.touched">
-            <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
+            <ion-icon name="information-circle-outline"></ion-icon>     {{"DIRECTIVE2"|translate}}
           </p>
 
           <ion-button mode="ios" color="black" fill="solid" expand="block" [disabled]="!resetPasswordForm.valid"
             (click)="resetPassword()">
-            Recover
+            {{"RECOVER"|translate}}
+         
           </ion-button>
           <ion-button mode="ios" color="lightgray" expand="block" fill="solid" class="ion-margin-top"
             routerLink="/fire-signup">
-            Create new user
+            {{"CREATn"|translate}}   
           </ion-button>
           <!--
           <ion-text color="dark">

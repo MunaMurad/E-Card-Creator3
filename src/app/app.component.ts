@@ -61,8 +61,8 @@ export class AppComponent {
 
       //my try to add new page to the side menu
       {
-        title: 'Walkthrough',
-        url: 'walkthrough',
+        title: 'intro',
+        url: 'intro-page',
         icon: 'walk'
       },
 
@@ -76,7 +76,8 @@ export class AppComponent {
   {
     title: 'تهنئة',
     url: 'congratulate',
-    icon: 'mail-open'
+    icon: 'mail-open',
+    
   },
 
   /*  {
@@ -431,7 +432,7 @@ export class AppComponent {
   ];  
   loggedIn = false;
   dark = false;
-  languageSelected: any = 'en';
+  languageSelected: any = 'ar';
   constructor(
     private menu: MenuController,
     private platform: Platform,
@@ -447,8 +448,10 @@ export class AppComponent {
     private toastCtrl: ToastController,
     
   ) {
-    this.TranslateService.setDefaultLang("en");
-    
+    this.TranslateService.setDefaultLang("ar");
+    this.TranslateService.addLangs(["en","ar"]);
+    this.initializeApp();
+
   }
   changeLocale(locale:string){
     this.TranslateService.use(locale);
