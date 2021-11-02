@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-toolbar color="lightgreen">
+  <ion-toolbar color="amethyst">
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
@@ -26,9 +26,12 @@
 -->
 
 
-    <ion-button color="greenwild" expand="block" routerLink="/fire-profile" >{{"EDIT"|translate}}</ion-button>
-    <ion-button mode="ios" color="greenwild" expand="block" class="ion-margin-top"  (click)="logout()">
+    <ion-button color="amethyst" expand="block" routerLink="/fire-profile" >{{"EDIT"|translate}}
+      <ion-icon name="clipboard-outline"></ion-icon></ion-button>
+    <ion-button mode="ios" color="amethyst" expand="block" class="ion-margin-top"  (click)="logout()">
       {{"SIGNout"|translate}}
+
+      <ion-icon name="log-out-outline"></ion-icon>
   </ion-button>
  
   </div>    

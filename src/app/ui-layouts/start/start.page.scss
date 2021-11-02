@@ -12,7 +12,7 @@ ion-content{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../../assets/WhatsApp Image 2021-10-06 at 5.38.00 AM (2).jpeg');
+    background-image: url('../../../assets/henry-co--odUkx8C2gg-unsplash.jpg');
    }
    //class I use it in the footer 
   .sign-in-hr {
@@ -38,9 +38,30 @@ ion-content{
 
 
   }
+  .english-pic{
+    width: 70%;
+    position: absolute;
+    left: 20%;
+    right: 0;
+    top: 60%;
+    transform: translateY(-50%);
+}
+  .firstButton {
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 28%;
+    transform: translateY(-50%);
+  }
 
 
 
+
+  .wordsHeader {
+    margin-top: 2.8rem;
+    background-color: #97929242; 
+  }
   
   .center{
     position: absolute;
