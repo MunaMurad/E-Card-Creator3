@@ -19,7 +19,7 @@
 
 <ion-content class="backg" >
   <ion-grid fixed>
-      <!--***********  2 columns  ***********-->
+      <!--***********   columns 1 ***********-->
       <ion-grid  *ngIf="selectedItem==='one'">
           <ion-row wrap color="gray">
               <ion-col >
@@ -30,7 +30,7 @@
                  
                    <ion-card-header>
                     <ion-card-title class="ion-text-center" color="black">{{"WEDDING"|translate}} </ion-card-title>
-                   <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/wedding">{{"MOVE"|translate}}</ion-button>
+                   <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-wedding">{{"MOVE"|translate}}</ion-button>
                   </ion-card-header>
                   </ion-card>
 
@@ -41,7 +41,7 @@
                 
                 <ion-card-header>
                 <ion-card-title class="ion-text-center" color="black">{{"HENNA"|translate}}</ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">{{"MOVE"|translate}}</ion-button>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-henna">{{"MOVE"|translate}}</ion-button>
                 </ion-card-header>
                 </ion-card>
                 
@@ -57,7 +57,7 @@
   
   
                 <ion-card-title class="ion-text-center" color="black">   {{"BYEsingle"|translate}}</ion-card-title>
-                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}}  </ion-button>
+                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-bye-singlelife">  {{"MOVE"|translate}}  </ion-button>
               
                 </ion-card-header>
                 </ion-card>
@@ -70,7 +70,7 @@
                 <ion-card-header>
   
                 <ion-card-title class="ion-text-center" color="black">   {{"NEWbaby"|translate}} </ion-card-title>
-                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}}  </ion-button>
+                <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-babyborn">  {{"MOVE"|translate}}  </ion-button>
                 
                 
                 </ion-card-header>
@@ -85,7 +85,7 @@
                 
                  <ion-card-header>
                   <ion-card-title class="ion-text-center" color="black">   {{"GATHERING"|translate}} </ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/gathering"> {{"MOVE"|translate}} </ion-button>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-home-party"> {{"MOVE"|translate}} </ion-button>
                  </ion-card-header>
                   </ion-card>
                 <!--card and image for (gradution partY)-->
@@ -94,14 +94,14 @@
                 
                  <ion-card-header>
                   <ion-card-title class="ion-text-center" color="black">{{"GRADUATION"|translate}} </ion-card-title>
-                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}} </ion-button>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-gradu">  {{"MOVE"|translate}} </ion-button>
                  </ion-card-header>
                 </ion-card>
               </ion-col>
           </ion-row>
       </ion-grid>
       
-      <!--***********  3 columns  ***********-->
+      <!--***********   columns 2  ***********-->
       
       <ion-grid *ngIf="selectedItem==='two'">
           <ion-row wrap color="gray">
@@ -115,7 +115,7 @@
        <ion-card-header>
         <ion-card-title class="ion-text-center" color="black">{{"WEDDING"|translate}}  </ion-card-title>
        
-       <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/empty-wedding">  {{"MOVE"|translate}}    </ion-button>
+       <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-wedding">  {{"MOVE"|translate}}    </ion-button>
       </ion-card-header>
       </ion-card>
 
@@ -127,7 +127,7 @@
     <ion-card-header>
     <ion-card-title class="ion-text-center" color="black">{{"HENNA"|translate}}</ion-card-title>
     
-    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">   {{"MOVE"|translate}}   </ion-button>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-henna">   {{"MOVE"|translate}}   </ion-button>
   </ion-card-header>
     
     </ion-card>
@@ -142,7 +142,7 @@
     
     <ion-card-header>
     <ion-card-title class="ion-text-center" color="black">{{"BYEsingle"|translate}}</ion-card-title>
-    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">     {{"MOVE"|translate}} </ion-button>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-bye-singlelife">     {{"MOVE"|translate}} </ion-button>
   
     </ion-card-header>
     </ion-card>
@@ -154,7 +154,7 @@
     
     <ion-card-header>
     <ion-card-title class="ion-text-center" color="black"> {{"NEWbaby"|translate}} </ion-card-title>
-    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">     {{"MOVE"|translate}} </ion-button>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-babyborn">     {{"MOVE"|translate}} </ion-button>
     
     
     </ion-card-header>
@@ -169,7 +169,7 @@
     
      <ion-card-header>
       <ion-card-title class="ion-text-center" color="black">{{"GATHERING"|translate}}</ion-card-title>
-      <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}} </ion-button>
+      <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-home-party">  {{"MOVE"|translate}} </ion-button>
      </ion-card-header>
       </ion-card>
     <!--card and image for (gradution partY)-->
@@ -178,7 +178,7 @@
     
      <ion-card-header>
       <ion-card-title class="ion-text-center" color="black">{{"GRADUATION"|translate}}</ion-card-title>
-      <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton">  {{"MOVE"|translate}}  </ion-button>
+      <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-gradu">  {{"MOVE"|translate}}  </ion-button>
      </ion-card-header>
     </ion-card>
 
@@ -187,7 +187,7 @@
       </ion-grid>
       
       
-      <!--***********  4 columns  ***********-->
+      <!--***********   columns 3 ***********-->
       <ion-grid *ngIf="selectedItem==='three'">
           <ion-row wrap color="gray">
             <ion-col  >
