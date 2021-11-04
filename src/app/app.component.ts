@@ -61,8 +61,8 @@ export class AppComponent {
 
       //my try to add new page to the side menu
       {
-        title: 'Walkthrough',
-        url: 'walkthrough',
+        title: 'intro',
+        url: 'intro-page',
         icon: 'walk'
       },
 
@@ -94,12 +94,12 @@ export class AppComponent {
   
   {
     title: 'Setting',
-    url: 'settings',
+    url: 'sett',
     icon: 'settings'
   },
   {
       title: 'Information Page',
-      url: 'information',
+      url: 'info',
       icon: 'alert'
     },
     //make unused pages as comment in sidemenue
@@ -432,7 +432,7 @@ export class AppComponent {
   ];  
   loggedIn = false;
   dark = false;
-  languageSelected: any = 'en';
+  languageSelected: any = 'ar';
   constructor(
     private menu: MenuController,
     private platform: Platform,

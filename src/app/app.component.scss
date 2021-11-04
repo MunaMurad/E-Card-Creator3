@@ -1,6 +1,7 @@
 ion-menu {
   ion-content {
-    --background: var(--ion-item-background, var(--ion-background-color, #fff));
+    --background: var(--ion-item-background, var(--ion-background-color, #fff)
+    );
   }
 }
 
@@ -47,7 +48,7 @@ ion-menu.md {
       min-height: 26px;
     }
   }
-
+ 
 
   
 

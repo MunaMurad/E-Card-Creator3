@@ -1,0 +1,69 @@
+<ion-header >
+  <ion-toolbar color="amethyst">
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4">رمضان </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="black" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backg" >
+  
+  <!--This part to show arabic designs-->
+
+  <!-- if needed we will seperate arabic and english
+  <div class="ion-text-center">
+    <img class="pic" src="../assets/arabic.png ">
+  </div>
+  -->
+
+<div class="arabic-designs-slides">
+<ion-slides [options]="option">
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan2.png')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan2.png">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan5.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan5.jpg">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan8.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan8.jpg">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan11.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan11.jpg">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan12.png')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan12.png">
+    </ion-card>
+  </ion-slide>
+
+</ion-slides>
+</div>
+  
+        
+        
+            
+
+  </ion-content>
+  
