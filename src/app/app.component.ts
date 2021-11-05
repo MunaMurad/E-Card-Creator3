@@ -432,7 +432,7 @@ export class AppComponent {
   ];  
   loggedIn = false;
   dark = false;
-  languageSelected: any = 'ar';
+  
   constructor(
     private menu: MenuController,
     private platform: Platform,
@@ -450,22 +450,15 @@ export class AppComponent {
   ) {
     this.TranslateService.setDefaultLang("ar");
     this.TranslateService.addLangs(["en","ar"]);
-    this.initializeApp();
+   
 
   }
   changeLocale(locale:string){
     this.TranslateService.use(locale);
   }
   
-  initializeApp() {
+  
 
-    this.platform.ready().then(() => {
-
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.setLanguage();
-    });
-  }
 
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
@@ -479,14 +472,4 @@ export class AppComponent {
     this.storage.set('ion_did_tutorial', false);
     this.router.navigateByUrl('/tutorial');
   }
-  setLanguage() {
-    const defaultLanguage = this.TranslateService.getDefaultLang();
-    if (this.languageSelected) {
-      console.log(this.languageSelected);
-      this.TranslateService.setDefaultLang(this.languageSelected);
-      this.TranslateService.use(this.languageSelected);
-    } else {
-      this.languageSelected = defaultLanguage;
-      this.TranslateService.use(defaultLanguage);
-    }
-}}
+ }
