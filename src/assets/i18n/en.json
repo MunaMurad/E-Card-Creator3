@@ -25,7 +25,7 @@
 "EMPTY":"Empty",
 "MOVE":"Move",
 "INVITATION":"Invitation",
-"WALK":"Walkthrough",
+"WALK":"introduce",
 "CONG":"congratulate",
 "MARRIAGEcontract":"Marriage Contract",
 "ENGAGEMENT":"Engagement",
@@ -78,7 +78,12 @@
 "WARNING4":"Lastname field must be at least 3 characters long!",
 "WARNING5":"Firstname field must be at least 3 characters long!",
 "INFO":"More inforamtion",
-"SIGNIN":"Sign In"
+"SIGNIN":"Sign In",
+"back":"back",
+"USERACCOUNT": "User Account",
+"AOU": "AOU Students"
+
+
 
 
 

@@ -16,13 +16,13 @@ import { Storage } from '@ionic/storage';
 })
 export class AppComponent {
 //title ='ngx-i18n';
-  public selectedIndex = 0;
-  public appPages = [
-    {
+ // public selectedIndex = 0;
+/*  public appPages = [
+  /* {
        title: 'Nearby places',
        url: '/folder/Inbox',
        icon: 'mail'
-     },
+     }, 
      {
        title: 'Food delivery',
        url: '/app-food',
@@ -47,25 +47,20 @@ export class AppComponent {
        title: '',
        url: '/folder/Spam',
        icon: 'warning'
-     }
-  ]
+     } 
+  ] */
   ;
-   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+ //  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 
 
   //**************************************//
   //********** UI layout pages **********//
   //*************************************//
-  layoutPages = [
+ // layoutPages = [
 
       //my try to add new page to the side menu
-      {
-        title: 'intro',
-        url: 'intro-page',
-        icon: 'walk'
-      },
-
+    
 
     /*  {
     title: 'congrats',
@@ -73,35 +68,14 @@ export class AppComponent {
     icon: 'mail-open'
   }, */
 
-  {
-    title: 'تهنئة',
-    url: 'congratulate',
-    icon: 'mail-open',
-    
-  },
-
+ 
   /*  {
       title: 'Invitation',
       url: 'image-gallery',
       icon: 'mail-open'
     }, */
 
-    {
-      title: 'دعوة',
-      url: 'invitation',
-      icon: 'mail-open'
-    },
-  
-  {
-    title: 'Setting',
-    url: 'sett',
-    icon: 'settings'
-  },
-  {
-      title: 'Information Page',
-      url: 'info',
-      icon: 'alert'
-    },
+
     //make unused pages as comment in sidemenue
 
     // {
@@ -199,13 +173,13 @@ export class AppComponent {
   //   url: 'empty-state',
   //   icon: 'sad'
   // }
-  ];
+//  ];
 
   //**************************************//
   //********* UI component pages *********//
   //*************************************//
 
- componentPages = [
+ //componentPages = [
     // {
     //   title: 'Accordion',
     //   url: 'accordion',
@@ -365,7 +339,7 @@ export class AppComponent {
     //   url: 'toolbar',
     //   icon: 'code-slash'
     // }
- ];
+ //];
 
 
 
@@ -397,12 +371,12 @@ export class AppComponent {
   //**************************************//
   //******** Firebase auth pages *********//
   //*************************************//
-  authPages = [
-    {
+  //authPages = [
+    /*{
       title: 'Signin',
       url: 'fire-signin',
       icon: 'log-in'
-    },
+    },*/
    /* {
       title: 'Signup',
       url: 'fire-signup',
@@ -418,18 +392,20 @@ export class AppComponent {
       url: 'fire-profile',
       icon: 'flame'
     } */
-  ];
+  //];
 
   //**************************//
   //******** Themes *********//
   //************************//
-  themePages = [
+  //themePages = [
     /* {
       title: 'Color ',
       url: 'ui-colors',
       icon: 'color-palette'
     } */
-  ];  
+  //];  
+
+  
   loggedIn = false;
   dark = false;
   
@@ -448,7 +424,7 @@ export class AppComponent {
     private toastCtrl: ToastController,
     
   ) {
-    this.TranslateService.setDefaultLang("ar");
+    this.TranslateService.setDefaultLang("en");
     this.TranslateService.addLangs(["en","ar"]);
    
 
@@ -461,15 +437,15 @@ export class AppComponent {
 
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+   /* const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
+     this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    */ }
   }
 
-  openTutorial() {
+ /* openTutorial() {
     this.menu.enable(false);
     this.storage.set('ion_did_tutorial', false);
     this.router.navigateByUrl('/tutorial');
   }
- }
+ } */
