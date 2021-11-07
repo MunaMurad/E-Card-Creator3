@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { EmpFridayPageRoutingModule } from './emp-friday-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { EmpFridayPage } from './emp-friday.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { EmpFridayPage } from './emp-friday.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EmpFridayPageRoutingModule
+    EmpFridayPageRoutingModule,
+    TranslateModule
   ],
   declarations: [EmpFridayPage]
 })

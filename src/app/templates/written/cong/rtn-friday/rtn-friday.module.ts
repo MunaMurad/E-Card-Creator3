@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { RtnFridayPageRoutingModule } from './rtn-friday-routing.module';
 
 import { RtnFridayPage } from './rtn-friday.page';
-
+import {TranslateModule} from '@ngx-translate/core';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RtnFridayPageRoutingModule
+    RtnFridayPageRoutingModule,
+    TranslateModule
   ],
   declarations: [RtnFridayPage]
 })

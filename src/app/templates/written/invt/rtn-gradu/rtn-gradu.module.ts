@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { RtnGraduPageRoutingModule } from './rtn-gradu-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { RtnGraduPage } from './rtn-gradu.page';
 
 @NgModule({
@@ -13,7 +11,9 @@ import { RtnGraduPage } from './rtn-gradu.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RtnGraduPageRoutingModule
+    RtnGraduPageRoutingModule,
+    TranslateModule
+    
   ],
   declarations: [RtnGraduPage]
 })

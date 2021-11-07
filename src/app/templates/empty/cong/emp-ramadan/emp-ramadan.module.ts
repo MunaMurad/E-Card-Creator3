@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { EmpRamadanPageRoutingModule } from './emp-ramadan-routing.module';
 
+import {TranslateModule} from '@ngx-translate/core';
 import { EmpRamadanPage } from './emp-ramadan.page';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { EmpRamadanPage } from './emp-ramadan.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EmpRamadanPageRoutingModule
+    EmpRamadanPageRoutingModule,
+    TranslateModule
   ],
   declarations: [EmpRamadanPage]
 })

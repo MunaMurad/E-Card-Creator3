@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { EmpMarriagePageRoutingModule } from './emp-marriage-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { EmpMarriagePage } from './emp-marriage.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { EmpMarriagePage } from './emp-marriage.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EmpMarriagePageRoutingModule
+    EmpMarriagePageRoutingModule,
+    TranslateModule
   ],
   declarations: [EmpMarriagePage]
 })

@@ -6,7 +6,6 @@
      "Def5" :"You will find various designs options and phrases to create a sparkling card",
     "DEF6":"You will find written cards.",
     "Def7":"An option that allows you to shorten your time and get your card done quickly",
-    "Round":"Let the experience begin",
     "Click":"Click here",
     "NEXT":"Next",
     "SKIP":"Skip",
@@ -81,7 +80,13 @@
 "SIGNIN":"Sign In",
 "back":"back",
 "USERACCOUNT": "User Account",
-"AOU": "AOU Students"
+"AOU": "AOU Students",
+"PROFILE":"User Profile",
+"ProfileDetail":"Your profile detail.",
+"UpdateProfile":"Update profile.",
+"beginning":" Select your Path:"
+
+
 
 
 

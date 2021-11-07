@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RtnRamadanPageRoutingModule } from './rtn-ramadan-routing.module';
+import {TranslateModule} from '@ngx-translate/core';
 
 import { RtnRamadanPage } from './rtn-ramadan.page';
 
@@ -13,7 +14,8 @@ import { RtnRamadanPage } from './rtn-ramadan.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RtnRamadanPageRoutingModule
+    RtnRamadanPageRoutingModule,
+    TranslateModule
   ],
   declarations: [RtnRamadanPage]
 })

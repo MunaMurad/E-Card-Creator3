@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { EmpEidAladhaPageRoutingModule } from './emp-eid-aladha-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { EmpEidAladhaPage } from './emp-eid-aladha.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { EmpEidAladhaPage } from './emp-eid-aladha.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EmpEidAladhaPageRoutingModule
+    EmpEidAladhaPageRoutingModule,
+    TranslateModule
   ],
   declarations: [EmpEidAladhaPage]
 })

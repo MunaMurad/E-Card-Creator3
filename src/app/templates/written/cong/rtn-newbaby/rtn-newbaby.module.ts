@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RtnNewbabyPageRoutingModule } from './rtn-newbaby-routing.module';
+import {TranslateModule} from '@ngx-translate/core';
 
 import { RtnNewbabyPage } from './rtn-newbaby.page';
 
@@ -13,7 +14,8 @@ import { RtnNewbabyPage } from './rtn-newbaby.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RtnNewbabyPageRoutingModule
+    RtnNewbabyPageRoutingModule,
+    TranslateModule
   ],
   declarations: [RtnNewbabyPage]
 })

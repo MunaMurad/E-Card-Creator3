@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { RtnEngagementPageRoutingModule } from './rtn-engagement-routing.module';
 
 import { RtnEngagementPage } from './rtn-engagement.page';
-
+import {TranslateModule} from '@ngx-translate/core';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RtnEngagementPageRoutingModule
+    RtnEngagementPageRoutingModule,
+    TranslateModule
   ],
   declarations: [RtnEngagementPage]
 })

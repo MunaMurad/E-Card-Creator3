@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { BeginningPageRoutingModule } from './beginning-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { BeginningPage } from './beginning.page';
 
 @NgModule({
@@ -13,7 +11,8 @@ import { BeginningPage } from './beginning.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    BeginningPageRoutingModule
+    BeginningPageRoutingModule,
+    TranslateModule
   ],
   declarations: [BeginningPage]
 })

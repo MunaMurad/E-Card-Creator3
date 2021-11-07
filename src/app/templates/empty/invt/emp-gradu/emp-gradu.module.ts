@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { EmpGraduPageRoutingModule } from './emp-gradu-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { EmpGraduPage } from './emp-gradu.page';
 
 @NgModule({
@@ -13,7 +11,9 @@ import { EmpGraduPage } from './emp-gradu.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EmpGraduPageRoutingModule
+    EmpGraduPageRoutingModule,
+    TranslateModule
+    
   ],
   declarations: [EmpGraduPage]
 })

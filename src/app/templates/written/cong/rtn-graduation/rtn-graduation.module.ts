@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RtnGraduationPageRoutingModule } from './rtn-graduation-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { RtnGraduationPage } from './rtn-graduation.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { RtnGraduationPage } from './rtn-graduation.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RtnGraduationPageRoutingModule
+    RtnGraduationPageRoutingModule,
+    TranslateModule
   ],
   declarations: [RtnGraduationPage]
 })

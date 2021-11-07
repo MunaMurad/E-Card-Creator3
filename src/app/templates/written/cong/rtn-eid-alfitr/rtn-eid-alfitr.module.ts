@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RtnEidAlfitrPageRoutingModule } from './rtn-eid-alfitr-routing.module';
-
+import {TranslateModule} from '@ngx-translate/core';
 import { RtnEidAlfitrPage } from './rtn-eid-alfitr.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { RtnEidAlfitrPage } from './rtn-eid-alfitr.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RtnEidAlfitrPageRoutingModule
+    RtnEidAlfitrPageRoutingModule,
+    TranslateModule
   ],
   declarations: [RtnEidAlfitrPage]
 })
