@@ -424,7 +424,7 @@ export class AppComponent {
     private toastCtrl: ToastController,
     
   ) {
-    this.TranslateService.setDefaultLang("en");
+    this.TranslateService.setDefaultLang("ar");
     this.TranslateService.addLangs(["en","ar"]);
    
 

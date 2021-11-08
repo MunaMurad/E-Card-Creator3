@@ -10,7 +10,58 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="backg" >
+  
+  <!--This part to show arabic designs-->
+
+  <!-- if needed we will seperate arabic and english
+  <div class="ion-text-center">
+    <img class="pic" src="../assets/arabic.png ">
+  </div>
+  -->
+
+<div class="arabic-designs-slides">
+<ion-slides [options]="option">
+
+  <ion-slide (click) ="editImage('assets/designs/graduation 65t67.png')">
+    <ion-card>
+      <img src="../assets/designs/graduation 65t67.png">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/GRD32.jpg')">
+    <ion-card>
+      <img src="../assets/designs/GRD32.jpg">
+    </ion-card>
+  </ion-slide>
+  
+  <ion-slide (click) ="editImage('assets/designs/GRD478.jpg')">
+    <ion-card>
+      <img src="../assets/designs/GRD478.jpg">
+    </ion-card>
+  </ion-slide>
+  
+  <ion-slide (click) ="editImage('assets/designs/GRD645.png')">
+    <ion-card>
+      <img src="../assets/designs/GRD645.png">
+    </ion-card>
+  </ion-slide>
+  
+  <ion-slide (click) ="editImage('assets/designs/GRD3424.png')">
+    <ion-card>
+      <img src="../assets/designs/GRD3424.png">
+    </ion-card>
+  </ion-slide>
+  
+  <ion-slide (click) ="editImage('assets/designs/grd768890.png')">
+    <ion-card>
+      <img src="../assets/designs/grd768890.png">
+    </ion-card>
+  </ion-slide>
+
  
-  </ion-content>
+</ion-slides>
+</div>
+  
+</ion-content>
+  
