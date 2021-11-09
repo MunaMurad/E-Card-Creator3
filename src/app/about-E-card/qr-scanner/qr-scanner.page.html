@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="amethyst">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{"QR-scanner"|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backg">
+
+
+  <input #fileinput type="file" accept="image/*:capture=camera" hidden (change)="handleFile($event.target.files)">
+
+<ion-button expand="full" (click)="captureImage()">
+  <ion-icon slot="start" name="camera"></ion-icon>
+  Capture Image
+</ion-button>
+
+
+  <ion-button expand="full" color="amethyst" (click)="startScan()">
+    <ion-icon slot="start" name="scan-outline"></ion-icon>
+    {{"StartScan"|translate}}
+  </ion-button>
+
+
+  <ion-button expand="full" color="amethyst" (click)="reset()" *ngIf="scanResult">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    {{"Reset"|translate}}
+  </ion-button>
+
+  <video #video [hidden]="!scanActive" width="100%"></video>
+  
+  <canvas #canvas hidden></canvas>
+  <ion-button expand="full" color="amethyst" (click)="stopScan()" *ngIf="scanActive">
+    <ion-icon slot="start" name="close"></ion-icon>
+    {{"StopScan"|translate}}
+  </ion-button>
+
+  <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title>
+        {{"QRcode"|translate}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ scanResult }}
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+
+<!--footer of the page -->
+<ion-footer>
+  <div class="sign-in-hr">
+  <p><span><ion-text  horizontal ="end" vertical="center">
+    {{"TEAM"|translate}}
+  </ion-text></span></p></div>
+  </ion-footer>

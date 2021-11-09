@@ -39,6 +39,7 @@
     "file-saver": "^2.0.5",
     "firebase": "^7.14.3",
     "ionic4-rating": "^1.0.9",
+    "jsqr": "^1.4.0",
     "ng2-charts": "^2.3.2",
     "npm-install-peers": "^1.2.2",
     "rxjs": "^7.3.0",

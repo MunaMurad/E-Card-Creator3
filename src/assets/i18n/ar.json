@@ -85,5 +85,10 @@
 "PROFILE":"المـلف الشـخـصـي",
 "ProfileDetail":":بيانات ملفك الشـخـصـي",
 "UpdateProfile":"حـدث بياناتك ",
-"beginning":" حدد مسارك"
+"beginning":" حدد مسارك",
+"QR-scanner":"QR الـماسـح الـضـوئي ",
+"StartScan":"إبدأ المسح",
+"Reset":"إعادة الضبط",
+"StopScan":"إيقاف المسح",
+" QRcode":" QR الكود المكتشـف"
 }

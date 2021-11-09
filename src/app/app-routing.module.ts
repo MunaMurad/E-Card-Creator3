@@ -799,6 +799,10 @@ const routes: Routes = [
     path: 'rtn-graduation',
     loadChildren: () => import('./templates/written/cong/rtn-graduation/rtn-graduation.module').then( m => m.RtnGraduationPageModule)
   },
+  {
+    path: 'qr-scanner',
+    loadChildren: () => import('./about-E-card/qr-scanner/qr-scanner.module').then( m => m.QRScannerPageModule)
+  },
 
 
 

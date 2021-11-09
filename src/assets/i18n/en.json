@@ -84,7 +84,12 @@
 "PROFILE":"User Profile",
 "ProfileDetail":"Your profile detail.",
 "UpdateProfile":"Update profile.",
-"beginning":" Select your Path:"
+"beginning":" Select your Path:",
+"QR-scanner":"QR-scanner",
+"StartScan":"Start Scan",
+"Reset":"Reset",
+"StopScan":"Stop scan",
+" QRcode":" QR code"
 
 
 
