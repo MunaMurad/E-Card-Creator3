@@ -10,7 +10,7 @@
 <ion-content class="backg">
 
 
-  <input #fileinput type="file" accept="image/*:capture=camera" hidden (change)="handleFile($event.target.files)">
+  <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event)">
 
 <ion-button expand="full" (click)="captureImage()">
   <ion-icon slot="start" name="camera"></ion-icon>

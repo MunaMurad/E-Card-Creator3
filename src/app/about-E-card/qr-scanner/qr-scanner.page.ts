@@ -34,9 +34,10 @@ export class QRScannerPage implements OnInit {
     this.fileinput.nativeElement.click();
   }
 
-  handleFile(files:FileList){
-
-    const file=files.item(0);
+  handleFile(event: Event){
+    const target= event.target as HTMLInputElement;
+    const file: File = (target.files as FileList)[0];
+    //const file=files.item(0);
     var img =new Image();
     img.onload=()=>{
       this.canvasContext.drawImage(img, 0, 0, this.canvasElement.width,this.canvasElement.height);
@@ -119,6 +120,7 @@ export class QRScannerPage implements OnInit {
 
   stopScan(){
     this.scanActive= false;
+    
   }
 
 
