@@ -130,11 +130,14 @@ export class QRScannerPage implements OnInit {
 
   async showQrToast(){
     const toast=await this.toastCtrl.create({
-      message:'Open $(this.scanResult)?',
+      //message:'Open the QR code',
       position:'top',
       buttons:[
         {
-          text:'Open',
+          side: 'start',
+          icon:'open-outline',
+          text:'Open the QR code',
+          
           handler:()=>{
             window.open(this.scanResult,'_system','location=yes');
           }
