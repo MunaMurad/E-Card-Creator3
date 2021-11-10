@@ -20,7 +20,7 @@ export class QRScannerPage implements OnInit {
   videoElement:any;
   canvasElement:any;
   canvasContext:any;
-  loading:HTMLIonLoadingElement
+  loading:HTMLIonLoadingElement;
   constructor(private toastCtrl:ToastController, private loadingCtrl:LoadingController) { }
 
   ngAfterViewInit(){
@@ -40,7 +40,7 @@ export class QRScannerPage implements OnInit {
     //const file=files.item(0);
     var img =new Image();
     img.onload=()=>{
-      this.canvasContext.drawImage(img, 0, 0, this.canvasElement.width,this.canvasElement.height);
+      this.canvasContext.drawImage(img, 0, 0, this.canvasElement.width, this.canvasElement.height);
       const imageData=this.canvasContext.getImageData(0,0, this.canvasElement.width, this.canvasElement.height);
       const code = jsQR(imageData.data,imageData.width,imageData.height,{
         inversionAttempts:'dontInvert'
@@ -79,18 +79,22 @@ export class QRScannerPage implements OnInit {
           this.canvasElement.width = this.videoElement.videoWidth;
           
           this.canvasContext.drawImage(
-            this.videoElement,
-            0,
-            0,
+            this.videoElement, 
+              0,
+              0,
+             this.canvasElement.width,
+             this.canvasElement.height
+             );
+
+          const imageData=this.canvasContext.getImageData(
+             0,
+             0,
             this.canvasElement.width,
             this.canvasElement.height
-          );
+              );
 
-          const imageData=this.canvasContext.getImageData(0, 0, this.canvasElement,  this.canvasElement.height);
-
-          const code = jsQR(imageData.data,imageData.width,imageData.height,{
-            inversionAttempts:'dontInvert'
-          });
+          const code = jsQR(imageData.data, imageData.width, imageData.height, {
+            inversionAttempts:'dontInvert'});
 
           console.log('code: ', code);
            

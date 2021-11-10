@@ -12,9 +12,9 @@
 
   <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event)">
 
-<ion-button expand="full" (click)="captureImage()">
-  <ion-icon slot="start" name="camera"></ion-icon>
-  Capture Image
+<ion-button expand="full" fill="solid" color="pomegrenade" (click)="captureImage()">
+  <ion-icon slot="start" name="images"></ion-icon>
+  {{"viewQR"|translate}}
 </ion-button>
 
 
@@ -32,13 +32,13 @@
   <video #video [hidden]="!scanActive" width="100%"></video>
   
   <canvas #canvas hidden></canvas>
-  <ion-button expand="full" color="amethyst" (click)="stopScan()" *ngIf="scanActive">
+  <ion-button expand="full" color="pomegrenade" (click)="stopScan()" *ngIf="scanActive">
     <ion-icon slot="start" name="close"></ion-icon>
     {{"StopScan"|translate}}
   </ion-button>
 
   <ion-card *ngIf="scanResult">
-    <ion-card-header>
+    <ion-card-header color="pomegrenade">
       <ion-card-title>
         {{"QRcode"|translate}}
       </ion-card-title>
