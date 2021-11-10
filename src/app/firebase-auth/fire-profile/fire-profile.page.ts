@@ -101,7 +101,7 @@ export class FireProfilePage implements OnInit {
   .then(() => {
     console.log("LOGOUT");
     this.ionicComponentService.presentTimeoutLoading(1000,true);
-    this.ionicComponentService.presentToastWithOptions("Notification","notifications-outline","","You are logged out","top",9000);
+    this.ionicComponentService.presentToastWithOptions("Notification","log-out-outline","","You are logged out","top",9000);
     //this.ionicComponentService.presentToast("Logout",1000);
     this.router.navigateByUrl('fire-signin');
       //loadingPopup.dismiss();

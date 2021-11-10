@@ -11,6 +11,41 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content class="backg" >
- 
-  </ion-content>
+  
+  <!--This part to show arabic designs-->
+
+  <div class="ion-text-center">
+    <img class="pic" src="../assets/arabic.png ">
+  </div>
+
+<div class="arabic-designs-slides">
+  <ion-slides [options]="option">
+
+    <ion-slide (click) ="editImage('assets/designs/24.png')">
+      <ion-card>
+        <img src="../assets/designs/24.png">
+      </ion-card>
+    </ion-slide>
+  
+    
+
+</ion-slides>
+</div>
+  
+
+<!--This part to show english designs-->
+<div class="ion-text-center">
+  <img class="english-pic" src="../assets/en.png ">
+</div>
+
+<div class="english-designs-slides">
+  <ion-slides [options]="option">
+
+
+
+  </ion-slides>
+</div>
+        
+</ion-content>  
