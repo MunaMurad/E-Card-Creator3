@@ -1,0 +1,123 @@
+<ion-content fullscreen="true" class="tutorial-page"  >
+  <ion-header class="ion-no-border" slot="fixed">
+    <ion-toolbar class="first">
+
+      <ion-buttons color="facebook" slot="start">
+        <ion-button color="facebook" (click)="toggleSideMenu()">
+          <ion-icon slot="icon-only" ios="apps-outline" size="small" md="call-sharp"></ion-icon>
+          &nbsp; &nbsp;{{"SKIP"|translate}}
+        </ion-button>
+
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-slides pager="true" [options]="slideFlip" #slidesOne>
+
+    <!--First slide-->
+    <ion-slide class="first-slilde">
+      <div class="top">
+      <h1 class="slide-title" > "E-Card Creator"</h1>
+    </div>
+        <img src= "../assets/Image folder-amico-first slide.svg">
+        <div class="down">
+          <h4>{{"Def1"|translate}}</h4>
+    </div>
+
+    <div class="next">
+      <ion-button color="facebook" fill="clear" size="" (click)="moveToNext(slidesOne)">
+        <ion-icon  slot="end" name="arrow-forward-circle-outline"></ion-icon>
+        <ion-label slot="start">{{"NEXT"|translate}} </ion-label>
+      </ion-button>
+    </div>
+    </ion-slide>
+    
+
+    <!--Second slide-->
+        <ion-slide class="second-slilde">
+          <div class="top">
+          <h1 class="slide-title" >{{ "Def2"|translate}}</h1>
+        </div>
+            <img src= "../assets/Photo Sharing-bro-secondSlide.svg">
+            <div class="down">
+          <h4>{{"Def3"|translate}}</h4>
+        </div>
+    
+        <div class="next">
+          <ion-button color="facebook" fill="clear" size="" (click)="moveToNext(slidesOne)">
+            <ion-icon  slot="end" name="arrow-forward-circle-outline"></ion-icon>
+            <ion-label slot="start">{{"NEXT"|translate}} </ion-label>
+          </ion-button>
+        </div>
+        </ion-slide>
+        
+       <!--Third slide-->
+       <ion-slide class="third-slilde">
+        <div class="top">
+        <h1 class="slide-title" >{{  "Def4"|translate}}</h1>
+      </div>
+          <img src=  "../assets/Designer girl-cuate third slide.svg">
+          <div class="down">
+        <h4>{{"Def5"|translate}}</h4>
+      </div>
+  
+      <div class="next">
+        <ion-button color="facebook" fill="clear" size="" (click)="moveToNext(slidesOne)">
+          <ion-icon  slot="end" name="arrow-forward-circle-outline"></ion-icon>
+          <ion-label slot="start">{{"NEXT"|translate}} </ion-label>
+        </ion-button>
+      </div>
+      </ion-slide>
+
+
+      
+       <!--Forth slide-->
+       <ion-slide class="forth-slilde">
+        <div class="top">
+        <h1 class="slide-title" >{{ "DEF6"|translate}}</h1>
+      </div>
+          <img src= "../assets/Invite-cuate forth slid.svg">
+          <div class="down">
+        <h4>{{"Def7"|translate}}</h4>
+      </div>
+  
+      <div class="next">
+        <ion-button color="facebook" fill="clear" size="" (click)="moveToNext(slidesOne)">
+          <ion-icon  slot="end" name="arrow-forward-circle-outline"></ion-icon>
+          <ion-label slot="start">{{"NEXT"|translate}} </ion-label>
+        </ion-button>
+      </div>
+      </ion-slide>
+
+
+      <!-- Last slide -->
+      <!-- MUST TO ADD CSS FOR LAST SLIDE BACKGROUND-->
+      <ion-slide class="last-slide" >
+        <div class="introBox" margin-top>
+          <img src= "../assets/Sign in-amico.svg">
+          <!--<h2 class="slide-title">Let's get started</h2>-->
+          <h1 >
+            {{"LOGin"|translate}} 
+          </h1>
+          <!-- Here to go from walkthrogh to signin immediately-->
+          <ion-button mode="ios" color="pink" fill="outline"  routerLink="/fire-signin" size="large">
+           {{"PRESS"|translate}}
+           <ion-icon name="log-in-outline"></ion-icon>
+          </ion-button>
+
+          <h3>_______________ {{"OR"|translate}} _________________</h3>          
+          <h1>
+           {{"UsingAppWithOut"|translate}}
+           </h1>
+           <!-- Here to go from walkthrogh to signin immediately-->
+           <ion-button mode="ios" color="pink" fill="outline"  (click)="toggleSideMenu()" size="large">
+            {{"PRESS"|translate}}
+            <ion-icon name="walk"></ion-icon>
+           </ion-button>
+        </div>
+      </ion-slide>
+
+
+    </ion-slides>
+  
+  </ion-content>

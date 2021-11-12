@@ -1,0 +1,62 @@
+<ion-header >
+  <ion-toolbar color="amethyst">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4">{{"SETTING"|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backg">
+<ion-content class="ion-padding">  
+
+  <ion-list>
+      <ion-item class ="select">
+      <ion-label>Language</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item class="select">
+
+        <ion-label>languageSelected</ion-label>
+        <!--
+       <ion-select cancelText='Cancel' [(ngModel)]="language" placeholder="Select Language">
+        <ion-select-option value="ar">Arabic</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+        </ion-select>
+
+            الفرق بين الكود الي فوق اضفتو انو فيه 
+            الفاليو و نفس الشي ما اشتغل 
+            الي تحت الاصلي 
+
+       <ion-select cancelText='Cancel' [(ngModel)]="language" placeholder="select">
+       
+        <ion-select-option >English</ion-select-option>
+          <ion-select-option >Arabic</ion-select-option>
+     
+      </ion-select>
+       -->
+    </ion-item>
+ </ion-list>
+
+    <ion-button color="amethyst" expand="block" routerLink="../fire-profile" >
+      {{"EDIT"|translate}}
+      <ion-icon name="clipboard-outline"></ion-icon>
+    </ion-button>
+    <ion-button mode="ios" color="amethyst" expand="block" class="ion-margin-top"  (click)="logout()">
+      {{"SIGNout"|translate}}
+
+      <ion-icon name="log-out-outline"></ion-icon>
+  </ion-button>
+ 
+    
+</ion-content> 
+ </ion-content>
+   
+  <!--footer of the page -->
+  <ion-footer>
+    <div class="sign-in-hr">
+    <p><span><ion-text  horizontal ="end" vertical="center">
+                            {{"TEAM"|translate}}
+    </ion-text></span></p></div>
+    </ion-footer>

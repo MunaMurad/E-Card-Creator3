@@ -51,14 +51,14 @@
 .tui-colorpicker-palette-hex {
   font-family: monospace;
   display: inline-block;
-  *display: inline;
+  display: inline;
   zoom: 1;
   width: 60px;
   vertical-align: middle;
 }
 .tui-colorpicker-palette-preview {
   display: inline-block;
-  *display: inline;
+  display: inline;
   zoom: 1;
   width: 12px;
   height: 12px;

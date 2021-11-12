@@ -3,10 +3,10 @@
       <ion-buttons slot="end">
           <ion-menu-button color="black" auto-hide="false"></ion-menu-button>
       </ion-buttons>
-      <ion-title color="black" size="large" class="ion-text-center">PROFILE</ion-title>
-      <!-- <ion-buttons slot="start">
-          <ion-back-button color="orange"></ion-back-button>
-      </ion-buttons> -->
+      <ion-title color="black" size="large" class="ion-text-center">{{"PROFILE"|translate}}</ion-title>
+       <ion-buttons slot="start">
+          <ion-back-button color="light" text=" "></ion-back-button>
+      </ion-buttons> 
       <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
   </ion-toolbar>
 </ion-header>
@@ -22,7 +22,7 @@
     <div class="login-form">
       <ion-text color="dark">
         <h2 text-center class="ion-margin-bottom main-header7">
-            Your profile detail.
+          {{"ProfileDetail"|translate}}
         </h2>
     </ion-text>
     <form [formGroup]="updateForm" novalidate>
@@ -103,10 +103,10 @@
 
 
           <ion-button mode="ios" color="black" fill="solid" expand="block" class="ion-margin-top"  (click)="updateProfile()">
-            Update profile
+            {{"UpdateProfile"|translate}}
           </ion-button>
           <ion-button mode="ios" color="gray" fill="solid" expand="block" class="ion-margin-top"  (click)="logout()">
-              Signout
+             {{"SIGNout"|translate}}
           </ion-button>
           <!--
           <ion-text color="dark">

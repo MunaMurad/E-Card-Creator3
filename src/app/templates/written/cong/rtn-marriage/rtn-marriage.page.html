@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar color="amethyst">
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4">{{"MARRIAGEcontract"|translate}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text=" " color="light" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backg">
+
+  <!--This part to show arabic designs-->
+  <div class="ion-text-center">
+    <img class="pic" src="../assets/ar.png ">
+  </div>
+
+<div class="arabic-designs-slides">
+<ion-slides [options]="option">
+  <ion-slide (click) ="editImage('assets/photos/marriage1.jpg')">
+    <ion-card>
+      <img src="../assets/photos/marriage1.jpg">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/marriage1.PNG')">
+    <ion-card>
+      <img src="../assets/designs/marriage1.PNG">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/marriage2.PNG')">
+    <ion-card>
+      <img src="../assets/designs/marriage2.PNG">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/marriage3.PNG')">
+    <ion-card>
+      <img src="../assets/designs/marriage3.PNG">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/marriage4.PNG')">
+    <ion-card>
+      <img src="../assets/designs/marriage4.PNG">
+    </ion-card>
+  </ion-slide>
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-slides>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--This part to show english designs-->
+<div class="ion-text-center">
+  <img class="english-pic" src="../assets/en.png ">
+</div>
+
+
+<div class="english-designs-slides">
+  <ion-slides [options]="option">
+    <ion-slide (click) ="editImage('assets/designs/wedding2.png')">
+      <ion-card>
+        <img src="../assets/designs/wedding2.png">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide (click) ="editImage('assets/designs/engagement2.png')">
+      <ion-card>
+        <img src="../assets/designs/engagement2.png">
+      </ion-card>
+    </ion-slide>
+
+
+
+
+
+  </ion-slides>
+</div>
+
+
+</ion-content>

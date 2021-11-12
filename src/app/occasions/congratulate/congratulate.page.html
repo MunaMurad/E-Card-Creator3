@@ -1,0 +1,204 @@
+<ion-header   >
+
+ 
+  <ion-toolbar color="amethyst">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4">{{"CREATcong"|translate}}</ion-title>
+    
+  </ion-toolbar>
+
+    <ion-toolbar color="amethyst" >
+    <ion-grid fixed class="ion-no-padding">
+      <ion-segment mode="md" [(ngModel)]="selectedItem" >
+        <ion-segment-button value="one"> {{"WRITTEN"|translate}}</ion-segment-button>
+        <ion-segment-button value="two">{{"EMPTY"|translate}}</ion-segment-button>
+      </ion-segment>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backg" >
+ <ion-grid fixed>
+      <!--***********  columns 1 ***********-->
+  <ion-grid  *ngIf="selectedItem==='one'">
+   <ion-row wrap color="gray">
+    <ion-col >
+          <!--card with image for (wedding)-->
+          <ion-card>
+            <img src="../../assets/3gdGeran.jpeg">
+
+           
+            <ion-card-header>
+              <ion-card-title class="ion-text-center" color="black">{{"MARRIAGEcontract"|translate}}</ion-card-title>
+            <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
+              class="ion-button" routerLink="/rtn-marriage"> {{"MOVE"|translate}}</ion-button>
+            </ion-card-header>
+            </ion-card>
+
+             <!--card with image for (Engagement)-->
+             <ion-card >
+              <img src="../../assets/wedding2.jpeg">
+              <ion-card-header>
+                <ion-card-title class="ion-text-center" color="black">{{"ENGAGEMENT"|translate}}</ion-card-title>
+               <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-engagement">  {{"MOVE"|translate}}</ion-button>
+              </ion-card-header>
+              </ion-card>
+          <!--card with image for (baby)-->
+          <ion-card>
+            <img src="../../assets/pictures/baby3.jpg">
+
+            <ion-card-header>
+              <ion-card-title class="ion-text-center" color="black">{{"BABY"|translate}}</ion-card-title>
+              <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
+                class="ion-button" routerLink="/rtn-newbaby"> {{"MOVE"|translate}}</ion-button>
+
+
+            </ion-card-header>
+          </ion-card>
+
+
+          <ion-card >
+            <img src ="../../assets/FridayPray.jpeg">
+  
+             <ion-card-header>
+               <ion-card-title class= "ion-text-center"color="black">{{"FRIDAY"|translate}}</ion-card-title>
+               <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-friday">  {{"MOVE"|translate}}</ion-button>
+             </ion-card-header>
+          </ion-card>
+                 <!--//card and image for (رمضان)-->
+ 
+               <ion-card>
+                  <img src="../../assets/Quran1.jpeg">
+                 <ion-card-header>
+                  <ion-card-title class="ion-text-center"color="black">{{"RAMADAN"|translate}}</ion-card-title>
+                  <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-ramadan"> {{"MOVE"|translate}} </ion-button>
+                  </ion-card-header>
+                    </ion-card>
+
+               <!--//card and image for (  عيدالفطر)-->
+ 
+           <ion-card >
+            <img src="../../assets/Ballons1.jpeg">
+             <ion-card-header>
+              <ion-card-title class="ion-text-center" color="black">{{"EID1"|translate}}</ion-card-title>
+              <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-eid-alfitr">  {{"MOVE"|translate}}</ion-button>
+             </ion-card-header>
+             </ion-card>
+  
+         <!--//card and image for ( عيدالاضحى  )-->
+           <ion-card >
+          <img src="../../assets/cuteSheep.jpg">
+           <ion-card-header>
+            <ion-card-title class="ion-text-center" color="black">{{"EID2"|translate}}</ion-card-title>
+            <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-eid-aladha">  {{"MOVE"|translate}}</ion-button>
+                  </ion-card-header>
+                 </ion-card>
+
+         <!--//card and image for ( graduation)-->
+         <ion-card >
+           <img src="../../assets/graduation2.jpeg">
+            <ion-card-header>
+             <ion-card-title class="ion-text-center" color="black">{{"GRADUATION"|translate}}</ion-card-title>
+             <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/rtn-graduation">  {{"MOVE"|translate}}</ion-button>
+                   </ion-card-header>
+                  </ion-card>       
+
+
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--***********   columns  2 ***********-->
+
+    <ion-grid *ngIf="selectedItem==='two'">
+      <ion-row wrap color="gray">
+        <ion-col>
+
+          <ion-card>
+            <img src="../../assets/3gdGeran.jpeg">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center" color="black">{{"MARRIAGEcontract"|translate}}</ion-card-title>
+            
+            <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
+              class="ion-button" routerLink="/emp-marriage">{{"MOVE"|translate}}</ion-button>
+            </ion-card-header>
+            </ion-card>
+
+          <!--card with image for (مولود)-->
+          <ion-card>
+            <img src="../../assets/pictures/baby3.jpg">
+
+            <ion-card-header>
+              <ion-card-title class="ion-text-center" color="black">{{"BABY"|translate}}</ion-card-title>
+              <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
+                class="ion-button" routerLink="/emp-newbaby">{{"MOVE"|translate}}</ion-button>
+            </ion-card-header>
+          </ion-card>
+
+          <!--//card and image for (جمعه))-->
+
+          <ion-card color>
+            <img src="../../assets/FridayPray.jpeg">
+
+            <ion-card-header>
+              <ion-card-title class="ion-text-center" color="black">{{"FRIDAY"|translate}}</ion-card-title>
+              <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
+                class="ion-button" routerLink="/emp-friday" >{{"MOVE"|translate}}</ion-button>
+
+
+            </ion-card-header>
+          </ion-card>
+
+
+          <!--//card and image for (رمضان)-->
+
+          <ion-card>
+            <img src="../../assets/Quran1.jpeg">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center" color="black">{{"RAMADAN"|translate}}</ion-card-title>
+              <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
+                class="ion-button" routerLink="/emp-ramadan">{{"MOVE"|translate}}</ion-button>
+            </ion-card-header>
+          </ion-card>
+
+
+            <!--//card and image for (  عيدالفطر)-->
+              
+            <ion-card >
+              <img src="../../assets/Ballons1.jpeg">
+               <ion-card-header>
+                <ion-card-title class="ion-text-center" color="black">{{"EID1"|translate}}</ion-card-title>
+              <ion-button expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button"
+                class="ion-button" routerLink="/emp-eid-alfitr">{{"MOVE"|translate}}</ion-button>
+            </ion-card-header>
+          </ion-card>
+ <!--//card and image for ( عيدالاضحى)-->
+ <ion-card >
+  <img src="../../assets/cuteSheep.jpg">
+   <ion-card-header>
+    <ion-card-title class="ion-text-center" color="black">{{"EID2"|translate}}</ion-card-title>
+    <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-eid-aladha"> {{"MOVE"|translate}}</ion-button>
+          </ion-card-header>
+         </ion-card>
+
+ <!--//card and image for ( graduation)-->
+ <ion-card >
+   <img src="../../assets/graduation2.jpeg">
+    <ion-card-header>
+     <ion-card-title class="ion-text-center" color="black">{{"GRADUATION"|translate}}</ion-card-title>
+            </ion-card-header>
+          
+            <ion-button  expand="full" shape="round" fill="solid" color="lightgray" strong class="my-action-button" class="ion-buuton" routerLink="/emp-graduation">{{"MOVE"|translate}} </ion-button>
+           
+          </ion-card>       
+
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+</ion-content>
+   

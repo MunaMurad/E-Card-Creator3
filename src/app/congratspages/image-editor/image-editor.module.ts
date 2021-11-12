@@ -8,6 +8,9 @@ import { ImageEditorPageRoutingModule } from './image-editor-routing.module';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ImageEditorPage } from './image-editor.page';
 import { QRCodeSVGModule } from 'ngx-qrcode-svg';
+
+import {TranslateModule} from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     NgxQRCodeModule,
@@ -15,7 +18,8 @@ import { QRCodeSVGModule } from 'ngx-qrcode-svg';
     CommonModule,
     FormsModule,
     IonicModule,
-    ImageEditorPageRoutingModule
+    ImageEditorPageRoutingModule,
+    TranslateModule
   ],
   declarations: [ImageEditorPage]
 })

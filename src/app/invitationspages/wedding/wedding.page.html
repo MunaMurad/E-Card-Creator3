@@ -14,14 +14,36 @@
   
   <!--This part to show arabic designs-->
 
-  <!-- if needed we will seperate arabic and english
+  
   <div class="ion-text-center">
     <img class="pic" src="../assets/arabic.png ">
   </div>
-  -->
 
 <div class="arabic-designs-slides">
   <ion-slides [options]="option">
+
+    <ion-slide (click) ="editImage('assets/designs/invit wedding.png')">
+      <ion-card>
+        <img src="../assets/designs/invit wedding.png">
+      </ion-card>
+    </ion-slide> 
+
+
+
+</ion-slides>
+</div>
+  
+
+<!--This part to show english designs-->
+<div class="ion-text-center">
+  <img class="english-pic" src="../assets/en.png ">
+</div>
+
+
+<div class="english-designs-slides">
+  <ion-slides [options]="option">
+
+    
     <ion-slide (click) ="editImage('assets/designs/wedding1.png')">
       <ion-card>
         <img src="../assets/designs/wedding1.png">
@@ -34,22 +56,32 @@
       </ion-card>
     </ion-slide>
 
-    
-    <ion-slide (click) ="editImage('assets/designs/invit wedding.png')">
-      <ion-card>
-        <img src="../assets/designs/invit wedding.png">
-      </ion-card>
-    </ion-slide> 
-
     <ion-slide (click) ="editImage('assets/designs/wedding76789.png')">
       <ion-card>
         <img src="../assets/designs/wedding76789.png">
       </ion-card>
     </ion-slide> 
+    
 
-</ion-slides>
+
+    <ion-slide (click) ="editImage('assets/designs/23.jpg')">
+      <ion-card>
+        <img src="../assets/designs/23.jpg">
+      </ion-card>
+    </ion-slide> 
+
+
+
+
+
+
+
+
+
+    
+
+  </ion-slides>
 </div>
-  
-        
+
         
 </ion-content>  

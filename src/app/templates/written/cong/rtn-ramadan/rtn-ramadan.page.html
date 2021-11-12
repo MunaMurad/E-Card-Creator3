@@ -1,0 +1,120 @@
+<ion-header >
+  <ion-toolbar color="amethyst">
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="main-header4">{{"RAMADAN"|translate}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="light" text=" " ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="backg" >
+  
+  <!--This part to show arabic designs-->
+
+  <div class="ion-text-center">
+    <img class="pic" src="../assets/ar.png ">
+  </div>
+
+<div class="arabic-designs-slides">
+<ion-slides [options]="option">
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan1.png')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan1.png">
+    </ion-card>
+  </ion-slide>
+<!--
+  <ion-slide (click) ="editImage('assets/designs/ramadan3.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan3.jpg">
+    </ion-card>
+  </ion-slide>
+  -->
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan4.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan4.jpg">
+    </ion-card>
+  </ion-slide>
+
+
+
+  <ion-slide (click) ="editImage('assets/designs/5.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/5.jpg">
+    </ion-card>
+  </ion-slide>
+
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan6.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan6.jpg">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan9.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan9.jpg">
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide (click) ="editImage('assets/designs/ramadan10.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/ramadan10.jpg">
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+</div>
+  
+
+<!--This part to show english designs-->
+<div class="ion-text-center">
+  <img class="english-pic" src="../assets/en.png ">
+</div>
+
+
+<div class="english-designs-slides">
+  <ion-slides [options]="option">
+
+    <ion-slide (click) ="editImage('assets/designs/Ramadan 979.png')">
+      <ion-card>
+        
+        <img src="../assets/designs/Ramadan 979.png">
+      </ion-card>
+    </ion-slide>
+
+    
+  <ion-slide (click) ="editImage('assets/designs/6.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/6.jpg">
+    </ion-card>
+  </ion-slide>
+
+    
+
+  <ion-slide (click) ="editImage('assets/designs/2.jpg')">
+    <ion-card>
+      
+      <img src="../assets/designs/2.jpg">
+    </ion-card>
+  </ion-slide>
+
+    
+  </ion-slides>
+</div>
+        
+            
+
+  </ion-content>
+  

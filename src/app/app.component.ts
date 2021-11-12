@@ -15,14 +15,14 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-
-  public selectedIndex = 0;
-  public appPages = [
-    {
+//title ='ngx-i18n';
+ // public selectedIndex = 0;
+/*  public appPages = [
+  /* {
        title: 'Nearby places',
        url: '/folder/Inbox',
        icon: 'mail'
-     },
+     }, 
      {
        title: 'Food delivery',
        url: '/app-food',
@@ -47,46 +47,35 @@ export class AppComponent {
        title: '',
        url: '/folder/Spam',
        icon: 'warning'
-     }
-  ]
+     } 
+  ] */
   ;
-   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+ //  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 
 
   //**************************************//
   //********** UI layout pages **********//
   //*************************************//
-  layoutPages = [
+ // layoutPages = [
 
       //my try to add new page to the side menu
-      {
-        title: 'Walkthrough',
-        url: 'walkthrough',
-        icon: 'walk'
-      },
-      {
+    
+
+    /*  {
     title: 'congrats',
     url: 'congrats',
     icon: 'mail-open'
-  },
+  }, */
 
-    {
+ 
+  /*  {
       title: 'Invitation',
       url: 'image-gallery',
       icon: 'mail-open'
-    },
-  
-  {
-    title: 'Setting',
-    url: 'settings',
-    icon: 'settings'
-  },
-  {
-      title: 'Information Page',
-      url: 'information',
-      icon: 'alert'
-    },
+    }, */
+
+
     //make unused pages as comment in sidemenue
 
     // {
@@ -184,13 +173,13 @@ export class AppComponent {
   //   url: 'empty-state',
   //   icon: 'sad'
   // }
-  ];
+//  ];
 
   //**************************************//
   //********* UI component pages *********//
   //*************************************//
 
- componentPages = [
+ //componentPages = [
     // {
     //   title: 'Accordion',
     //   url: 'accordion',
@@ -350,7 +339,7 @@ export class AppComponent {
     //   url: 'toolbar',
     //   icon: 'code-slash'
     // }
- ];
+ //];
 
 
 
@@ -382,12 +371,12 @@ export class AppComponent {
   //**************************************//
   //******** Firebase auth pages *********//
   //*************************************//
-  authPages = [
-    {
+  //authPages = [
+    /*{
       title: 'Signin',
       url: 'fire-signin',
       icon: 'log-in'
-    },
+    },*/
    /* {
       title: 'Signup',
       url: 'fire-signup',
@@ -403,21 +392,23 @@ export class AppComponent {
       url: 'fire-profile',
       icon: 'flame'
     } */
-  ];
+  //];
 
   //**************************//
   //******** Themes *********//
   //************************//
-  themePages = [
+  //themePages = [
     /* {
       title: 'Color ',
       url: 'ui-colors',
       icon: 'color-palette'
     } */
-  ];  
+  //];  
+
+  
   loggedIn = false;
   dark = false;
-  languageSelected: any = 'en';
+  
   constructor(
     private menu: MenuController,
     private platform: Platform,
@@ -428,44 +419,33 @@ export class AppComponent {
     private TranslateService :TranslateService,
     // private userData: UserData,
     // private swUpdate: SwUpdate,
+  
+  
     private toastCtrl: ToastController,
+    
   ) {
     this.TranslateService.setDefaultLang("ar");
     this.TranslateService.addLangs(["en","ar"]);
-    this.initializeApp();
+   
+
   }
-
-
-  initializeApp() {
-
-    this.platform.ready().then(() => {
-
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.setLanguage();
-    });
+  changeLocale(locale:string){
+    this.TranslateService.use(locale);
   }
+  
+  
+
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+   /* const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
+     this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    */ }
   }
 
-  openTutorial() {
+ /* openTutorial() {
     this.menu.enable(false);
     this.storage.set('ion_did_tutorial', false);
     this.router.navigateByUrl('/tutorial');
   }
-  setLanguage() {
-    const defaultLanguage = this.TranslateService.getDefaultLang();
-    if (this.languageSelected) {
-      console.log(this.languageSelected);
-      this.TranslateService.setDefaultLang(this.languageSelected);
-      this.TranslateService.use(this.languageSelected);
-    } else {
-      this.languageSelected = defaultLanguage;
-      this.TranslateService.use(defaultLanguage);
-    }
-}}
+ } */

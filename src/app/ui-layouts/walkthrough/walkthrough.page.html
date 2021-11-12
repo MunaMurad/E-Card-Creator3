@@ -1,15 +1,3 @@
-<!-- 
-
-   <ion-header class="ion-no-border">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button color="dark" (click)="toggleSideMenu()">
-            Skip
-          </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header> -->
-
 
   <ion-content fullscreen="true" class="tutorial-page"  >
     <ion-header class="ion-no-border" slot="fixed">
@@ -18,7 +6,7 @@
         <ion-buttons color="facebook" slot="start">
           <ion-button color="facebook" (click)="toggleSideMenu()">
             <ion-icon slot="icon-only" ios="apps-outline" size="small" md="call-sharp"></ion-icon>
-            &nbsp; &nbsp;تخطي
+            &nbsp; &nbsp;{{"SKIP"|translate}}
           </ion-button>
   
         </ion-buttons>
@@ -46,25 +34,36 @@
           <div>
             <ion-button color="facebook" fill="clear" size="" (click)="moveToNext(slidesOne)">
               <ion-icon  slot="end" name="arrow-forward-circle-outline"  size=""></ion-icon>
-              <ion-label slot="start"> التالي</ion-label>
+              <ion-label slot="start">{{"NEXT"|translate}} </ion-label>
             </ion-button>
           </div>
         </div>
   
       </ion-slide>
-      
+       
       <!-- Last slide -->
-      <ion-slide class="lastslide">
+      <ion-slide >
         <div class="introBox" margin-top>
-          
+          <img src= "../../../assets/Sign in-amico.svg">
           <!--<h2 class="slide-title">Let's get started</h2>-->
-          <h1 class="slide-title main-b-header6">
-            لــتــبـدأ الــتجــربــــة 
+          <h1 >
+            {{"LOGin"|translate}} 
           </h1>
           <!-- Here to go from walkthrogh to signin immediately-->
-          <ion-button mode="ios" color="facebook" expand="block" routerLink="/fire-signin" size="large">
-            اضغط هنا
+          <ion-button mode="ios" color="pink" fill="outline"  routerLink="/fire-signin" size="large">
+           {{"PRESS"|translate}}
+           <ion-icon name="log-in-outline"></ion-icon>
           </ion-button>
+
+          <h3>_______________OR_________________</h3>          
+          <h1>
+           {{"UsingAppWithOut"|translate}}
+           </h1>
+           <!-- Here to go from walkthrogh to signin immediately-->
+           <ion-button mode="ios" color="pink" fill="outline"  (click)="toggleSideMenu()" size="large">
+            {{"PRESS"|translate}}
+            <ion-icon name="walk"></ion-icon>
+           </ion-button>
         </div>
       </ion-slide>
     </ion-slides>
