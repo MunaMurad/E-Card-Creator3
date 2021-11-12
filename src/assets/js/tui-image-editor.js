@@ -3786,7 +3786,7 @@ exports.default = {
             top: 100
           });
         }, _imagetracer2.default.tracerDefaultOption());
-      }
+      },
     }, this._commonAction());
   },
 
@@ -21129,7 +21129,7 @@ var Ui = function () {
       this._subMenuElement = selector('.tui-image-editor-submenu');
       this._buttonElements = {
         download: this._selectedElement.querySelectorAll('.tui-image-editor-download-btn'),
-        load: this._selectedElement.querySelectorAll('.tui-image-editor-load-btn')
+        load: this._selectedElement.querySelectorAll('.tui-image-editor-load-btn'),
       };
 
       this._addHelpMenus();
@@ -26327,6 +26327,8 @@ var Colorpicker = function () {
       if (color) {
         this.colorElement.classList.remove('transparent');
         this.colorElement.style.backgroundColor = color;
+        this.colorElement.style.strokeWidth = 1;
+        this.colorElement.style.stroke = '#color';
       } else {
         this.colorElement.style.backgroundColor = '#fff';
         this.colorElement.classList.add('transparent');

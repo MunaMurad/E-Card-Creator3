@@ -62,5 +62,29 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "phonegap-plugin-barcodescanner": {
+    "source": {
+      "type": "registry",
+      "id": "phonegap-plugin-barcodescanner@^8.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-base64-to-gallery": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-base64-to-gallery"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com-badrit-base64": {
+    "source": {
+      "type": "registry",
+      "id": "com-badrit-base64"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

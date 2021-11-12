@@ -30,6 +30,15 @@
     },
     "cordova-sqlite-storage": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-base64-to-gallery": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "com-badrit-base64": {
+      "PACKAGE_NAME": "io.ionic.starter"
     }
   },
   "dependent_plugins": {}

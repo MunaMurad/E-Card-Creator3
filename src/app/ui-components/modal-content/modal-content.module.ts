@@ -1,3 +1,4 @@
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +11,7 @@ import { ModalContentPage } from './modal-content.page';
 
 @NgModule({
   imports: [
+    NgxQRCodeModule,
     CommonModule,
     FormsModule,
     IonicModule,

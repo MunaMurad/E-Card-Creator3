@@ -1,6 +1,7 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @Component({
   selector: 'app-modal-content',
@@ -9,13 +10,15 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class ModalContentPage implements OnInit {
 
-  //@Input() website: string;
-
+  @Input() qrcode: any;
+  //qrvalue:any;
 
   constructor(
     private navParams: NavParams, 
     private modalController: ModalController
-  ) { }
+  ) { 
+    console.log("before modal poping up : ",this.qrcode)
+  }
 
   ngOnInit() {
   }

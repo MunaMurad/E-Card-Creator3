@@ -85,6 +85,7 @@
     background-color: #fdba3b;
     border-color: #fdba3b;
     color: #fff;
+    display: none;
   }
   .tui-image-editor-container .tui-image-editor-load-btn {
     position: absolute;

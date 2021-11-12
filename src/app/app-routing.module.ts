@@ -1,6 +1,8 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { UserGuard } from './services/user.guard';
+
 const routes: Routes = [
 
   {
@@ -610,7 +612,8 @@ const routes: Routes = [
   {
     path: 'image-editor',
     loadChildren: () => import('./congratspages/image-editor/image-editor.module').then( m => m.ImageEditorPageModule)
-  },  {
+  },
+  {
     path: 'empty-baby',
     loadChildren: () => import('./congratspages/empty-baby/empty-baby.module').then( m => m.EmptyBabyPageModule)
   },
@@ -661,6 +664,10 @@ const routes: Routes = [
   {
     path: 'start',
     loadChildren: () => import('./ui-layouts/start/start.module').then( m => m.StartPageModule)
+  },
+  {
+    path: 'qr-modal',
+    loadChildren: () => import('./congratspages/qr-modal/qr-modal.module').then( m => m.QrModalPageModule)
   },
 
 

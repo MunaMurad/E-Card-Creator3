@@ -5,6 +5,7 @@
     <div id="container">
         <br>
         <strong class="capitalize">Empty state</strong>
+        <ngx-qrcode id="qrcode" style="height: 40px; width:40px;" [elementType]="'img'" [value]="qrcode"></ngx-qrcode>
         <p>Explore <a target="_blank" rel="noopener noreferrer" href="">UI Components</a></p>
         <ion-button class="margin-top-10" (click)="close()" color="pumpkin">
             <ion-icon slot="icon-only"   size="large" name="close-circle-outline"></ion-icon>

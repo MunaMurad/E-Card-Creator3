@@ -87,13 +87,15 @@ import { ImageGalleryViewPageModule } from './ui-layouts/image-gallery-view/imag
 import { SharedModule} from './shared/shared.module';
 
 
-
 import { AppRoutingModule } from './app-routing.module';
 
 
 import {HttpClientModule, HttpClient} from '@angular/common/http';
- import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateModule, TranslateLoader,TranslateService} from '@ngx-translate/core';
+// import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
+
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,'./assets/i18n/', '.json');
@@ -104,8 +106,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-
-
+    NgxQRCodeModule,
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({

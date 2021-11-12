@@ -412,6 +412,41 @@ module.exports = [
         "id": "cordova-sqlite-storage.SQLiteProxy",
         "pluginId": "cordova-sqlite-storage",
         "runs": true
+    },
+    {
+        "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+        "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+        "pluginId": "phonegap-plugin-barcodescanner",
+        "clobbers": [
+            "cordova.plugins.barcodeScanner"
+        ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
+        "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
+        "pluginId": "phonegap-plugin-barcodescanner",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-base64-to-gallery/www/object.assign-polyfill.js",
+        "id": "cordova-base64-to-gallery.object.assign-polyfill",
+        "pluginId": "cordova-base64-to-gallery"
+    },
+    {
+        "file": "plugins/cordova-base64-to-gallery/www/base64ToGallery.js",
+        "id": "cordova-base64-to-gallery.base64ToGallery",
+        "pluginId": "cordova-base64-to-gallery",
+        "clobbers": [
+            "cordova.base64ToGallery"
+        ]
+    },
+    {
+        "file": "plugins/com-badrit-base64/www/Base64.js",
+        "id": "com-badrit-base64.Base64",
+        "pluginId": "com-badrit-base64",
+        "clobbers": [
+            "navigator.Base64"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -424,7 +459,10 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-ionic-webview": "4.2.1",
     "cordova-plugin-ionic-keyboard": "2.2.0",
-    "cordova-sqlite-storage": "6.0.0"
+    "cordova-sqlite-storage": "6.0.0",
+    "phonegap-plugin-barcodescanner": "8.1.0",
+    "cordova-base64-to-gallery": "4.1.3",
+    "com-badrit-base64": "0.2.0"
 }
 // BOTTOM OF METADATA
 });

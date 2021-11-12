@@ -60,7 +60,9 @@ import './zone-flags';
 
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
-
+// Needed by Buffer needed by QRCode
+// tslint:disable-next-line:no-string-literal
+(window as any)['global'] = window;
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
