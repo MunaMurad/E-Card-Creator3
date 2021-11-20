@@ -3,6 +3,12 @@ import { ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 import { LoadingController } from '@ionic/angular';
 import jsQR from "jsqr";
+//import for counter function:
+//import{InvitationDetails} from'../../congratspages/image-editor/InvitationDetails';
+//import { EncryptionService } from './../../services/encryption.service';
+import { firestore } from 'firebase';
+
+
 
 
 @Component({
@@ -21,7 +27,18 @@ export class QRScannerPage implements OnInit {
   canvasElement:any;
   canvasContext:any;
   loading:HTMLIonLoadingElement;
-  constructor(private toastCtrl:ToastController, private loadingCtrl:LoadingController) { }
+ 
+  ///new var for counter
+  //decryptedText:any;
+ // CurrentCount=null;
+ // AllowedAttends:any;
+ // qrData:any;
+
+
+
+
+//private encryptionService: EncryptionService 
+  constructor(private toastCtrl:ToastController, private loadingCtrl:LoadingController ) { }
 
   ngAfterViewInit(){
 
@@ -146,6 +163,30 @@ export class QRScannerPage implements OnInit {
     });
     toast.present();
   }
+
+  //tryin to make counter code:
+
+  async CountScanner(){
+    //this.decryptedText=await this.encryptionService.Decrypt(''+this.qrData);
+
+    //ما قدرت اسويها نفس ما طلبتي
+    //this.AllowedAttends= firestore.doc(this.decryptedText).get().AttendeesAllowed;
+    //ظهرلي ايرور 
+    //هذا الي طلع معي وما بعرف لو بيزبط 
+    //this.AllowedAttends= this.decryptedText.doc(this.decryptedText).get().AttendeesAllowed;
+   //this.CurrentCount= this.decryptedText.doc(this.decryptedText).get().AttendeesCount;
+
+   //if(this.CurrentCount<this.AllowedAttends){
+  //  this.CurrentCount++;
+  //  firestore.doc(this.decryptedText).update(
+     // {
+    //    AttendeesCount:this.CurrentCount+1
+     // }
+   // )
+   //}else{
+   //  alert("sorry the number is FULL");
+  // }
+}
 
   ngOnInit() {
   }
