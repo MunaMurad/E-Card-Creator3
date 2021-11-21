@@ -7,7 +7,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'walkthrough',
+    redirectTo: 'intro-page',
     pathMatch: 'full'
   },
   {
@@ -1416,7 +1416,11 @@ const routes: Routes = [
   {
     path: 'qr-modal',
     loadChildren: () => import('./congratspages/qr-modal/qr-modal.module').then( m => m.QrModalPageModule)
+  },  {
+    path: 'emp-engagement',
+    loadChildren: () => import('./templates/empty/cong/emp-engagement/emp-engagement.module').then( m => m.EmpEngagementPageModule)
   },
+
 
 ];
 

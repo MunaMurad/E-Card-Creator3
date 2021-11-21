@@ -12,5 +12,21 @@
 </ion-header>
 
 <ion-content class="backg" >
- 
+  <div class="arabic-designs-slides">
+    <ion-slides [options]="option">
+    
+      <ion-slide (click) ="editImage('assets/designs/eidALhaj2.jpg')">
+        <ion-card>
+          <img src="../assets/designs/eidALhaj2.jpg">
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide (click) ="editImage('assets/designs/eidALhaj1.jpg')">
+        <ion-card>
+          <img src="../assets/designs/eidALhaj1.jpg">
+        </ion-card>
+      </ion-slide>
+
+      </ion-slides>
+      </div>
   </ion-content>
