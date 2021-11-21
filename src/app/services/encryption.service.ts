@@ -14,17 +14,13 @@ export class EncryptionService {
      //****** Get all places *********//
     //*******************************//
 
-    Encrypt(data: string ){
-        console.log('Encrypt Data:' , data);
-        this.encryptedQr = cryptoJs.AES.encrypt(''+data,this.secretKey);
+    async Encrypt(data: string ){
+        this.encryptedQr = await cryptoJs.AES.encrypt(''+data,this.secretKey);
         return this.encryptedQr;
     };
 
-    Decrypt(data: any ): InvitationDetails{
-        let decryptedData = cryptoJs.AES.Decrypt(data,this.secretKey);
-        var obj = JSON.parse(decryptedData.toString(cryptoJs.enc.Utf8));
-        alert(obj);
-
-        return obj;
+    async Decrypt(data: string ){
+        let decryptedData = cryptoJs.AES.decrypt(data,this.secretKey).toString(cryptoJs.enc.Utf8);
+        return decryptedData;
     };
 }

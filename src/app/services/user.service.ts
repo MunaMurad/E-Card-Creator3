@@ -4,6 +4,7 @@ import { AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} f
 // import * as firebase from 'firebase';
 // import { Observable } from 'rxjs';
 import { first,map } from 'rxjs/operators';
+import { Storage } from '@ionic/storage';
 
 
 @Injectable({
@@ -17,20 +18,24 @@ export class UserService {
 
   constructor(
     private firestore: AngularFirestore,
-    private fireAuth:AngularFireAuth
+    private fireAuth:AngularFireAuth,
+    public storage: Storage
   ) { 
+    
+    
     this.fireAuth.authState.subscribe( user => {
       if(user) {
         console.log("USERSERVICE.....  auth = true");
         this.userId =  user.uid;
         this.userAuth =  true;
-        console.log("userId="+this.userId);
+        this.storage.set('userId', this.userId);
+        this.storage.set('userAuth', true);
       } else {
-        console.log("USERSERVICE.....  auth = false");
         // Empty the value when user signs out
         this.userId =  "";
         this.userAuth =  false;
-        console.log("userId="+this.userId);
+        this.storage.set('userId', this.userId);
+        this.storage.set('userAuth', this.userAuth);
       }
     });
 
@@ -51,26 +56,24 @@ export class UserService {
     return await this.userAuth;
   }
   getUserId(){
-        return this.userId;
+    return this.userId;
   }
-  getConnectedUserId(){
-    this.fireAuth.authState.subscribe( user => {
+  getConnectedUserId():string{
+    this.fireAuth.authState.subscribe( (user) => {
       if(user) {
-        console.log("USERSERVICE RUNNNNN...  auth 1");
         this.userId =  user.uid;
         this.userAuth =  true;
-        console.log("userService call getUserId="+this.userId);
-        return this.userId;
+        this.storage.set('userId', this.userId);
+        this.storage.set('userAuth', true);
       } else {
-        console.log("USERSERVICE RUNNNNN...  auth 0");
         // Empty the value when user signs out
         this.userId =  null;
         this.userAuth =  false;
-        console.log("userService call getUserId="+this.userId);
-        return this.userId;
+        this.storage.set('userId', null);
+        this.storage.set('userAuth', false);
       }
     });
-  
+    return this.userId;
   }
   // async doSomething(): Promise<string>  {
   //   const user = await this.isLoggedIn()

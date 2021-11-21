@@ -39,7 +39,6 @@ export class QrService {
   // Get Latest DocId from DB and insert the rest of the details
     async InsertInvitationQRCodeInDb(data:InvitationDetails){
         data.UserId = this.userId !='' ? this.userId :'a';
-        console.log('user Id:' + this.userId); 
         var invitation = new  InvitationDetails();
         invitation.EventName = data.EventName;
         invitation.UserId = data.UserId;
@@ -49,8 +48,7 @@ export class QrService {
 
         const createdAt = firebase.firestore.FieldValue.serverTimestamp();
         var result : any; 
-        console.log("invitation",invitation);
-        this.invitationsCollection
+        await this.invitationsCollection
         .add({
             EventName : data.EventName,
             UserId : data.UserId,
@@ -58,13 +56,12 @@ export class QrService {
             AttendeesCount : 0
         })
         .then(function(docRef) {
-            console.log('document ref Inside, ',result);
             result = docRef.id;
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });
-        console.log('document Id, ',result);
+
         return await this.encryptionService.Encrypt(result);
 
         //return result;
@@ -72,6 +69,39 @@ export class QrService {
 
     Clear(EncryptedDetails: string){
         this.createCode = this.qrData;
+    }
+    // Get Latest DocId from DB and insert the rest of the details
+    async UpdateInvitationQRCodeInDb(data:InvitationDetails){
+        var dbObj = this.invitationsCollection.doc(data.id);
+        var result;
+        dbObj.update({
+            EventName : data.EventName,
+            AttendeesAllowed: data.AttendeesAllowed,
+        })   
+        .then(function(docRef) {
+            result = docRef;
+        }).catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+
+        return result;
+    }
+    // Get Latest DocId from DB and insert the rest of the details
+    async getInvitationQRCode(docId: string){
+        var invitation = new InvitationDetails()
+        var data = await this.invitationsCollection.doc(docId).ref.get().then(
+            function (querySnapshot){
+            invitation = querySnapshot.data() as InvitationDetails;
+            invitation.id = docId;
+        });        
+        // data.subscribe(res=>{
+        //     invitation = res.
+        // });
+        return invitation;
+    }
+    
+    deleteInvitaion(docId: string): Promise<void> {
+        return this.invitationsCollection.doc(docId).delete();
     }
 
     // getCategories(){

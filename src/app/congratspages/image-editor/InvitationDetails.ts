@@ -1,6 +1,6 @@
 export class InvitationDetails{
-    Id: string;
-    UserId: Number;
+    id: string;
+    UserId: string;
     EventName: string;
     AttendeesAllowed: Number;
     AttendeesCount:Number;
