@@ -11,6 +11,8 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { AngularFireAuth } from '@angular/fire/auth';
 import { EncryptionService } from 'src/app/services/encryption.service';
 import { Storage } from '@ionic/storage';
+// this imports for the alert in back-button
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-image-editor',
@@ -46,7 +48,9 @@ export class ImageEditorPage implements OnInit {
     private meta: Meta,
     private qrServices: QrService,
     private route: ActivatedRoute,
-    public storage: Storage 
+    public storage: Storage ,
+    public alertController: AlertController,
+    private _Router:Router
   ) 
   {
     this.meta.addTag({ name: 'viewport', content: 'width=device-width, user-scalable=no' });
@@ -325,6 +329,30 @@ export class ImageEditorPage implements OnInit {
   //   });
   // }
 
+  async confirmMovingBack() {
+    const alert = await this.alertController.create({
+        header: 'Attention !! تنبيه',
+        message: 'You will lose all your updating if you are leaving without download this image ....في حال لم تقم بتنزيل الصورة فإنك ستفقد كل التغييرات بمجرد مغادرتك الصفحة',
+        buttons: [
+          {
+            text: 'إلغاء',
+            role: 'cancel',
+            cssClass: 'secondary',
+            //side:'start',
+            //icon:'open-outline',
+            handler: () => {}
+          },
+         {
+            text: 'مـوافق',
+            handler: () => {
+              this._Router.navigate(['/beginning']); 
+            }
+          }
+        ]
 
+      });
+  
+      await alert.present();
+    }
 
 }

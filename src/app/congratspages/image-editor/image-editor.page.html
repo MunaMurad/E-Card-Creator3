@@ -10,7 +10,10 @@
     </ion-buttons>
     <ion-title  class="main-header4">{{"edit"|translate}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="light" text=" " ></ion-back-button>
+      <ion-button (click)=" confirmMovingBack()" >
+      <ion-icon name="arrow-back-outline" slot="start" color="light"></ion-icon>
+    </ion-button>
+     <!-- <ion-back-button color="light" text=" " ></ion-back-button>-->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
