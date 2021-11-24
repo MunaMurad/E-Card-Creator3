@@ -13,6 +13,9 @@ import { UserService } from '../../services/user.service';
 export class FireForgotPage implements OnInit {
 
   public resetPasswordForm: FormGroup;
+
+
+  
   constructor( 
     public userService: UserService,
     private navController: NavController,

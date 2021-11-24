@@ -7,19 +7,13 @@ import { TranslateService} from '@ngx-translate/core';
   styleUrls: ['./info.page.scss'],
 })
 export class InfoPage implements OnInit {
-  //ngx code
-  langs:string []=[];
-  constructor(private TranslateService:TranslateService) { 
-  this.langs=this.TranslateService.getLangs();
-}
+ 
+  constructor() { }
 
   ngOnInit() {
   }
-  //this code to select lang button
-changelang(event){
-this.TranslateService.use(event.detail.value);
-console.log(event.detail.value);
-
 
 }
-}
+
+ 
+
