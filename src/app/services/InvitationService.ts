@@ -12,7 +12,7 @@ import { UserService } from './user.service';
   providedIn: "root",
 })
 
-export class QrService {
+export class InvitationService {
     qrData:any;
     createCode: any;
     private invitationsCollection: AngularFirestoreCollection<any>;
@@ -86,6 +86,23 @@ export class QrService {
 
         return result;
     }
+
+    //Get Latest DocId from DB and insert the rest of the details
+    async IncrementAttendeesCount(docId:string){
+
+        var result = null;
+        var details = await this.getInvitationQRCode(docId);
+        var dbObj = this.invitationsCollection.doc(docId);
+        dbObj.update({
+            AttendeesCount :(Number)(details.AttendeesCount)+1
+        })
+        .then(function(docRef) {
+            result = docRef;
+        }).catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+        return result;
+    }
     // Get Latest DocId from DB and insert the rest of the details
     async getInvitationQRCode(docId: string){
         var invitation = new InvitationDetails()
@@ -94,9 +111,6 @@ export class QrService {
             invitation = querySnapshot.data() as InvitationDetails;
             invitation.id = docId;
         });        
-        // data.subscribe(res=>{
-        //     invitation = res.
-        // });
         return invitation;
     }
     
