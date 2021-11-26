@@ -1,150 +1,107 @@
 <ion-app>
 
-
-  
   <ion-split-pane contentId="main-content" when="(min-width: 3000px)">
 
-
     <ion-menu contentId="main-content" >
-      <ion-content>
-        <!-- ########################### -->
+    <ion-content>
 
-
-
-
-
-        <!-- ############################ -->
 
         <ion-list id="inbox-list">
           <ion-list-header>E-Card Creator </ion-list-header>
           <ion-note>{{"PROJECT"|translate}}</ion-note>
-    
         </ion-list>
 
-        <ion-list class="padding-left-10" lines="none">
-          <!-- <ion-list-header>
-            UI layout with firebase
-          </ion-list-header> -->
+     <ion-list class="padding-left-10" lines="none">
 
-          <!-- Try -->  
+         <ion-list lines="none">
+         <ion-note> {{"USERACCOUNT"|translate}} </ion-note>
+         <ion-menu-toggle autoHide="false">
+         <ion-item routerLink="fire-signin" routerLinkActive="selected" routerDirection="root" detail="false">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+         <ion-label>
+         {{"SIGNIN"|translate}}
+         </ion-label>
+          </ion-item>
+         </ion-menu-toggle>
+         </ion-list>
           
-          <!--
-  <ion-list lines="none">
-    <ion-note> TRY </ion-note>
-    <ion-menu-toggle autoHide="false">
-      <ion-item routerLink="rtn-marriage" routerLinkActive="selected" routerDirection="root" detail="false">
-        <ion-icon slot="start" name="flower-outline"></ion-icon>
-        
-        <ion-label>
-         عقد قران
-        </ion-label>
-      </ion-item>
+     <!--second part of sidemenu-->
+      <ion-list lines="none">
 
-    </ion-menu-toggle>
-  </ion-list>
--->
-<!--end try -->
-<ion-list lines="none">
-  <ion-note> {{"USERACCOUNT"|translate}} </ion-note>
-  <ion-menu-toggle autoHide="false">
-    <ion-item routerLink="fire-signin" routerLinkActive="selected" routerDirection="root" detail="false">
-      <ion-icon slot="start" name="log-in-outline"></ion-icon>
-      
-      <ion-label>
-        {{"SIGNIN"|translate}}
-       </ion-label>
-    </ion-item>
-
-  </ion-menu-toggle>
-</ion-list>
-          
-<!--second part of sidemenu-->
-<ion-list lines="none">
-
-  <ion-note> {{"SELECTP"|translate}} </ion-note>
-
-
-  <ion-menu-toggle autoHide="false">
-    <ion-item routerLink="intro-page" routerLinkActive="selected" routerDirection="root" detail="false">
+      <ion-note> {{"SELECTP"|translate}} </ion-note>
+      <ion-menu-toggle autoHide="false">
+      <ion-item routerLink="intro-page" routerLinkActive="selected" routerDirection="root" detail="false">
       <ion-icon slot="start" name="walk-outline"></ion-icon>
-      
       <ion-label>
         {{"WALK"|translate}}
-       </ion-label>
-    </ion-item>
-  </ion-menu-toggle>
+      </ion-label>
+      </ion-item>
+      </ion-menu-toggle>
 
-  <ion-menu-toggle autoHide="false">
-    <ion-item routerLink="congratulate" routerLinkActive="selected" routerDirection="root" detail="false">
-      <ion-icon slot="start" name="mail-open-outline"></ion-icon>
-      
-      <ion-label>
+     <ion-menu-toggle autoHide="false">
+     <ion-item routerLink="congratulate" routerLinkActive="selected" routerDirection="root" detail="false">
+     <ion-icon slot="start" name="mail-open-outline"></ion-icon>
+     <ion-label>
         {{"CONG"|translate}}
-       </ion-label>
-    </ion-item>
-  </ion-menu-toggle>
+     </ion-label>
+     </ion-item>
+     </ion-menu-toggle>
 
-  <ion-menu-toggle autoHide="false">
-    <ion-item routerLink="invitation" routerLinkActive="selected" routerDirection="root" detail="false">
-      <ion-icon slot="start" name="mail-open-outline"></ion-icon>
-      
-      <ion-label>
-        {{"INVITATION"|translate}}
-       </ion-label>
-    </ion-item>
-  </ion-menu-toggle>
+     <ion-menu-toggle autoHide="false">
+     <ion-item routerLink="invitation" routerLinkActive="selected" routerDirection="root" detail="false">
+     <ion-icon slot="start" name="mail-open-outline"></ion-icon>
+     <ion-label>
+      {{"INVITATION"|translate}}
+     </ion-label>
+     </ion-item>
+     </ion-menu-toggle>
 
+     <ion-menu-toggle autoHide="false">
+     <ion-item routerLink="qr-scanner" routerLinkActive="selected" routerDirection="root" detail="false">
+     <ion-icon slot="start" name="scan-circle-outline"></ion-icon>
+     <ion-label>
+       {{"QR-scanner"|translate}}
+     </ion-label>
+     </ion-item>
+     </ion-menu-toggle>
 
-  <ion-menu-toggle autoHide="false">
-    <ion-item routerLink="qr-scanner" routerLinkActive="selected" routerDirection="root" detail="false">
-      <ion-icon slot="start" name="scan-circle-outline"></ion-icon>
-      
-      <ion-label>
-        {{"QR-scanner"|translate}}
-       </ion-label>
-    </ion-item>
-  </ion-menu-toggle>
+     <ion-menu-toggle autoHide="false">
+     <ion-item routerLink="sett" routerLinkActive="selected" routerDirection="root" detail="false">
+     <ion-icon slot="start" name="settings-outline"></ion-icon>
+     <ion-label>
+      {{"SETTING"|translate}}
+     </ion-label>
+     </ion-item>
+     </ion-menu-toggle>
 
-  <ion-menu-toggle autoHide="false">
-    <ion-item routerLink="sett" routerLinkActive="selected" routerDirection="root" detail="false">
-      <ion-icon slot="start" name="settings-outline"></ion-icon>
-      
-      <ion-label>
-        {{"SETTING"|translate}}
-       </ion-label>
-    </ion-item>
-  </ion-menu-toggle>
+     <ion-menu-toggle autoHide="false">
+     <ion-item routerLink="info" routerLinkActive="selected" routerDirection="root" detail="false">
+     <ion-icon slot="start" name="alert-outline"></ion-icon>
+     <ion-label>
+      {{"INFO"|translate}}
+     </ion-label>
+     </ion-item>
+     </ion-menu-toggle>
 
+     </ion-list>
 
-  <ion-menu-toggle autoHide="false">
-    <ion-item routerLink="info" routerLinkActive="selected" routerDirection="root" detail="false">
-      <ion-icon slot="start" name="alert-outline"></ion-icon>
-      
-      <ion-label>
-        {{"INFO"|translate}}
-       </ion-label>
-    </ion-item>
-  </ion-menu-toggle>
-
-</ion-list>
-
-<ion-list>
   <ion-list>
-  <ion-note> {{"AOU"|translate}} </ion-note>
+   <ion-list>
+   <ion-note> {{"AOU"|translate}} </ion-note>
 
-  <ion-note> {{"TEAM"|translate}} </ion-note>
-</ion-list>
-  <ion-note>2021-2022</ion-note>
-</ion-list>
+   <ion-note> {{"TEAM"|translate}} </ion-note>
+   </ion-list>
+   <ion-note>2021-2022</ion-note>
+ </ion-list>
 
 </ion-list>
   
 
 
-      </ion-content>
+ </ion-content>
       
 
-    </ion-menu>
+  </ion-menu>
 
 
 
