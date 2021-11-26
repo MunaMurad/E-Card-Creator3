@@ -1,5 +1,5 @@
 import { UserService } from './../../services/user.service';
-import { QrService } from './../../services/qr.service';
+import { InvitationService } from '../../services/InvitationService';
 import { InvitationDetails } from './InvitationDetails';
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
@@ -46,7 +46,7 @@ export class ImageEditorPage implements OnInit {
     private encryptionService: EncryptionService,
     private alertCtrl: AlertController,
     private meta: Meta,
-    private qrServices: QrService,
+    private qrServices: InvitationService,
     private route: ActivatedRoute,
     public storage: Storage ,
     public alertController: AlertController,

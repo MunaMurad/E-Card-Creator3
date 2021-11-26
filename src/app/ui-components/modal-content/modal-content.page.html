@@ -1,14 +1,14 @@
-
-
 <ion-content>
-
     <div id="container">
-        <br>
-        <strong class="capitalize">Empty state</strong>
-        <ngx-qrcode id="qrcode" style="height: 40px; width:40px;" [elementType]="'img'" [value]="qrcode"></ngx-qrcode>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="">UI Components</a></p>
+        <img src="assets/img/scan-successful.jpg" style="width:50%; height:50%">
+        <h3 class="ion-margin-top ion-text-center"  style="color: #1d808c">
+            Scan Successful
+        </h3>
+        <h5 class="ion-text-center"   style="color: #1d808c">
+            {{AttendeesCount}} out of {{AttendeesAllowed}} attendees present
+        </h5>
         <ion-button class="margin-top-10" (click)="close()" color="pumpkin">
             <ion-icon slot="icon-only"   size="large" name="close-circle-outline"></ion-icon>
         </ion-button>
-      </div>
+    </div> 
 </ion-content>

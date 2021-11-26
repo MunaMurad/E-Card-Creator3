@@ -10,14 +10,14 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 })
 export class ModalContentPage implements OnInit {
 
-  @Input() qrcode: any;
+  @Input() AttendeesCount: any;
+  @Input() AttendeesAllowed: any;
   //qrvalue:any;
 
   constructor(
     private navParams: NavParams, 
     private modalController: ModalController
   ) { 
-    console.log("before modal poping up : ",this.qrcode)
   }
 
   ngOnInit() {
