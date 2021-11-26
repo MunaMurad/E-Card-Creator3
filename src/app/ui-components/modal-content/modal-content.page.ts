@@ -18,7 +18,6 @@ export class ModalContentPage implements OnInit {
     private navParams: NavParams, 
     private modalController: ModalController
   ) { 
-    console.log("before modal poping up : ",this.AttendeesCount)
   }
 
   ngOnInit() {

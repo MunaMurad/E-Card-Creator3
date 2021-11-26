@@ -205,7 +205,6 @@ export class QRScannerPage implements OnInit {
         this.presentToast("Sorry you have reached the maximum capacity of attendees",'danger');
       }
     } catch (error) {
-      console.log(error);
       this.presentToast("Error Occured. Please check your internet connection","danger");
     }
   }
