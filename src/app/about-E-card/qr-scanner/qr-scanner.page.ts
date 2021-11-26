@@ -4,10 +4,11 @@ import { environment } from 'src/environments/environment';
 import { LoadingController } from '@ionic/angular';
 import jsQR from "jsqr";
 //import for counter function:
-/*
+import * as firebase from 'firebase';
 import{InvitationDetails} from'../../congratspages/image-editor/InvitationDetails';
 import { EncryptionService } from './../../services/encryption.service';
-import { firestore } from 'firebase';*/
+import { AngularFirestoreCollection, AngularFirestoreModule } from '@angular/fire/firestore';
+
 
 
 
@@ -30,16 +31,16 @@ export class QRScannerPage implements OnInit {
   loading:HTMLIonLoadingElement;
  
   ///new var for counter
-  /*
+  
   decryptedText:any;
   CurrentCount=null;
   AllowedAttends:any;
   qrData:any;
-  firestore:any; */
+  
+  invoiceCol: AngularFirestoreCollection;
 
-
-
-  //private encryptionService: EncryptionService
+  private FS: AngularFirestoreModule;
+  private encryptionService: EncryptionService
   constructor(private toastCtrl:ToastController, private loadingCtrl:LoadingController
    ) { }
 
@@ -171,10 +172,12 @@ export class QRScannerPage implements OnInit {
   //tryin to make counter code:
 
   async CountScanner(){
-    //this.decryptedText=await this.encryptionService.Decrypt(''+this.qrData);
 
+    this.decryptedText=await this.encryptionService.Decrypt(''+this.qrData);
+    //this.AllowedAttends=this.FS.collection(Invitations).doc(this.decryptedText).get().AttendeesAllowed;
     //ما قدرت اسويها نفس ما طلبتي
-  ////  this.AllowedAttends= this.firestore.doc(this.decryptedText).get().AttendeesAllowed;
+   // this.AllowedAttends= this.FS.collection<Invitations>.doc(this.decryptedText).get().AttendeesAllowed;
+      
     //ظهرلي ايرور 
     //هذا الي طلع معي وما بعرف لو بيزبط 
     //this.AllowedAttends= this.decryptedText.doc(this.decryptedText).get().AttendeesAllowed;
