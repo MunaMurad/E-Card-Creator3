@@ -8,7 +8,34 @@ export const environment = {
     messagingSenderId: "610815746444",
     appId: "1:610815746444:web:6edfc71ebfe7be4aa2b6a9",
     measurementId: "G-QYB9F91DSF"
-  }
+  },
+  socialShareOption: [
+    {
+        title: 'Whatsapp',
+        logo: 'assets/icon/whatsapp-icon.png',
+        shareType: 'shareViaWhatsApp'
+    },
+    {
+        title: 'Facebook',
+        logo: 'assets/icon/facebook-icon.png',
+        shareType: 'shareViaFacebook'
+    },
+    {
+        title: 'Twitter',
+        logo: 'assets/icon/twitter-icon.png',
+        shareType: 'shareViaTwitter'
+    },
+    {
+        title: 'Instagram',
+        logo: 'assets/icon/instagram-icon.png',
+        shareType: 'shareViaInstagram'
+    },
+    {
+        title: 'Email',
+        logo: 'assets/icon/email-icon.png',
+        shareType: 'viaEmail'
+    }
+  ],
 };
 
 /*

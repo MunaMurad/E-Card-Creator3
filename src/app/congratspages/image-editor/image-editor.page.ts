@@ -3,7 +3,7 @@ import { InvitationService } from '../../services/InvitationService';
 import { InvitationDetails } from './InvitationDetails';
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
-import { ModalController, AlertController } from '@ionic/angular';
+import { ModalController, AlertController, ToastController } from '@ionic/angular';
 import ImageEditor from 'tui-image-editor';
 import { en } from '../image-editor/en';
 import { ActivatedRoute } from '@angular/router';
@@ -13,6 +13,7 @@ import { EncryptionService } from 'src/app/services/encryption.service';
 import { Storage } from '@ionic/storage';
 // this imports for the alert in back-button
 import {Router} from '@angular/router';
+import { SocialSharePage } from 'src/app/social-share/social-share.page';
 
 @Component({
   selector: 'app-image-editor',
@@ -36,6 +37,9 @@ export class ImageEditorPage implements OnInit {
   public iconColor: string = '#000000';
   addQrBtn = '<button id="tui-image-editor-addQr-btn">Add QR</button>';
   editBtn = `<button id="tui-image-editor-edit-btn">Edit QR</button>`;
+  shareBtn = `<li tooltip-content="Share" class="tie-btn-shareAll tui-image-editor-item help">
+              <img src="assets/icon/icons8-share.svg" class="social-share-btn" width = 20px height = 20px />
+              </li>`;
   QRIconId = '';
   userId = '';
   constructor(
@@ -50,7 +54,8 @@ export class ImageEditorPage implements OnInit {
     private route: ActivatedRoute,
     public storage: Storage ,
     public alertController: AlertController,
-    private _Router:Router
+    private _Router:Router,
+    private toastCtrl:ToastController
   ) 
   {
     this.meta.addTag({ name: 'viewport', content: 'width=device-width, user-scalable=no' });
@@ -123,31 +128,57 @@ export class ImageEditorPage implements OnInit {
 
 
     document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-download-btn').insertAdjacentHTML('afterend', this.addQrBtn);
+    
+    
+    
+    document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-load-btn').closest('div').hidden = true ; //.classList.add('social-share');
 
+    document.querySelector('.tui-image-editor-container .tie-btn-deleteAll').insertAdjacentHTML('afterend', this.shareBtn);
+
+    document.querySelector('.social-share-btn').addEventListener('click', async (e) => {
+      await this.showShareOptions();
+    });
 
     document.querySelector('.tui-image-editor-container #tui-image-editor-addQr-btn').addEventListener('click', async (e) => {
-      await this.presentAlertConfirm();
-      await this.checkElement('#qrcode > svg > path:nth-child(2)') //use whichever selector you want
-        .then(async (element) => {
-          var iconAdded = await this.addQRIcon();
-          if (iconAdded) {
-            await this.addEditButton();
-
-          }
-        });
+      if(this.storage.get['userAuth']=='true'){
+        await this.presentAlertConfirm();
+        await this.checkElement('#qrcode > svg > path:nth-child(2)') //use whichever selector you want
+          .then(async (element) => {
+            var iconAdded = await this.addQRIcon();
+            if (iconAdded) {
+              await this.addEditButton();
+  
+            }
+          });
+      }else{
+        this.presentToast('Please sign in to add QR to invitation','warning')
+      }
     });
     document.querySelector('.tui-image-editor-help-menu').classList.remove('top');
     document.querySelector('.tui-image-editor-help-menu').classList.add('left');
     document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-download-btn').insertAdjacentHTML('afterend', this.editBtn);
     document.getElementById('tui-image-editor-edit-btn').style.display = "none";
     document.querySelector('input[type="file"]').closest('div').style.display = "none";
+
     document.querySelectorAll('.tui-image-editor-icpartition').forEach(li=>{
       li.closest('li').style.display='none';
-    })
+    });
+
+
     document.querySelector('#tui-image-editor-edit-btn').addEventListener('click', async (e) => {
       await this.presentAlertUpdate();
     });
   }
+
+  async presentToast(message:string,type:string ) {
+    const toast = await this.toastCtrl.create({
+      message: message,
+      duration: 3000,
+      color:type,
+    });
+    toast.present();
+  }
+
 
   async addEditButton() {
     document.getElementById('tui-image-editor-addQr-btn').style.display = "none";
@@ -314,20 +345,19 @@ export class ImageEditorPage implements OnInit {
   }
 
 
-  // //******** Middle ***********//
-  // async openMiddleModal() {
-  //     console.log("openMiddleModel"+this.qrvalue);
-  //   await this.modalCtrl.create({
-  //     component: ModalContentPage,
-  //     cssClass: 'from-middle-modal',
-  //     componentProps: {
-  //       qrcode: ''+this.qrvalue
-  //       // index: image
-  //     }
-  //   }).then(modal => {
-  //     modal.present();
-  //   });
-  // }
+  async showShareOptions() {
+    const modal = await this.modalCtrl.create({
+      component: SocialSharePage,
+      cssClass: 'backTransparent',
+      backdropDismiss: true,
+      showBackdrop: true,
+      swipeToClose:true,
+      keyboardClose:true,
+    });
+    
+    return modal.present();
+  }
+
 
   async confirmMovingBack() {
     const alert = await this.alertController.create({

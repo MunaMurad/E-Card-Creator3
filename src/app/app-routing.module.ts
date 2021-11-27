@@ -1420,6 +1420,14 @@ const routes: Routes = [
     path: 'emp-engagement',
     loadChildren: () => import('./templates/empty/cong/emp-engagement/emp-engagement.module').then( m => m.EmpEngagementPageModule)
   },
+  {
+    path: 'social-share',
+    loadChildren: () => import('./social-share/social-share.module').then( m => m.SocialSharePageModule)
+  },
+  {
+    path: 'social-share',
+    loadChildren: () => import('./social-share/social-share.module').then( m => m.SocialSharePageModule)
+  },
 
 
 ];

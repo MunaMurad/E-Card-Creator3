@@ -447,6 +447,20 @@ module.exports = [
         "clobbers": [
             "navigator.Base64"
         ]
+    },
+    {
+        "file": "plugins/es6-promise-plugin/www/promise.js",
+        "id": "es6-promise-plugin.Promise",
+        "pluginId": "es6-promise-plugin",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -462,7 +476,9 @@ module.exports.metadata =
     "cordova-sqlite-storage": "6.0.0",
     "phonegap-plugin-barcodescanner": "8.1.0",
     "cordova-base64-to-gallery": "4.1.3",
-    "com-badrit-base64": "0.2.0"
+    "com-badrit-base64": "0.2.0",
+    "es6-promise-plugin": "4.2.2",
+    "cordova-plugin-x-socialsharing": "6.0.3"
 }
 // BOTTOM OF METADATA
 });

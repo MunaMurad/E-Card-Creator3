@@ -96,6 +96,9 @@ import {TranslateModule, TranslateLoader,TranslateService} from '@ngx-translate/
 // import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,'../assets/i18n/', '.json');
@@ -178,6 +181,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     StatusBar,
+    SocialSharing,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
