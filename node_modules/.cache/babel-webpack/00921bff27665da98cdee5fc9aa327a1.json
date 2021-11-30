@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { listChanges } from './changes';\nimport { validateEventsArray } from './utils';\nexport function snapshotChanges(query, events, scheduler) {\n  events = validateEventsArray(events);\n  return listChanges(query, events, scheduler);\n} //# sourceMappingURL=snapshot-changes.js.map","map":null,"metadata":{},"sourceType":"module"}

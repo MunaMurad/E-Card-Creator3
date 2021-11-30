@@ -4,27 +4,14 @@ import { ToastController, ModalController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 import { LoadingController } from '@ionic/angular';
 import jsQR from "jsqr";
-//import for counter function:
-<<<<<<< HEAD
-import * as firebase from 'firebase';
-import{InvitationDetails} from'../../congratspages/image-editor/InvitationDetails';
-import { EncryptionService } from './../../services/encryption.service';
-import { AngularFirestoreCollection, AngularFirestoreModule } from '@angular/fire/firestore';
-
-=======
-import{InvitationDetails} from'../../congratspages/image-editor/InvitationDetails';
-import { EncryptionService } from './../../services/encryption.service';
-import { firestore } from 'firebase';
+import { InvitationDetails } from 'src/app/congratspages/image-editor/InvitationDetails';
 import { ModalContentPage } from 'src/app/ui-components/modal-content/modal-content.page';
->>>>>>> a234fe81cd5d8580e85238fa442ce0cf143a805e
-
-
-
+import { EncryptionService } from 'src/app/services/encryption.service';
+//import for counter function:
 
 @Component({
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.page.html',
-  styleUrls: ['./qr-scanner.page.scss'],
 })
 export class QRScannerPage implements OnInit {
 
@@ -44,15 +31,6 @@ export class QRScannerPage implements OnInit {
   CurrentCount=null;
   AllowedAttendees:any;
   qrData:any;
-<<<<<<< HEAD
-  
-  invoiceCol: AngularFirestoreCollection;
-
-  private FS: AngularFirestoreModule;
-  private encryptionService: EncryptionService
-  constructor(private toastCtrl:ToastController, private loadingCtrl:LoadingController
-   ) { }
-=======
   codeDetails:any;
   firestore:any; 
 
@@ -66,7 +44,6 @@ export class QRScannerPage implements OnInit {
     private invitationService:InvitationService) 
     { 
     }
->>>>>>> a234fe81cd5d8580e85238fa442ce0cf143a805e
 
   ngAfterViewInit(){
 
@@ -200,24 +177,6 @@ export class QRScannerPage implements OnInit {
   //tryin to make counter code:
 
   async CountScanner(){
-<<<<<<< HEAD
-
-    this.decryptedText=await this.encryptionService.Decrypt(''+this.qrData);
-    //this.AllowedAttends=this.FS.collection(Invitations).doc(this.decryptedText).get().AttendeesAllowed;
-    //ما قدرت اسويها نفس ما طلبتي
-   // this.AllowedAttends= this.FS.collection<Invitations>.doc(this.decryptedText).get().AttendeesAllowed;
-      
-    //ظهرلي ايرور 
-    //هذا الي طلع معي وما بعرف لو بيزبط 
-    //this.AllowedAttends= this.decryptedText.doc(this.decryptedText).get().AttendeesAllowed;
-  /////// this.CurrentCount= this.firestore.doc(this.decryptedText).get().AttendeesCount;
-
-  /// if(this.CurrentCount<this.AllowedAttends){
-   /* this.CurrentCount++;
-    this.firestore.doc(this.decryptedText).update(
-      {
-        AttendeesCount:this.CurrentCount+1
-=======
     try {
       var details: InvitationDetails=new InvitationDetails();
       var decryptedText ;
@@ -239,7 +198,6 @@ export class QRScannerPage implements OnInit {
       }
       else{
         this.presentToast("Sorry you have reached the maximum capacity of attendees",'danger');
->>>>>>> a234fe81cd5d8580e85238fa442ce0cf143a805e
       }
     } catch (error) {
       this.presentToast("Error Occured. Please check your internet connection","danger");
