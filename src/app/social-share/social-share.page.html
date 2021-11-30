@@ -1,0 +1,30 @@
+<!-- <div padding class="mainContent"  (click)="closeModal()">
+</div> -->
+<div tappable class="mainContent" (click)="closeModal()">
+</div>
+
+<ion-footer no-margin margin-top class="feedbackCard" >
+  <ion-row class="textCenter">
+    <div>
+      <table>
+        <tr>
+          <td>Share via </td>
+          <td><span style="margin-left:4px"> </span></td>
+          <td>المشاركة عبر</td>
+        </tr>
+      </table>
+    </div>
+  </ion-row>
+  <div class="logoList">
+    <ion-row *ngFor="let item of sharingList">
+      <ion-col>
+        <a [href]="item.href" target="_blank">
+          <img class="socialLogo" [src]="item.logo" width="20px" height="20px" />
+        </a>
+      </ion-col>
+    </ion-row>
+  </div>
+  <button ion-button class="btn" (click)="closeModal()" fill="clear">
+    Close
+  </button>
+</ion-footer>
