@@ -4,19 +4,14 @@ import { ToastController, ModalController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 import { LoadingController } from '@ionic/angular';
 import jsQR from "jsqr";
-//import for counter function:
-import{InvitationDetails} from'../../congratspages/image-editor/InvitationDetails';
-import { EncryptionService } from './../../services/encryption.service';
-import { firestore } from 'firebase';
+import { InvitationDetails } from 'src/app/congratspages/image-editor/InvitationDetails';
 import { ModalContentPage } from 'src/app/ui-components/modal-content/modal-content.page';
-
-
-
+import { EncryptionService } from 'src/app/services/encryption.service';
+//import for counter function:
 
 @Component({
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.page.html',
-  styleUrls: ['./qr-scanner.page.scss'],
 })
 export class QRScannerPage implements OnInit {
 

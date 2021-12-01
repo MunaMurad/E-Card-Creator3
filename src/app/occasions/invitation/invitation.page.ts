@@ -44,6 +44,7 @@ async getInvitationCounter(){
   return this.invitations;
 }
 
+
   ngOnInit() {
   }
 

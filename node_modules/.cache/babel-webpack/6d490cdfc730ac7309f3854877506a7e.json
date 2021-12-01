@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { fromRef } from '../observable/fromRef';\nexport function createObjectSnapshotChanges(query, scheduler) {\n  return function snapshotChanges() {\n    return fromRef(query, 'value', 'on', scheduler);\n  };\n} //# sourceMappingURL=snapshot-changes.js.map","map":null,"metadata":{},"sourceType":"module"}
