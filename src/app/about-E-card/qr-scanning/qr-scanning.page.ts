@@ -9,11 +9,13 @@ import { ModalContentPage } from 'src/app/ui-components/modal-content/modal-cont
 import { EncryptionService } from 'src/app/services/encryption.service';
 
 
+
 @Component({
-  selector: 'app-qr-scanner',
-  templateUrl: './qr-scanner.page.html',
+  selector: 'app-qr-scanning',
+  templateUrl: './qr-scanning.page.html',
+  styleUrls: ['./qr-scanning.page.scss'],
 })
-export class QRScannerPage implements OnInit {
+export class QrScanningPage implements OnInit {
 
   scanResult= null;
   scanActive=false;

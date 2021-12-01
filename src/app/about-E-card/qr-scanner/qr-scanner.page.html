@@ -10,45 +10,45 @@
 <ion-content class="backg">
 
 
-  <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event)">
+        <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event)">
 
-<ion-button expand="full" fill="solid" color="pomegrenade" (click)="captureImage()">
-  <ion-icon slot="start" name="images"></ion-icon>
-  {{"viewQR"|translate}}
-</ion-button>
+      <ion-button expand="full" fill="solid" color="pomegrenade" (click)="captureImage()">
+        <ion-icon slot="start" name="images"></ion-icon>
+        {{"viewQR"|translate}}
+      </ion-button>
 
-<div class="ion-text-center">
-<h3>_______________ {{"OR"|translate}} _________________</h3>          
-</div>
-  <ion-button expand="full" color="amethyst" (click)="startScan()">
-    <ion-icon slot="start" name="scan-outline"></ion-icon>
-    {{"StartScan"|translate}}
-  </ion-button>
+      <div class="ion-text-center">
+      <h3>_______________ {{"OR"|translate}} _________________</h3>          
+      </div>
+        <ion-button expand="full" color="amethyst" (click)="startScan()">
+          <ion-icon slot="start" name="scan-outline"></ion-icon>
+          {{"StartScan"|translate}}
+        </ion-button>
 
 
-  <ion-button expand="full" color="amethyst" (click)="reset()" *ngIf="scanResult">
-    <ion-icon slot="start" name="refresh"></ion-icon>
-    {{"Reset"|translate}}
-  </ion-button>
+        <ion-button expand="full" color="amethyst" (click)="reset()" *ngIf="scanResult">
+          <ion-icon slot="start" name="refresh"></ion-icon>
+          {{"Reset"|translate}}
+        </ion-button>
 
-  <video #video [hidden]="!scanActive" width="100%"></video>
-  
-  <canvas #canvas hidden></canvas>
-  <ion-button expand="full" color="pomegrenade" (click)="stopScan()" *ngIf="scanActive">
-    <ion-icon slot="start" name="close"></ion-icon>
-    {{"StopScan"|translate}}
-  </ion-button>
+        <video #video [hidden]="!scanActive" width="100%"></video>
+        
+        <canvas #canvas hidden></canvas>
+        <ion-button expand="full" color="pomegrenade" (click)="stopScan()" *ngIf="scanActive">
+          <ion-icon slot="start" name="close"></ion-icon>
+          {{"StopScan"|translate}}
+        </ion-button>
 
-  <ion-card *ngIf="scanResult">
-    <ion-card-header color="pomegrenade">
-      <ion-card-title>
-        {{"QRcode"|translate}}
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      {{ scanResult }}
-    </ion-card-content>
-  </ion-card>
+        <ion-card *ngIf="scanResult">
+          <ion-card-header color="pomegrenade">
+            <ion-card-title>
+              {{"QRcode"|translate}}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ scanResult }}
+          </ion-card-content>
+        </ion-card>
 
 
 </ion-content>

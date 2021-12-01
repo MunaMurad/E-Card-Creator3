@@ -27107,7 +27107,7 @@ function keyMirror() {
 
   for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
-  }
+  };
 
   (0, _tuiCodeSnippet.forEach)(args, function (key) {
     obj[key] = key;

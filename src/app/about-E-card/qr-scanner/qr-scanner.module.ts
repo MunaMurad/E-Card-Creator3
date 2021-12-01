@@ -5,8 +5,6 @@ import { IonicModule } from '@ionic/angular';
 import { QRScannerPageRoutingModule } from './qr-scanner-routing.module';
 import {TranslateModule} from '@ngx-translate/core';
 import { QRScannerPage } from './qr-scanner.page';
-//import{InvitationDetails} from'../../congratspages/image-editor/InvitationDetails';
-//import { EncryptionService } from './../../services/encryption.service';
 
 @NgModule({
   imports: [

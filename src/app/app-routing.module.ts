@@ -1428,6 +1428,10 @@ const routes: Routes = [
     path: 'social-share',
     loadChildren: () => import('./social-share/social-share.module').then( m => m.SocialSharePageModule)
   },
+  {
+    path: 'qr-scanning',
+    loadChildren: () => import('./about-E-card/qr-scanning/qr-scanning.module').then( m => m.QrScanningPageModule)
+  },
 
 
 ];
