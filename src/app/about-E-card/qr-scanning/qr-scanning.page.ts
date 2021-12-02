@@ -210,7 +210,7 @@ export class QrScanningPage implements OnInit {
   async presentToast(message:string,type:string ) {
     const toast = await this.toastCtrl.create({
       message: message,
-      duration: 3000,
+      duration: 5000,
       color:type,
     });
     toast.present();
@@ -225,14 +225,14 @@ export class QrScanningPage implements OnInit {
       backdropDismiss:true,
       componentProps: {
         AttendeesAllowed: this.codeDetails.AttendeesAllowed,
-        AttendeesCount: this.codeDetails.AttendeesCount
+        AttendeesCount: this.codeDetails.AttendeesCount+1
       }
     }).then(modal => {
       modal.present();
 
       setTimeout(() => {
         modal.dismiss();
-    }, 2000);
+    }, 5000);
     });
   }
 
