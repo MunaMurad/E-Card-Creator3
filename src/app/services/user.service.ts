@@ -3,7 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 // import * as firebase from 'firebase';
 // import { Observable } from 'rxjs';
-import { first,map } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
+//import { map } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
 
 
@@ -47,17 +48,19 @@ export class UserService {
 //******   user authentication    ******//
 //**************************************//
 
-///https://angularfirebase.com/snippets/check-if-current-user-exists-with-angularfire/
   isLoggedIn():Promise<any> {
     return this.fireAuth.authState.pipe(first()).toPromise();
   }
+
   async getAuthState(){
     console.log("userService call getAuthState="+this.userAuth);
     return await this.userAuth;
   }
+
   getUserId(){
     return this.userId;
   }
+
   getConnectedUserId():string{
     this.fireAuth.authState.subscribe( (user) => {
       if(user) {
@@ -75,41 +78,31 @@ export class UserService {
     });
     return this.userId;
   }
-  // async doSomething(): Promise<string>  {
-  //   const user = await this.isLoggedIn()
-  //   if (user) {
-  //     // do something
-  //     this.userId = await user.uid;
-  //     return   this.firestore.doc<any>('userProfile/'+this.userId).valueChanges();
-  //   } else {
-  //     // do something else
-  //   }
-  // }
  
   // login
   signinUser(newEmail: string, newPassword: string): Promise<any> {
     return this.fireAuth.auth.signInWithEmailAndPassword(newEmail,newPassword)
   }
-
+  //reset Password
   resetPassword(email: string):Promise<any> {
     return this.fireAuth.auth.sendPasswordResetEmail(email);
   }
-
+  //signout
   signoutUser(): Promise<any> {
     return this.fireAuth.auth.signOut();
   }
 
   // register 
-  signupUser(firstname: string, lastname: string, phone: string, username: string, password: string): Promise<any> {
+  signupUser(firstname: string, lastname: string, username: string, password: string): Promise<any> {
     return this.fireAuth.auth.createUserWithEmailAndPassword(username, password).then((newUser) => {
-      console.log("userid========="+newUser.user.uid);   // firebase.database().ref('/userProfile').child(newUser.uid).set({
+      console.log("userid========="+newUser.user.uid);
         this.firestore.collection('userProfile').doc(newUser.user.uid).set({
           id: newUser.user.uid,
           firstname: firstname,
           lastname: lastname,
           email: username,
-          image:"",
-          phone:phone
+          image:""
+          
         })
 
     });
@@ -120,15 +113,6 @@ export class UserService {
 //*******************************//
 
   getUserProfile(){
-  //  this.fireAuth.authState.subscribe(user => {
-  //   if (user) {
-  //     //this.userId = user.uid;
-  //     //console.log("CALL check user auth________________userService user auth id = "+ this.userId);
-  //     // set angularfireDoc userfile
-  //    // this.userProfile = this.firestore.doc<any>('userProfile/'+this.userId);
-  //       //######
-  //   }
-  // });
     console.log("userId="+this.userId);
     console.log("getUserProfile");
     return   this.firestore.doc<any>('userProfile/'+this.userId).valueChanges();
@@ -138,11 +122,9 @@ export class UserService {
   async getUserProfileId(){
    const user = await this.isLoggedIn()
     if (user) {
-      // do something
       this.userId = await user.uid;
       //return   this.firestore.doc<any>('userProfile/'+this.userId).valueChanges();
     } else {
-      // do something else
       console.log("++++++++No userId"+this.userId)
     }
     console.log("++++++++++getUserProfileId = "+this.userId)
@@ -153,79 +135,17 @@ export class UserService {
   updateUserProfile(
     firstname: string, 
     lastname: string, 
-    phone: string, 
+   // phone: string, 
     email: string, 
   ){
     
     return  this.firestore.doc<any>('userProfile/'+this.userId).update({
       firstname: firstname,
       lastname: lastname,
-      phone:phone,
+    //  phone:phone,
       email: email
     });
   }
-
-
-//*******************************//
-//******   user address    ******//
-//*******************************//
-
-getAddressByUserId(){
-  console.log("_____getAddressByUserId=");
-  return this.firestore.collection<any>('/userAddress', ref => ref
-  .where('userProfileId', '==', this.userId))
-  .snapshotChanges().pipe(
-    map(actions => {  
-      return actions.map(a => {
-        const data = a.payload.doc.data();
-        const id = a.payload.doc.id; 
-        console.log("####get a group of countries="+data);
-        return { id, ...data };
-      });
-    })
-  );
-}
-
-getAddressById( addressId: string){
-  console.log("_______getAddressById")
-  return   this.firestore.doc<any>('userAddress/'+addressId).valueChanges();
-}
-
-addAddress(
-  label: string,
-  fullname: string,
-  phone: number, 
-  address: string
-) {
-  console.log("___addAddress=");
-  return  this.firestore.collection<any>('userAddress').add({
-      userProfileId: this.userId,
-      label: label,
-      fullname: fullname,
-      phone: phone,
-      address: address
-      //createdTime: new Date()
-  });
-}
-
-editAddress(
-  addressId: string,    
-  title: string,
-  fullname: string,
-  phone: number, 
-  address: string){
-    console.log("addressId="+addressId)
-    return  this.firestore.doc<any>('userAddress/'+addressId).update({
-      label: title,
-      fullname: fullname,
-      phone: phone,
-      address: address
-    });
-}
-
-deleteAddress(addressId: string){
-  return this.firestore.doc('userAddress/'+addressId).delete();
-}
 
 
 }

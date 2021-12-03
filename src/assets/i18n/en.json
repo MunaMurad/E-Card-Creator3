@@ -63,7 +63,7 @@
 "CANCEL":"Cancel",
 "FORGOT":"FORGOT",
 "FORGOT3":"  Forgot password",
-"DIRECTIVE2":"Username field must be at least 3 characters long! ",
+"DIRECTIVE2":"Be sure that you write your Email correctly",
 "DIRECTIVE3":"Password field must be at least 3 characters long!",
 "DIRECTIVE4":"If you want to sign out, click here to go to settings page.",
 "RECOVER":"Recover",
@@ -72,7 +72,7 @@
 "EMAIL":"emil",
 "SIGN":" Sign in to continue",
 "WARNING1":" Password field must be at least 6 characters long!",
-"WARNING2":"Username must be e-mail!",
+"WARNING2":"Verify the email is correct",
 "WARNING3":"Phone field must be at least 6 characters long!",
 "WARNING4":"Lastname field must be at least 3 characters long!",
 "WARNING5":"Firstname field must be at least 3 characters long!",
@@ -92,11 +92,10 @@
 "QRcode":" QR code",
 "viewQR":"View QR code",
 "OR":"OR",
-"edit":"Edit Image"
-
-
-
-
+"edit":"Edit Image",
+"ProfileErrorMessage1":"This field must be at least 3 characters long",
+"ProfileErrorMessage2":"This field must be at least 3 characters long",
+"ProfileErrorMessage3":"Enter a valid email"
 
 
 

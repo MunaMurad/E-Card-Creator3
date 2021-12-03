@@ -69,7 +69,7 @@ export class IonicComponentService {
 //**********************************//
 async presentAlert(msg) {
   const alert = await this.alertController.create({
-    header: 'Alert',
+    header: 'Alert | تنبيه ',
     subHeader: '',
     message: msg,
     buttons: ['OK']

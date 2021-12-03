@@ -7,118 +7,83 @@
        <ion-buttons slot="start">
           <ion-back-button color="light" text=" "></ion-back-button>
       </ion-buttons> 
-      <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content class="backg">
   <ion-grid fixed class="ion-no-padding">
- 
-    <!-- <div class="logo-box">
-      <img src="https://pbs.twimg.com/profile_images/1148952014036054016/xxv7lLvp.jpg" alt="">
-    </div> -->
-
     <div class="login-form">
+
+
       <ion-text color="dark">
         <h2 text-center class="ion-margin-bottom main-header7">
           {{"ProfileDetail"|translate}}
         </h2>
     </ion-text>
+
     <form [formGroup]="updateForm" novalidate>
 
       <ion-list class="ion-margin-top ion-padding">
-        <!-- ############ -->
+        <!-- The first item for First name -->
         <ion-item  class="roundedInput8px margin-bottom-10">
           <ion-label>
             <ion-icon name="person-outline" color="medium"></ion-icon>
             </ion-label>
-          <ion-input  type="text"  formControlName="firstname" color="black" [value]="(userDetail | async)?.firstname" placeholder="First Name" color="black"></ion-input>
+          <ion-input  type="text"  formControlName="firstname" color="black" [value]="(userDetail | async)?.firstname" placeholder="First Name | الاسم الأول" color="black"></ion-input>
         </ion-item>
-        <!-- ############ -->
+
+        <!-- The second item for second name -->
         <ion-item  class="roundedInput8px margin-bottom-10">
           <ion-label>
             <ion-icon name="people-outline" color="medium"></ion-icon>
             </ion-label>
-          <ion-input type="text"  formControlName="lastname"  color="black" [value]="(userDetail | async)?.lastname" placeholder="Last Name" color="black"></ion-input>
+          <ion-input type="text"  formControlName="lastname"  color="black" [value]="(userDetail | async)?.lastname" placeholder="Last Name | الاسم الأخير" color="black"></ion-input>
         </ion-item>
-        <!-- ############ -->
+
+        <!-- The third item for the Email -->
         <ion-item  class="roundedInput8px margin-bottom-10">
           <ion-label>
             <ion-icon name="mail-outline" color="medium"></ion-icon>
             </ion-label>
-          <ion-input type="text"  formControlName="email" color="black" [value]="(userDetail | async)?.email" placeholder="email" color="black"></ion-input>
+          <ion-input type="text"  formControlName="email" color="black" [value]="(userDetail | async)?.email" placeholder="email | البريد الإلكتروني" color="black"></ion-input>
         </ion-item>
-
-        <!-- ############ -->
+<!--
+         The last item for the phone number 
         <ion-item  class="roundedInput8px margin-bottom-10">
             <ion-label>
               <ion-icon name="call-outline" color="medium"></ion-icon>
               </ion-label>
-            <ion-input  type="text" formControlName="phone" color="black"  [value]="(userDetail | async)?.phone" placeholder="Phone Number" color="black"></ion-input>
+            <ion-input  type="text" formControlName="phone" color="black"  [value]="(userDetail | async)?.phone" placeholder="Phone Number | رقم الجوال" color="black"></ion-input>
           </ion-item>
-
+        -->
       </ion-list>
 
 
 
-
-        <!-- <ion-list lines="none">
-            <ion-item>
-              <ion-icon slot="start" color="lightgray" size="small" name="mail-outline"></ion-icon>
-              <ion-input type="text"  formControlName="firstname"  [value]="(userDetail | async)?.firstname"></ion-input>
-            </ion-item>
-
-            <ion-item>
-              <ion-icon slot="start" color="lightgray" size="small" name="mail-outline"></ion-icon>
-                <ion-input type="text"  formControlName="lastname"   [value]="(userDetail | async)?.lastname"></ion-input>
-            </ion-item>
-
-            <ion-item>
-              <ion-icon slot="start" color="lightgray" size="small" name="mail-outline"></ion-icon>
-                <ion-input type="text"  formControlName="email"  [value]="(userDetail | async)?.email"></ion-input>
-            </ion-item>
-
-            <ion-item>
-              <ion-icon slot="start" color="lightgray" size="small" name="mail-outline"></ion-icon>
-              <ion-input type="text" formControlName="phone"   [value]="(userDetail | async)?.phone"></ion-input>
-            </ion-item>
-
-
-        </ion-list> -->
-
           <!-- Error meassage -->
-          <!-- <p color="warning" *ngIf="!updateForm.controls.firstname.valid && updateForm.controls.firstname.touched">
-              <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
+          <!--
+           <p color="warning" *ngIf="!updateForm.controls.firstname.valid && updateForm.controls.firstname.touched">
+              <ion-icon name="information-circle-outline"></ion-icon> {{"ProfileErrorMessage1"|translate}}
           </p>
           <p color="warning" *ngIf="!updateForm.controls.lastname.valid && updateForm.controls.lastname.touched">
-              <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
+              <ion-icon name="information-circle-outline"></ion-icon> {{"ProfileErrorMessage2"|translate}}
           </p>
           <p color="warning" *ngIf="!updateForm.controls.email.valid && updateForm.controls.email.touched">
-            <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
+            <ion-icon name="information-circle-outline"></ion-icon> {{"ProfileErrorMessage3"|translate}}
           </p>
-          <p color="warning" *ngIf="!updateForm.controls.phone.valid && updateForm.controls.phone.touched">
-            <ion-icon name="information-circle-outline"></ion-icon> This field must be at least 3 characters long!
-          </p> -->
+          -->
 
 
           <ion-button mode="ios" color="black" fill="solid" expand="block" class="ion-margin-top"  (click)="updateProfile()">
             {{"UpdateProfile"|translate}}
           </ion-button>
+
           <ion-button mode="ios" color="gray" fill="solid" expand="block" class="ion-margin-top"  (click)="logout()">
              {{"SIGNout"|translate}}
           </ion-button>
-          <!--
-          <ion-text color="dark">
-            <h2  class="ion-text-center ion-margin-bottom main-header8">
-                By clicking Sign up you agree to the following Terms ans Conditions without reservation
-            </h2>
-        </ion-text>
-        -->
+         
     </form>
-
-
-
 
     </div>
   </ion-grid>

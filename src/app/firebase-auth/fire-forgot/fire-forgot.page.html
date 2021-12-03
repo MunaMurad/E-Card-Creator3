@@ -8,7 +8,6 @@
 
 <ion-back-button  color="light" text=" "></ion-back-button>
     </ion-buttons>
-    <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
   </ion-toolbar>
 </ion-header>
 
@@ -28,9 +27,6 @@
             </h2>
           </ion-text>
           <ion-list class="ion-margin-top">
-            <!-- <ion-item>
-                  <ion-input formControlName="email" type="text" placeholder="email"></ion-input>
-                </ion-item> -->
             <ion-item class="roundedInput8px margin-bottom-10">
               <ion-label>
                 <ion-icon name="mail-outline" color="medium"></ion-icon>
@@ -39,7 +35,7 @@
             </ion-item>
           </ion-list>
 
-          <!-- Error meassage -->
+          <!-- Error meassage "تحقق من كتابة البريد الإلكتروني بشكل صحيح" -->
           <p color="warning" *ngIf="!resetPasswordForm.controls.email.valid && resetPasswordForm.controls.email.touched">
             <ion-icon name="information-circle-outline"></ion-icon>     {{"DIRECTIVE2"|translate}}
           </p>
@@ -47,19 +43,13 @@
           <ion-button mode="ios" color="black" fill="solid" expand="block" [disabled]="!resetPasswordForm.valid"
             (click)="resetPassword()">
             {{"RECOVER"|translate}}
-         
           </ion-button>
+
           <ion-button mode="ios" color="lightgray" expand="block" fill="solid" class="ion-margin-top"
             routerLink="/fire-signup">
             {{"CREATn"|translate}}   
           </ion-button>
-          <!--
-          <ion-text color="dark">
-            <h2  class="ion-text-center ion-margin-bottom main-header8">
-                By clicking Sign up you agree to the following Terms ans Conditions without reservation
-            </h2>
-        </ion-text>
-        -->
+
         </div>
       </form>
   </ion-grid>
