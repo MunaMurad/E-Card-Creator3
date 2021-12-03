@@ -42,6 +42,7 @@ export class ImageEditorPage implements OnInit {
               </li>`;
   QRIconId = '';
   userId = '';
+  userAuth = false;
   constructor(
     private firestore: AngularFirestore,
     private userService: UserService,
@@ -65,6 +66,9 @@ export class ImageEditorPage implements OnInit {
     this.storage.get('userId').then((val)=>{
       this.userId = val;
     });
+    this.storage.get('userAuth').then((val)=>{
+      this.userAuth = val;
+    });
   }
 
   ngOnInit() {
@@ -73,7 +77,6 @@ export class ImageEditorPage implements OnInit {
       usageStatistics: false,
       includeUI: {
         loadImage: {
-          // path: this.image,
           path: '../../../' + this.imgSrc,
           name: 'Invitation Image',
         },
@@ -84,7 +87,7 @@ export class ImageEditorPage implements OnInit {
       cssMaxWidth: document.documentElement.clientWidth,
       cssMaxHeight: document.documentElement.clientHeight,
       selectionStyle: {
-        cornerSize: 10,
+        cornerSize: 30,
         rotatingPointOffset: 40
       }
     });
@@ -95,8 +98,6 @@ export class ImageEditorPage implements OnInit {
     });
 
     //Font select list
-    //--------------------------------------
-    //Any installed web font from Google will work: https://fonts.google.com/
     let fontArray = ["Sakkal Majalla", "Akhbar MT", "Aldhabi", "Simple Indust Outline", "Cairo", "Dubai", "DecoType Naskh"
       , "Arial", "Arial Black", "Caveat", "Comic Sans MS", "Courier New", "Georgia1", "Impact", "Lobster Two",
       "Lucida Console", "Luckiest Guy", "Open Sans", "Pacifico", "Palatino Linotype", "Press Start 2P", "Roboto",
@@ -140,7 +141,8 @@ export class ImageEditorPage implements OnInit {
     });
 
     document.querySelector('.tui-image-editor-container #tui-image-editor-addQr-btn').addEventListener('click', async (e) => {
-      if(this.storage.get['userAuth']=='true'){
+
+      if(this.userAuth == true){
         await this.presentAlertConfirm();
         await this.checkElement('#qrcode > svg > path:nth-child(2)') //use whichever selector you want
           .then(async (element) => {
@@ -241,11 +243,9 @@ export class ImageEditorPage implements OnInit {
             if (data) {
               this.qrDetails.EventName = data.EventName;
               this.qrDetails.UserId = this.userId;
-              // console.log('this.qrDetails.UserId',this.userId);
               this.qrDetails.AttendeesAllowed = Number(data.AttendeesAllowed);
               this.qrvalue = await this.CreateCode(this.qrDetails);
             } else {
-              // invalid login
               return false;
             }
           }
@@ -353,8 +353,11 @@ export class ImageEditorPage implements OnInit {
       showBackdrop: true,
       swipeToClose:true,
       keyboardClose:true,
+      componentProps:{
+        imageToShare : this.imageEditor.toDataURL()
+      }
     });
-    
+    console.log(this.imageEditor.toDataURL());
     return modal.present();
   }
 
