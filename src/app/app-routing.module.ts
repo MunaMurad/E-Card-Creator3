@@ -15,105 +15,14 @@ const routes: Routes = [
     path: 'sidemenu',
     loadChildren: () => import('./sidemenu/sidemenu.module').then( m => m.SidemenuPageModule)
   },
-
- 
-
-
- 
-
-
-  //***********************************//
+   //***********************************//
   //********** UI components **********//
   //***********************************//
-
-
-  
-  {
-    path: 'animation',
-    loadChildren: () => import('./ui-components/animation/animation.module').then( m => m.AnimationPageModule)
-  },
-  {
-    path: 'actionsheet',
-    loadChildren: () => import('./ui-components/actionsheet/actionsheet.module').then( m => m.ActionsheetPageModule)
-  },
-  {
-    path: 'alert',
-    loadChildren: () => import('./ui-components/alert/alert.module').then( m => m.AlertPageModule)
-  },
-  {
-    path: 'dialog',
-    loadChildren: () => import('./ui-components/dialog/dialog.module').then( m => m.DialogPageModule)
-  },
-
-
-
-
-  {
-    path: 'header-shrinking',
-    loadChildren: () => import('./ui-components/header-shrinking/header-shrinking.module').then( m => m.HeaderShrinkingPageModule)
-  },
-  {
-    path: 'header-fading',
-    loadChildren: () => import('./ui-components/header-fading/header-fading.module').then( m => m.HeaderFadingPageModule)
-  },
-  {
-    path: 'header-title',
-    loadChildren: () => import('./ui-components/header-title/header-title.module').then( m => m.HeaderTitlePageModule)
-  },
-  {
-    path: 'header-transparent',
-    loadChildren: () => import('./ui-components/header-transparent/header-transparent.module').then( m => m.HeaderTransparentPageModule)
-  },
-
-
-
-
-  {
-    path: 'footer-shrinking',
-    loadChildren: () => import('./ui-components/footer-shrinking/footer-shrinking.module').then( m => m.FooterShrinkingPageModule)
-  },
-
-
-  {
-    path: 'horizontal-card',
-    loadChildren: () => import('./ui-components/horizontal-card/horizontal-card.module').then( m => m.HorizontalCardPageModule)
-  },
-  {
-    path: 'vertical-card',
-    loadChildren: () => import('./ui-components/vertical-card/vertical-card.module').then( m => m.VerticalCardPageModule)
-  },
-
-
-
-  {
-    path: 'grid',
-    loadChildren: () => import('./ui-components/grid/grid.module').then( m => m.GridPageModule)
-  },
   {
     path: 'modal',
     loadChildren: () => import('./ui-components/modal/modal.module').then( m => m.ModalPageModule)
   },
-  {
-    path: 'rating',
-    loadChildren: () => import('./ui-components/rating/rating.module').then( m => m.RatingPageModule)
-  },
-  {
-    path: 'skeleton',
-    loadChildren: () => import('./ui-components/skeleton/skeleton.module').then( m => m.SkeletonPageModule)
-  },
-  {
-    path: 'segment',
-    loadChildren: () => import('./ui-components/segment/segment.module').then( m => m.SegmentPageModule)
-  },
   
-  {
-    path: 'toolbar',
-    loadChildren: () => import('./ui-components/toolbar/toolbar.module').then( m => m.ToolbarPageModule)
-  },
-
-
-
-
   //**********************************************//
   //********* Firebase authentication ************//
   //**********************************************//
@@ -131,63 +40,19 @@ const routes: Routes = [
     loadChildren: () => import('./firebase-auth/fire-profile/fire-profile.module').then( m => m.FireProfilePageModule),
     canActivate: [UserGuard]
   },
-
-
-  
-  {
-    path: 'select',
-    loadChildren: () => import('./ui-components/select/select.module').then( m => m.SelectPageModule)
-  },
-
-  {
-    path: 'refresher',
-    loadChildren: () => import('./ui-components/refresher/refresher.module').then( m => m.RefresherPageModule)
-  },
-  {
-    path: 'range',
-    loadChildren: () => import('./ui-components/range/range.module').then( m => m.RangePageModule)
-  },
-  {
-    path: 'radio',
-    loadChildren: () => import('./ui-components/radio/radio.module').then( m => m.RadioPageModule)
-  },
-  {
-    path: 'progress-bar',
-    loadChildren: () => import('./ui-components/progress-bar/progress-bar.module').then( m => m.ProgressBarPageModule)
-  },
-  {
-    path: 'toast',
-    loadChildren: () => import('./ui-components/toast/toast.module').then( m => m.ToastPageModule)
-  },
   {
     path: 'modal-content',
     loadChildren: () => import('./ui-components/modal-content/modal-content.module').then( m => m.ModalContentPageModule)
   },
-  {
-    path: 'datetime',
-    loadChildren: () => import('./ui-components/datetime/datetime.module').then( m => m.DatetimePageModule)
-  },
+
  
   {
     path: 'list-item',
     loadChildren: () => import('./ui-components/list-item/list-item.module').then( m => m.ListItemPageModule)
   },
-  {
-    path: 'avatar',
-    loadChildren: () => import('./ui-components/avatar/avatar.module').then( m => m.AvatarPageModule)
-  },
-  {
-    path: 'badge',
-    loadChildren: () => import('./ui-components/badge/badge.module').then( m => m.BadgePageModule)
-  },
-  {
-    path: 'button',
-    loadChildren: () => import('./ui-components/button/button.module').then( m => m.ButtonPageModule)
-  },
-  {
-    path: 'searchbar',
-    loadChildren: () => import('./ui-components/searchbar/searchbar.module').then( m => m.SearchbarPageModule)
-  },
+
+
+ 
   {
     path: 'icon',
     loadChildren: () => import('./ui-components/icon/icon.module').then( m => m.IconPageModule)
@@ -214,128 +79,14 @@ const routes: Routes = [
     path: 'sidemenu',
     loadChildren: () => import('./sidemenu/sidemenu.module').then( m => m.SidemenuPageModule)
   },
-
-
-
-
-  
- 
-
- 
- 
- 
-
-
-  //*****************************//
-  //********** Travel  **********//
-  //*****************************//
-
- 
-
-
-
-
- 
-
-
-
-
-
-
-
-
-  //***********************************//
+   //***********************************//
   //********** UI components **********//
   //***********************************//
 
-
-  
-  {
-    path: 'animation',
-    loadChildren: () => import('./ui-components/animation/animation.module').then( m => m.AnimationPageModule)
-  },
-  {
-    path: 'actionsheet',
-    loadChildren: () => import('./ui-components/actionsheet/actionsheet.module').then( m => m.ActionsheetPageModule)
-  },
-  {
-    path: 'alert',
-    loadChildren: () => import('./ui-components/alert/alert.module').then( m => m.AlertPageModule)
-  },
-  {
-    path: 'dialog',
-    loadChildren: () => import('./ui-components/dialog/dialog.module').then( m => m.DialogPageModule)
-  },
-
-
-
-
-  {
-    path: 'header-shrinking',
-    loadChildren: () => import('./ui-components/header-shrinking/header-shrinking.module').then( m => m.HeaderShrinkingPageModule)
-  },
-  {
-    path: 'header-fading',
-    loadChildren: () => import('./ui-components/header-fading/header-fading.module').then( m => m.HeaderFadingPageModule)
-  },
-  {
-    path: 'header-title',
-    loadChildren: () => import('./ui-components/header-title/header-title.module').then( m => m.HeaderTitlePageModule)
-  },
-  {
-    path: 'header-transparent',
-    loadChildren: () => import('./ui-components/header-transparent/header-transparent.module').then( m => m.HeaderTransparentPageModule)
-  },
-
-
-
-
-  {
-    path: 'footer-shrinking',
-    loadChildren: () => import('./ui-components/footer-shrinking/footer-shrinking.module').then( m => m.FooterShrinkingPageModule)
-  },
-
-
-  {
-    path: 'horizontal-card',
-    loadChildren: () => import('./ui-components/horizontal-card/horizontal-card.module').then( m => m.HorizontalCardPageModule)
-  },
-  {
-    path: 'vertical-card',
-    loadChildren: () => import('./ui-components/vertical-card/vertical-card.module').then( m => m.VerticalCardPageModule)
-  },
-
-
-
-  {
-    path: 'grid',
-    loadChildren: () => import('./ui-components/grid/grid.module').then( m => m.GridPageModule)
-  },
-  {
+ {
     path: 'modal',
     loadChildren: () => import('./ui-components/modal/modal.module').then( m => m.ModalPageModule)
   },
-  {
-    path: 'rating',
-    loadChildren: () => import('./ui-components/rating/rating.module').then( m => m.RatingPageModule)
-  },
-  {
-    path: 'skeleton',
-    loadChildren: () => import('./ui-components/skeleton/skeleton.module').then( m => m.SkeletonPageModule)
-  },
-  {
-    path: 'segment',
-    loadChildren: () => import('./ui-components/segment/segment.module').then( m => m.SegmentPageModule)
-  },
-  
-  {
-    path: 'toolbar',
-    loadChildren: () => import('./ui-components/toolbar/toolbar.module').then( m => m.ToolbarPageModule)
-  },
-
-
-
-
   //**********************************************//
   //********* Firebase authentication ************//
   //**********************************************//
@@ -353,72 +104,19 @@ const routes: Routes = [
     loadChildren: () => import('./firebase-auth/fire-profile/fire-profile.module').then( m => m.FireProfilePageModule),
     canActivate: [UserGuard]
   },
-
-
-  
-  {
-    path: 'select',
-    loadChildren: () => import('./ui-components/select/select.module').then( m => m.SelectPageModule)
-  },
-
-  {
-    path: 'refresher',
-    loadChildren: () => import('./ui-components/refresher/refresher.module').then( m => m.RefresherPageModule)
-  },
-  {
-    path: 'range',
-    loadChildren: () => import('./ui-components/range/range.module').then( m => m.RangePageModule)
-  },
-  {
-    path: 'radio',
-    loadChildren: () => import('./ui-components/radio/radio.module').then( m => m.RadioPageModule)
-  },
-  {
-    path: 'progress-bar',
-    loadChildren: () => import('./ui-components/progress-bar/progress-bar.module').then( m => m.ProgressBarPageModule)
-  },
-  {
-    path: 'toast',
-    loadChildren: () => import('./ui-components/toast/toast.module').then( m => m.ToastPageModule)
-  },
   {
     path: 'modal-content',
     loadChildren: () => import('./ui-components/modal-content/modal-content.module').then( m => m.ModalContentPageModule)
   },
   {
-    path: 'datetime',
-    loadChildren: () => import('./ui-components/datetime/datetime.module').then( m => m.DatetimePageModule)
-  },
-
-
-  {
     path: 'list-item',
     loadChildren: () => import('./ui-components/list-item/list-item.module').then( m => m.ListItemPageModule)
-  },
-  {
-    path: 'avatar',
-    loadChildren: () => import('./ui-components/avatar/avatar.module').then( m => m.AvatarPageModule)
-  },
-  {
-    path: 'badge',
-    loadChildren: () => import('./ui-components/badge/badge.module').then( m => m.BadgePageModule)
-  },
-  {
-    path: 'button',
-    loadChildren: () => import('./ui-components/button/button.module').then( m => m.ButtonPageModule)
-  },
-  {
-    path: 'searchbar',
-    loadChildren: () => import('./ui-components/searchbar/searchbar.module').then( m => m.SearchbarPageModule)
   },
   {
     path: 'icon',
     loadChildren: () => import('./ui-components/icon/icon.module').then( m => m.IconPageModule)
   },
  
- 
-  
-
   {
     path: 'fire-forgot',
     loadChildren: () => import('./firebase-auth/fire-forgot/fire-forgot.module').then( m => m.FireForgotPageModule)

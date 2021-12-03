@@ -1,14 +1,11 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
 //import { HttpClientModule } from '@angular/common/http';
-
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { AppComponent } from './app.component';
 
 //******** Angularfire ********/
@@ -26,41 +23,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 //******* firebase storage ********//
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
-
-
-
 //******** UI_components / modal detail *********/
 import { ModalContentPageModule } from './ui-components/modal-content/modal-content.module';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //******** UI_components / modal detail *********/
-// import { ModalDetailPageModule } from './ui-components/modal-detail/modal-detail.module';
-
-
-// //******** ionic4 rating *********/
-//import { IonicRatingModule } from 'ionic4-rating/dist';
-
-
 // //******** Shared module *********/
 import { SharedModule} from './shared/shared.module';
-
-
 import { AppRoutingModule } from './app-routing.module';
-
 //ngx translate 
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -93,9 +60,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
 
 
-
-    
-    
     //IonicRatingModule, // Put ionic-rating module here
     SharedModule,
     HttpClientModule,
@@ -104,31 +68,15 @@ export function HttpLoaderFactory(http: HttpClient) {
       mode: 'ios'
     }),
     IonicStorageModule.forRoot(),
-
-
     AppRoutingModule,
-
-
- 
-  
- 
-
-   
-    
-
 
     //******* UI-components / modal ********//
 
     ModalContentPageModule,
-
-   
-
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-
-
   ],
   providers: [
     StatusBar,
