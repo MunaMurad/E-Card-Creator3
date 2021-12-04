@@ -95,7 +95,12 @@
 "edit":"Edit Image",
 "ProfileErrorMessage1":"This field must be at least 3 characters long",
 "ProfileErrorMessage2":"This field must be at least 3 characters long",
-"ProfileErrorMessage3":"Enter a valid email"
+"ProfileErrorMessage3":"Enter a valid email",
+"QR1question":"What is the benefit of QR?",
+"QR1answer":"It helps you in calculating and knowing the number of attendees, by scanning the code on the page designated for that",
+"QR2question":"Why the app do not allow me to add QR?",
+"QR2answer":"Check your login! The QR feature is only available to people who have an account in the app"
+
 
 
 
