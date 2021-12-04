@@ -48,21 +48,13 @@
             </ion-label>
           <ion-input type="text"  formControlName="email" color="black" [value]="(userDetail | async)?.email" placeholder="email | البريد الإلكتروني" color="black"></ion-input>
         </ion-item>
-<!--
-         The last item for the phone number 
-        <ion-item  class="roundedInput8px margin-bottom-10">
-            <ion-label>
-              <ion-icon name="call-outline" color="medium"></ion-icon>
-              </ion-label>
-            <ion-input  type="text" formControlName="phone" color="black"  [value]="(userDetail | async)?.phone" placeholder="Phone Number | رقم الجوال" color="black"></ion-input>
-          </ion-item>
-        -->
+
       </ion-list>
 
 
 
           <!-- Error meassage -->
-          <!--
+          
            <p color="warning" *ngIf="!updateForm.controls.firstname.valid && updateForm.controls.firstname.touched">
               <ion-icon name="information-circle-outline"></ion-icon> {{"ProfileErrorMessage1"|translate}}
           </p>
@@ -72,7 +64,7 @@
           <p color="warning" *ngIf="!updateForm.controls.email.valid && updateForm.controls.email.touched">
             <ion-icon name="information-circle-outline"></ion-icon> {{"ProfileErrorMessage3"|translate}}
           </p>
-          -->
+          
 
 
           <ion-button mode="ios" color="black" fill="solid" expand="block" class="ion-margin-top"  (click)="updateProfile()">
