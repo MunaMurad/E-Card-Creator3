@@ -12,7 +12,7 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  
+  title='ngx-i18n';
   loggedIn = false;
   dark = false;
   
@@ -23,28 +23,22 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private storage: Storage,
-    private TranslateService :TranslateService,
+    private Translate :TranslateService,
     // private userData: UserData,
     // private swUpdate: SwUpdate,
   
   
     private toastCtrl: ToastController,
     
-  ) {
-    this.TranslateService.setDefaultLang("ar");
-    this.TranslateService.addLangs(["en","ar"]);
-   
-
+  ) 
+  { Translate.setDefaultLang('ar'),
+  Translate.use('ar');
   }
   changeLocale(locale:string){
-    this.TranslateService.use(locale);
-  }
-  
-  
-
-
-  ngOnInit() {
+    this.Translate.use(locale);
    }
-  }
-
+   
+  
+  ngOnInit() {}
+    }
 

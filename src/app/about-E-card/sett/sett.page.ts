@@ -11,17 +11,21 @@ import { TranslateService} from '@ngx-translate/core';
 })
 
 export class SettPage implements OnInit {
-
- //ngx code
- langs:string []=[];
+   //ngx code
+  title='ngx-i18n';
+  locale:string;
  constructor(private renderer:Renderer2,
    public userService: UserService,
    private ionicComponentService: IonicComponentService,
    public router: Router,
-   private TranslateService:TranslateService) {
-     this.langs=this.TranslateService.getLangs();
+   private Translate:TranslateService) {
+    Translate.setDefaultLang('ar'),
+    Translate.use('ar');
     }
-
+    changeLocale(locale:string){
+      this.Translate.use(locale);
+     }
+     
    ngOnInit() {
    }
    async logout(){
@@ -45,10 +49,6 @@ export class SettPage implements OnInit {
      });
     }
 
-      //this code to select lang button
-changelang(event){
- this.TranslateService.use(event.detail.value);
- console.log(event.detail.value);
-}
+   
 
 }
