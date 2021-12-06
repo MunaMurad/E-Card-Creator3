@@ -1234,6 +1234,87 @@ body > textarea {
 .tui-image-editor-container.top.tui-image-editor-top-optimization .tui-image-editor-controls-logo {
   display: none;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2e2e2e; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #464242; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* To prevent image jumping issue required to override top position of .tui-image-editor.*/
+.tui-image-editor {
+    top: 0px !important;
+}
+
+.tui-image-editor-container.left .tui-image-editor-controls {
+    width: 64px;
+    height: 100%;
+    display: list-item;
+    overflow-x: hidden; /* broken tooltips*/
+    overflow-y: scroll;
+    top: 0;
+}
+
+  
+
+.tui-image-editor-container.bottom .tui-image-editor-menu{
+    display: list-item;
+    margin-top: 10px;
+}
+
+.tui-image-editor-container.bottom .tui-image-editor-controls {
+  width: 100%;
+  display: list-item;
+  overflow-x: scroll; /* broken tooltips*/
+  overflow-y: hidden;
+  left: 0;
+}
+.tui-image-editor-container.bottom .tui-image-editor-main{
+  width: 100%;
+  display: list-item;
+  overflow-x: scroll; /* broken tooltips*/
+  overflow-y: hidden;
+  left: 0;
+}
+
+/* broken tooltips ref, http://jsfiddle.net/1bz0v4ny/  . http://jsfiddle.net/dsczxkpf/4/ */
+li.tui-image-editor-item:after, li.tui-image-editor-item:before{
+  display: none !important;
+}
+
+.tooltip{
+    position: absolute;
+    left: 60px;
+/*            background-color: red;*/
+    background-color: #2f2f2f;
+    z-index: 100;
+    
+    display: inline-block;
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 11px;
+    font-weight: lighter;
+    border-radius: 3px;
+    max-height: 23px;
+    top: -25px;
+    min-width: 24px;
+}
+
 /*# sourceMappingURL=src/css/index.css.map */
 
 /*# sourceMappingURL=tui-image-editor.css.map*/

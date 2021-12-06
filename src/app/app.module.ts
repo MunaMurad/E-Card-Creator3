@@ -97,7 +97,8 @@ import {TranslateModule, TranslateLoader,TranslateService} from '@ngx-translate/
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
-
+// import { EmailComposer } from '@ionic-native/email-composer';
+import * as $ from 'jquery';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -183,6 +184,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusBar,
     SocialSharing,
     SplashScreen,
+    // EmailComposer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   exports: [TranslateModule],

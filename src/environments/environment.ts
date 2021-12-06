@@ -30,11 +30,11 @@ export const environment = {
         logo: 'assets/icon/instagram-icon.png',
         shareType: 'shareViaInstagram'
     },
-    {
-        title: 'Email',
-        logo: 'assets/icon/email-icon.png',
-        shareType: 'viaEmail'
-    }
+    // {
+    //     title: 'Email',
+    //     logo: 'assets/icon/email-icon.png',
+    //     shareType: 'viaEmail'
+    // }
   ],
 };
 

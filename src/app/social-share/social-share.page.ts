@@ -1,3 +1,4 @@
+// import {EmailComposer, EmailComposerOptions} from "@ionic-native/email-composer/ngx";
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
@@ -15,11 +16,12 @@ export class SocialSharePage implements OnInit {
   sharingImage:any;
   sharingText = 'An Invitation has been sent to you!';
   emailSubject = 'Invitation Image'
-  recipent = ['recipient@example.org'];
+  recipent = [''];
   sharingUrl = 'https://store.enappd.com';
   constructor(
     private modal: ModalController,
     private socialSharing: SocialSharing,
+    // private emailComposer: EmailComposer
     ) { 
       this.sharingImage = [this.imageToShare];
     }
@@ -37,8 +39,9 @@ export class SocialSharePage implements OnInit {
   }
 
   async shareVia(shareData) {
+    console.log(shareData);
     if (shareData.shareType === 'viaEmail') {
-      this.shareViaEmail();
+      this.sendEmail();
     } else {
       this.socialSharing[`${shareData.shareType}`](this.sharingText, this.sharingImage, null)
       .then((res) => {
@@ -50,8 +53,24 @@ export class SocialSharePage implements OnInit {
       });
     }
   }
+
+  sendEmail() {
+    let email = {
+      to: '',
+      cc: '',
+      attachments: [
+        this.sharingImage
+      ],
+      subject: "New Invitation",
+      body: "Hey, You've received an invitation ?",
+      isHtml: true
+    };
+ 
+    // this.emailComposer.open(email);
+  }
+
+
   shareViaEmail() {
-    console.log(this.sharingImage);
     this.socialSharing.canShareViaEmail().then((res) => {
       this.socialSharing.shareViaEmail(this.sharingText, this.emailSubject, this.recipent, null, null, this.sharingImage).then(() => {
         this.modal.dismiss();

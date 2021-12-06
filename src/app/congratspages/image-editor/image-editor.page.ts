@@ -14,6 +14,8 @@ import { Storage } from '@ionic/storage';
 // this imports for the alert in back-button
 import {Router} from '@angular/router';
 import { SocialSharePage } from 'src/app/social-share/social-share.page';
+import * as $ from 'jquery'
+declare var EditorPanZoom:any;
 
 @Component({
   selector: 'app-image-editor',
@@ -73,7 +75,7 @@ export class ImageEditorPage implements OnInit {
 
   ngOnInit() {
     var locale_ar = en;
-    this.imageEditor = new ImageEditor(document.querySelector('.tui-image-editor'), {
+    this.imageEditor = new ImageEditor(document.querySelector('#tui-image-editor-container'), {
       usageStatistics: false,
       includeUI: {
         loadImage: {
@@ -96,6 +98,33 @@ export class ImageEditorPage implements OnInit {
     this.imageEditor.loadImageFromURL('img/sampleImage.jpg', 'SampleImage').then(() => {
       this.imageEditor.clearUndoStack();
     });
+
+    new EditorPanZoom(this.imageEditor).enable();
+        
+
+    // FIX TOOLTIPS OVER SCROLLBAR
+    $('li.tui-image-editor-item').each(function(){
+      var text = $(this).attr('tooltip-content');
+      if(text){
+        var el = $('<span class="tooltip" style="display: none">'+text+'</span>'); 
+        $("body").append(el);
+        $(this).data('c-tooltip', el);    
+      }
+        
+    });
+    
+    $('li.tui-image-editor-item').mouseover(function(event) {
+      var el = $(this).data('c-tooltip');
+      if(el){
+          el.css('top', (event.pageY) + 'px');
+          el.show();
+      }
+
+    }).mouseleave(function() {
+      var el = $(this).data('c-tooltip');
+      if(el) $(this).data('c-tooltip').hide();
+    }) 
+    
 
     //Font select list
     let fontArray = ["Sakkal Majalla", "Akhbar MT", "Aldhabi", "Simple Indust Outline", "Cairo", "Dubai", "DecoType Naskh"
@@ -232,13 +261,13 @@ export class ImageEditorPage implements OnInit {
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancel إلغاء',
           role: 'cancel',
           handler: data => {
           }
         },
         {
-          text: 'Register QR',
+          text: 'Register تسجيل',
           handler: async (data: any) => {
             if (data) {
               this.qrDetails.EventName = data.EventName;
@@ -276,13 +305,13 @@ export class ImageEditorPage implements OnInit {
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancel إلغاء',
           role: 'cancel',
           handler: data => {
           }
         },
         {
-          text: 'Update QR',
+          text: 'Update تحديث',
           handler: async (data: any) => {
             if (data) {
               this.qrDetails = invitationDetails;
@@ -357,7 +386,6 @@ export class ImageEditorPage implements OnInit {
         imageToShare : this.imageEditor.toDataURL()
       }
     });
-    console.log(this.imageEditor.toDataURL());
     return modal.present();
   }
 
