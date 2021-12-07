@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { isNil } from '../utils';\nexport function validateEventsArray(events) {\n  if (isNil(events) || events.length === 0) {\n    events = ['child_added', 'child_removed', 'child_changed', 'child_moved'];\n  }\n\n  return events;\n} //# sourceMappingURL=utils.js.map","map":null,"metadata":{},"sourceType":"module"}

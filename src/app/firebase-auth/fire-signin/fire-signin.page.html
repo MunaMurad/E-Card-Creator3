@@ -4,62 +4,58 @@
             <ion-menu-button color="black" auto-hide="false"></ion-menu-button>
         </ion-buttons>
         <ion-title color="black" size="large" class="ion-text-center">{{"SIGNIN"|translate}}</ion-title>
-
-       
     </ion-toolbar>
 </ion-header> 
 
 
 <ion-content fullscreen=true class="backg">
     <ion-grid fixed class="ion-no-padding">
- 
-
-
 
         <form [formGroup]="loginForm" novalidate>
             <div class="login-form">
+
+
                 <ion-text color="dark">
                     <h2 text-center class="ion-margin-bottom main-header7">
                         {{"SIGN"|translate}}
                     </h2>
                 </ion-text>
-                <!--  -->
+                
                 <ion-list class="ion-margin-top ion-padding">
-                    <!-- ############ -->
+                    <!-- The first item for the Email -->
                     <ion-item class="roundedInput8px margin-bottom-10">
                         <ion-label>
                             <ion-icon name="person-add-outline" color="black"></ion-icon>
                         </ion-label>
-                        <ion-input formControlName="username"  type="email" placeholder="email" color="black" [disabled]="loginForm.valid"></ion-input>
+                        <ion-input formControlName="username"  type="email" placeholder="email | البريد الإلكتروني" color="black" [disabled]="loginForm.valid"></ion-input>
                     </ion-item>
-                    <!-- ############ -->
+                    <!-- The second item for the password -->
                     <ion-item class="roundedInput8px margin-bottom-10">
                         <ion-label slot="start" class="margin-right-8">
                             <ion-icon name="lock-closed-outline" color="black"></ion-icon>
                         </ion-label>
 
-                        <ion-input formControlName="password"  type="password" placeholder="Password" color="black" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false">
-                      
+                        <ion-input formControlName="password"  type="password" placeholder="Password | كلمة المرور" color="black" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false">
                         </ion-input>
 
-                        <!-- ### Show/hide password ### -->
+                        <!--  Show/hide password  -->
                         <div (click)="onPasswordToggle()" ion-button fill="clear" size="small">
                             <ion-icon slot="icon-only" color="medium" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
                         </div>
                     </ion-item>
-                    <!-- ############ -->
+
+                    <!-- To rout to forget page -->
                     <span>
                         <p class="ion-text-right" (click)="forgot()">{{"FORGOT?"|translate}}</p>
                     </span>     
                 
-                    <!-- ############ -->
-
                     <!-- Error meassage -->
                     <ion-text color="scarletred">
                         <p *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.touched">
                             <ion-icon name="information-circle-outline"></ion-icon>  {{"DIRECTIVE2"|translate}}
                         </p>
                     </ion-text>
+
                     <ion-text color="scarletred">
                         <p *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched">
                             <ion-icon name="information-circle-outline"></ion-icon> {{"DIRECTIVE3"|translate}}
@@ -71,26 +67,6 @@
 
 
 
-                <!--  -->
-                <!-- <ion-list class="ion-margin-top">
-                    <ion-item lines="none">
-                        <ion-icon slot="start" color="lightgray" size="small" name="mail-outline"></ion-icon>
-                        <ion-input formControlName="username" type="email" placeholder="Username"></ion-input>
-                    </ion-item>
-
-                    <ion-item lines="none">
-                        <ion-icon slot="start" color="lightgray" size="small" name="key-outline"></ion-icon>
-                        <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
-                    </ion-item>
-
-                </ion-list> -->
-
-
-
-
-                <!-- <ion-button mode="ios" color="orange" expand="block"  (click)="login()">
-                    Sign in
-                </ion-button> -->
 
                 <ion-button mode="ios" color="black" expand="block"  fill="solid" [disabled]="!loginForm.valid" (click)="login()">
                     {{"SIGNin"|translate}}
@@ -99,15 +75,16 @@
                 <ion-button mode="ios" color="asphalt" expand="block"  class="ion-margin-top" (click)="register()">
                       {{"CREATn"|translate}}
                 </ion-button>
+
                 <ion-text color="dark">
                     <h2 class="ion-margin-bottom main-header8 ion-text-center">
                         {{"DIRECTIVE1"|translate}} 
                     </h2>
                 </ion-text>
 
-                 <!--message to learn the user where to go if he want to sign out--> 
+                 <!--message to tell the user where to go if he want to sign out--> 
                  <ion-text color="wisteria">
-                    <h2 class="ion-margin-bottom main-header8 ion-text-center"  class="wordBackground" routerLink="/settings">
+                    <h2 class="ion-margin-bottom main-header8 ion-text-center"  class="wordBackground" routerLink="/sett">
                         {{"DIRECTIVE4"|translate}}  
                     </h2>
                 </ion-text> 

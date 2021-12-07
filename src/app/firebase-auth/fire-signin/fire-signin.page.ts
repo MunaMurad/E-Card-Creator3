@@ -28,17 +28,14 @@ export class FireSigninPage implements OnInit {
     //****** form validation ********//
     public formBuilder: FormBuilder
   ) {
-    //this.catId = this.activatedRoute.snapshot.paramMap.get('catId');
-    /// console.log("CatId="+this.catId);
-
+  
+    /* this is as expression to validate email address.*/ 
     let EMAIL_REGEXP = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
-
+ //the required information with the constraints on it.
     this.loginForm = formBuilder.group({
-      username: [
-        "",
-        Validators.compose([Validators.minLength(3), Validators.required]),
-      ],
+      username:['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP)])],
+     // username: [ "", Validators.compose([Validators.minLength(3), Validators.required]), ],
       password: ["", Validators.compose([Validators.required])],
     });
   }
@@ -47,7 +44,6 @@ export class FireSigninPage implements OnInit {
     this.redirectUrl = this.activatedRoute.snapshot.queryParamMap.get(
       "redirectUrl"
     );
-    // const secondParam: string = this.route.snapshot.queryParamMap.get('secondParamKey');
     console.log("redirectUrl=" + this.redirectUrl);
      }
 
@@ -62,19 +58,18 @@ export class FireSigninPage implements OnInit {
   }
 
   register() {
-    if (this.redirectUrl) {
-      this.router.navigateByUrl("/fire-signup?redirectUrl=" + this.redirectUrl);
-    } else {
-      this.router.navigateByUrl("/fire-signup");
-    }
+    //this.router.navigateByUrl("/fire-signup?redirectUrl=" + this.redirectUrl);
+    this.router.navigateByUrl("/fire-signup");
   }
+
   forgot() {
+   // this.router.navigateByUrl("/fire-forgot?redirectUrl=" + this.redirectUrl);
     this.router.navigateByUrl("/fire-forgot");
   }
+  
   login() {
     if (!this.loginForm.valid) {
       console.log(this.loginForm.value);
-      //this.presentAlert("invalid form");
       console.log("invalid form");
     } else {
       this.ionicComponentService.presentLoading();
@@ -96,16 +91,15 @@ export class FireSigninPage implements OnInit {
             }
           },
           (error) => {
-            //var errorMessage: string = error.message;
             this.ionicComponentService.dismissLoading();
-            console.log("Error:" + error.message);
-            this.ionicComponentService.presentAlert(error.message);
+           // console.log("Error:" + error.message);
+            this.ionicComponentService.presentAlert(" The Email or Password is incorrect | البريد الإلكتروني أو كلمة المرور غير صحيحة");
           }
         );
     }
   }
 
-  //####### Show / hide password #######//
+  /* Show / hide password */
   public onPasswordToggle(): void {
     this.showPassword = !this.showPassword;
   }

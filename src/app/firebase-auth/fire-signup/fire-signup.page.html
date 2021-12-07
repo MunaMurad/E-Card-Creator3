@@ -7,7 +7,6 @@
       <ion-buttons slot="start">
         <ion-back-button color="light" text=" " ></ion-back-button>
       </ion-buttons>
-      <!-- <ion-title slot="start" class="main-header4">SIGNIN</ion-title> -->
     </ion-toolbar>
   </ion-header> 
 
@@ -21,92 +20,49 @@
                     {{"CREATEu"|translate}}
                 </h2>
             </ion-text>
+
             <form [formGroup]="registerForm" novalidate>
-    <!--  -->
+
               <ion-list class="ion-margin-top ion-padding">
-                <!-- ############ -->
+                <!-- The first item for First name -->
                 <ion-item  class="roundedInput8px margin-bottom-10">
                   <ion-label>
                     <ion-icon name="person-outline" color="medium"></ion-icon>
                     </ion-label>
-                  <ion-input type="text" formControlName="firstname" placeholder="First name" ></ion-input>
+                  <ion-input type="text" formControlName="firstname" placeholder="First name | الاسم الأول" ></ion-input>
                 </ion-item>
-                <!-- ############ -->
+                <!-- The second item for last name -->
                 <ion-item  class="roundedInput8px margin-bottom-10">
                   <ion-label>
                     <ion-icon name="people-outline" color="medium"></ion-icon>
                     </ion-label>
-                  <ion-input type="text" formControlName="lastname" placeholder="Lastname"></ion-input>
-                </ion-item>
-                <!-- ############ -->
-                <ion-item  class="roundedInput8px margin-bottom-10">
-                  <ion-label>
-                    <ion-icon name="call-outline" color="medium"></ion-icon>
-                    </ion-label>
-                  <ion-input  type="number" formControlName="phone" placeholder="phone" ></ion-input>
+                  <ion-input type="text" formControlName="lastname" placeholder="Lastname | الاسم الأخير"></ion-input>
                 </ion-item>
 
-                <!-- ############ -->
+                <!-- The third item for Email -->
                 <ion-item  class="roundedInput8px margin-bottom-10">
                     <ion-label>
                       <ion-icon name="mail-outline" color="medium"></ion-icon>
                       </ion-label>
-                    <ion-input type="text" formControlName="username" placeholder="Username(email)"></ion-input>
+                    <ion-input type="text" formControlName="username" placeholder="email | البريد الإلكتروني"></ion-input>
                   </ion-item>
-      
 
-
-                <!-- ############ -->                              
+                <!-- The forth item for password -->                              
                 <ion-item  class="roundedInput8px margin-bottom-10">
-
                   <ion-label slot="start" class="margin-right-8">
                     <ion-icon name="lock-closed-outline" color="medium"></ion-icon>
                     </ion-label>
 
-                  <ion-input type="text" formControlName="password" placeholder="Password" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
+                  <ion-input type="text" formControlName="password" placeholder="Password | كلمة المرور" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false"></ion-input>
 
-                      <!-- ### Show/hide password ### -->    
+                      <!--  Show/hide password -->    
                       <div (click)="onPasswordToggle()" ion-button fill="clear" size="small" >
                         <ion-icon  slot="icon-only" color="medium" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
                       </div>
-
                 </ion-item>
 
               </ion-list>
 
-
-    <!--  -->
-
-
-
-                <!-- <ion-list lines="none">
-
-                    <ion-item>
-                        <ion-icon slot="start" color="lightgrey" size="small" name="person-outline"></ion-icon>
-                        <ion-input type="text" formControlName="firstname" placeholder="First name"></ion-input>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-icon slot="start" color="lightgrey" size="small" name="people-outline"></ion-icon>
-                        <ion-input type="text" formControlName="lastname" placeholder="Lastname"></ion-input>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-icon slot="start" color="lightgrey" size="small" name="call-outline"></ion-icon>
-                        <ion-input type="number" formControlName="phone" placeholder="phone"></ion-input>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-icon slot="start" color="lightgrey" size="small" name="mail-outline"></ion-icon>
-                        <ion-input type="text" formControlName="username" placeholder="Username(email)"></ion-input>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-icon slot="start" color="lightgrey" size="small" name="key-outline"></ion-icon>
-                        <ion-input type="text" formControlName="password" placeholder="Password"></ion-input>
-                    </ion-item>
-
-                </ion-list> -->
 
                 <!-- Error meassage -->
                 <ion-text color="danger">
@@ -114,22 +70,19 @@
                         <ion-icon name="information-circle-outline"></ion-icon> {{"WARNING5"|translate}}
                     </p>
                 </ion-text>
+
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.lastname.valid && registerForm.controls.lastname.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNINIG4"|translate}}
-                    </p>
-                </ion-text>
-                <ion-text color="danger">
-                    <p *ngIf="!registerForm.controls.phone.valid && registerForm.controls.phone.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNINIG3"|translate}}
+                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNING4"|translate}}
                     </p>
                 </ion-text>
 
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.username.valid && registerForm.controls.username.touched">
-                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNINIG2"|translate}}
+                        <ion-icon name="information-circle-outline"></ion-icon> {{"WARNING2"|translate}} 
                     </p>
                 </ion-text>
+
                 <ion-text color="danger">
                     <p *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.touched">
                         <ion-icon name="information-circle-outline"></ion-icon>{{"WARNING1"|translate}}
@@ -142,10 +95,12 @@
                     (click)="registerUser()">
                     {{"CREATE"|translate}}
                 </ion-button>
+
                 <ion-button mode="ios" color="asphalt" expand="block"  class="ion-margin-top"
                     routerLink="/fire-signin">
                     {{"CANCEL"|translate}}
                 </ion-button>
+
                 <ion-text color="dark">
                     <h2  class="ion-text-center ion-margin-bottom main-header8">
                          {{"DIRECTIVE1"|translate}}

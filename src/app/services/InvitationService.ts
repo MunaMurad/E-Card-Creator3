@@ -104,6 +104,7 @@ export class InvitationService {
         return result;
     }
     // Get Latest DocId from DB and insert the rest of the details
+    
     async getInvitationQRCode(docId: string){
         var invitation = new InvitationDetails()
         var data = await this.invitationsCollection.doc(docId).ref.get().then(

@@ -23,6 +23,8 @@
 "WRITTEN":"Written",
 "EMPTY":"Empty",
 "MOVE":"Move",
+"English":"English",
+"Arabic":"Arabic",
 "INVITATION":"Invitation",
 "WALK":"introduce",
 "CONG":"congratulate",
@@ -63,7 +65,7 @@
 "CANCEL":"Cancel",
 "FORGOT":"FORGOT",
 "FORGOT3":"  Forgot password",
-"DIRECTIVE2":"Username field must be at least 3 characters long! ",
+"DIRECTIVE2":"Be sure that you write your Email correctly",
 "DIRECTIVE3":"Password field must be at least 3 characters long!",
 "DIRECTIVE4":"If you want to sign out, click here to go to settings page.",
 "RECOVER":"Recover",
@@ -72,7 +74,7 @@
 "EMAIL":"emil",
 "SIGN":" Sign in to continue",
 "WARNING1":" Password field must be at least 6 characters long!",
-"WARNING2":"Username must be e-mail!",
+"WARNING2":"Verify the email is correct",
 "WARNING3":"Phone field must be at least 6 characters long!",
 "WARNING4":"Lastname field must be at least 3 characters long!",
 "WARNING5":"Firstname field must be at least 3 characters long!",
@@ -92,10 +94,14 @@
 "QRcode":" QR code",
 "viewQR":"View QR code",
 "OR":"OR",
-"edit":"Edit Image"
-
-
-
+"edit":"Edit Image",
+"ProfileErrorMessage1":"This field must be at least 3 characters long",
+"ProfileErrorMessage2":"This field must be at least 3 characters long",
+"ProfileErrorMessage3":"Enter a valid email",
+"QR1question":"What is the benefit of QR?",
+"QR1answer":"It helps you in calculating and knowing the number of attendees, by scanning the code on the page designated for that",
+"QR2question":"Why the app do not allow me to add QR?",
+"QR2answer":"Check your login! The QR feature is only available to people who have an account in the app"
 
 
 

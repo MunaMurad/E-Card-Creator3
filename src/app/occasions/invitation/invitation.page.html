@@ -107,7 +107,6 @@
           <ion-row wrap color="gray">
             <ion-col   >
 
-
      <!--card with image for (wedding)-->
      <ion-card >
       <img src="../../assets/wedding1.jpeg">
@@ -192,9 +191,25 @@
           <ion-row wrap color="gray">
             <ion-col  >
 
-              <!--Here to write the code of current invitation and access to camera and read the QR code-->
+              <!--Here to write the code of current invitation and access to camera and read the QR code  (click)="getInvitationCounter()-->
+              
+                <ion-list>
+                  <ion-list-header>
+                   Counter Lists: 
+                  </ion-list-header>
 
-
+                  <div *ngIf="invitations!= null; else conditionFalse">
+                    <ion-item *ngFor="let invitation of invitations"  >
+                   
+                      <h2>{{invitation}}</h2>
+                    </ion-item>
+                  </div>
+                  <ng-template #conditionFalse>
+                    No invitations found
+                  </ng-template>
+                  
+                </ion-list>
+              
             </ion-col>
           </ion-row>
       </ion-grid>
