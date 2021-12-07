@@ -10,7 +10,7 @@
   "cordova-plugin-whitelist": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-whitelist@1.3.3"
+      "id": "cordova-plugin-whitelist@^1.3.3"
     },
     "is_top_level": true,
     "variables": {}
@@ -74,7 +74,7 @@
   "cordova-base64-to-gallery": {
     "source": {
       "type": "registry",
-      "id": "cordova-base64-to-gallery"
+      "id": "cordova-base64-to-gallery@^4.1.3"
     },
     "is_top_level": true,
     "variables": {}
@@ -90,7 +90,7 @@
   "cordova-plugin-x-socialsharing": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-x-socialsharing"
+      "id": "cordova-plugin-x-socialsharing@^6.0.3"
     },
     "is_top_level": true,
     "variables": {}
@@ -101,6 +101,30 @@
       "id": "es6-promise-plugin@^4.1.0"
     },
     "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-androidx-build": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-androidx-build"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-file": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file@6.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-android-permissions": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-android-permissions"
+    },
+    "is_top_level": true,
     "variables": {}
   }
 }

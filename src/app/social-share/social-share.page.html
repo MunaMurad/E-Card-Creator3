@@ -18,9 +18,7 @@
   <div class="logoList">
     <ion-row *ngFor="let item of sharingList">
       <ion-col>
-        <a [href]="item.href" target="_blank">
-          <img class="socialLogo" [src]="item.logo" width="20px" height="20px" />
-        </a>
+          <ion-img class="socialLogo" (click)="shareVia(item)" [src]="item.logo"></ion-img>
       </ion-col>
     </ion-row>
   </div>

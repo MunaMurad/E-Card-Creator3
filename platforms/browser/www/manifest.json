@@ -1,8 +1,8 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "MyApp",
-  "short_name": "MyApp",
+  "name": "E-Card Creator",
+  "short_name": "E-Card Creator",
   "version": "io.ionic.starter",
   "description": "An awesome Ionic/Cordova app.",
   "author": "Ionic Framework Team",

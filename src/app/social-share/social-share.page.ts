@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+// import {EmailComposer, EmailComposerOptions} from "@ionic-native/email-composer/ngx";
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
@@ -9,18 +10,22 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
   styleUrls: ['./social-share.page.scss'],
 })
 export class SocialSharePage implements OnInit {
-
+  @Input() imageToShare: any;
   public sharingList = environment.socialShareOption;
   loader: any = null;
-  sharingText = 'You can download our app from playstore or use this link to download the app. And you can share awesome coupons with your loved once, Thank you';
-  emailSubject = 'Download Apps'
-  recipent = ['recipient@example.org'];
-  sharingImage = ['https://store.enappd.com/wp-content/uploads/2019/03/700x700_2-1-280x280.jpg'];
+  sharingImage:any;
+  sharingText = 'An Invitation has been sent to you!';
+  emailSubject = 'Invitation Image'
+  recipent = [''];
   sharingUrl = 'https://store.enappd.com';
   constructor(
     private modal: ModalController,
     private socialSharing: SocialSharing,
-  ) { }
+    // private emailComposer: EmailComposer
+    ) { 
+      this.sharingImage = [this.imageToShare];
+    }
+    
 
   ngOnInit() {
 
@@ -34,10 +39,11 @@ export class SocialSharePage implements OnInit {
   }
 
   async shareVia(shareData) {
+    console.log(shareData);
     if (shareData.shareType === 'viaEmail') {
-      this.shareViaEmail();
+      this.sendEmail();
     } else {
-      this.socialSharing[`${shareData.shareType}`](this.sharingText, this.sharingImage, this.sharingUrl)
+      this.socialSharing[`${shareData.shareType}`](this.sharingText, this.sharingImage, null)
       .then((res) => {
         this.modal.dismiss();
       })
@@ -47,6 +53,23 @@ export class SocialSharePage implements OnInit {
       });
     }
   }
+
+  sendEmail() {
+    let email = {
+      to: '',
+      cc: '',
+      attachments: [
+        this.sharingImage
+      ],
+      subject: "New Invitation",
+      body: "Hey, You've received an invitation ?",
+      isHtml: true
+    };
+ 
+    // this.emailComposer.open(email);
+  }
+
+
   shareViaEmail() {
     this.socialSharing.canShareViaEmail().then((res) => {
       this.socialSharing.shareViaEmail(this.sharingText, this.emailSubject, this.recipent, null, null, this.sharingImage).then(() => {
