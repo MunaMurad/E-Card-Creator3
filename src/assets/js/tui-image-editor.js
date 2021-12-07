@@ -47377,7 +47377,6 @@ var ImageTracer = /*#__PURE__*/function () {
     value: function imageToTracedata(url, callback, options) {
       var _this2 = this;
 
-<<<<<<< HEAD
       options = this.checkoptions(options);
       this.loadImage(url, function (canvas) {
         callback(_this2.imagedataToTracedata(_this2.getImgdata(canvas), options));
@@ -49429,11 +49428,6 @@ var ImageTracer = /*#__PURE__*/function () {
 var instance_map = __webpack_require__(899);
 var map_default = /*#__PURE__*/__webpack_require__.n(instance_map);
 ;// CONCATENATED MODULE: ./src/js/interface/component.js
-=======
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  };
->>>>>>> c8310f522b3d0e58d42610413aa0c99434b77dd8
 
 
 
