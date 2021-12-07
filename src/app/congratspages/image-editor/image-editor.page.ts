@@ -109,7 +109,7 @@ export class ImageEditorPage implements OnInit {
       if (i == 0) {
         selected = 'selected';
       }
-      fontSelectHTML += '<option style="font-family:' + fontArray[i] + ';" value="' + fontArray[i] + '" ' + selected + '>' + fontArray[i] + '</option>';
+      fontSelectHTML += '<option style="font-family:' + fontArray[i] + ';" value="' + fontArray[i] +'" ' + selected + '>' + fontArray[i] + '</option>';
     }
     fontSelectHTML += '</select></div>\n \n <div></div>  <div></div>';
 
