@@ -194,16 +194,20 @@
               <!--Here to write the code of current invitation and access to camera and read the QR code  (click)="getInvitationCounter()-->
               
                 <ion-list>
-                  <ion-list-header>
+                 <!-- <ion-list-header>
                    Counter Lists: 
-                  </ion-list-header>
+                  </ion-list-header>-->
 
                   <div *ngIf="invitations!= null; else conditionFalse">
                     <ion-item *ngFor="let invitation of invitations"  >
-                   
+                      <ion-avatar slot="start">
+                        <img src="../../assets/qr-code.png">
+                      </ion-avatar>
+                      <ion-label>
                       <h2>{{invitation.EventName}}</h2>
                       <br/>
                       <p text-wrap>{{ invitation.AttendeesCount }} out of {{invitation.AttendeesAllowed}}</p>
+                    </ion-label>
                     </ion-item>
                   </div>
                   <ng-template #conditionFalse>

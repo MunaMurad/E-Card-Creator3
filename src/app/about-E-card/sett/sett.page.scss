@@ -15,10 +15,10 @@ ion-content{
     background-image: url('../../../assets/henry-co--odUkx8C2gg-unsplash.jpg');
    }
    //class I use it in the footer 
-  .sign-in-hr {
+   .sign-in-hr {
     width: 100%; 
     height: 0%; 
-    border-bottom: 0px solid rgb(177, 167, 167); 
+    border-bottom: 0px solid rgb(255, 255, 255); 
     text-align: center; 
     margin-top: 10px; 
     margin-bottom: 10px;
@@ -26,10 +26,11 @@ ion-content{
   //class I use it in the footer as a style 
     span {
         font-size: 18px; 
-        color: rgba(83, 81, 81, 0.781); 
-        background-color: #fde8ff42; 
+        color: rgba(2, 1, 1, 0.781); 
+        background-color: #fffffffb; 
         padding: 0 10px;
     }
+  
     h1 {
       color: rgb(44, 30, 30);
       font-weight: 300 !important;
