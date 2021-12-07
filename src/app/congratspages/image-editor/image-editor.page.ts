@@ -37,11 +37,22 @@ export class ImageEditorPage implements OnInit {
   qrDetails: InvitationDetails = new InvitationDetails();
   private userProfile: AngularFirestoreDocument<any>;
   public iconColor: string = '#000000';
-  addQrBtn = '<button id="tui-image-editor-addQr-btn">Add QR</button>';
-  editBtn = `<button id="tui-image-editor-edit-btn">Edit QR</button>`;
-  shareBtn = `<li tooltip-content="Share" class="tie-btn-shareAll tui-image-editor-item help">
-              <img src="assets/icon/icons8-share.svg" class="social-share-btn" width = 20px height = 20px />
+  // addQrBtn = '<button id="tui-image-editor-addQr-btn">Add QR</button>';
+  // editBtn = `<button id="tui-image-editor-edit-btn">Edit QR</button>`;
+  editBtn = `<li tooltip-content="Edit QR" class="tui-image-editor-edit-btn tui-image-editor-item help" id="tui-image-editor-edit-btn">
+  <img src="assets/icon/editQr.jpg"  width = 20px height = 20px />
+  </li>`;
+  addQrBtn = `<li tooltip-content="Add QR" class="tui-image-editor-addQr-btn tui-image-editor-item help" id="tui-image-editor-addQr-btn">
+  <img src="assets/icon/addQr.png" width = 20px height = 20px />
+  </li>`
+  downloadBtn = `<li tooltip-content="download" class="tui-image-editor-download-btn tui-image-editor-item help">
+  <img src="assets/icon/download.svg" width = 20px height = 20px />
+  </li>`
+  shareBtn = `<li tooltip-content="Share" class="tie-btn-shareAll tui-image-editor-item help social-share-btn">
+              <img src="assets/icon/icons8-share.svg" width = 20px height = 20px />
               </li>`;
+
+
   QRIconId = '';
   userId = '';
   userAuth = false;
@@ -157,13 +168,14 @@ export class ImageEditorPage implements OnInit {
     });
 
 
-    document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-download-btn').insertAdjacentHTML('afterend', this.addQrBtn);
-    
-    
+    // document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-download-btn').insertAdjacentHTML('afterend', this.addQrBtn);
     
     document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-load-btn').closest('div').hidden = true ; //.classList.add('social-share');
+    document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-download-btn').closest('div').hidden = true ;
 
     document.querySelector('.tui-image-editor-container .tie-btn-deleteAll').insertAdjacentHTML('afterend', this.shareBtn);
+    document.querySelector('.tui-image-editor-container .tie-btn-deleteAll').insertAdjacentHTML('afterend', this.downloadBtn);
+    document.querySelector('.tui-image-editor-container .tie-btn-deleteAll').insertAdjacentHTML('afterend', this.addQrBtn);
 
     document.querySelector('.social-share-btn').addEventListener('click', async (e) => {
       await this.showShareOptions();
@@ -185,9 +197,9 @@ export class ImageEditorPage implements OnInit {
         this.presentToast('Please sign in to add QR to invitation','warning')
       }
     });
-    document.querySelector('.tui-image-editor-help-menu').classList.remove('top');
-    document.querySelector('.tui-image-editor-help-menu').classList.add('left');
-    document.querySelector('.tui-image-editor-header-buttons .tui-image-editor-download-btn').insertAdjacentHTML('afterend', this.editBtn);
+    // document.querySelector('.tui-image-editor-help-menu').classList.remove('top');
+    // document.querySelector('.tui-image-editor-help-menu').classList.add('left');
+    document.querySelector('.tui-image-editor-container .tie-btn-deleteAll').insertAdjacentHTML('afterend', this.editBtn);
     document.getElementById('tui-image-editor-edit-btn').style.display = "none";
     document.querySelector('input[type="file"]').closest('div').style.display = "none";
 
@@ -201,6 +213,28 @@ export class ImageEditorPage implements OnInit {
     });
   }
 
+
+  // private async savePicture(cameraPhoto: CameraPhoto) {
+  //   // Convert photo to base64 format, required by Filesystem API to save
+  //   const base64Data = 
+  
+  //   // Write the file to the data directory
+  //   const fileName = new Date().getTime() + '.jpeg';
+  //   const savedFile = await Filesystem.writeFile({
+  //     path: fileName,
+  //     data: base64Data,
+  //     directory: Directory.Data
+  //   });
+  
+  //   // Use webPath to display the new image instead of base64 since it's
+  //   // already loaded into memory
+  //   return {
+  //     filepath: fileName,
+  //     webviewPath: cameraPhoto.webPath
+  //   };
+  // }
+
+  
   async presentToast(message:string,type:string ) {
     const toast = await this.toastCtrl.create({
       message: message,

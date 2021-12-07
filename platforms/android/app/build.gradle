@@ -48,8 +48,6 @@ buildscript {
     repositories repos
 
     dependencies {
-        compile 'com.android.support:support-v4:+'
-        
         apply from: '../CordovaLib/cordova.gradle'
 
         classpath 'com.android.tools.build:gradle:4.0.1'
@@ -145,9 +143,6 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "../cordova-androidx-build/starter-cordova-androidx-build.gradle"
-apply from: "../cordova-plugin-googlemaps/starter-tbxml-android.gradle"
-apply from: "../cordova-plugin-googlemaps/starter-pgm-custom.gradle"
-apply from: "../phonegap-plugin-barcodescanner/starter-barcodescanner.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -352,9 +347,6 @@ dependencies {
 
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
-    implementation "com.android.support:support-annotations:27.+"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    implementation "com.android.support:support-v4:27.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

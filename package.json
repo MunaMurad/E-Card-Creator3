@@ -38,6 +38,7 @@
     "chart.js": "^2.9.3",
     "cordova-browser": "5.0.4",
     "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-email-composer": "^0.10.0",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
     "cordova-plugin-splashscreen": "^5.0.2",
@@ -121,8 +122,7 @@
       "cordova-plugin-x-socialsharing": {}
     },
     "platforms": [
-      "browser",
-      "android"
+      "browser"
     ]
   }
 }
