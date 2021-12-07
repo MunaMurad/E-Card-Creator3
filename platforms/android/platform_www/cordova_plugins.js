@@ -22,6 +22,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
+    },
+    {
       "id": "cordova-plugin-device.device",
       "file": "plugins/cordova-plugin-device/www/device.js",
       "pluginId": "cordova-plugin-device",
@@ -34,6 +42,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "com-badrit-base64": "0.2.0",
     "cordova-androidx-build": "1.0.4",
     "cordova-base64-to-gallery": "4.1.3",
+    "cordova-plugin-android-permissions": "1.1.2",
     "cordova-plugin-device": "2.0.2"
   };
 });

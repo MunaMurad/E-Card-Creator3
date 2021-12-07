@@ -318,6 +318,12 @@ Apache-2.0
 @firebase/webchannel-wrapper
 Apache-2.0
 
+@ionic-native/android-permissions
+MIT
+
+@ionic-native/base64-to-gallery
+MIT
+
 @ionic-native/core
 MIT
 

@@ -1,3 +1,4 @@
+import { Base64ToGallery, Base64ToGalleryOptions } from '@ionic-native/base64-to-gallery/ngx';
 import { UserService } from './../../services/user.service';
 import { InvitationService } from '../../services/InvitationService';
 import { InvitationDetails } from './InvitationDetails';
@@ -16,6 +17,7 @@ import {Router} from '@angular/router';
 import { SocialSharePage } from 'src/app/social-share/social-share.page';
 import * as $ from 'jquery'
 declare var EditorPanZoom:any;
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @Component({
   selector: 'app-image-editor',
@@ -36,6 +38,7 @@ export class ImageEditorPage implements OnInit {
   showModal: Boolean = false;
   qrDetails: InvitationDetails = new InvitationDetails();
   private userProfile: AngularFirestoreDocument<any>;
+  hasWriteAccess: boolean = false;
   public iconColor: string = '#000000';
   // addQrBtn = '<button id="tui-image-editor-addQr-btn">Add QR</button>';
   // editBtn = `<button id="tui-image-editor-edit-btn">Edit QR</button>`;
@@ -45,7 +48,7 @@ export class ImageEditorPage implements OnInit {
   addQrBtn = `<li tooltip-content="Add QR" class="tui-image-editor-addQr-btn tui-image-editor-item help" id="tui-image-editor-addQr-btn">
   <img src="assets/icon/addQr.png" width = 20px height = 20px />
   </li>`
-  downloadBtn = `<li tooltip-content="download" class="tui-image-editor-download-btn tui-image-editor-item help">
+  downloadBtn = `<li tooltip-content="download" class="tui-image-editor-download tui-image-editor-item help">
   <img src="assets/icon/download.svg" width = 20px height = 20px />
   </li>`
   shareBtn = `<li tooltip-content="Share" class="tie-btn-shareAll tui-image-editor-item help social-share-btn">
@@ -57,8 +60,10 @@ export class ImageEditorPage implements OnInit {
   userId = '';
   userAuth = false;
   constructor(
+    public base64ToGallery:Base64ToGallery,
     private firestore: AngularFirestore,
     private userService: UserService,
+    private androidPermissions: AndroidPermissions,
     private fireAuth: AngularFireAuth,
     private modalCtrl: ModalController,
     private encryptionService: EncryptionService,
@@ -211,28 +216,58 @@ export class ImageEditorPage implements OnInit {
     document.querySelector('#tui-image-editor-edit-btn').addEventListener('click', async (e) => {
       await this.presentAlertUpdate();
     });
+
+
+    document.querySelector('.tui-image-editor-download').addEventListener('click', async (e) => {
+      await this.saveImage();
+    });
   }
 
+  ionViewWillEnter() {
+    this.checkPermissions();
+ }
+ 
+ checkPermissions() {
+    this.androidPermissions
+    .checkPermission(this.androidPermissions
+    .PERMISSION.WRITE_EXTERNAL_STORAGE)
+    .then((result) => {
+     console.log('Has permission?',result.hasPermission);
+     this.hasWriteAccess = result.hasPermission;
+   },(err) => {
+       this.androidPermissions
+         .requestPermission(this.androidPermissions
+         .PERMISSION.WRITE_EXTERNAL_STORAGE);
+    });
+    if (!this.hasWriteAccess) {
+      this.androidPermissions
+        .requestPermissions([this.androidPermissions
+        .PERMISSION.WRITE_EXTERNAL_STORAGE]);
+    }
+ }
+ 
+ saveImage() {
+    if (!this.hasWriteAccess) {
+      this.checkPermissions();
+    }
+    let options: Base64ToGalleryOptions = {
+      prefix: '_img', 
+      mediaScanner: true
+    };
+    this.base64ToGallery
+      .base64ToGallery(this.imageEditor.toDataURL(), options).then(
+      res => console.log('Saved image to gallery:', res),
+      err => console.log('Error saving image to gallery:', err)
+    );
+ }
 
-  // private async savePicture(cameraPhoto: CameraPhoto) {
-  //   // Convert photo to base64 format, required by Filesystem API to save
-  //   const base64Data = 
-  
-  //   // Write the file to the data directory
-  //   const fileName = new Date().getTime() + '.jpeg';
-  //   const savedFile = await Filesystem.writeFile({
-  //     path: fileName,
-  //     data: base64Data,
-  //     directory: Directory.Data
-  //   });
-  
-  //   // Use webPath to display the new image instead of base64 since it's
-  //   // already loaded into memory
-  //   return {
-  //     filepath: fileName,
-  //     webviewPath: cameraPhoto.webPath
-  //   };
+  // fileSave() {
+  //   this.base64ToGallery.base64ToGallery(  {prefix: 'Img', mediaScanner:true }).then(
+  //     res => console.log('Saved image to gallery ', res),
+  //     err => console.log('Error saving image to gallery ', err)
+  //   );
   // }
+
 
   
   async presentToast(message:string,type:string ) {

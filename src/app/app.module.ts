@@ -99,7 +99,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 // import { EmailComposer } from '@ionic-native/email-composer';
 import * as $ from 'jquery';
-
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,'../assets/i18n/', '.json');
@@ -184,6 +185,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusBar,
     SocialSharing,
     SplashScreen,
+    Base64ToGallery,
+    AndroidPermissions,
     // EmailComposer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

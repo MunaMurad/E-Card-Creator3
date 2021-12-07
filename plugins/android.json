@@ -13,6 +13,9 @@
     "cordova-base64-to-gallery": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "io.ionic.starter"
     }

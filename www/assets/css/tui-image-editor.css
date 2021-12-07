@@ -74,8 +74,8 @@ body > textarea {
   text-align: center;
 }
 .tui-image-editor-container .tui-image-editor-download-btn {
-  background-color: #fdba3b;
-  border-color: #fdba3b;
+  /* background-color: #fdba3b; */
+  /* border-color: #fdba3b; */
   color: #fff;
 }
 .tui-image-editor-container .tui-image-editor-save-btn {
@@ -800,11 +800,13 @@ body > textarea {
 }
 .tui-image-editor-container .tui-image-editor-help-menu.top {
   white-space: nowrap;
-  width: 506px;
+  width: 100%;
   height: 40px;
   top: 8px;
   left: 50%;
   transform: translateX(-50%);
+  overflow-y: hidden;
+  overflow-x:scroll;
 }
 .tui-image-editor-container .tui-image-editor-help-menu.top .tie-panel-history {
   top: 45px;
