@@ -201,7 +201,9 @@
                   <div *ngIf="invitations!= null; else conditionFalse">
                     <ion-item *ngFor="let invitation of invitations"  >
                    
-                      <h2>{{invitation}}</h2>
+                      <h2>{{invitation.EventName}}</h2>
+                      <br/>
+                      <p text-wrap>{{ invitation.AttendeesCount }} out of {{invitation.AttendeesAllowed}}</p>
                     </ion-item>
                   </div>
                   <ng-template #conditionFalse>

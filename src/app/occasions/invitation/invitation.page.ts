@@ -17,30 +17,29 @@ export class InvitationPage implements OnInit {
   private invitationsCollection: AngularFirestoreCollection<any>;
   
   userId:any;
-  invitations:InvitationDetails[];
+  invitations:InvitationDetails[]=[];
   constructor(public userService:UserService,private storage:Storage, private firestore: AngularFirestore) {
-
     this.invitationsCollection = this.firestore.collection<any>('Invitations');
-    this.storage.get('userId').then((val)=>{
-      console.log("this.userId = val inside",val)
-      this.userId = val;
-    });
-    console.log('this.storage.get(userId) outside',this.userId);
+    this.getInvitationCounter();
    }
 
 async getInvitationCounter(){
-  
-  console.log('start getInvitationCounter');
+  await this.storage.get('userId').then((val)=>{
+    this.userId = val;
+    console.log('start getInvitationCounter',this.userId);
+
+  });
+  var invitations:InvitationDetails[]=[];
   var data = await this.invitationsCollection.ref.where('UserId', '==', this.userId).get().then(
     function (querySnapshot){
       querySnapshot.forEach((res)=>
       {
         var result = res.data() as InvitationDetails;
-      console.log('start this.invitation.push', result);
-      this.invitation.push(res.data() as InvitationDetails);
+        invitations.push(res.data() as InvitationDetails);
       })
-  });        
-  console.log('start invitationArray', this.invitations);
+  });
+    this.invitations = invitations;        
+    console.log('start invitationArray', this.invitations);
   return this.invitations;
 }
 
