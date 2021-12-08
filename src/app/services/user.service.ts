@@ -135,14 +135,12 @@ export class UserService {
   updateUserProfile(
     firstname: string, 
     lastname: string, 
-   // phone: string, 
     email: string, 
   ){
     
     return  this.firestore.doc<any>('userProfile/'+this.userId).update({
       firstname: firstname,
       lastname: lastname,
-    //  phone:phone,
       email: email
     });
   }

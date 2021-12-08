@@ -32,7 +32,6 @@ export class FireSignupPage implements OnInit {
     this.registerForm = formBuilder.group({
       firstname: ['', Validators.compose([Validators.minLength(3), Validators.required])],
       lastname: ['', Validators.compose([Validators.minLength(3), Validators.required])],
-     // phone: ['', Validators.compose([Validators.minLength(2), Validators.required])],
       username:  ['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP)])],
       password:  ['', Validators.compose([Validators.minLength(6), Validators.required])],
     });
@@ -70,16 +69,11 @@ export class FireSignupPage implements OnInit {
       )
       .then(() => {
         this.ionicComponentService.dismissLoading();
-        if(this.redirectUrl){
-          this.router.navigateByUrl('/'+this.redirectUrl);
-        }else{
           this.router.navigateByUrl('/beginning');
-        }
       }, 
       (error) => { 
-         var errorMessage: string = error.message;
          this.ionicComponentService.dismissLoading();
-         this.ionicComponentService.presentAlert(errorMessage);      
+         this.ionicComponentService.presentAlert(" تحقق من صحة البيانات المدخلة |Verify that the entered data is correct");      
       });
   
     }

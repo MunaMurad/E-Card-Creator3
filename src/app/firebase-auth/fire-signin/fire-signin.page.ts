@@ -84,15 +84,10 @@ export class FireSigninPage implements OnInit {
           (authData) => {
             console.log("Auth pass");
             this.ionicComponentService.dismissLoading();
-            if (this.redirectUrl) {
-              this.router.navigateByUrl("/" + this.redirectUrl);
-            } else {
               this.router.navigateByUrl("/beginning");
-            }
           },
           (error) => {
             this.ionicComponentService.dismissLoading();
-           // console.log("Error:" + error.message);
             this.ionicComponentService.presentAlert(" The Email or Password is incorrect | البريد الإلكتروني أو كلمة المرور غير صحيحة");
           }
         );

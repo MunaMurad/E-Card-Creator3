@@ -37,8 +37,7 @@ export class FireProfilePage implements OnInit {
     this.updateForm = formBuilder.group({
       firstname: ['', Validators.compose([Validators.minLength(3), Validators.required])],
       lastname: ['', Validators.compose([Validators.minLength(3), Validators.required])],
-      email: ['', Validators.compose([Validators.minLength(0), Validators.required])],
-      //phone: ['', Validators.compose([Validators.minLength(0), Validators.required])] 
+      email: ['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP)])],
 
     });
    }
@@ -62,7 +61,7 @@ export class FireProfilePage implements OnInit {
       console.log(this.updateForm.value);
       
     } else {
-        // add to firebase
+      
       this.ionicComponentService.presentLoading();
 
       console.log("YES");
