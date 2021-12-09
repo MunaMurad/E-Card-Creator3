@@ -37,7 +37,49 @@ export class AppComponent {
   changeLocale(locale:string){
     this.Translate.use(locale);
    }
+/*
+   public selectedIndex = 0;
+   public userAccount = [
+    {
+      title: 'Sign in',
+      url: '/fire-signin',
+      icon: 'log-in'
+    },
+  ];
    
+  public appPages = [
+    {
+      title: 'Intro Page',
+      url: '/intro-page',
+      icon: 'walk'
+    },
+    {
+      title: 'Congratulate',
+      url: '/congratulate',
+      icon: 'mail-open'
+    },
+    {
+      title: 'Invitation',
+      url: '/invitation',
+      icon: 'mail-open'
+    },
+    {
+      title: 'QR Scanner',
+      url: '/qr-scanning',
+      icon: 'scan-circle'
+    },
+    {
+      title: 'Setting',
+      url: '/sett',
+      icon: 'settings'
+    },
+    {
+      title: 'About Us',
+      url: '/info',
+      icon: 'alert'
+    },
+  ];
+  */
   
   ngOnInit() {}
     }
