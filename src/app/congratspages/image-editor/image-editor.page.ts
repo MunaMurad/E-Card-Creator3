@@ -18,6 +18,7 @@ import { SocialSharePage } from 'src/app/social-share/social-share.page';
 import * as $ from 'jquery'
 declare var EditorPanZoom:any;
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-image-editor',
@@ -40,8 +41,8 @@ export class ImageEditorPage implements OnInit {
   private userProfile: AngularFirestoreDocument<any>;
   hasWriteAccess: boolean = false;
   public iconColor: string = '#000000';
-  // addQrBtn = '<button id="tui-image-editor-addQr-btn">Add QR</button>';
-  // editBtn = `<button id="tui-image-editor-edit-btn">Edit QR</button>`;
+  supportingFileAPI = !!(window.File && window.FileList && window.FileReader);
+  rImageType = /data:(image\/.+);base64,/;
   editBtn = `<li tooltip-content="Edit QR" class="tui-image-editor-edit-btn tui-image-editor-item help" id="tui-image-editor-edit-btn">
   <img src="assets/icon/editQr.jpg"  width = 20px height = 20px />
   </li>`;
@@ -247,19 +248,42 @@ export class ImageEditorPage implements OnInit {
  }
  
  saveImage() {
-    if (!this.hasWriteAccess) {
-      this.checkPermissions();
+    var imageName = this.imageEditor.getImageName();
+    var dataURL = this.imageEditor.toDataURL();
+    var blob, type, w;
+    if (this.supportingFileAPI) {
+      blob = this.base64ToBlob(dataURL);
+      type = blob.type.split('/')[1];
+      if (imageName.split('.').pop() !== type) {
+        imageName += '.' + type;
+      }
+      FileSaver.saveAs(blob, imageName); 
+    } else {
+      alert('This browser needs a file-server');
+      w = window.open();
+      w.document.body.innerHTML = '<img src=' + dataURL + '>';
     }
-    let options: Base64ToGalleryOptions = {
-      prefix: '_img', 
-      mediaScanner: true
-    };
-    this.base64ToGallery
-      .base64ToGallery(this.imageEditor.toDataURL(), options).then(
-      res => console.log('Saved image to gallery:', res),
-      err => console.log('Error saving image to gallery:', err)
-    );
  }
+ base64ToBlob(data) {
+  var mimeString = '';
+  var raw, uInt8Array, i, rawLength;
+
+  raw = data.replace(this.rImageType, function (header, imageType) {
+    mimeString = imageType;
+
+    return '';
+  });
+
+  raw = atob(raw);
+  rawLength = raw.length;
+  uInt8Array = new Uint8Array(rawLength); // eslint-disable-line
+
+  for (i = 0; i < rawLength; i += 1) {
+    uInt8Array[i] = raw.charCodeAt(i);
+  }
+
+  return new Blob([uInt8Array], { type: mimeString });
+}
 
   // fileSave() {
   //   this.base64ToGallery.base64ToGallery(  {prefix: 'Img', mediaScanner:true }).then(
