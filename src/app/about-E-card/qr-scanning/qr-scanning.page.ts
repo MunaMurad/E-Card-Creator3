@@ -38,7 +38,7 @@ export class QrScanningPage implements OnInit {
 
 
 
-  //private encryptionService: EncryptionService
+ 
   constructor(private toastCtrl:ToastController, 
     private loadingCtrl:LoadingController, 
     private modalCtrl: ModalController,
@@ -68,6 +68,7 @@ export class QrScanningPage implements OnInit {
         this.canvasContext.drawImage(img, 0, 0, this.canvasElement.width, this.canvasElement.height);
         const imageData=this.canvasContext.getImageData(0,0, this.canvasElement.width, this.canvasElement.height);
         const code = jsQR(imageData.data,imageData.width,imageData.height,{
+         // to not invert the cam 
           inversionAttempts:'dontInvert'
         });
         if(code){
@@ -207,7 +208,7 @@ export class QrScanningPage implements OnInit {
   }
 
 
-  async presentToast(message:string,type:string ) {
+  async presentToast(message:string,type:string) {
     const toast = await this.toastCtrl.create({
       message: message,
       duration: 5000,

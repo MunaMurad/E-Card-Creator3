@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content  class="backg">
+
   <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event)">
 
   <ion-button expand="full" fill="solid" color="pomegrenade" (click)="captureImage()">
@@ -18,6 +19,8 @@
   <div class="ion-text-center">
   <h3>_______________ {{"OR"|translate}} _________________</h3>          
   </div>
+
+  
     <ion-button expand="full" color="amethyst" (click)="startScan()">
       <ion-icon slot="start" name="scan-outline"></ion-icon>
       {{"StartScan"|translate}}
@@ -36,7 +39,7 @@
       <ion-icon slot="start" name="close"></ion-icon>
       {{"StopScan"|translate}}
     </ion-button>
-  
+  <!--to show the result of showToast result-->
     <ion-card *ngIf="scanResult">
       <ion-card-header color="pomegrenade">
         <ion-card-title>
@@ -47,6 +50,7 @@
         {{ scanResult }}
       </ion-card-content>
     </ion-card>
+    <!---->
   
 </ion-content>
 <!--footer of the page -->
